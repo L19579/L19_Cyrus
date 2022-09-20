@@ -12,7 +12,7 @@
 
 <Card>
   <div class="num-display">
-    {item.id}
+    {item.rating}
   </div>
   <button class="close" on:click={() => handle_delete(item.id)}>X</button>
   <p class="text-display">
