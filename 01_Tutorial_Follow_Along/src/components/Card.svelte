@@ -3,7 +3,7 @@
 </div>
 
 <style>
-  .card {
+  .card{
     background-color: #fff;
     color: #333;
     border-radius: 15px;
