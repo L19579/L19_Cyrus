@@ -5,8 +5,8 @@
 
   const dispact = createEventDispatcher();
   const on_change = (event) => {
-    select = event.currentTarget.value
-      dispact('rating-select', select);
+    selected = event.currentTarget.value
+      dispact('rating-select', selected);
   }
 </script>
 
