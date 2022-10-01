@@ -148,7 +148,8 @@
     flex
     justify-center
   ;
-
+  
+  flex-wrap: wrap;
   left: 0;
   top: 0;
   height: 17%;
@@ -160,15 +161,13 @@
     border-8 
     border-cyan-600 
     bg-slate-200 
-    px-32 
-    py-1 
     flex 
     justify-center
     items-center
     md:flex-col
     xl:flex-row
     md:flex-row
-    max-w-5xl
+    w-full
   ;
 
   position: fixed;
