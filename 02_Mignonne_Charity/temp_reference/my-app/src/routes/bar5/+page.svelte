@@ -19,12 +19,14 @@
             <h3>Mignone_Donation</h3>
           </div>
           <ul class="menu-items-frame">
-            <li>
-              <div class="example_svg"><a href="/">Root</a>
+
+            <li class="example_svg_class">
+              <div><a href="/">Root</a>
               <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g id="example_svg" clip-path="url(#clip0_3_13)">
-              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
-							stroke="transparent" stroke-width="3" stroke-linecap="round"/>
+                <path id="vector1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 
+                10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+							  stroke="transparent" stroke-width="3" stroke-linecap="round"/>
               </g>
               <defs>
               <clipPath id="clip0_3_13">
@@ -33,18 +35,67 @@
               </defs>
               </svg></div>
             </li>
-            <li>
-              <a href="/bar">Home</a>
+            <li class="example_svg_class">
+              <div><a href="/bar">Home</a>
+              <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+                <path id="vector1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 
+                10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+							  stroke="transparent" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg></div>
             </li>
-            <li>
-              <a href="/bar1">Bar1</a>
+            <li class="example_svg_class">
+              <div><a href="/bar1">Bar1</a>
+              <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+                <path id="vector1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 
+                10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+							  stroke="transparent" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg></div>
             </li>
-            <li>
-              <a href="/bar2">Bar2</a>
+            <li class="example_svg_class">
+              <div><a href="/bar2">Bar2</a>
+              <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+                <path id="vector1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 
+                10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+							  stroke="transparent" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg></div>
             </li>
-            <li>
-              <a href="/bar3">Bar3</a>
+            <li class="example_svg_class">
+              <div><a href="/bar3">Bar3</a>
+              <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+                <path id="vector1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 
+                10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+							  stroke="transparent" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+              </svg></div>
             </li>
+
           </ul>
         </nav>
       </div>
@@ -138,11 +189,10 @@
 
 .menu-items-frame {
   @apply 
+    py-5 
     hidden
     border-8 
     border-green-600 
-    px-24 
-    py-3 
     max-w-xl
     w-full
     justify-between
@@ -160,7 +210,7 @@
 
 .menu-items-frame > * {
   @apply
-    px-3
+    px-2
     leading-4
     font-['Comic_Sans'] text-2xl
     justify-self-start
@@ -174,7 +224,7 @@
   ;
 }
 
-.example_svg{
+.example_svg_class{
   @apply
     border-2
     border-black
@@ -183,13 +233,13 @@
   ;
 }
 
-/*path{*/
-path{
+#vector1{
 	stroke: transparent;
 	stroke-dasharray: 1000;
 }
 
-path:hover{
+/* This works for scoped effects on hover */
+.example_svg_class:hover #vector1{
 	stroke: red;
   animation: dash 4s linear forwards;
 }
