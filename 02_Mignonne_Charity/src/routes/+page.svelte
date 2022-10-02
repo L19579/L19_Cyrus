@@ -12,23 +12,92 @@
       <!-- TODO fill x-data, breaking atm -->
       <nav id="nav-low-wrapper" x-data="">
       <!-- TODO FIX LINK -->
-        <a id="title" href="/" >
-          <span>Dieu Peut</span>
+        <a href="/" >
+          <span id="title">Dieu Peut</span>
       <!-- TODO Insert Title SVG here -->
         </a>
       <!-- TODO Nav buttons here -->
         <ul class="nav-link-wrapper">
-          <li>
+
+          <li id="nav-link-items">
       <!-- TODO FIX LINK -->
-            <a id="nav-link-items" href="/"
-            >
-              Impact
-              <!-- 
-                TODO Missing
-                x-underline:linecontainer.hover.starty.6.curvex.60%.curvey.4.endy.6 
-              -->
-            </a>
+            <a href="/"> Impact </a>
+            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+              stroke="red" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
           </li>
+
+          <li id="nav-link-items">
+      <!-- TODO FIX LINK -->
+            <a href="/"> Impact </a>
+            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+              stroke="red" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </li>
+
+          <li id="nav-link-items">
+      <!-- TODO FIX LINK -->
+            <a href="/"> Impact </a>
+            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+              stroke="red" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </defs>
+            </svg>
+          </li>
+
+          <li id="nav-link-items">
+      <!-- TODO FIX LINK -->
+            <a href="/"> Impact </a>
+            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+              stroke="red" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </li>
+
+          <li id="nav-link-items">
+      <!-- TODO FIX LINK -->
+            <a href="/"> Impact </a>
+            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="example_svg" clip-path="url(#clip0_3_13)">
+              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
+              stroke="red" stroke-width="3" stroke-linecap="round"/>
+              </g>
+              <defs>
+              <clipPath id="clip0_3_13">
+              <rect width="89" height="19" fill="white"/>
+              </clipPath>
+              </defs>
+            </svg>
+          </li>
+
         </ul>
       </nav>
     </div>
@@ -44,6 +113,8 @@
       w-full
       z-30
       top-0
+      left-0
+      right-0
     ;
   }
 
@@ -53,7 +124,6 @@
       py-5
       xl:pt-9
       xl:pb-7
-      dark:bg-stone-700
     ;
   }
 
@@ -71,15 +141,17 @@
   #nav-low-wrapper{
     @apply
       flex
-      justify-between
+      justify-around
       items-center
       md:flex-col
       xl:flex-row
-      xl:items-end
       before:block
       before:w-10
       md:before:hidden
     ;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    border: 2px solid green;
   }
 
   #title{
@@ -92,21 +164,19 @@
       md:w-[185px]
       text-stone-600
       contrast-more:text-stone-900
-      dark:text-stone-400
-      contrast-more:dark:text-stone-200
-      will-change-transform
       hover:scale-105
-      transition-transform
-      duration-200
-      ease-in-out
-      motion-reduce:transition-none
+      justify-center
     ;
+    display: flex;
+    border: 2px solid red;
   }
-
-  #nav-link-wrapper{
+  
+  /* !! hidden no use, refactor; px-0 voodoo fix for left margin */
+  .nav-link-wrapper{
     @apply
       hidden
       md:flex
+      px-0
       mt-2
       -mb-1
       xl:my-0
@@ -115,27 +185,33 @@
       w-full
       max-w-3xl
     ;
+    list-style: none;
+    border: 2px solid black;
   }
- 
+
   /*
     Absent here: 
       group
       hover:text-indigo
   */
-  .nav-link-items{
+
+  /* transition likely not useful ; and block?*/
+  #nav-link-items{
     @apply
       text-stone-600
       contrast-more:text-stone-900
-      dark:text-stone-400
-      contrast-more:dark:text-stone-200
       relative
       block
       px-3
       py-2
       text-lg
       font-bold
-      dark:hover:text-white
-      transition
+      justify-center
     ;
+    min-width: 125px;
+    flex-basis: 1;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid blue;
   }
 </style>
