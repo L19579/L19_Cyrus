@@ -12,7 +12,7 @@
       <!-- TODO fill x-data, breaking atm -->
       <nav id="nav-low-wrapper" x-data="">
       <!-- TODO FIX LINK -->
-        <a href="/" >
+        <a href="/" id="title-text-wrapper">
           <span id="title">Dieu Peut</span>
       <!-- TODO Insert Title SVG here -->
         </a>
@@ -21,81 +21,44 @@
 
           <li id="nav-link-items">
       <!-- TODO FIX LINK -->
-            <a href="/"> Impact </a>
-            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="example_svg" clip-path="url(#clip0_3_13)">
-              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
-              stroke="red" stroke-width="3" stroke-linecap="round"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_3_13">
-              <rect width="89" height="19" fill="white"/>
-              </clipPath>
-              </defs>
-            </svg>
+            <a href="/" class="nav-text">Impact</a>
+            <div class="nav-svg-wrapper">
+              <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="nav-svg" id="nav-svg-t1" d="M10 8C16.563 7.61394 23.1388 6.61704 29.6667 5.88889C41.2257 4.59953 52.3852 4 64 4C71 4 78 4 85 4" stroke="black" stroke-width="3" stroke-linecap="round"/>
+              <path class="nav-svg" id="nav-svg-t1" d="M3 4C38.0449 4 72.9763 3.39095 108 3" stroke="black" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+
+            </div>
           </li>
 
           <li id="nav-link-items">
       <!-- TODO FIX LINK -->
-            <a href="/"> Impact </a>
-            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="example_svg" clip-path="url(#clip0_3_13)">
-              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
-              stroke="red" stroke-width="3" stroke-linecap="round"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_3_13">
-              <rect width="89" height="19" fill="white"/>
-              </clipPath>
-              </defs>
-            </svg>
+            <a href="/" class="nav-text">Goals</a>
+            <div class="nav-svg-wrapper">
+              <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="nav-svg" id="nav-svg-t1" d="M3 5.95367C35.9659 0.0413027 69.9108 4.50724 103 6.45367" stroke="black" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
           </li>
 
           <li id="nav-link-items">
       <!-- TODO FIX LINK -->
-            <a href="/"> Impact </a>
-            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="example_svg" clip-path="url(#clip0_3_13)">
-              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
-              stroke="red" stroke-width="3" stroke-linecap="round"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_3_13">
-              <rect width="89" height="19" fill="white"/>
-              </defs>
-            </svg>
+            <a href="/" class="place-items-center nav-text">Organization</a>
+            <div class="nav-svg-wrapper">
+              <svg width="100%" height="auto" viewBox="0 0 184 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="nav-svg" id="nav-svg-t2" d="M6 5.42224C33.6588 4.54107 61.4841 2.32714 89.1667 3.20002C107.107 3.76569 125.056 4.0542 142.972 5.20002C152.924 5.83644 163.582 5.53284 173.333 7.81113C175.186 8.24401 176.611 8.42224 178.5 8.42224" stroke="black" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
           </li>
 
-          <li id="nav-link-items">
-      <!-- TODO FIX LINK -->
-            <a href="/"> Impact </a>
-            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="example_svg" clip-path="url(#clip0_3_13)">
-              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
-              stroke="red" stroke-width="3" stroke-linecap="round"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_3_13">
-              <rect width="89" height="19" fill="white"/>
-              </clipPath>
-              </defs>
-            </svg>
+          <li id="nav-link-items" class="nav-text">
+      <!-- TODO FIX LINK // Replace name w/ language icon. TODO: Dropdown menu -->
+            <a href="/" class="nav-text">LNG</a>
           </li>
 
-          <li id="nav-link-items">
+          <li id="nav-link-items" class="nav-text">
       <!-- TODO FIX LINK -->
-            <a href="/"> Impact </a>
-            <svg width="89" height="16" viewBox="0 0 89 22" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g id="example_svg" clip-path="url(#clip0_3_13)">
-              <path id="Vector 1" d="M4 19C6.30004 12.5923 9.35865 7.09731 13.049 5.6142C20.0659 2.79426 27.8318 10.4268 34.6507 13.4829C51.0295 20.8236 67.7271 16.7293 84 10.046" 
-              stroke="red" stroke-width="3" stroke-linecap="round"/>
-              </g>
-              <defs>
-              <clipPath id="clip0_3_13">
-              <rect width="89" height="19" fill="white"/>
-              </clipPath>
-              </defs>
-            </svg>
+            <a href="/" class="nav-text">Donate</a>
           </li>
 
         </ul>
@@ -149,8 +112,8 @@
       before:w-10
       md:before:hidden
     ;
-    padding-left: 5rem;
-    padding-right: 5rem;
+    padding-left: 7rem;
+    padding-right: 7rem;
     border: 2px solid green;
   }
 
@@ -167,6 +130,7 @@
       hover:scale-105
       justify-center
     ;
+    text-decoration: none;
     display: flex;
     border: 2px solid red;
   }
@@ -180,7 +144,7 @@
       mt-2
       -mb-1
       xl:my-0
-      justify-between
+      justify-around
       items-center
       w-full
       max-w-3xl
@@ -208,10 +172,63 @@
       font-bold
       justify-center
     ;
-    min-width: 125px;
     flex-basis: 1;
     text-align: center;
     text-decoration: none;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+  }
+
+  #title-text-wrapper{
+    text-decoration: none;
+  }
+
+  .nav-text{
+    text-decoration: none;
+  }
+
+  svg{
+    /* border: 0.2px solid purple; */
+  }
+
+  .nav-svg-wrapper{
+    @apply
+      flex
+      absolute
+      justify-center
+      inset-x-1.5
+      bottom-[5px]
+      h-2.5
+    ;
+    /* border: 0.2px solid orange; */
+  }
+
+  .nav-svg{
+    stroke: red;
+    stroke-width: 4;
+    stroke-linecap: round;
+    opacity: 0;
+    /* border: 0.2px solid purple; */
+  }
+  
+  #nav-link-items:hover .nav-svg{
+    opacity: 100%;
+    stroke-dasharray: 1000;
+  }
+
+  #nav-link-items:hover #nav-svg-t1{
+    animation: dash 1.5s linear forwards;
+  }
+  
+  #nav-link-items:hover #nav-svg-t2{
+    animation: dash 0.7s linear forwards;
+  }
+  
+  @keyframes dash{
+    from{
+      stroke-dashoffset: 1000;
+    }
+    to{
+      stroke-dashoffset: 0; 
+    }
   }
 </style>
