@@ -13,12 +13,11 @@
       <nav id="nav-low-wrapper" x-data="">
       <!-- TODO FIX LINK -->
         <a href="/" id="title-text-wrapper">
-          <span id="title">Dieu Peut</span>
+          <span id="nav-title">Dieu Peut</span>
       <!-- TODO Insert Title SVG here -->
         </a>
       <!-- TODO Nav buttons here -->
         <ul class="nav-link-wrapper">
-
           <li id="nav-link-items">
       <!-- TODO FIX LINK -->
             <a href="/" class="nav-text">Impact</a>
@@ -53,15 +52,24 @@
 
           <li id="nav-link-items" class="nav-text">
       <!-- TODO FIX LINK // Replace name w/ language icon. TODO: Dropdown menu -->
-            <a href="/" class="nav-text">LNG</a>
+            <button class="nav-language-button">
+            <div>
+              <svg id="svg-translate" xmlns="http://www.w3.org/2000/svg" width="21" height="27" viewbox="0 0 54 60" stroke="#000" stroke-linejoin="bevel">
+              <path fill="none" stroke-width="3"
+              d="M18,4V14M4,14h29M25,14q0,15-18,22m6-14q11,14
+              18,14m0,19 9-25 9 25m-3-7H33"/>
+              <path d="m15,41-3,3h6zv10m7-3 3,3-3,3zM14.5,51h9"/>
+            </div>
+            <span>EN</span>
+            </button>
+              <div class="nav-svg-wrapper">
+                <svg width="54" height="8" viewBox="0 0 54 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path class="nav-svg" id="nav-svg-t1" d="M6 5C21.3328 5 36.6662 5 52 5" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
+                </svg>
+              </div>
           </li>
-
-          <li id="nav-link-items" class="nav-text">
-      <!-- TODO FIX LINK -->
-            <a href="/" class="nav-text">Donate</a>
-          </li>
-
         </ul>
+        <a href="/" class="nav-donate">Donate</a>
       </nav>
     </div>
   </div>
@@ -112,19 +120,19 @@
       before:w-10
       md:before:hidden
     ;
-    padding-left: 7rem;
-    padding-right: 7rem;
+    padding-left: 6rem;
+    padding-right: 6rem;
     border: 2px solid green;
   }
 
-  #title{
+  #nav-title{
     @apply
-      block w-[158px]
+      block w-[150px]
       -mt-2.5
       md:mt-0
       translate-x-3
       xl:translate-x-0
-      md:w-[185px]
+      /* md:w-[185px] */
       text-stone-600
       contrast-more:text-stone-900
       hover:scale-105
@@ -147,7 +155,7 @@
       justify-around
       items-center
       w-full
-      max-w-3xl
+      max-w-xl
     ;
     list-style: none;
     border: 2px solid black;
@@ -210,6 +218,12 @@
     /* border: 0.2px solid purple; */
   }
   
+  #nav-link-items:hover .nav-text{
+    @apply
+      text-red-600
+    ;
+  }
+  
   #nav-link-items:hover .nav-svg{
     opacity: 100%;
     stroke-dasharray: 1000;
@@ -230,5 +244,51 @@
     to{
       stroke-dashoffset: 0; 
     }
+  }
+
+  .nav-donate{
+    @apply
+      hidden
+      xl:block
+      py-2
+      px-8
+      bg-indigo-700
+      text-white
+      font-bold
+      text-lg
+      rounded-full
+      /*
+      will-change-transform
+      hover:scale-110
+      transition-transform duration-200 ease-in-out
+      motion-reduce:transition-none
+      */
+    ;
+    will-change: transform;
+    text-decoration: none;
+  }
+  .nav-donate:hover, #nav-title:hover {
+    transition-duration: 200ms;
+    transform: scale(1.1);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  #svg-translate{
+    @apply
+      flex;
+    ;
+    
+  }
+  .nav-language-button{
+    @apply
+      block
+      flex
+      items-center
+      gap-0.5
+    ;
+    background-color: inherit;
+    border: inherit;
+    color: inherit;
+    font: inherit;
   }
 </style>
