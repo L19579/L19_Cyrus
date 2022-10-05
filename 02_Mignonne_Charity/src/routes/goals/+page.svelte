@@ -2,4 +2,4 @@
   import Navbar from './../../components/Navbar.svelte'
 </script>
 
-<Navbar current_nav_page = 'organization'/>
+<Navbar current_nav_page = 'goals'/>
