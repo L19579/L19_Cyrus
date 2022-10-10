@@ -21,7 +21,7 @@
         <ul class="nav-link-wrapper">
           <li id="nav-link-items">
       <!-- TODO FIX LINK -->
-            <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">impact</a>
+            <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">Impact</a>
             <div class="nav-svg-wrapper">
               <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="{current_nav_page === 'impact' ? 'nav-svg-selected' : 'nav-svg'}" id="nav-svg-t1" d="M10 8C16.563 7.61394 23.1388 6.61704 29.6667 5.88889C41.2257 4.59953 52.3852 4 64 4C71 4 78 4 85 4" stroke-width="3" stroke-linecap="round"/>
@@ -33,7 +33,7 @@
 
           <li id="nav-link-items">
       <!-- TODO FIX LINK -->
-            <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">goals</a>
+            <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">Goals</a>
             <div class="nav-svg-wrapper">
               <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="{current_nav_page === 'goals' ? 'nav-svg-selected' : 'nav-svg'}" id="nav-svg-t1" d="M3 5.95367C35.9659 0.0413027 69.9108 4.50724 103 6.45367"/>
@@ -43,7 +43,7 @@
 
           <li id="nav-link-items">
       <!-- TODO FIX LINK -->
-            <a href="/organization" class="place-items-center {current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">organization</a>
+            <a href="/organization" class="place-items-center {current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">Organization</a>
             <div class="nav-svg-wrapper">
               <svg width="100%" height="auto" viewBox="0 0 184 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="{current_nav_page === 'organization' ? 'nav-svg-selected' : 'nav-svg'}" id="nav-svg-t2"  d="M6 5.42224C33.6588 4.54107 61.4841 2.32714 89.1667 3.20002C107.107 3.76569 125.056 4.0542 142.972 5.20002C152.924 5.83644 163.582 5.53284 173.333 7.81113C175.186 8.24401 176.611 8.42224 178.5 8.42224">
@@ -117,11 +117,11 @@
       md:flex-col
       xl:flex-row
       before:block
-      before:w-10
+      before:w-10 /* prob not needed */
       md:before:hidden
     ;
-    padding-left: 6rem;
-    padding-right: 6rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
     border: 2px solid green;
   }
 
@@ -137,6 +137,7 @@
       contrast-more:text-stone-900
       hover:scale-105
       justify-center
+      text-3xl
     ;
     text-decoration: none;
     display: flex;
@@ -155,7 +156,7 @@
       justify-around
       items-center
       w-full
-      max-w-xl
+      max-w-3xl
     ;
     list-style: none;
     border: 2px solid black;
@@ -176,7 +177,7 @@
       block
       px-3
       py-2
-      text-lg
+      text-xl
       font-bold
       justify-center
     ;
@@ -274,7 +275,7 @@
       bg-indigo-700
       text-white
       font-bold
-      text-lg
+      text-xl
       rounded-full
       /*
       will-change-transform
