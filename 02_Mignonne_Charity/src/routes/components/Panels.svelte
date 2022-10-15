@@ -53,11 +53,12 @@
 <style>
   .panels{
 		@apply
+      block
       xsm:pt-[45px]
       sm:pt-[45px]
       md:pt-[110px]
       xl:pt-[110px]
-      xl:min-h-[810px]
+      /* xl:min-h-[810px]  Not req */ 
     ; 
   }
   
@@ -72,6 +73,7 @@
       lg:h-screen
       xl:h-screen
       justify-center
+      pb-10
 		;
     width: 100%;
     border: 2px solid red;
@@ -85,6 +87,7 @@
       xsm:px-4
       flex
     ;
+    min-height: 500px;
     max-width: 1200px; 
     border: 2px solid purple;
     
