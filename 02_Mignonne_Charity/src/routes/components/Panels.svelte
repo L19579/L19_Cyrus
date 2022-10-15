@@ -149,6 +149,7 @@
       mx-2
       rounded-full
     ;
+    white-space: nowrap;
     text-decoration: none;
     will-change: transform;
   }
