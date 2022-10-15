@@ -69,10 +69,10 @@
           </div>
           <div class="company-dieu-peu-address-top-wrapper-1">
             <div class="company-dieu-peu-address-lower-wrapper-1">
-              <div class="company-dieu-peu-address-1-title"> 
+              <div class="company-dieu-peu-address-1-title" id="address-text"> 
                 Canada
               </div>
-              <div class="company-dieu-peu-address-1-address"> 
+              <div class="company-dieu-peu-address-1-address" id="address-text"> 
                 123 Temporary Ave <br />
                 Toronto, Ontario <br />
                 M6T 2SR
@@ -81,10 +81,10 @@
           </div>
           <div class="company-dieu-peu-address-top-wrapper-2">
             <div class="company-dieu-peu-address-lower-wrapper-2">
-              <div class="company-dieu-peu-address-2-title"> 
+              <div class="company-dieu-peu-address-2-title" id="address-text"> 
                 Haiti
               </div>
-              <div class="company-dieu-peu-address-2-address"> 
+              <div class="company-dieu-peu-address-2-address" id="address-text"> 
                 321 Boulevard Faux Chemin, <br />
                 Port-au-Prince 6221, <br />
                 Haiti
@@ -94,8 +94,9 @@
         </div>
       </div>
       <div class="company-l19579-wrapper">
-        <div class="company-l19579-title">
-          <a href="https://github.com/l19579">Designed by L19579</a>
+        <div class="company-ll19579-description">
+          Written, and hosted by <img id="l19579-logo" src="https://avatars.githubusercontent.com/u/98875234?v=4" alt="L19579"> L19579 <br />
+          Apache-2.0 / MIT license <br />
         </div>
       </div>
     </div>
@@ -198,16 +199,16 @@
       text-white
     ;
     display: grid;
-    grid-template-columns: repeat(5, [col] 20%);
-    grid-template-rows: minmax(0, 1fr) repeat(2, [row] 100%);
+    grid-template-columns: repeat(10, [col] 10%);
+    grid-template-rows: minmax(0, 1fr) repeat(5, [row] 20%);
     height: 100%;
     width: 1200px;
     border: 2px solid red;
   }
   
   .company-dieu-peu-top-wrapper{
-    grid-column: col / span 3;
-    grid-row: row;
+    grid-column: col / span 7;
+    grid-row: row / span 5;
     border: 2px solid pink;
   }
   
@@ -220,73 +221,13 @@
     height: 99%; /* <-- minor overlap at 100%, gap somewhere? */
   }
 
-  /* @@@@@@@ */
-
-    .company-dieu-peu-address-top-wrapper-1{
-      overflow: hidden;
-      grid-column: col / span 5;
-      grid-row: row 2 / span 4;
-
-      border: 2px solid green;
-    } 
-
-    .company-dieu-peu-address-lower-wrapper-1{
-      height: 99%;
-      display: grid;
-      overflow: hidden;
-      grid-tempplate-rows: repeat(5, [row] 20%);
-      grid-tempplate-columns: repeat(5, [col] 20%);
-      border: 2px solid black;
-    }
-
-    .company-dieu-peu-address-1-title{
-      grid-column: col 0/ span 1;
-      grid-row: row 0 / span 1;
-      border: 2px solid white;
-    }
-
-    .company-dieu-peu-address-1-address{
-      grid-column: col 0 / span 2;
-      grid-row: row 3 / span 2;
-      border: 2px solid white;
-    }
-    
-    .company-dieu-peu-address-top-wrapper-2{
-      overflow: hidden;
-      grid-column: col 6 / span 5;
-      grid-row: row 2 / span 4;
-      border: 2px solid green;
-    } 
-    
-  .company-dieu-peu-address-lower-wrapper-2{
-      height: 99%;
-      display: grid;
-      overflow: hidden;
-      grid-tempplate-rows: repeat(5, [row] 20%);
-      grid-tempplate-columns: repeat(5, [col] 20%);
-      border: 2px solid black;
-    }
-
-    .company-dieu-peu-address-2-title{
-      grid-column: col 0/ span 1;
-      grid-row: row 0 / span 1;
-      border: 2px solid white;
-    }
-
-    .company-dieu-peu-address-2-address{
-      grid-column: col 0 / span 2;
-      grid-row: row 3 / span 2;
-      border: 2px solid white;
-    }
-    
-
-  /* @@@@@@@ */
-
   .company-dieu-peu-title{
     @apply
+      pl-4
       text-3xl
-      text-center 
+      leading-10
     ;
+    text-align: left;
     grid-column: col / span 4;
     grid-row: row;
     white-space: nowrap;
@@ -338,22 +279,104 @@
     transform:scale(1.1);
     transition-timing-function: cubic-bezier(0.4, 0,)
   }
+  
+  /* @@@@@@@ */
+
+    .company-dieu-peu-address-top-wrapper-1{
+      overflow: hidden;
+      grid-column: col / span 5;
+      grid-row: row 2 / span 4;
+
+      border: 2px solid green;
+    } 
+
+    .company-dieu-peu-address-lower-wrapper-1{
+      height: 99%;
+      display: grid;
+      overflow: hidden;
+      grid-tempplate-rows: repeat(5, [row] 20%);
+      grid-tempplate-columns: repeat(5, [col] 20%);
+      border: 2px solid black;
+    }
+
+    .company-dieu-peu-address-1-title{
+      grid-column: col 0/ span 1;
+      grid-row: row 0 / span 1;
+      border: 2px solid white;
+    }
+
+    .company-dieu-peu-address-1-address{
+      grid-column: col 0 / span 2;
+      grid-row: row 3 / span 2;
+      border: 2px solid white;
+    }
+    
+    .company-dieu-peu-address-top-wrapper-2{
+      overflow: hidden;
+      grid-column: col 6 / span 5;
+      grid-row: row 2 / span 4;
+      border: 2px solid green;
+    } 
+    
+  .company-dieu-peu-address-lower-wrapper-2{
+      height: 99%;
+      display: grid;
+      overflow: hidden;
+      grid-tempplate-rows: repeat(5, [row] 20%);
+      grid-tempplate-columns: repeat(5, [col] 20%);
+      border: 2px solid black;
+    }
+    
+    /* Issues w/ grid selections here. Suspect inherited attr.
+       Temp solution in place but cant explain it. fix.
+    */
+    .company-dieu-peu-address-2-title{
+      grid-column: col 0/ span 1;
+      grid-row: row 0 / span 1;
+      border: 2px solid white;
+    }
+
+    .company-dieu-peu-address-2-address{
+      grid-column: col 0 / span 2;
+      grid-row: row 3 / span 2;
+      border: 2px solid white;
+    }
+
+    #address-text{
+      position: relative;
+      padding-left: 1rem;
+    }
+
+  /* @@@@@@@ */
+
 
  
   /* -------------------- */
 
   .company-l19579-wrapper{
     overflow: hidden;
-    grid-column: col 4 / span 2;
-    grid-row: row;
+    grid-column: col 8 / span 3;
+    grid-row: row 3 / span 3;
     border: 2px solid yellow;
+
+    text-align: right;
   }
 
-  .company-l19579-title{
+  .company-ll19579-description{
     @apply
-      text-3xl
+      text-xl
+      px-3
     ;
     text-decoration: none;
     white-space: nowrap; 
+  }
+
+  #l19579-logo{
+    @apply
+      rounded-full
+    ;
+    height: 20px;
+    width: auto;
+
   }
 </style>
