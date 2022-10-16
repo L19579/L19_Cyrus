@@ -23,14 +23,14 @@
       <div class="company-dieu-peu-top-wrapper">
         <div class="company-dieu-peu-lower-wrapper">
           <div class="company-dieu-peu-title">
-            Dieu Peut
+            <span class="company-dieu-peu-title-text">Dieu Peut</span>
           </div>
           <div class="company-dieu-peu-social-media">
             <div class="buttons-social-media-top-wrapper">
               <div class="buttons-social-media-lower-wrapper">
                 <a href="https://www.tiktok.com">
                   <div class="social-media-buttons" id="social-media-button-tiktok">
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="56%" height="auto" viewBox="0 0 256 256" xml:space="preserve">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="50%" height="auto" viewBox="0 0 256 256" xml:space="preserve">
                     <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
                       <path d="M 84.494 22.535 c -5.144 0 -9.891 -1.704 -13.702 -4.579 c -4.371 -3.296 -7.512 -8.13 -8.621 -13.702 C 61.895 2.877 61.748 1.456 61.733 0 H 47.038 v 40.154 l -0.018 21.994 c 0 5.88 -3.829 10.866 -9.137 12.619 c -1.54 0.509 -3.204 0.75 -4.937 0.655 c -2.211 -0.121 -4.283 -0.789 -6.084 -1.866 c -3.833 -2.292 -6.431 -6.451 -6.502 -11.208 c -0.111 -7.435 5.9 -13.496 13.329 -13.496 c 1.467 0 2.875 0.239 4.194 0.674 V 38.552 v -3.945 c -1.391 -0.206 -2.806 -0.313 -4.238 -0.313 c -8.132 0 -15.737 3.38 -21.174 9.47 c -4.109 4.602 -6.574 10.473 -6.954 16.63 c -0.498 8.088 2.461 15.776 8.201 21.449 c 0.843 0.833 1.729 1.606 2.655 2.319 C 21.294 87.947 27.31 90 33.646 90 c 1.431 0 2.847 -0.106 4.238 -0.312 c 5.919 -0.877 11.38 -3.586 15.69 -7.847 c 5.296 -5.234 8.222 -12.183 8.253 -19.579 l -0.076 -32.844 c 2.526 1.949 5.289 3.562 8.253 4.813 c 4.611 1.945 9.5 2.931 14.531 2.93 V 26.491 v -3.959 C 84.539 22.535 84.497 22.535 84.494 22.535 L 84.494 22.535 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
                     </g>
@@ -67,37 +67,70 @@
               </div>
             </div>
           </div>
-          <div class="company-dieu-peu-address-top-wrapper-1">
-            <div class="company-dieu-peu-address-lower-wrapper-1">
-              <div class="company-dieu-peu-address-1-title" id="address-text"> 
-                Canada
-              </div>
-              <div class="company-dieu-peu-address-1-address" id="address-text"> 
-                123 Temporary Ave <br />
-                Toronto, Ontario <br />
-                M6T 2SR
-              </div>
-            </div>
-          </div>
-          <div class="company-dieu-peu-address-top-wrapper-2">
-            <div class="company-dieu-peu-address-lower-wrapper-2">
-              <div class="company-dieu-peu-address-2-title" id="address-text"> 
-                Haiti
-              </div>
-              <div class="company-dieu-peu-address-2-address" id="address-text"> 
-                321 Boulevard Faux Chemin, <br />
-                Port-au-Prince 6221, <br />
-                Haiti
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+          <div class="company-dieu-peu-address-all-wrapper">
+						<div class="company-dieu-peu-address-top-wrapper-1">
+							<div class="company-dieu-peu-address-lower-wrapper-1">
+								<div class="company-dieu-peu-address-1-title" id="address-text"> 
+								</div>
+								<div class="company-dieu-peu-address-1-address" id="address-text"> 
+									Dieu Peut Charity <br />
+									123 Temporary Ave <br />
+									Toronto, Ontario <br />
+									Canada, M6T 2SR <br />
+								</div>
+							</div>
+						</div>
+						<div class="company-dieu-peu-address-top-wrapper-2">
+							<div class="company-dieu-peu-address-lower-wrapper-2">
+								<div class="company-dieu-peu-address-2-title" id="address-text"> 
+								</div>
+								<div class="company-dieu-peu-address-2-address" id="address-text"> 
+									Haitian office: <br />
+									321 Boulevard Faux Chemin, <br />
+									Port-au-Prince, Ouest<br />
+									Haiti, 6221 <br />
+								</div>
+							</div>
+						</div>
+						<div class="company-dieu-peu-address-top-wrapper-3">
+							<div class="company-dieu-peu-address-lower-wrapper-3">
+								<div class="company-dieu-peu-address-3-title" id="address-text"> 
+								</div>
+								<div class="company-dieu-peu-address-3-address" id="address-text"> 
+									Dominican office: <br />
+									10129, Av. John F Kennedy, <br />
+									Santo Domingo, Distrito Nacional<br />
+									Dominican Republic, 10126 <br />
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="company-dieu-peu-copyright-wrapper">
+				<div class="company-dieu-peu-copyright-text">
+					Copyright &copy 2022 Dieu Peut Charity. <br />
+					All rights reserved.
+				</div>
+			</div>
       <div class="company-l19579-wrapper">
-        <div class="company-ll19579-description">
-          Written, and hosted by <img id="l19579-logo" src="https://avatars.githubusercontent.com/u/98875234?v=4" alt="L19579"> L19579 <br />
-          Apache-2.0 / MIT license <br />
-        </div>
+        <div class="company-l19579-description">
+						<div class="managed-by-statement">
+							Written, and managed by&nbsp
+							<a id="managed-by-statement-link" href="https://www.l19579.com" target="_blank">
+								<img id="l19579-logo" src="https://avatars.githubusercontent.com/u/98875234?v=4" alt="L19579" /> L19579 <br />
+							</a>
+						</div>
+					</div>
+					<div class="l19579-mit-license-wrapper">
+						<div class="l19579-mit-license-text">
+							Apache-2.0 / MIT license &nbsp
+						</div>
+						<div id="social-media-button-github">
+							<svg fill="#000000" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 64 64" width="17px" height="auto"><path d="M32 6C17.641 6 6 17.641 6 32c0 12.277 8.512 22.56 19.955 25.286-.592-.141-1.179-.299-1.755-.479V50.85c0 0-.975.325-2.275.325-3.637 0-5.148-3.245-5.525-4.875-.229-.993-.827-1.934-1.469-2.509-.767-.684-1.126-.686-1.131-.92-.01-.491.658-.471.975-.471 1.625 0 2.857 1.729 3.429 2.623 1.417 2.207 2.938 2.577 3.721 2.577.975 0 1.817-.146 2.397-.426.268-1.888 1.108-3.57 2.478-4.774-6.097-1.219-10.4-4.716-10.4-10.4 0-2.928 1.175-5.619 3.133-7.792C19.333 23.641 19 22.494 19 20.625c0-1.235.086-2.751.65-4.225 0 0 3.708.026 7.205 3.338C28.469 19.268 30.196 19 32 19s3.531.268 5.145.738c3.497-3.312 7.205-3.338 7.205-3.338.567 1.474.65 2.99.65 4.225 0 2.015-.268 3.19-.432 3.697C46.466 26.475 47.6 29.124 47.6 32c0 5.684-4.303 9.181-10.4 10.4 1.628 1.43 2.6 3.513 2.6 5.85v8.557c-.576.181-1.162.338-1.755.479C49.488 54.56 58 44.277 58 32 58 17.641 46.359 6 32 6zM33.813 57.93C33.214 57.972 32.61 58 32 58 32.61 58 33.213 57.971 33.813 57.93zM37.786 57.346c-1.164.265-2.357.451-3.575.554C35.429 57.797 36.622 57.61 37.786 57.346zM32 58c-.61 0-1.214-.028-1.813-.07C30.787 57.971 31.39 58 32 58zM29.788 57.9c-1.217-.103-2.411-.289-3.574-.554C27.378 57.61 28.571 57.797 29.788 57.9z"/>
+							</svg>
+						</div>
+					</div>
       </div>
     </div>
   </div>
@@ -188,6 +221,7 @@
       flex
       justify-center
       bg-stone-700
+			pt-10
     ;
     height: 200px;
     width: 100%;
@@ -196,13 +230,13 @@
 
   .company-lower-panel-wrapper{
     @apply
-      text-white
+			text-stone-400
     ;
     display: grid;
     grid-template-columns: repeat(10, [col] 10%);
     grid-template-rows: minmax(0, 1fr) repeat(5, [row] 20%);
     height: 100%;
-    width: 1200px;
+    width: 1100px;
     border: 2px solid red;
   }
   
@@ -227,12 +261,22 @@
       text-3xl
       leading-10
     ;
+		font-weight: 700;
     text-align: left;
     grid-column: col / span 4;
     grid-row: row;
     white-space: nowrap;
     border: 2px solid white;
   }
+
+	.company-dieu-peu-title-text{
+		transition: color 0.5s;
+	}
+	.company-dieu-peu-title-text:hover{
+		@apply
+			text-stone-100
+		;
+	}
   
   .company-dieu-peu-social-media{
     overflow: hidden;
@@ -244,8 +288,8 @@
   .buttons-social-media-top-wrapper{
     @apply
       flex
-      justify-end
-      pr-5
+      justify-center
+      pl-9
     ;
     height: 90%; /* This is producing minor misalignment @ 100%, no margins */
     border: 2px solid yellow;
@@ -266,26 +310,40 @@
       flex
       flex-col
       items-center
-      bg-red-700
+      bg-stone-500
       rounded-full
     ;
     height: 32px;
     width: 32px;
-    border: 2px solid white;
+    border: 0.1px solid black;
   }
   
   .social-media-buttons:hover{
+		@apply
+      bg-stone-300
+		;
     transition-duration: 200ms;
     transform:scale(1.1);
     transition-timing-function: cubic-bezier(0.4, 0,)
   }
   
   /* @@@@@@@ */
+		.company-dieu-peu-address-all-wrapper{
+			padding-top: 1rem;
+			grid-column: col 1 / span 10;
+			grid-row: row 2 / span 4;
+			
+			display: grid;	
+      grid-template-columns: repeat(9, [col] 9%);
+      grid-template-rows: repeat(5, [row] 20%);
+      border: 2px solid pink;
+			
+		}
 
     .company-dieu-peu-address-top-wrapper-1{
       overflow: hidden;
-      grid-column: col / span 5;
-      grid-row: row 2 / span 4;
+      grid-column: col / span 3;
+      grid-row: row 1 / span 5;
 
       border: 2px solid green;
     } 
@@ -294,27 +352,21 @@
       height: 99%;
       display: grid;
       overflow: hidden;
-      grid-tempplate-rows: repeat(5, [row] 20%);
-      grid-tempplate-columns: repeat(5, [col] 20%);
+      grid-template-columns: repeat(5, [col] 20%);
+      grid-template-rows: repeat(5, [row] 20%);
       border: 2px solid black;
     }
 
-    .company-dieu-peu-address-1-title{
-      grid-column: col 0/ span 1;
-      grid-row: row 0 / span 1;
-      border: 2px solid white;
-    }
-
     .company-dieu-peu-address-1-address{
-      grid-column: col 0 / span 2;
-      grid-row: row 3 / span 2;
+      grid-column: col 1 / span 5;
+      grid-row: row 1 / span 5;
       border: 2px solid white;
     }
     
     .company-dieu-peu-address-top-wrapper-2{
       overflow: hidden;
-      grid-column: col 6 / span 5;
-      grid-row: row 2 / span 4;
+      grid-column: col 4 / span 3;
+      grid-row: row 1 / span 5;
       border: 2px solid green;
     } 
     
@@ -322,54 +374,103 @@
       height: 99%;
       display: grid;
       overflow: hidden;
-      grid-tempplate-rows: repeat(5, [row] 20%);
-      grid-tempplate-columns: repeat(5, [col] 20%);
+      grid-template-rows: repeat(5, [row] 20%);
+      grid-template-columns: repeat(5, [col] 20%);
+      border: 2px solid black;
+    }
+
+    .company-dieu-peu-address-2-address{
+      grid-column: col 1 / span 5;
+      grid-row: row 1 / span 5;
+      border: 2px solid white;
+    }
+
+    #address-text{
+			font-weight: 300;
+      position: relative;
+      padding-left: 1rem;
+			line-height: 1.4rem;
+    }
+
+    .company-dieu-peu-address-top-wrapper-3{
+      overflow: hidden;
+      grid-column: col 7 / span 5;
+      grid-row: row 1 / span 5;
+      border: 2px solid green;
+    } 
+    
+  .company-dieu-peu-address-lower-wrapper-3{
+      height: 99%;
+      display: grid;
+      overflow: hidden;
+      grid-template-rows: repeat(5, [row] 20%);
+      grid-template-columns: repeat(5, [col] 20%);
       border: 2px solid black;
     }
     
     /* Issues w/ grid selections here. Suspect inherited attr.
        Temp solution in place but cant explain it. fix.
     */
-    .company-dieu-peu-address-2-title{
-      grid-column: col 0/ span 1;
-      grid-row: row 0 / span 1;
-      border: 2px solid white;
-    }
 
-    .company-dieu-peu-address-2-address{
-      grid-column: col 0 / span 2;
-      grid-row: row 3 / span 2;
+    .company-dieu-peu-address-3-address{
+      grid-column: col 1 / span 5;
+      grid-row: row 1 / span 5;
       border: 2px solid white;
     }
 
     #address-text{
+			font-weight: 300;
       position: relative;
       padding-left: 1rem;
+			line-height: 1.4rem;
     }
 
   /* @@@@@@@ */
 
+	.company-dieu-peu-copyright-wrapper{
+    overflow: hidden;
+    grid-column: col 8 / span 3;
+    grid-row: row 1 / span 2;
+    border: 2px solid yellow;
+		height: 100%;
 
- 
+	}
+	
+	.company-dieu-peu-copyright-text{
+		padding-top: 1.7rem;
+		text-align: right;
+	}
+
   /* -------------------- */
 
   .company-l19579-wrapper{
     overflow: hidden;
     grid-column: col 8 / span 3;
-    grid-row: row 3 / span 3;
+    grid-row: row 4 / span 2;
     border: 2px solid yellow;
-
+	
     text-align: right;
   }
-
-  .company-ll19579-description{
+		
+  .company-l19579-description{
     @apply
+			flex
+			flex-col
       text-xl
       px-3
+			justify-end
     ;
-    text-decoration: none;
     white-space: nowrap; 
+		border: 3px solid green;
   }
+	
+	a:link a:visited a:active a:hover{
+    text-decoration: none;
+	}
+
+	#managed-by-statement-link:link{
+    text-decoration: none;
+	}
 
   #l19579-logo{
     @apply
@@ -377,6 +478,25 @@
     ;
     height: 20px;
     width: auto;
-
   }
+
+	.l19579-mit-license-wrapper{
+		@apply
+			flex
+			align-middle
+			justify-end
+		;
+		border: 2px solid blue;
+	}
+	
+	.l19579-mit-license-text{
+	}
+		
+	#social-media-button-github{
+		@apply
+			pl-1
+			rounded-full
+		;
+		border: 2px solid red;	
+	}
 </style>
