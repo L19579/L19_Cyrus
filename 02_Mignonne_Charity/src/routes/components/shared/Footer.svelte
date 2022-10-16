@@ -86,7 +86,7 @@
 								</div>
 								<div class="company-dieu-peu-address-2-address" id="address-text"> 
 									Haitian office: <br />
-									321 Boulevard Faux Chemin, <br />
+									321 Blvd. Faux Chemin, <br />
 									Port-au-Prince, Ouest<br />
 									Haiti, 6221 <br />
 								</div>
@@ -97,7 +97,7 @@
 								<div class="company-dieu-peu-address-3-title" id="address-text"> 
 								</div>
 								<div class="company-dieu-peu-address-3-address" id="address-text"> 
-									Dominican office: <br />
+									DR office: <br />
 									10129, Av. John F Kennedy, <br />
 									Santo Domingo, Distrito Nacional<br />
 									Dominican Republic, 10126 <br />
@@ -342,7 +342,7 @@
 
     .company-dieu-peu-address-top-wrapper-1{
       overflow: hidden;
-      grid-column: col / span 3;
+      grid-column: col 1 / span 3;
       grid-row: row 1 / span 5;
 
       border: 2px solid green;
@@ -394,7 +394,7 @@
 
     .company-dieu-peu-address-top-wrapper-3{
       overflow: hidden;
-      grid-column: col 7 / span 5;
+      grid-column: col 7 / span 4;
       grid-row: row 1 / span 5;
       border: 2px solid green;
     } 
@@ -413,7 +413,7 @@
     */
 
     .company-dieu-peu-address-3-address{
-      grid-column: col 1 / span 5;
+      grid-column: col 1 / span 4;
       grid-row: row 1 / span 5;
       border: 2px solid white;
     }
