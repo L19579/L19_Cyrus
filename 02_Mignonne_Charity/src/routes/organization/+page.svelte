@@ -9,11 +9,13 @@
 <div class="panels-top-wrapper"> 
   <div class="panels-lower-wrapper"> 
     <div class="panels-background-filter">
+      <div class="meet-the-team-title-wrapper">
+        <div class="meet-the-team-title-wrapper-filter">
+          <h2 class="meet-the-team-title">Meet the team!</h2>
+        </div>
+      </div>
       <div class="panel-1-outer-wrapper">
         <div class="panel-1-inner-wrapper">
-          <div class="meet-the-team-title-wrapper">
-            <h2 class="meet-the-team-title">Meet the team!</h2>
-          </div>
           <div class="meet-the-team-portraits-wrapper">
             <div class="meet-the-team-portraits" id="portrait-1">
             </div>
@@ -26,6 +28,10 @@
             <div class="meet-the-team-portraits" id="portrait-5">
             </div>
             <div class="meet-the-team-portraits" id="portrait-6">
+            </div>
+            <div class="meet-the-team-portraits" id="portrait-7">
+            </div>
+            <div class="meet-the-team-portraits" id="portrait-8">
             </div>
           </div>
         </div>
@@ -61,11 +67,11 @@
     position: relative;
     overflow: hidden;
     background-attachment: local;
-    background-size: 3000px;
+    background-size: 2000px;
     background-position-x: -445px;
     background-position-y: -200px;
     background-repeat: repeat-x;
-    background-image: url("./../../../static/bw_fb_temp_group_img.png");
+    background-image: url("./../../../static/backgrounds/old_img_black_group.webp");
   }
   
   .panels-background-filter{
@@ -81,8 +87,8 @@
     @apply
       flex
       relative
-      /* h-[120vh] */
-      h-[1110px]
+       /* h-[90vh] */
+      min-h-[870px]
       justify-center
     ;
 
@@ -106,24 +112,40 @@
 
   .meet-the-team-title-wrapper{ /* expl? */
     @apply
+      relative
       grow
       flex
-      m-10
-      h-[107px]
-      min-w-[200px]
+      /* h-[107px] */
       justify-center
+      mb-10
+      h-[140px]
     ;
+    background-attachment: local;
+    background-position-x: -300px;
+    background-position-y: -1200px;
+    background-image: url("./../../../static/backgrounds/paper-texture-6.jpg");
+
     overflow: hidden;
-    background-size: 50%;
-    background-image: url("./../../../static/backgrounds/paper-texture-1.webp");
     border: 2px solid red;
+  }
+
+  .meet-the-team-title-wrapper-filter{
+    @apply
+      flex
+      relative
+      justify-center
+      py-6
+    ;
+
+    width: 100%;
+    height: 100%;
+    background-color: rgba(120,113,108,0.4);
   }
 
   .meet-the-team-title{
     @apply
       relative
       mt-3
-      pb-0
       text-[clamp(28px,8.5vw,68px)]
     ;
     white-space: nowrap;
@@ -132,7 +154,7 @@
   .meet-the-team-portraits-wrapper{
     @apply
       relative
-      h-[70%]
+      h-[100%]
       px-10
     ;
     display: grid;
