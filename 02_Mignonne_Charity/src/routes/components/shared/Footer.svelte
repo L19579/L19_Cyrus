@@ -225,6 +225,7 @@
 			pt-12
 			pb-5
     ;
+		overflow: hidden;
     height: 200px;
     width: 100%;
     /* border: 2px solid red; */
@@ -249,7 +250,6 @@
   }
   
   .company-dieu-peu-lower-wrapper{
-    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(10, [col] 10%);
     grid-template-rows: repeat(4, [row] 25%);
@@ -263,6 +263,7 @@
       text-3xl
       leading-10
     ;
+		min-width: 100%;
 		font-weight: 700;
     text-align: left;
     grid-column: col / span 4;
