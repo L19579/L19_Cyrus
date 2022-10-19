@@ -19,61 +19,81 @@
           <div class="meet-the-team-portraits-wrapper">
             <div class="meet-the-team-portraits" id="portrait-1">
               <div class="portrait-img-wrapper" id="portrait-1-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-1" src="../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-1" src="./../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-1-emplopyee-info">
-                <div class="employee-function" id="employee-1-function">
-                  Web Architect
-                </div>
                 <div class="employee-name" id="employee-1-name">
                   Junandre Paul
                 </div>
+                <div class="employee-function" id="employee-1-function">
+                  Web Architect
+                </div>
                 <div class="employee-bio" id="employee-1-bio">
                   <p> 
-                    This text is random filler for what should a brief bio of person in focus. 
-                    Section should be three to four sentences long and briefly touch on relevant
-                    career hightlights. Include a couple non specific/relatable attribute or 
-                    interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                    Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
+                    touch on relevant career hightlights. Include a couple non specific/relatable 
+                    attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
                   </p>
                 </div>
               </div>
             </div>
             <div class="meet-the-team-portraits" id="portrait-2">
               <div class="portrait-img-wrapper" id="portrait-2-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-2" src="../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-2" src="./../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-2-emplopyee-info">
-                <div class="employee-function" id="employee-2-function">
-                </div>
                 <div class="employee-name" id="employee-2-name">
+                  Michael Andretti
+                </div>
+                <div class="employee-function" id="employee-2-function">
+                  Head of Staff
                 </div>
                 <div class="employee-bio" id="employee-2-bio">
+                  <p>
+                    Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
+                    touch on relevant career hightlights. Include a couple non specific/relatable 
+                    attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                  </p>
                 </div>
               </div>
             </div>
             <div class="meet-the-team-portraits" id="portrait-3">
               <div class="portrait-img-wrapper" id="portrait-3-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-3" src="../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-3" src="./../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-3-emplopyee-info">
-                <div class="employee-function" id="employee-3-function">
-                </div>
                 <div class="employee-name" id="employee-3-name">
+                  Lewis Hamilton
+                </div>
+                <div class="employee-function" id="employee-3-function">
+                  Senna Idolizer
                 </div>
                 <div class="employee-bio" id="employee-3-bio">
+                  <p>
+                    Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
+                    touch on relevant career hightlights. Include a couple non specific/relatable 
+                    attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                  </p>
                 </div>
               </div>
             </div>
             <div class="meet-the-team-portraits" id="portrait-4">
               <div class="portrait-img-wrapper" id="portrait-4-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-4" src="../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-4" src="./../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-4-emplopyee-info">
-                <div class="employee-function" id="employee-4-function">
-                </div>
                 <div class="employee-name" id="employee-4-name">
+                  Nicholas Latifi
+                </div>
+                <div class="employee-function" id="employee-4-function">
+                  Chaos Intern
                 </div>
                 <div class="employee-bio" id="employee-4-bio">
+                  <p>
+                    Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
+                    touch on relevant career hightlights. Include a couple non specific/relatable 
+                    attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                  </p>
                 </div>
               </div>
             </div>
@@ -126,7 +146,10 @@
     background-color: rgba(41,37,36,0.4);
   }
 
-  /* No longer req */
+  /* 
+     This doesn't have a max height, but works
+      for now. May need to change for mobile view.
+   */
   .panel-1-outer-wrapper{
     @apply
       flex
@@ -210,9 +233,8 @@
       justify-center
     ;
     display: grid;
-    grid-gap: 2rem;
     grid-template-columns: repeat(2, [col], 50%);
-    grid-template-rows: repeat(3, [row], 33.33%);
+    grid-template-rows: repeat(2, [row], 50%);
     border: 2px solid green;
   }
 
@@ -283,22 +305,40 @@
 /* weird nesting issue here. Likely an error in html */
   .portrait-employee-info{
     @apply
+      relative
       flex
       flex-col
       justify-center
     ;
-    border: 2px solid red;
+    max-width: 100%;
+    max-height: 100%;
+    border: 5px solid black;
   }
   
   .employee-name{
-    border: 2px solid red;
+    @apply
+      text-3xl
+    ;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid green;
   }
 
-  .emplyee-function{
+  .employee-function{
+    @apply
+      text-xl
+    ;
+    font-weight: 600;
+    text-align: center;
     border: 2px solid red;
   }
 
   .employee-bio{
+    @apply
+      text-lg
+      px-3
+    ;
+    font-weight: 500;
     border: 2px solid red;
   }
 </style>
