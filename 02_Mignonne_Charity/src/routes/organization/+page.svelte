@@ -23,14 +23,17 @@
               </div>
               <div class="portrait-employee-info" id="portrait-1-emplopyee-info">
                 <div class="employee-function" id="employee-1-function">
-                  Event Manager
+                  Web Architect
                 </div>
                 <div class="employee-name" id="employee-1-name">
                   Junandre Paul
                 </div>
                 <div class="employee-bio" id="employee-1-bio">
                   <p> 
-                    Extensive background in charity management and customer relations.
+                    This text is random filler for what should a brief bio of person in focus. 
+                    Section should be three to four sentences long and briefly touch on relevant
+                    career hightlights. Include a couple non specific/relatable attribute or 
+                    interest (i.e. "expert in all things tomatoes, ask about the farm!").
                   </p>
                 </div>
               </div>
@@ -71,32 +74,6 @@
                 <div class="employee-name" id="employee-4-name">
                 </div>
                 <div class="employee-bio" id="employee-4-bio">
-                </div>
-              </div>
-            </div>
-            <div class="meet-the-team-portraits" id="portrait-5">
-              <div class="portrait-img-wrapper" id="portrait-5-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-5" src="../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
-              </div>
-              <div class="portrait-employee-info" id="portrait-5-emplopyee-info">
-                <div class="employee-function" id="employee-5-function">
-                </div>
-                <div class="employee-name" id="employee-5-name">
-                </div>
-                <div class="employee-bio" id="employee-5-bio">
-                </div>
-              </div>
-            </div>
-            <div class="meet-the-team-portraits" id="portrait-6">
-              <div class="portrait-img-wrapper" id="portrait-6-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-6" src="../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
-              </div>
-              <div class="portrait-employee-info" id="portrait-6-emplopyee-info">
-                <div class="employee-function" id="employee-6-function">
-                </div>
-                <div class="employee-name" id="employee-6-name">
-                </div>
-                <div class="employee-bio" id="employee-6-bio">
                 </div>
               </div>
             </div>
@@ -172,6 +149,7 @@
       /* eh, review for mobile scaling refactor */
       justify-center
       mb-10
+      bg-stone-100
     ;
     overflow: hidden;
     width: 1200px;
@@ -226,9 +204,10 @@
   
   .meet-the-team-portraits-wrapper{
     @apply
+      flex
       relative
       h-[100%]
-      px-10
+      justify-center
     ;
     display: grid;
     grid-gap: 2rem;
@@ -241,8 +220,8 @@
     @apply
       mx-5
       bg-stone-300
-      w-[300px]
-      h-[300px]
+      w-[480px]
+      h-[450px]
     ;
     border: 3px solid blue;
   }
@@ -299,5 +278,27 @@
   }
 
   #portrait-img-1{
+  }
+
+/* weird nesting issue here. Likely an error in html */
+  .portrait-employee-info{
+    @apply
+      flex
+      flex-col
+      justify-center
+    ;
+    border: 2px solid red;
+  }
+  
+  .employee-name{
+    border: 2px solid red;
+  }
+
+  .emplyee-function{
+    border: 2px solid red;
+  }
+
+  .employee-bio{
+    border: 2px solid red;
   }
 </style>
