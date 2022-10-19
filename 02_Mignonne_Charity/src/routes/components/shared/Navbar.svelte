@@ -3,10 +3,11 @@
 
   let mobileNavVisible = false;
   let languageNavVisible = false;
-
+  
+  import Wopprompt from './Wopprompt.svelte';
 </script>
 
-
+<Wopprompt />
 <header id="header">
   <div id="nav-top-wrapper">
     <div id="nav-mid-wrapper">
