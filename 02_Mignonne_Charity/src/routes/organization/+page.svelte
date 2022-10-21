@@ -39,7 +39,7 @@
             </div>
             <div class="meet-the-team-portraits" id="portrait-2">
               <div class="portrait-img-wrapper" id="portrait-2-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-2" src="./../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-2" src="temporary/huey_portrait_cropped_transparent_bg.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-2-emplopyee-info">
                 <div class="employee-name" id="employee-2-name">
@@ -59,7 +59,7 @@
             </div>
             <div class="meet-the-team-portraits" id="portrait-3">
               <div class="portrait-img-wrapper" id="portrait-3-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-3" src="./../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-3" src="static/temporary/huey_portrait_cropped_transparent_bg.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-3-emplopyee-info">
                 <div class="employee-name" id="employee-3-name">
@@ -79,7 +79,7 @@
             </div>
             <div class="meet-the-team-portraits" id="portrait-4">
               <div class="portrait-img-wrapper" id="portrait-4-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-4" src="./../../../static/temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-4" src="temporary/huey_portrait_cropped_transparent_bg.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-4-emplopyee-info">
                 <div class="employee-name" id="employee-4-name">
