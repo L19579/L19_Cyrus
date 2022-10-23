@@ -1,53 +1,63 @@
+<script>
+  const ipsum = "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy";
+</script>
+
 <div class="background-wrapper">
   <div class="panel-0-outer-wrapper">
     <div class="panel-0-background-wrapper">
       <div class="panel-0-background-1">
-      </div>
-      <div class="panel-0-background-2">
-      </div>
-    </div>
     <div class="panel-0-description-wrapper">
       <h2 class="temp-panel-0">
         Panel 0 overlay text here ; black gradient at max
       </h2>
     </div>
+      </div>
+      <div class="panel-0-background-2">
+      </div>
+    </div>
   </div>
 
-  <div class="panels-group-outer-wrapper">
-    <div class="panels-group-inner-wrapper">
-      <div class="panel-1-title-wrapper">
-        <h2 class="panel-1-title-text">
-          Food for X Program
-        </h2>
-      </div>
-      <div class="panel-1-description-wrapper">
-        <p>This is for Panel 1</p>
+  <div class="panels-group-outer-wrapper" id="panel-1-outer-wrapper">
+    <div class="panels-group-background" id="panel-1-background">
+      <div class="panels-group-background-cover" id="panel-1-background-cover">
+        <div class="panels-group-background-cover-2" id="panel-1-background-cover-2">
+          <div class="panels-group-inner-wrapper">
+            <div class="panels-group-title-wrapped" id="panel-1-title-wrapper">
+              <h2 class="panels-group-title-text" id="panel-1-title-text">
+                Food for X Program
+              </h2>
+            </div>
+            <div class="panels-group-description-wrapper" id="panel-1-description-wrapper">
+              <p>{ipsum}</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="panels-group-outer-wrapper">
     <div class="panels-group-inner-wrapper">
-      <div class="panel-1-title-wrapper">
-        <h2 class="panel-1-title-text">
+      <div class="panel-2-title-wrapper">
+        <h2 class="panel-2-title-text">
           Youth Recreation
         </h2>
       </div>
-      <div class="panel-1-description-wrapper">
-        <p>This is for Panel 2</p>
+      <div class="panel-2-description-wrapper">
+        <p>{ipsum}</p>
       </div>
     </div>
   </div>
 
   <div class="panels-group-outer-wrapper">
     <div class="panels-group-inner-wrapper">
-      <div class="panel-1-title-wrapper">
-        <h2 class="panel-1-title-text">
+      <div class="panel-3-title-wrapper">
+        <h2 class="panel-3-title-text">
           Sunday Prayer Group
         </h2>
       </div>
-      <div class="panel-1-description-wrapper">
-        <p>This is for Panel 3</p>
+      <div class="panel-3-description-wrapper">
+        <p>{ipsum}</p>
       </div>
     </div>
   </div>
@@ -126,7 +136,6 @@
 
   .panel-0-description-wrapper{
     @apply
-      relative
       flex
       top-0
       left-0
@@ -135,33 +144,96 @@
     ;
     /* margin-top: -100%; issue */
     overflow: hidden;
-    border: 10px solid blue;
+    border: 2px solid blue;
   }
 
   h2{
     font-weight: 800;
   }
   
-  /* Panel 1 specifics */
+  /* ------------------------------------------------------------------------------- Panel group specific (1-3) */
 
   .panels-group-outer-wrapper{
     @apply
       flex 
       justify-center
     ;
+    overflow: hidden;
     width: 100%;
-    height: 500px;
+    height: 700px;
+    background-color: white;
     border: 2px solid red; 
+  }
+
+  .panels-group-background{
+    @apply
+      flex
+      justify-center
+      relative
+    ;
+    overflow: hidden;
+    height: 100%; 
+    width: 100%;
+    border: 2px solid purple;
+  }
+  
+  .panels-group-background-cover{
+    @apply
+      flex
+      relative
+      justify-center
+    ;
+    width: 100%;
+    
+    background: radial-gradient(circle, rgba(9,9,121,0) 70%, rgba(38,38,38,1) 90%);
+    /*background: radial-gradient(circle, rgba(9,9,121,0) 70%, rgba(74,74,74,1) 90%); */
+    /* background: linear-gradient(284deg, rgba(231,229,228,1) 3%, rgba(231,229,228,0) 27%); */
+    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.953213991651348) 100%); */
+    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.8487882213432247) 100%); */
+    border: 2px solid green;
+  }
+  
+  .panels-group-background-cover-2{
+    @apply
+      flex
+      relative
+      justify-center
+    ;
+    width: 100%;
+    
+    background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(74,74,74,0) 80%);
+    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.953213991651348) 100%); */
+    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.8487882213432247) 100%); */
+    border: 2px solid red;
   }
   
   .panels-group-inner-wrapper{
     @apply
-      relative
+      xsm:px-4
+      sm:px-4
+      md:px-8
+      lg:px-10
+
       justify-center
     ;
     height: 100%;
     width: 1278px;
-    border: 2px solid blue; 
+    border: 2px solid white; 
+  }
+  
+  .panels-group-title-wrapped{
+    padding-top: 2rem;
+  }
+  
+  /* ------------------------------------------------------------------------------- Panel 1 specific */
+
+  #panel-1-outer-wrapper{
+    width: 100%;
+    overflow: hidden;
+    background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(38,38,38,1) 50%);
+    /* background: rgb(231,229,228); */
+    /* background-color: black; */
+    border: 2px solid blue;
   }
 
   /* This is inheriting a "relative" attr thats not needed; untis affected */
@@ -169,28 +241,45 @@
     solid: 2px solid black;
   }
 
-  .panel-1-title-wrapper{
+  #panel-1-background{
+    @apply
+      relative
+    ;
+    overflow: hidden;
+    width: 1700px;
+    background-attachment: local;
+    background-size: 1600px;
+    background-position-y: -200px; 
+    background-position-x: 370px; 
+    background-repeat: no-repeat;
+    background-image: url(../../../static/bg_impact/panel_1_bg_kids_eating.webp);
+  }
+
+ #panel-1-title-wrapper{
     @apply
       flex
       justify-center
+      text-black
+      text-xl
     ;
     width: 100%;
     height: 20%;
     border: 1px solid green;
   }
 
-  .panel-1-description-wrapper{
+  #panel-1-title-text{
+    white-space: nowrap;
+  }
+
+ #panel-1-description-wrapper{
     @apply
       flex
       justify-center
+      text-black
+      text-lg
     ;
     width: 100%;
     height: 80%;
     border: 1px solid orange;
   }
-
-  .panel-1-title-text{
-    white-space: nowrap;
-  }
-    
 </style>
