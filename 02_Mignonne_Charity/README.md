@@ -4,7 +4,7 @@
 
 ---
 
-Live updates [here](https://dieupeutcharity.com)
+Live view [here](https://dieupeutcharity.com).
 
 ## Current state 
 
@@ -39,4 +39,4 @@ Work done on some components to observe scaling behaviour.
 
 ---
 
-![reference current](https://github.com/L19579/L19_Cyrus/tree/main/02_Mignonne_Charity/imgs/reference_2.png)
+![reference current](https://raw.githubusercontent.com/L19579/L19_Cyrus/main/02_Mignonne_Charity/imgs/reference_2.png)

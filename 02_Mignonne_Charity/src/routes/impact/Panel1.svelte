@@ -101,13 +101,13 @@
       relative
       top-0;
     ;
-    width: 50%;
+    width: 100%;
     height: 100%;
     float: left;
 
-    background-image: url("./../../../static/backgrounds/old_img_black_group.webp");
-    background-size: 800%;
-    animation: slide 8s linear infinite;
+    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
+    background-size: 200%;
+    animation: slide 15s linear infinite;
 
     border: 4px solid green;
   }
@@ -117,13 +117,13 @@
       relative
       top-0;
     ;
-    width: 50%;
+    width: 100%;
     height: 100%;
     float: left;
     
-    background-image: url("./../../../static/backgrounds/old_img_black_group.webp");
-    background-size: 800%;
-    animation: slide 8s linear infinite;
+    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
+    background-size: 200%;
+    animation: slide 15s linear infinite;
 
     border: 4px solid red;
   }
@@ -217,7 +217,7 @@
       justify-center
     ;
     height: 100%;
-    width: 1278px;
+    width: 1200px;
     border: 2px solid white; 
   }
   
