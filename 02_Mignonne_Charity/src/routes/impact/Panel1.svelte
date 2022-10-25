@@ -78,7 +78,7 @@
 
   .panel-0-outer-wrapper{
     position: relative;
-    width: 100%;
+    width: 11100px;
     border: 5px solid black;
   }
 
@@ -106,8 +106,8 @@
     float: left;
 
     background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
-    background-size: 200%;
-    animation: slide 15s linear infinite;
+    background-size: 30%;
+    animation: slide 100s linear infinite;
 
     border: 4px solid green;
   }
@@ -122,8 +122,8 @@
     float: left;
     
     background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
-    background-size: 200%;
-    animation: slide 15s linear infinite;
+    background-size: 30%;
+    animation: slide 100s linear infinite;
 
     border: 4px solid red;
   }
