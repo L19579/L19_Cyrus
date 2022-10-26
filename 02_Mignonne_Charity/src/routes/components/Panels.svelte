@@ -111,12 +111,6 @@
       ;
   }
 
-  .leading-title-statement-description-top-wrapper{
-  }
-  
-  .leading-title-statement-description-main-wrapper{
-  }
-  
   .leading-title-statement-description-main-text-wrapper{
       @apply
         xl:pr-96

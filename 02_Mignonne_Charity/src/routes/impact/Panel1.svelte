@@ -4,13 +4,13 @@
 
 <div class="background-wrapper">
   <div class="panel-0-outer-wrapper">
-    <div class="panel-0-background-wrapper">
-      <div class="panel-0-background-1">
     <div class="panel-0-description-wrapper">
       <h2 class="temp-panel-0">
         Panel 0 overlay text here ; black gradient at max
       </h2>
     </div>
+    <div class="panel-0-background-wrapper">
+      <div class="panel-0-background-1">
       </div>
       <div class="panel-0-background-2">
       </div>
@@ -28,7 +28,10 @@
               </h2>
             </div>
             <div class="panels-group-description-wrapper" id="panel-1-description-wrapper">
-              <p>{ipsum}</p>
+              <p>
+                -- Write up not clean; throwing thoughts around -- <br />
+                {ipsum}
+              </p>
             </div>
           </div>
         </div>
@@ -38,26 +41,41 @@
 
   <div class="panels-group-outer-wrapper">
     <div class="panels-group-inner-wrapper">
-      <div class="panel-2-title-wrapper">
-        <h2 class="panel-2-title-text">
-          Youth Recreation
+      <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
+        <h2 class="panels-group-title-text" id="panel-2-title-text">
+          Youth Recreation Group
         </h2>
       </div>
-      <div class="panel-2-description-wrapper">
-        <p>{ipsum}</p>
+      <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
+        <p>
+          -- Write up not clean; throwing thoughts around -- <br />
+          We're strong believers in bringing positive and constructive activies to 
+          Haiti's children and young adults. Whether that's piano lessons, a listening ear, 
+          a local checkers tournament or help with brain teaser on a school assignment; 
+          we provide the space and tools for our young to build lasting bonds and critical 
+          life skills.
+        </p>
       </div>
     </div>
   </div>
 
   <div class="panels-group-outer-wrapper">
     <div class="panels-group-inner-wrapper">
-      <div class="panel-3-title-wrapper">
-        <h2 class="panel-3-title-text">
-          Sunday Prayer Group
+      <div class="panels-group-title-wrapper" id="panel-3-title-wrapper">
+        <h2 class="panels-group-title-text" id="panel-3-title-text">
+          Sunday Prayer Service
         </h2>
       </div>
-      <div class="panel-3-description-wrapper">
-        <p>{ipsum}</p>
+      <div class="panels-description-wrapper" id="panel-3-description-wrapper">
+        <p>
+          -- Write up not clean; throwing thoughts around -- <br />
+          Besides running charity programs our founder hosts weekly virtual weekly virtual
+          and in person prayer groups for a Haitian audience accross the world (?). Our
+          efforts continue to grow with an increase in hosts, in-person events, and ... .
+          We're building an inclusive community for those who seek to celebrate the word
+          of God.
+          
+        </p>
       </div>
     </div>
   </div>
@@ -77,8 +95,8 @@
   /* Panel 0 specifics */
 
   .panel-0-outer-wrapper{
-    position: relative;
-    width: 11100px;
+    /*width: 11100px;*/
+    width: 2720px;
     border: 5px solid black;
   }
 
@@ -106,8 +124,9 @@
     float: left;
 
     background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
-    background-size: 30%;
-    animation: slide 100s linear infinite;
+    background-size: 2720px;
+    /* animation: slide 385s linear infinite; */
+    animation: slide 90s linear infinite;
 
     border: 4px solid green;
   }
@@ -122,8 +141,9 @@
     float: left;
     
     background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
-    background-size: 30%;
-    animation: slide 100s linear infinite;
+    background-size: 2720px;
+    /* animation: slide 385s linear infinite; */
+    animation: slide 90s linear infinite;
 
     border: 4px solid red;
   }
@@ -134,6 +154,7 @@
     }
   }
 
+  /* also acts as image filter */
   .panel-0-description-wrapper{
     @apply
       flex
@@ -141,10 +162,13 @@
       left-0
       z-20
       justify-center
+      text-white
     ;
-    /* margin-top: -100%; issue */
-    overflow: hidden;
-    border: 2px solid blue;
+    width: 100%;
+    height: 141px;
+    position: absolute;
+    background-color: rgba(28, 25, 23, 0.2);
+    border: 4px solid blue;
   }
 
   h2{
@@ -186,10 +210,6 @@
     width: 100%;
     
     background: radial-gradient(circle, rgba(9,9,121,0) 70%, rgba(38,38,38,1) 90%);
-    /*background: radial-gradient(circle, rgba(9,9,121,0) 70%, rgba(74,74,74,1) 90%); */
-    /* background: linear-gradient(284deg, rgba(231,229,228,1) 3%, rgba(231,229,228,0) 27%); */
-    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.953213991651348) 100%); */
-    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.8487882213432247) 100%); */
     border: 2px solid green;
   }
   
@@ -202,8 +222,6 @@
     width: 100%;
     
     background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(74,74,74,0) 80%);
-    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.953213991651348) 100%); */
-    /* background: radial-gradient(circle, rgba(9,9,121,0) 35%, rgba(0,0,0,0.8487882213432247) 100%); */
     border: 2px solid red;
   }
   
@@ -222,7 +240,24 @@
   }
   
   .panels-group-title-wrapped{
-    padding-top: 2rem;
+    /* ---- temp ---- */
+  }
+
+  .panels-group-title-text{
+    @apply
+      text-[clamp(28px,5vw,50px)]
+    ;
+    white-space: nowrap;
+  }
+
+  /* styling not reaching base atm */
+  .panels-group-description-wrapper{ 
+    @apply
+      text-xl
+      leading-[1.75]
+      text-left
+    ;
+    font-weight: 500;
   }
   
   /* ------------------------------------------------------------------------------- Panel 1 specific */
@@ -262,23 +297,70 @@
       text-black
       text-xl
     ;
-    width: 100%;
-    height: 20%;
+    margin: auto;
+    height: 10;
     border: 1px solid green;
-  }
-
-  #panel-1-title-text{
-    white-space: nowrap;
   }
 
  #panel-1-description-wrapper{
     @apply
       flex
+      text-black
+      pt-12
+      pl-12
+      pr-40
+    ;
+    height: 80%;
+    border: 1px solid orange;
+  }
+
+  /* ------------------------------------------------------------------------------- Panel 2 specific */
+ #panel-2-title-wrapper{
+    @apply
+      flex
       justify-center
       text-black
-      text-lg
+      text-xl
     ;
-    width: 100%;
+    margin: auto;
+    height: 10;
+    border: 1px solid green;
+  }
+
+ #panel-2-description-wrapper{
+    @apply
+      flex
+      text-black
+      pt-12
+      pl-12
+      pr-40
+    ;
+    height: 80%;
+    border: 1px solid orange;
+  }
+
+  /* ------------------------------------------------------------------------------- Panel 3 specific */
+
+ #panel-3-title-wrapper{
+    @apply
+      flex
+      justify-center
+      text-black
+      text-xl
+    ;
+    margin: auto;
+    height: 10;
+    border: 1px solid green;
+  }
+
+ #panel-3-description-wrapper{
+    @apply
+      flex
+      text-black
+      pt-12
+      pl-12
+      pr-40
+    ;
     height: 80%;
     border: 1px solid orange;
   }
