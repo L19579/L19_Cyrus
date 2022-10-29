@@ -39,43 +39,57 @@
     </div>
   </div>
 
-  <div class="panels-group-outer-wrapper">
-    <div class="panels-group-inner-wrapper">
-      <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
-        <h2 class="panels-group-title-text" id="panel-2-title-text">
-          Youth Recreation Group
-        </h2>
-      </div>
-      <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
-        <p>
-          -- Write up not clean; throwing thoughts around -- <br />
-          We're strong believers in bringing positive and constructive activies to 
-          Haiti's children and young adults. Whether that's piano lessons, a listening ear, 
-          a local checkers tournament or help with brain teaser on a school assignment; 
-          we provide the space and tools for our young to build lasting bonds and critical 
-          life skills.
-        </p>
+  <div class="panels-group-outer-wrapper" id="panel-2-outer-wrapper">
+    <div id="panel-2-background">
+      <div id="panel-2-background-center-cover">
+        <div id="panel-2-background-left-cover">
+          <div id="panel-2-background-right-cover">
+            <div class="panels-group-inner-wrapper" id="panel-2-inner-wrapper">
+              <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
+                <h2 class="panels-group-title-text" id="panel-2-title-text">
+                  Youth Recreation Group
+                </h2>
+              </div>
+              <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
+                <p>
+                  -- Write up not clean; throwing thoughts around -- <br />
+                  We're strong believers in bringing positive and constructive activies to 
+                  Haiti's children and young adults. Whether that's piano lessons, a listening ear, 
+                  a local checkers tournament or help with brain teaser on a school assignment; 
+                  we provide the space and tools for our young to build lasting bonds and critical 
+                  life skills.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="panels-group-outer-wrapper">
-    <div class="panels-group-inner-wrapper">
-      <div class="panels-group-title-wrapper" id="panel-3-title-wrapper">
-        <h2 class="panels-group-title-text" id="panel-3-title-text">
-          Sunday Prayer Service
-        </h2>
+  <div class="panels-group-outer-wrapper" id="panel-3-outer-wrapper">
+    <div id="panel-3-background">
+      <div id="panel-3-background-side-cover">
+      <div id="panel-3-background-top-cover">
+        <div class="panels-group-inner-wrapper" id="panel-3-inner-wrapper">
+          <div class="panels-group-title-wrapper" id="panel-3-title-wrapper">
+            <h2 class="panels-group-title-text" id="panel-3-title-text">
+              Sunday Prayer Service
+            </h2>
+          </div>
+          <div class="panels-description-wrapper" id="panel-3-description-wrapper">
+            <p>
+              -- Write up not clean; throwing thoughts around -- <br />
+              Besides running charity programs our founder hosts weekly virtual weekly virtual
+              and in person prayer groups for a Haitian audience accross the world (?). Our
+              efforts continue to grow with an increase in hosts, in-person events, and ... .
+              We're building an inclusive community for those who seek to celebrate the word
+              of God.
+              
+            </p>
+          </div>
+        </div>
       </div>
-      <div class="panels-description-wrapper" id="panel-3-description-wrapper">
-        <p>
-          -- Write up not clean; throwing thoughts around -- <br />
-          Besides running charity programs our founder hosts weekly virtual weekly virtual
-          and in person prayer groups for a Haitian audience accross the world (?). Our
-          efforts continue to grow with an increase in hosts, in-person events, and ... .
-          We're building an inclusive community for those who seek to celebrate the word
-          of God.
-          
-        </p>
       </div>
     </div>
   </div>
@@ -123,7 +137,7 @@
     height: 100%;
     float: left;
 
-    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
+    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png");
     background-size: 2720px;
     /* animation: slide 385s linear infinite; */
     animation: slide 90s linear infinite;
@@ -140,7 +154,7 @@
     height: 100%;
     float: left;
     
-    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_delete.png");
+    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png");
     background-size: 2720px;
     /* animation: slide 385s linear infinite; */
     animation: slide 90s linear infinite;
@@ -201,34 +215,9 @@
     border: 2px solid purple;
   }
   
-  .panels-group-background-cover{
-    @apply
-      flex
-      relative
-      justify-center
-    ;
-    width: 100%;
-    
-    background: radial-gradient(circle, rgba(9,9,121,0) 70%, rgba(38,38,38,1) 90%);
-    border: 2px solid green;
-  }
-  
-  .panels-group-background-cover-2{
-    @apply
-      flex
-      relative
-      justify-center
-    ;
-    width: 100%;
-    
-    background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(74,74,74,0) 80%);
-    border: 2px solid red;
-  }
-  
   .panels-group-inner-wrapper{
     @apply
       xsm:px-4
-      sm:px-4
       md:px-8
       lg:px-10
 
@@ -266,8 +255,6 @@
     width: 100%;
     overflow: hidden;
     background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(38,38,38,1) 50%);
-    /* background: rgb(231,229,228); */
-    /* background-color: black; */
     border: 2px solid blue;
   }
 
@@ -289,8 +276,32 @@
     background-repeat: no-repeat;
     background-image: url(../../../static/bg_impact/panel_1_bg_kids_eating.webp);
   }
+  
+  #panel-1-background-cover{
+    @apply
+      flex
+      relative
+      justify-center
+    ;
+    width: 100%;
+    
+    background: radial-gradient(circle, rgba(9,9,121,0) 70%, rgba(38,38,38,1) 90%);
+    border: 2px solid green;
+  }
+  
+  #panel-1-background-cover-2{
+    @apply
+      flex
+      relative
+      justify-center
+    ;
+    min-width: 100%;
+    
+    background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(74,74,74,0) 80%);
+    border: 2px solid red;
+  }
 
- #panel-1-title-wrapper{
+  #panel-1-title-wrapper{
     @apply
       flex
       justify-center
@@ -315,7 +326,60 @@
   }
 
   /* ------------------------------------------------------------------------------- Panel 2 specific */
- #panel-2-title-wrapper{
+  #panel-2-outer-wrapper{
+    background-color: rgba(245,245,244,1);
+  }
+  
+  #panel-2-background{
+    @apply
+      flex
+      justify-center
+    ;
+    
+    width: 2000px;
+    background-position-y: -400px; 
+    /* background-position-x: 100px; */
+    background-size: 2200px;
+    background-image: url(../../../static/bg_impact/panel_2_bg_boys_soccer.jpeg);
+
+    border: yellow solid 2px;
+  } 
+
+  #panel-2-background-center-cover{
+    @apply
+      flex
+      relative 
+      justify-center
+    ;
+
+    width: 100%;
+    height: 100%;
+    background: rgba(245,245,245,0.3);
+  }
+
+  #panel-2-background-left-cover{
+    @apply
+      relative
+    ;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%);
+    border: solid 2px red;
+  }
+
+  #panel-2-background-right-cover{
+    @apply
+      relative
+      flex
+      justify-center
+    ;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(270deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%);
+    border: solid 2px green;
+  }
+    
+  #panel-2-title-wrapper{
     @apply
       flex
       justify-center
@@ -341,11 +405,46 @@
 
   /* ------------------------------------------------------------------------------- Panel 3 specific */
 
- #panel-3-title-wrapper{
+  #panel-3-outer-wrapper{
+    background-color: rgba(38,38,38,1);
+  }
+  
+  #panel-3-background{
     @apply
       flex
       justify-center
-      text-black
+    ;
+    
+    width: 2000px;
+    background-position-y: -100px;
+    background-position-x: 100px;
+    background-size: 1900px;
+    background-image: url(../../../static/bg_impact/panel_3_church_goers.jpg);
+
+    border: yellow solid 2px;
+  } 
+
+  #panel-3-background-side-cover{
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(9,9,121,0) 20%, rgba(38,38,38,1) 92%);
+  }
+
+  #panel-3-background-top-cover{
+    @apply
+      flex
+      justify-center
+    ;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(38,38,38,0.9) 10%, rgba(74,74,74,0) 40%);
+  }
+
+  #panel-3-title-wrapper{
+    @apply
+      flex
+      justify-center
+      text-white
       text-xl
     ;
     margin: auto;
@@ -356,7 +455,7 @@
  #panel-3-description-wrapper{
     @apply
       flex
-      text-black
+      text-white
       pt-12
       pl-12
       pr-40
