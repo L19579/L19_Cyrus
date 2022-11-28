@@ -17,7 +17,7 @@
 		city: "Boogieville",
 		province: "Manitoba",
 		postal_code: "K1H 2R4",
-		country: "Canaada",
+		country: "Canada",
 	},
 	card: {
 		amount: 6666,
@@ -29,10 +29,35 @@
 })
 
 async function doyathingtwentyone () {
-		const res = await fetch('http://172.105.104.235:8000/doyathingtwentyone', {
+		const res = await fetch('http://127.0.0.1:8000/doyathingtwentyone', {
 			method: 'POST',
-		body: JSON.stringify({user})
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+          first_name: "Gigi",
+          last_name: "Fifi",
+          email: "Gigi@fifi.com",
+          phone: "1112223344",
+          address: {
+            line1: "416 Yadi Road",
+            line2: "",
+            city: "Boogieville",
+            province: "Manitoba",
+            postal_code: "K1H 2R4",
+            country: "Canada",
+          },
+          card: {
+            amount: 6666,
+            number: "4242424242424242",
+            cvc: "123",
+            exp_month: 2,
+            exp_year: 24,
+          },
+        })
 		})
+    .then(response => response.json())
+    .then(data => console.log(data));
 		
 		const json = await res.json()
 		result = JSON.stringify(json)
