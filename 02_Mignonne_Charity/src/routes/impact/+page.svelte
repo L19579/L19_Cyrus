@@ -1,7 +1,7 @@
 <script>
   import Panel1 from './Panel1.svelte'
-  import Navbar from './../components/shared/Navbar.svelte'
-  import Footer from './../components/shared/Footer.svelte'
+  import Navbar from './../shared/Navbar.svelte'
+  import Footer from './../shared/Footer.svelte'
 </script>
 
 <Navbar current_nav_page = 'impact'/>

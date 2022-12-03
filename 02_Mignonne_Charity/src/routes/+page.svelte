@@ -1,7 +1,7 @@
 <script>
-  import Navbar from './components/shared/Navbar.svelte'; 
-  import Footer from './components/shared/Footer.svelte'; 
-  import Panels from './components/Panels.svelte';
+  import Navbar from './shared/Navbar.svelte'; 
+  import Footer from './shared/Footer.svelte'; 
+  import Panels from './home/Panels.svelte';
 </script>
 
 <Navbar/>

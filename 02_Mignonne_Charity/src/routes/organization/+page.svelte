@@ -1,7 +1,7 @@
 <script>
-  import Navbar from './../components/shared/Navbar.svelte'
-  import Footer from './../components/shared/Footer.svelte'
-  import Todo from './../components/shared/Todo.svelte'
+  import Navbar from './../shared/Navbar.svelte'
+  import Footer from './../shared/Footer.svelte'
+  import Todo from './../shared/Todo.svelte'
 </script>
 
 <Navbar current_nav_page = 'organization'/>
@@ -39,7 +39,7 @@
             </div>
             <div class="meet-the-team-portraits" id="portrait-2">
               <div class="portrait-img-wrapper" id="portrait-2-img-wrapper">
-                <img class="portrait-imgs" id="portrait-img-2" src="temporary/huey_portrait_cropped_transparent_bg.png" />
+                <img class="portrait-imgs" id="portrait-img-2" src="temporary/williane.png" />
               </div>
               <div class="portrait-employee-info" id="portrait-2-emplopyee-info">
                 <div class="employee-name" id="employee-2-name">

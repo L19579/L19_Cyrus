@@ -1,3 +1,7 @@
+<script>
+  import Moreinfo from './Moreinfo.svelte'
+</script>
+
 <div class="panels"> 
   <div class="panel-1-outer-wrapper">
     <div class="panel-1-inner-wrapper">
@@ -31,11 +35,14 @@
       </div>
     </div>
   </div>
-  <div class="panel-2-outer-wrapper">
-    <div class="panel-2-inner-wrapper">
-      <div class="panel-2-video-wrapper">
+
+  <Moreinfo />
+  
+  <div class="panel-video-outer-wrapper">
+    <div class="panel-video-inner-wrapper">
+      <div class="panel-video-video-wrapper">
         <video
-          class="panel-2-video"
+          class="panel-video-video"
           autoplay 
           muted
           loop
@@ -60,6 +67,7 @@
       xl:pt-[110px]
       /* xl:min-h-[810px]  Not req */ 
     ; 
+    width: 100%;
   }
   
   /* Panel 1 specific */
@@ -164,11 +172,10 @@
   #learn-button{
     @apply bg-stone-600;
   }
-
   
-  /* Panel 2 specific */
+  /* Panel-video specific */
 
-	.panel-2-outer-wrapper{
+	.panel-video-outer-wrapper{
 		@apply
       flex
 			relative
@@ -181,7 +188,7 @@
     border: 2px solid blue;
 	}	
 	
-  .panel-2-inner-wrapper{
+  .panel-video-inner-wrapper{
     @apply
       flex
     ;
@@ -190,7 +197,7 @@
     border: 2px solid red;
   }
 
-  .panel-2-video-wrapper{
+  .panel-video-video-wrapper{
     @apply
       flex
       justify-around
@@ -200,7 +207,7 @@
     border: 2px solid purple;
   }
 
-  .panel-2-video{
+  .panel-video-video{
     display: block;
     overflow: hidden;
     border: 2px solid blue;
