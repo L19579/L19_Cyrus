@@ -1,6 +1,12 @@
 <script>
   const staff_quotes = [
-    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    { 
+      name: "Williane Moise",
+      title_en: "Founder",
+      title_fr: "PDG",
+      portrait: "temporary/williane.png",
+      quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+    }
   ];
 </script>
 
@@ -73,10 +79,21 @@
     <div class="info-panel-group-outer-wrapper" id="info-panel-3-outer-wrapper">
       <div class="info-panel-group-inner-wrapper" id="info-panel-3-inner-wrapper">
         <div id="info-panel-3-portrait-wrapper">
-          <img id="info-panel-3-portrait" src="temporary/williane.png" />
+          <img id="info-panel-3-portrait" src="{staff_quotes[0].portrait}" />
         </div>
         <div id="info-panel-3-quote-wrapper">
           <div id="info-panel-3-quote">
+            "{staff_quotes[0].quote}"
+          </div>
+          <div id="info-panel-3-quote-name-wrapper">
+            <div id="info-panel-3-quote-name">
+              {staff_quotes[0].name}
+            </div>
+          </div>
+          <div id="info-panel-3-quote-title-wrapper">
+            <div id="info-panel-3-quote-title">
+              {staff_quotes[0].title_en}
+            </div>
           </div>
           <div id="info-panel-3-button-wrapper">
             <div id="info-panel-3-button">
@@ -192,7 +209,7 @@
     position: relative;
     display: grid;
     grid-template-columns: repeat(3, [col] 30%);
-    grid-template-row: 100%;
+    grid-template-rows: 100%;
     grid-gap: 2px;
 
     width: 100%;
@@ -283,6 +300,7 @@
   #info-panel-3-inner-wrapper{
     @apply
       flex
+      py-[0.5rem]
     ;
     height: 98%;
     width: 1280px;
@@ -290,8 +308,12 @@
   }
 
   #info-panel-3-portrait-wrapper{
+    @apply
+      my-[auto]
+    ;
     position: relative;
-    display: inline-block;
+    padding: auto;
+    height: 90%;
     width: 30%; 
     margin-left: 3%;
     
@@ -299,37 +321,97 @@
   } 
 
   #info-panel-3-portrait{
-  
+    height: 90%; 
+    width: auto; 
   } 
 
   #info-panel-3-quote-wrapper{
     @apply
-      flex
+      my-[auto]
     ;
-    display: inline-block;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(20, [row] 5%);
+
     margin-left: 2%;
     margin-right: 2%;
     width: 100%;
-    height: 98%;
+    height: 90%;
     border: 2px solid purple;
+    text-align: center;
   }
 
   #info-panel-3-quote{
     @apply
       flex
+      py-[2%]
+      px-[10%]
+      text-[clamp(12px,5.5vw,22px)]
     ;
-    height: 90%;
-    text-align: center;
+    font-style: italic;
+    grid-row: row 1 / span 13;
+
+    /* height: 90%; */
     border: 2px solid black;
   }
 
+  #info-panel-3-quote-name-wrapper{
+    @apply
+      flex
+      text-[clamp(12px,5.5vw,22px)]
+    ;
+    height: 100%;
+    grid-row: row 14 / span 2;
+    border: 2px solid red;
+  }
+
+  #info-panel-3-quote-name{
+    @apply
+      m-[auto]
+      text-[clamp(12px,5.5vw,22px)]
+    ;
+    font-weight: 600;
+  }
+
+  #info-panel-3-quote-title-wrapper{
+    @apply
+      flex
+    ;
+    height: 100%;
+    grid-row: row 16 / span 2;
+    border: 2px solid blue;
+  }
+
+  #info-panel-3-quote-title{
+    @apply
+      text-[clamp(10px,5.5vw,20px)]
+      m-[auto]
+    ;
+    font-style: italic;
+    text-align: center;
+  }
+
   #info-panel-3-button-wrapper{
-    margin-bottom: 1em;
-    
+    @apply
+      flex
+      py-[auto]
+    ;
+    height: 100%;
+    grid-row: row 18 / span 3;
     border: 2px solid green;
   }
 
   #info-panel-3-button{
+    @apply
+      m-[auto]
+      px-6
 
+      text-white
+      font-bold
+      text-xl
+      rounded-full
+    ;
+    background-color: blue;
+    border: 2px solid red;
   }
 </style>
