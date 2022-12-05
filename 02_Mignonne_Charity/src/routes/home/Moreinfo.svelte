@@ -1,4 +1,8 @@
 <script>
+  import Typewriter from 'svelte-typewriter';
+  import { tweened } from 'svelte/motion';
+  /* import { backInOut } from 'svelte/easing'; */
+
   const staff_quotes = [
     { 
       name: "Williane Moise",
@@ -8,7 +12,52 @@
       quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     }
   ];
+  
+  let debug = false;
+
+  let innerWidth = 0;
+  let innerHeight = 0;
+  let y_scroll_distance;
+
+
+  let show_counter_notes = false;
+  let tweened_families_fed = tweened(0);
+  let tweened_enrolled_youths = tweened(0);
+  let tweened_sunday_service_attendees = tweened(0);
+
+  $: if (y_scroll_distance > 550) {
+    setTimeout(() =>{
+      setInterval(() => {
+        if ($tweened_families_fed < 50) $tweened_families_fed++;   
+      }, 100);
+    }, 0); 
+
+    setTimeout(() =>{
+      setInterval(() => {
+        if ($tweened_enrolled_youths < 37) $tweened_enrolled_youths++;   
+      }, 100);
+    }, 300); 
+
+    setTimeout(() =>{
+      setInterval(() => {
+        if ($tweened_sunday_service_attendees == 0) $tweened_sunday_service_attendees = 95;   
+        if ($tweened_sunday_service_attendees < 145 && $tweened_sunday_service_attendees > 94) 
+          $tweened_sunday_service_attendees++;   
+      }, 250);
+    }, 300); 
+
+    setTimeout(() =>{
+      show_counter_notes = true;
+    }, 2200); 
+  };
+
+  $: counter_families_fed = Math.floor($tweened_families_fed / 1);
+  $: counter_enrolled_youths = Math.floor($tweened_enrolled_youths / 1);
+  $: counter_sunday_service_attendees = Math.floor($tweened_sunday_service_attendees / 1);
+
 </script>
+
+<svelte:window bind:innerWidth bind:innerHeight bind:scrollY={y_scroll_distance}/>
 
 <div class="info-panels-outer-wrapper">
   <div class="info-panels-inner-wrapper">
@@ -17,15 +66,15 @@
         <div id="info-panel-1-stats-grid">
           <div class="info-panel-1-stat-group" id="info-panel-1-stat-1">
             <div class="stat-number-group" id="stat-number-1">
-              50+
+              {counter_families_fed}+
             </div>
             <div class="stat-description-group" id="stat-description-1">
-              Families fed
+              Families Fed
             </div>
           </div>
           <div class="info-panel-1-stat-group" id="info-panel-1-stat-2">
             <div class="stat-number-group" id="stat-number-2">
-              30+
+              {counter_enrolled_youths}+
             </div>
             <div class="stat-description-group" id="stat-description-2">
               Enrolled Youths
@@ -33,12 +82,19 @@
           </div>
           <div class="info-panel-1-stat-group" id="info-panel-1-stat-3">
             <div class="stat-number-group" id="stat-number-3">
-              60+
+              {counter_sunday_service_attendees}+
             </div>
             <div class="stat-description-group" id="stat-description-3">
               Sunday Service Attendees
             </div>
           </div>
+        </div>
+        <div id="info-panel-1-counter-note">
+          {#if show_counter_notes}
+            <Typewriter mode="cascade" interval="50" cursor="false">
+              ...and counting.
+            </Typewriter>
+          {/if}
         </div>
         <div id="info-panel-1-description">
           Since our founding(??) we've dedicated resources to helping
@@ -49,6 +105,14 @@
           supported by our donors include meal assitance, and youth social
           programs. We also host prayer services in person and online.
         </div>
+        {#if debug}
+          <div>
+            screen_height: {innerHeight} <br />
+            screen_width: {innerWidth} <br />
+            Distance scrolled on Y-Axis: {y_scroll_distance} <br />
+            show_counter_notes: {show_counter_notes}
+          </div>
+        {/if}
       </div>
 
       <div class="info-panel-group-footer-outer-wrapper" id="info-panel-1-footer-outer-wrapper"> 
@@ -244,7 +308,7 @@
       text-xl
       text-[clamp(28px,8.5vw,35px)]
     ;
-  
+    
   }
 
   #info-panel-1-stat-1{
@@ -265,17 +329,35 @@
     padding-bottom: 5px;
   }
 
+  #info-panel-1-counter-note{
+    @apply
+      relative
+      block
+      text-[clamp(28px,8.5vw,30px)]
+    ;
+    font-weight: 600; 
+    height: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 0.6rem;
+
+    border: 2px solid black;
+  }
+
   #info-panel-1-description{
     @apply
       relative
       block
       text-[clamp(28px,8.5vw,30px)]
     ;
-    margin-top: 50px;
-    padding-left: 5%;
-    padding-right: 5%;
+    line-height: 2.6rem;
+    margin-top: 2.5rem;
+    padding-left: 8%;
+    padding-right: 8%;
     text-align: center;
     font-weight: 540;
+
+    border: 2px solid blue;
   }
 
 
