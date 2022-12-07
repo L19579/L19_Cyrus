@@ -25,7 +25,7 @@
   let tweened_enrolled_youths = tweened(0);
   let tweened_sunday_service_attendees = tweened(0);
 
-  $: if (y_scroll_distance > 550) {
+  $: if (y_scroll_distance > 470) {
     setTimeout(() =>{
       setInterval(() => {
         if ($tweened_families_fed < 50) $tweened_families_fed++;   
@@ -160,9 +160,9 @@
             </div>
           </div>
           <div id="info-panel-3-button-wrapper">
-            <div id="info-panel-3-button">
+            <a href="/organization" id="info-panel-3-button">
               Meet the Team! >
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -249,7 +249,7 @@
   .info-panel-group-footer-button:hover{
     transition-duration: 200ms;
     transform: scale(1.1);
-    transition-timing-funciton: cubic-bezier(0.4, 0,2, 1);
+    transition-timing-function: cubic-bezier(0.4,0,2,1);
   }
 
 
@@ -492,8 +492,18 @@
       font-bold
       text-xl
       rounded-full
+      bg-indigo-700;
     ;
-    background-color: blue;
+    white-space: nowrap;
+    text-decoration: none;
+    will-change: transform;
+
     border: 2px solid red;
+  }
+
+  #info-panel-3-button:hover{
+    transition-duration: 200ms;
+    transform: scale(1.1); 
+    transition-timing-function: cubic-bezier(0.4,0.2,1);
   }
 </style>
