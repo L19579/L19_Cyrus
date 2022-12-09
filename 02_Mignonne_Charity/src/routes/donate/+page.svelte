@@ -15,6 +15,7 @@
     exp_year: 0,
     cvc: "",
     postal_code: "",
+    country: "",
   });
 
 </script>
@@ -27,39 +28,74 @@
       </div>
       <div class="donate-payment-outer-wrapper">
         <div class="donate-payment-inner-wrapper">
-          <label> Amount </label> <br>
-          <input type="text" bind:value={$payment_form.amount} />
-          <br />
-          <br />
 
-          <label> First Name </label>
-          <input type="text" bind:value={$payment_form.first_name} />
-          <br />
-          <label> Last Name </label>
-          <input type="text" bind:value={$payment_form.last_name} />
-          <br />
-          <label> Email </label>
-          <input type="text" bind:value={$payment_form.email} />
-          <br />
+          <div class="group-form-subsection">
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.amount} />
+              <br />
+              <label> Amount </label>
+            </div>
+          </div>
+          
+          <div class="group-form-subsection">
+            <div class="group-form-input-wrapper" id="form-first-name-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.first_name} />
+              <br />
+              <label> First Name </label>
+            </div>
+            <div class="group-form-input-wrapper" id="form-last-name-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.last_name} />
+              <br />
+              <label> Last Name </label>
+            </div>
+          </div>
 
-          <label> Card Number </label>
-          <input type="text" bind:value={$payment_form.card_number} />
-          <br />
-          <label> Exp Month </label>
-          <input type="number" bind:value={$payment_form.exp_month} />
-          <br />
-          <label> Exp Year </label>
-          <input type="number" bind:value={$payment_form.exp_year} />
-          <br />
-          <label> CVC </label>
-          <input type="text" bind:value={$payment_form.cvc} />
-          <br />
-          <label> Postal Code </label>
-          <input type="text" bind:value={$payment_form.postal_code} />
-          <br />
+          <div class="group-form-subsection">
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.email} />
+              <br />
+              <label> Email </label>
+            </div>
+          </div>
+          
+          <div class="group-form-subsection">
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.card_number} />
+              <br />
+              <label> Card Number </label>
+            </div>
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.cvc} />
+              <br />
+              <label> CVC </label>
+            </div>
+          </div>
 
+          <div class="group-form-subsection">
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="number" bind:value={$payment_form.exp_month} />
+              <br />
+              <label> Exp Month </label>
+            </div>
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="number" bind:value={$payment_form.exp_year} />
+              <br />
+              <label> Exp Year </label>
+            </div>
+          </div>
 
-          {$payment_form.first_name}
+          <div class="group-form-subsection">
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.postal_code} />
+              <br />
+              <label> Postal/Zip Code </label>
+            </div>
+            <div class="group-form-input-wrapper">
+              <input class="group-input-fields" type="text" bind:value={$payment_form.country} />
+              <br />
+              <label> Country </label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -115,8 +151,32 @@
   } 
 
   .donate-payment-inner-wrapper{
-
     width: 75%;
     border: 2px solid green;
   }
+
+  /* ---------------- Form Group ---------------- */
+  .group-input-fields{
+    height: 2.5rem;
+    width: 20rem;
+  }
+  
+  .group-form-input-wrapper{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: block;
+    text-align: center;
+    border: 2px solid red;
+  }
+
+  .group-form-subsection{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid red;
+  }
+  /* ---------------- Form Group ---------------- */
+
+  #form-first-name-wrapper{
+  }
+
 </style>
