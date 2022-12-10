@@ -6,13 +6,11 @@
   import Todo from './../shared/Todo.svelte'
 
   let payment_form = writable({
-    first_name: "",
-    last_name: "",
+    name: "",
     email: "",
     amount: 0,
     card_number: "", 
-    exp_month: 0,
-    exp_year: 0,
+    exp: "",
     cvc: "",
     postal_code: "",
     country: "",
@@ -29,69 +27,54 @@
       <div class="donate-payment-outer-wrapper">
         <div class="donate-payment-inner-wrapper">
 
-          <div class="group-form-subsection">
+          <div class="group-form-subsection" id="form-subsection-amount">
             <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.amount} />
+              <input class="group-half-input-fields" type="text" placeholder="100" bind:value={$payment_form.amount} />
               <br />
               <label> Amount </label>
             </div>
           </div>
           
           <div class="group-form-subsection">
-            <div class="group-form-input-wrapper" id="form-first-name-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.first_name} />
-              <br />
-              <label> First Name </label>
-            </div>
-            <div class="group-form-input-wrapper" id="form-last-name-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.last_name} />
-              <br />
-              <label> Last Name </label>
-            </div>
-          </div>
-
-          <div class="group-form-subsection">
             <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.email} />
+              <input class="group-full-input-fields" type="text" bind:value={$payment_form.email} />
               <br />
               <label> Email </label>
             </div>
           </div>
-          
+
           <div class="group-form-subsection">
-            <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.card_number} />
+            <div class="group-form-input-wrapper" id="form-name-wrapper">
+              <input class="group-full-input-fields" type="text" bind:value={$payment_form.name} />
               <br />
-              <label> Card Number </label>
+              <label> First Name </label>
             </div>
-            <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.cvc} />
-              <br />
-              <label> CVC </label>
+          </div>
+
+          <div class="group-form-subsection">
+            <div class="group-form-input-wrapper" id="card-form-input-wrapper">
+              <input class="group-full-input-fields" id="card-number-field" type="text" 
+                placeholder="1234 1234 1234 1234" bind:value={$payment_form.card_number} />
+              <input class="group-full-input-fields" id="card-exp-field" type="text" 
+                placeholder="MM / YY" bind:value={$payment_form.exp} />
+              <input class="group-full-input-fields" id="card-cvc-field" type="text" 
+                placeholder="CVC" bind:value={$payment_form.cvc} />
             </div>
           </div>
 
           <div class="group-form-subsection">
             <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="number" bind:value={$payment_form.exp_month} />
-              <br />
-              <label> Exp Month </label>
-            </div>
-            <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="number" bind:value={$payment_form.exp_year} />
-              <br />
-              <label> Exp Year </label>
             </div>
           </div>
 
           <div class="group-form-subsection">
             <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.postal_code} />
+              <input class="group-half-input-fields" type="text" bind:value={$payment_form.postal_code} />
               <br />
               <label> Postal/Zip Code </label>
             </div>
             <div class="group-form-input-wrapper">
-              <input class="group-input-fields" type="text" bind:value={$payment_form.country} />
+              <input class="group-half-input-fields" type="text" bind:value={$payment_form.country} />
               <br />
               <label> Country </label>
             </div>
@@ -121,7 +104,6 @@
       justify-center
     ;
     margin-top: 0.3rem;
-    border: 2px red solid; 
     height: 1000px;
     width: 100%;
     display: grid;
@@ -156,27 +138,66 @@
   }
 
   /* ---------------- Form Group ---------------- */
-  .group-input-fields{
-    height: 2.5rem;
-    width: 20rem;
-  }
-  
-  .group-form-input-wrapper{
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: block;
-    text-align: center;
-    border: 2px solid red;
-  }
-
   .group-form-subsection{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     border: 2px solid red;
   }
-  /* ---------------- Form Group ---------------- */
 
-  #form-first-name-wrapper{
+  .group-form-input-wrapper{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-right: 2rem;
+    padding-left: 2rem;
+    justify-content: center;
+    display: block;
+    text-align: center;
+    width: 100%;
+
+    border: 2px solid red;
   }
 
+  .group-full-input-fields{
+    position: relative;
+    height: 2.5rem;
+    width: 100%;
+    padding: 0px 2.5rem;
+    box-sizing: border-box;
+  }
+
+  .group-half-input-fields{
+    height: 2.5rem;
+    width: 48%;
+  }
+
+  /* ---------------- Form ---------------- */
+
+  #form-subsection-amount{
+    margin-bottom: 3rem; 
+  }
+
+  #card-form-input-wrapper{
+    display: grid;
+    gap: 0px;
+    grid-template-columns: repeat(2, [col] 50%);
+    grid-template-rows: repeat(2, [row] 50%);
+  }
+
+  #card-number-field{
+    grid-column: col 1 / span 2;
+    grid-row: row 1 / span 1;
+    border-radius: 10px 10px 0px 0px;
+  }
+
+  #card-exp-field{
+    grid-column: col 1 / span 1;
+    grid-row: row 2 / span 1;
+    border-radius: 0px 0px 0px 10px;
+  }
+
+  #card-cvc-field{
+    grid-column: col 2 / span 1;
+    grid-row: row 2 / span 1;
+    border-radius: 0px 0px 10px 0px;
+  }
 </style>
