@@ -16,46 +16,7 @@
     postal_code: ""
   });
 
-  function into_readable(mod_id){
-    console.log("DEBUG - into_readable: start");
-    switch(mod_id){
-      case 0: // card_number
-        switch(payment_form.card_number.length){
-          case(4):
-          case(9):
-          case(14):
-            payment_form.card_number = payment_form.card_number + " ";
-            break;
-        };
-        break;
-      case 1:  // exp
-        switch(payment_form.exp.length){
-          case(2):
-            payment_form.exp = payment_form.exp + " / "; 
-            break;
-        }
-        break;
-      case 2:  // postal_code
-        switch(payment_form.country){
-          case "canada":
-            if (payment_form.postal_code.length == 3){
-              payment_form.postal_code = payment_form.postal_code + " ";
-            };
-          case "haiti":
-            if (payment_form.postal_code.length == 2){
-              payment_form.postal_code = payment_form.postal_code + " ";
-            };
-            break;
-          default:
-            break;
-        }
-        break;
-    };
-  }  
-
-  function card_number_remove_spaces(){
-    // TODO  
-  }
+  // ----------------------------------------- Thank You Section 
 
   let colors = [
     'rgba(66,245,185,1)',
@@ -97,39 +58,201 @@
     console.log("Country: " + payment_form.country);
   }
   
-  function handleRelease(){ // Test
-    test_bg = 'white'
-  }
-  
-  let postal_code_placeholder = "A1A 2B2";
+  // ----------------------------------------- Form Make Pretty
+
+  function into_readable(mod_id){
+    console.log("DEBUG - into_readable: start");
+    switch(mod_id){
+      case 0: // card_number
+        switch(payment_form.card_number.length){
+          case(4):
+          case(9):
+          case(14):
+            payment_form.card_number = payment_form.card_number + " ";
+            break;
+        };
+        break;
+      case 1:  // exp
+        switch(payment_form.exp.length){
+          case(2):
+            payment_form.exp = payment_form.exp + " / "; 
+            break;
+        }
+        break;
+      case 2:  // postal_code
+        switch(payment_form.country){
+          case "canada":
+            if (payment_form.postal_code.length == 3){
+              payment_form.postal_code = payment_form.postal_code + " ";
+            };
+            break;
+          case "haiti":
+            if (payment_form.postal_code.length == 2){
+              payment_form.postal_code = payment_form.postal_code + " ";
+            };
+            break;
+          default:
+            break;
+        }
+        break;
+    };
+  }  
+
+  // ----------------------------------------- Form Postal Code
+
+  let postal_code_placeholder = "A1A 1B1";
   let postal_code_max_length = 7;
+  let postal_input_mode = "text";
 
   function format_postal_code(){
     payment_form.postal_code = ""; 
     switch(payment_form.country){
       case "canada":
         postal_code_max_length = 7;
-        postal_code_placeholder = "A1A 1A1";
+        postal_code_placeholder = "A1A 1B1";
+        postal_input_mode = "text";
         break;
       case "dominican republic":
         postal_code_max_length = 5;
         postal_code_placeholder = "12345";
+        postal_input_mode = "numeric";
         break;
       case "france":
         postal_code_max_length = 5;
         postal_code_placeholder = "12345";
+        postal_input_mode = "numeric";
         break;
       case "haiti":
         postal_code_max_length = 7;
         postal_code_placeholder = "HT 1234";
+        postal_input_mode = "text";
         break;
       case "united states":
         postal_code_max_length = 5;
         postal_code_placeholder = "12345";
+        postal_input_mode = "numeric";
         break;
     }; 
   }
 
+  // ----------------------------------------- Form validation 
+
+  let is_valid = {
+    email: 1,
+    card_number: 1,
+    exp: 1,
+    cvc: 1,
+    name: 1,
+    postal_code: 1
+  };
+
+  function remove_slash_ws(value){
+    new_value = temp_value.replace(/\//g, ""); // remove slashes
+    new_value = temp_value.replace(/\s+/g, ""); // remove whitespace
+    return new_value; 
+  }
+
+  function is_all_number(value){
+    let temp_value = value; // maybe not req
+    temp_value = remove_slash_ws(temp_value);
+    let is_num = /^\d+$/.test(temp_value); // false if not [0-9] exclusively
+    return is_num;
+  }
+
+  function is_valid_email_format(email){
+    if ( email.length < 6 
+      || !email.contains("@") 
+      || !email.contains(".")){
+      return 0; 
+    }
+    // checking shortest possible email: a@b.cd
+    if ((email.indexOf(".") - email.indexOf("@")) < 2
+      && (email.length - email.indexOf(".")) < 2) {
+      return 0;
+    };
+    return 1; 
+  }
+
+  function is_valid_postal_code_format(country, postal_code){
+    let temp_postal_code = remove_slash_ws(postal_code);
+    temp_postal_code.toLowerCase();
+
+    switch(country){
+      case "canada": 
+        if (temp_postal_code.length != 6){
+          return 0;
+        };
+        for (let i = 0; i < 7; i++){
+          pos = temp_postal_code.chatAt(i);
+          switch(i){
+            case 1: 
+            case 3: 
+            case 5:
+              if (!pos.match(/[a-z]/i)){
+                return 0
+              }; 
+              break;
+            case 2: 
+            case 4: 
+            case 6:
+              if (!(/^\d+$/.test(pos))){ // eh TODO
+                return 0
+              }; 
+              break;
+          };
+        };
+        break;
+      case "haiti": 
+        if (temp_postal_code.length != 6){
+          return 0;
+        };    
+        break;
+      case "dominican republic": 
+      case "france": 
+      case "united states": 
+        if (temp_postal_code.length != 5){
+          return 0;
+        };
+        break;
+    }; 
+  }
+  
+  // boiler plate; TODO
+  function validate_form(){ 
+    let all_valid = 1;
+    if (!is_valid_email_format(payment_form.email)){
+      is_valid.email = 0;
+      all_valid = 0;
+    };
+    if (!is_all_number(payment_form.card_number) 
+      && payment_form.card_number.length != 19 ){
+      is_valid.card_number = 0;
+      all_valid = 0;
+    }; 
+    if (!is_all_number(payment_form.exp) 
+      && payment_form.exp.length != 7){
+      is_valid.exp = 0;
+      all_valid = 0;
+    };
+    if (!is_all_number(payment_form.cvc) 
+      && payment_form.cvc.length != 3){
+      is_valid.cvc = 0;  
+      all_valid = 0;
+    };
+    if (payment_form.name < 2){ // weak sauce; is no last name a thing in the yr of our lord?
+      is_valid.name = 0;
+      all_valid = 0;
+    };
+    return all_valid;
+  }
+
+  // ----------------------------------------- Send To Backend 
+
+  function card_number_remove_spaces(){
+    // TODO  
+  }
+
+  
 </script>
 
 <Navbar current_nav_page = 'donate'/>
@@ -249,8 +372,9 @@
                   <option value="united states" selected="selected">United States</option>
                 </select>
                 <input class="group-full-input-fields" id="region-postal-code-field" type="text"
-                  bind:value={payment_form.postal_code} on:input={() => into_readable(2)}
-                  placeholder={postal_code_placeholder} maxlength={postal_code_max_length} />
+                  bind:value={payment_form.postal_code} on:input={() => into_readable(2)} 
+                  placeholder={postal_code_placeholder} maxlength={postal_code_max_length}
+                  inputmode={postal_input_mode} /> <!-- inputmode currently not working -->
               </div>
             </div>
 
