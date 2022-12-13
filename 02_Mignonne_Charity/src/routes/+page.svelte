@@ -4,7 +4,7 @@
   import Panels from './home/Panels.svelte';
 </script>
 
-<Navbar/>
+<Navbar current_nav_page = ''/>
 <main>
   <Panels></Panels>
 </main>

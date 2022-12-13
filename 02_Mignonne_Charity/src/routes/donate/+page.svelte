@@ -5,16 +5,16 @@
   import Footer from './../shared/Footer.svelte'
   import Todo from './../shared/Todo.svelte'
 
-  let payment_form = writable({
+  let payment_form = {
     name: "",
     email: "",
     amount: 0,
-    card_number: "10",
+    card_number: "",
     exp: "",
     cvc: "",
-    country: "",
+    country: "canada",
     postal_code: ""
-  });
+  };
 
   // ----------------------------------------- Thank You Section 
 
@@ -24,12 +24,15 @@
     'rgba(73,234,242,1)',
     'rgba(46,152,158,1)',
     'rgba(235,89,128,1)',
-    'rgba(179,61,92,1)'
+    'rgba(179,61,92,1)',
+    'rgba(10,10,10,1)',
+    'rgba(0,0,0,1)'
   ];
 
   let first_option_color = colors[0];
   let second_option_color = colors[2];
   let third_option_color = colors[4];
+  let donate_button_color = colors[6];
 
   function handle_click_release(is_down, option_id){
     console.log("got a click/release");
@@ -46,6 +49,9 @@
       case 3:
         donation_amount = 15;
         third_option_color = !is_down ? colors[4] : colors[5]; 
+        break;
+      case 4:
+        donate_button_color = !is_down ? colors[6] : colors[7]; 
         break;
     }
     payment_form.amount = is_down ? donation_amount : payment_form.amount; 
@@ -136,6 +142,14 @@
   }
 
   // ----------------------------------------- Form validation 
+  
+  // continue here----------------------------------------------------------------------------------
+  let border_color_email = 'black';  
+  let border_color_card_number = 'black';  
+  let border_color_exp = 'black';  
+  let border_color_cvc = 'black';  
+  let border_color_name = 'black';  
+  let border_color_postal_code = 'black';  
 
   let is_valid = {
     email: 1,
@@ -147,8 +161,9 @@
   };
 
   function remove_slash_ws(value){
-    new_value = temp_value.replace(/\//g, ""); // remove slashes
-    new_value = temp_value.replace(/\s+/g, ""); // remove whitespace
+    let new_value = value;
+    new_value = new_value.replace(/\//g, ""); // remove slashes
+    new_value = new_value.replace(/\s+/g, ""); // remove whitespace
     return new_value; 
   }
 
@@ -159,43 +174,52 @@
     return is_num;
   }
 
-  function is_valid_email_format(email){
-    if ( email.length < 6 
-      || !email.contains("@") 
-      || !email.contains(".")){
+  function is_valid_email_format(){
+    let temp_email = payment_form.email;
+    temp_email = temp_email.toLowerCase();
+
+    if ( temp_email.length < 6 
+      || !temp_email.includes("@") 
+      || !temp_email.includes(".")){
       return 0; 
     }
     // checking shortest possible email: a@b.cd
-    if ((email.indexOf(".") - email.indexOf("@")) < 2
-      && (email.length - email.indexOf(".")) < 2) {
+    if ((temp_email.indexOf(".") - temp_email.indexOf("@")) < 2
+      && (temp_email.length - temp_email.indexOf(".")) < 2) {
       return 0;
     };
     return 1; 
   }
 
-  function is_valid_postal_code_format(country, postal_code){
-    let temp_postal_code = remove_slash_ws(postal_code);
-    temp_postal_code.toLowerCase();
-
-    switch(country){
+  function is_valid_postal_code_format(){
+    let temp_postal_code = remove_slash_ws(payment_form.postal_code);
+    temp_postal_code = temp_postal_code.toLowerCase();
+    
+    console.log("temp_postal_code: " + temp_postal_code);
+    switch(payment_form.country){
       case "canada": 
+        if (temp_postal_code.length != 6){
+          return 0;
+        };    
         if (temp_postal_code.length != 6){
           return 0;
         };
         for (let i = 0; i < 7; i++){
-          pos = temp_postal_code.chatAt(i);
+          let pos = temp_postal_code.charAt(i);
           switch(i){
-            case 1: 
-            case 3: 
-            case 5:
+            case 0: 
+            case 2: 
+            case 4:
               if (!pos.match(/[a-z]/i)){
+                console.log(" "+ pos);
                 return 0
               }; 
               break;
-            case 2: 
-            case 4: 
-            case 6:
+            case 1: 
+            case 3: 
+            case 5:
               if (!(/^\d+$/.test(pos))){ // eh TODO
+                console.log(" "+ pos);
                 return 0
               }; 
               break;
@@ -206,6 +230,27 @@
         if (temp_postal_code.length != 6){
           return 0;
         };    
+        console.log("DEBUG: Haiti Postal Code: " + temp_postal_code);
+        for (let i = 0; i < 7; i++){
+          let pos = temp_postal_code.charAt(i);
+          switch(i){
+            case 0: 
+            case 1: 
+              if (!pos.match(/[a-z]/i)){ // TODO not limited to HT
+                return 0;
+              }; 
+              break;
+            case 2: 
+            case 3: 
+            case 4:
+            case 5:
+              if (!(/^\d+$/.test(pos))){ // eh TODO
+                console.log(" "+ pos);
+                return 0;
+              }; 
+              break;
+          };
+        };
         break;
       case "dominican republic": 
       case "france": 
@@ -213,49 +258,83 @@
         if (temp_postal_code.length != 5){
           return 0;
         };
+        if (!(/^\d+$/.test(temp_postal_code))){
+          return 0;
+        }
         break;
     }; 
+    return 1;
   }
   
   // boiler plate; TODO
   function validate_form(){ 
     let all_valid = 1;
-    if (!is_valid_email_format(payment_form.email)){
+    if (!is_valid_email_format()){
+      border_color_email = 'red';
       is_valid.email = 0;
       all_valid = 0;
+    } else {
+      border_color_email = 'black';
     };
     if (!is_all_number(payment_form.card_number) 
-      && payment_form.card_number.length != 19 ){
+      || payment_form.card_number.length != 19 ){
+      border_color_card_number = 'red';
       is_valid.card_number = 0;
       all_valid = 0;
+    } else {
+      border_color_card_number = 'black';
     }; 
     if (!is_all_number(payment_form.exp) 
-      && payment_form.exp.length != 7){
+      || payment_form.exp.length != 7){
+      border_color_exp = 'red';
       is_valid.exp = 0;
       all_valid = 0;
+    } else {
+      border_color_exp = 'black';
     };
     if (!is_all_number(payment_form.cvc) 
       && payment_form.cvc.length != 3){
+      border_color_cvc = 'red';
       is_valid.cvc = 0;  
       all_valid = 0;
+    } else {
+      border_color_cvc = 'black';
     };
     if (payment_form.name < 2){ // weak sauce; is no last name a thing in the yr of our lord?
+      border_color_name = 'red';
       is_valid.name = 0;
       all_valid = 0;
+    } else {
+      border_color_name = 'black';
     };
+    if (!is_valid_postal_code_format()){
+      border_color_postal_code = 'red';
+      is_valid.postal_code = 0;
+      all_valid = 0;
+    } else {
+      border_color_postal_code = 'black';
+    };
+    
+    console.log("DEBUG: all_valid: " + all_valid);
     return all_valid;
   }
 
   // ----------------------------------------- Send To Backend 
 
-  function card_number_remove_spaces(){
-    // TODO  
-  }
+  function test_send_to_back_end (){
+    // clean up trailing whitespace ; trim error TODO
+    // payment_form.email = payment_form.email.trim();
+    // payment_form.name = payment_form.name.trim();
 
-  
+    if (!validate_form()){
+      console.log("Form is invalid");
+    } else {
+      console.log("We've got a valid form!!")
+    };
+  }
 </script>
 
-<Navbar current_nav_page = 'donate'/>
+  <Navbar current_nav_page = 'donate'/>
 
   <div class="donate-outer-wrapper">
     <div class="donate-inner-wrapper">
@@ -270,32 +349,37 @@
             <div id="amount-manual-field-text"> Amount </div>
           </div> 
 
-          <div class="amount-options-wrapper">
-           
-            <div class="group-amount-options" id="first-amount-option"
-              on:mousedown={() => handle_click_release(1, 1)} on:mouseup={() => handle_click_release(0, 1)} 
-              style="--first-option-color: {first_option_color}">  
-              <div class="group-amount-option-text" id="first-amount-option-text">
-                $5
-              </div>
-            </div>  
-            <div class="group-amount-options" id="second-amount-option" 
-              on:mousedown={() => handle_click_release(1, 2)} on:mouseup={() => handle_click_release(0, 2)} 
-              style="--second-option-color: {second_option_color}">  
-              <div class="group-amount-option-text" id="second-amount-option-text">
-                $10
-              </div>
-            </div>  
-            <div class="group-amount-options" id="third-amount-option"
-              on:mousedown={() => handle_click_release(1, 3)} on:mouseup={() => handle_click_release(0, 3)} 
-              style="--third-option-color: {third_option_color}">  
-              <div class="group-amount-option-text" id="third-amount-option-text">
-                $15
-              </div>
-            </div>  
+          <div class="amount-options-outer-wrapper">
+            <div class="amount-options-inner-wrapper">
+             
+              <div class="group-amount-options block-select" id="first-amount-option"
+                on:mousedown={() => handle_click_release(1, 1)} on:mouseup={() => handle_click_release(0, 1)} 
+                style="--first-option-color: {first_option_color}">  
+                <div class="group-amount-option-text" id="first-amount-option-text">
+                  $5
+                </div>
+              </div>  
+              <div class="group-amount-options block-select" id="second-amount-option" 
+                on:mousedown={() => handle_click_release(1, 2)} on:mouseup={() => handle_click_release(0, 2)} 
+                style="--second-option-color: {second_option_color}">  
+                <div class="group-amount-option-text" id="second-amount-option-text">
+                  $10
+                </div>
+              </div>  
+              <div class="group-amount-options block-select" id="third-amount-option"
+                on:mousedown={() => handle_click_release(1, 3)} on:mouseup={() => handle_click_release(0, 3)} 
+                style="--third-option-color: {third_option_color}">  
+                <div class="group-amount-option-text" id="third-amount-option-text">
+                  $15
+                </div>
+              </div>  
 
             </div>
-          <div>
+          </div>
+          <div class="thank-you-message-wrapper">
+            <div id="thank-you-message-text">
+              Thank You! 
+            </div>
           </div>
         </div>
       </div>
@@ -332,7 +416,8 @@
               <label>Email</label>
               <div class="group-form-input-wrapper">
                 <input class="group-full-input-fields" type="text" id="email-field"
-                  placeholder="email@example.com" bind:value={$payment_form.email} />
+                  style="--email-field-border-color: {border_color_email}"
+                  placeholder="email@example.com" bind:value={payment_form.email} />
                 <br />
               </div>
             </div>
@@ -341,12 +426,15 @@
               <label>Card Information</label>
               <div class="group-form-input-wrapper" id="card-form-input-wrapper">
                 <input class="group-full-input-fields" id="card-number-field" type="text"
+                  style="--card-number-field-border-color: {border_color_card_number}"
                   bind:value={payment_form.card_number} on:input={() => into_readable(0)}
                   placeholder="1234 1234 1234 1234" maxlength="19"/>
                 <input class="group-full-input-fields" id="card-exp-field" type="text"
+                  style="--exp-field-border-color: {border_color_exp}"
                   on:input={() => into_readable(1)} bind:value={payment_form.exp} 
                   placeholder="MM / YY" maxlength="7"/>
                 <input class="group-full-input-fields" id="card-cvc-field" type="text"
+                  style="--cvc-field-border-color: {border_color_cvc}"
                   bind:value={payment_form.cvc} placeholder="CVC" maxlength="3" />
               </div>
             </div>
@@ -355,7 +443,8 @@
               <label>Name on card</label>
               <div class="group-form-input-wrapper" id="form-name-wrapper">
                 <input class="group-full-input-fields" id="name-field" type="text"
-                  placeholder="Josaphine Doe" bind:value={$payment_form.name} />
+                  style="--name-field-border-color: {border_color_name}"
+                  placeholder="Josaphine Doe" bind:value={payment_form.name} />
                 <br />
               </div>
             </div>
@@ -365,21 +454,25 @@
               <div class="group-form-input-wrapper" id="region-form-input-wrapper">
                 <select class="group-full-input-fields" id="region-country-field" type="text"
                   bind:value={payment_form.country} on:change={format_postal_code}> 
-                  <option value="canada" selected="selected">Canada</option>
-                  <option value="dominican republic" selected="selected">Dominican Republic</option>
-                  <option value="france" selected="selected">France</option>
-                  <option value="haiti" selected="selected">Haiti</option>
-                  <option value="united states" selected="selected">United States</option>
+                  <option selected value="canada">Canada</option>
+                  <option value="dominican republic">Dominican Republic</option>
+                  <option value="france">France</option>
+                  <option value="haiti">Haiti</option>
+                  <option value="united states">United States</option>
                 </select>
-                <input class="group-full-input-fields" id="region-postal-code-field" type="text"
+                <input class="group-full-input-fields" id="region-postal-code-field" type="text" 
+                  style="--postal-code-field-border-color: {border_color_postal_code}"
                   bind:value={payment_form.postal_code} on:input={() => into_readable(2)} 
                   placeholder={postal_code_placeholder} maxlength={postal_code_max_length}
-                  inputmode={postal_input_mode} /> <!-- inputmode currently not working -->
+                  inputmode={postal_input_mode} />
               </div>
             </div>
 
             <div class="group-form-subsection" id="button-form-subsection">
-              <div id="form-donate-button">
+              <div class="block-select" id="form-donate-button" style="--donate-button-color: {donate_button_color}"
+              on:mousedown={() => handle_click_release(1, 4)} on:mouseup={() => handle_click_release(0, 4)} 
+              on:click={test_send_to_back_end}
+              >
                 Donate
               </div>
             </div>
@@ -419,6 +512,15 @@
     /* border: 2px red solid; */
   }
 
+  .block-select{
+    /* block text selection across browsers */
+    -moz-user-select: none;
+    -ktml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  } 
+
   /* ---------------- Thank You Section ---------------- */
 
   .test{ /* Delete */
@@ -439,7 +541,7 @@
     ;
     grid-column: 1 / span 2;
     background-image: linear-gradient(to right, rgba(222,220,181,1), rgba(230, 229, 218,1));
-    border: 4px solid red;
+    /* border: 4px solid red; */
     /* background-color: rgba(186, 222, 215, 1); */
     /* background-color: rgba(222, 220, 186, 1); */
   }
@@ -481,11 +583,19 @@
     font-weight: bold;
   }
 
-  .amount-options-wrapper{
+  .amount-options-outer-wrapper{
+    @apply
+      flex
+      justify-center
+    ;
+    width: 100%;
+  }
+
+  .amount-options-inner-wrapper{
     margin-top: 1rem;
     justify-content: center;
     text-align: center;
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
 
     border: 4px solid purple;
@@ -498,8 +608,8 @@
       justify-center
     ;
     cursor: pointer;
-    margin: 2.6rem 0rem;
-    height: 120px;
+    margin: 2.1rem 0rem;
+    height: 100px;
     width: 100%;
     box-shadow: 0;
     transition: box-shadow 100ms;
@@ -515,13 +625,6 @@
   .group-amount-option-text{
     font-size: 50px;
     font-weight: bold;
-   
-    /* block text selection across browsers */
-    -moz-user-select: none;
-    -ktml-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
   }
 
   #first-amount-option{
@@ -535,6 +638,25 @@
   #third-amount-option{
     background-color: var(--third-option-color);
   }
+
+  .thank-you-message-wrapper{
+    @apply
+      flex
+      flex-col
+      justify-center
+      my-[2rem]
+      py-[auto]
+    ;
+    width: 100%;
+    height: 7rem;
+    border: 2px solid red;
+  }  
+
+  #thank-you-message-text{
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+  }  
 
   /* ---------------- Donate Form Section ---------------- */
   .donate-payment-outer-wrapper{
@@ -684,6 +806,8 @@
 
   #email-field{
     border-radius: 10px;
+    border-color: var(--email-field-border-color);
+    /* above returns non black color */
   }
 
   #card-form-input-wrapper{
@@ -697,22 +821,26 @@
     grid-column: col 1 / span 2;
     grid-row: row 1 / span 1;
     border-radius: 10px 10px 0px 0px;
+    border-color: var(--card-number-field-border-color);
   }
 
   #card-exp-field{
     grid-column: col 1 / span 1;
     grid-row: row 2 / span 1;
     border-radius: 0px 0px 0px 10px;
+    border-color: var(--exp-field-border-color);
   }
 
   #card-cvc-field{
     grid-column: col 2 / span 1;
     grid-row: row 2 / span 1;
     border-radius: 0px 0px 10px 0px;
+    border-color: var(--cvc-field-border-color);
   }
 
   #name-field{
     border-radius: 10px;
+    border-color: var(--name-field-border-color);
   }
 
   #region-form-input-wrapper{
@@ -737,6 +865,7 @@
     text-transform: uppercase;
     border-radius: 0px 10px 10px 0px;
     grid-column: col 2 / span 1;
+    border-color: var(--postal-code-field-border-color);
   }
 
   #form-donate-button{
@@ -745,14 +874,15 @@
     color: white;
     font-size: 21px;
     font-weight: bold;
-    background-color: black;
+    background-color: var(--donate-button-color);
     width: 100%;
     border-radius: 10px;
-    border: 2px solid red;
+    border: 2px solid orange;
+    cursor: pointer;
   }
 
-  #donate-button:hover{
-
+  #form-donate-button:hover{
+    box-shadow: 0 0 4px black;  
   }
 
   #payment-separator-wrapper{
