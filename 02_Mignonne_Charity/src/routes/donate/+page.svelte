@@ -29,6 +29,10 @@
     'rgba(0,0,0,1)'
   ];
 
+  let first_option_amount = 10;
+  let second_option_amount = 30;
+  let third_option_amount = 50;
+
   let first_option_color = colors[0];
   let second_option_color = colors[2];
   let third_option_color = colors[4];
@@ -39,15 +43,15 @@
     let donation_amount = 0;
     switch(option_id){
       case 1:
-        donation_amount = 5;
+        donation_amount = first_option_amount;
         first_option_color = !is_down ? colors[0] : colors[1]; 
         break;
       case 2:
-        donation_amount = 10;
+        donation_amount = second_option_amount;
         second_option_color = !is_down ? colors[2] : colors[3]; 
         break;
       case 3:
-        donation_amount = 15;
+        donation_amount = third_option_amount;
         third_option_color = !is_down ? colors[4] : colors[5]; 
         break;
       case 4:
@@ -143,7 +147,6 @@
 
   // ----------------------------------------- Form validation 
   
-  // continue here----------------------------------------------------------------------------------
   let border_color_email = 'black';  
   let border_color_card_number = 'black';  
   let border_color_exp = 'black';  
@@ -293,7 +296,7 @@
       border_color_exp = 'black';
     };
     if (!is_all_number(payment_form.cvc) 
-      && payment_form.cvc.length != 3){
+      || payment_form.cvc.length != 3){
       border_color_cvc = 'red';
       is_valid.cvc = 0;  
       all_valid = 0;
@@ -356,21 +359,21 @@
                 on:mousedown={() => handle_click_release(1, 1)} on:mouseup={() => handle_click_release(0, 1)} 
                 style="--first-option-color: {first_option_color}">  
                 <div class="group-amount-option-text" id="first-amount-option-text">
-                  $5
+                  ${first_option_amount}
                 </div>
               </div>  
               <div class="group-amount-options block-select" id="second-amount-option" 
                 on:mousedown={() => handle_click_release(1, 2)} on:mouseup={() => handle_click_release(0, 2)} 
                 style="--second-option-color: {second_option_color}">  
                 <div class="group-amount-option-text" id="second-amount-option-text">
-                  $10
+                  ${second_option_amount}
                 </div>
               </div>  
               <div class="group-amount-options block-select" id="third-amount-option"
                 on:mousedown={() => handle_click_release(1, 3)} on:mouseup={() => handle_click_release(0, 3)} 
                 style="--third-option-color: {third_option_color}">  
                 <div class="group-amount-option-text" id="third-amount-option-text">
-                  $15
+                  ${third_option_amount}
                 </div>
               </div>  
 
@@ -413,7 +416,12 @@
             </div>
 
             <div class="group-form-subsection">
-              <label>Email</label>
+              <div class="group-form-label-wrapper">
+                <label class="form-label-title">Email</label>
+                {#if !is_valid.email}
+                  <label class="form-label-invalid">Invalid</label>
+                {/if}
+              </div>
               <div class="group-form-input-wrapper">
                 <input class="group-full-input-fields" type="text" id="email-field"
                   style="--email-field-border-color: {border_color_email}"
@@ -423,7 +431,12 @@
             </div>
 
             <div class="group-form-subsection">
-              <label>Card Information</label>
+              <div class="group-form-label-wrapper">
+                <label class="form-label-title">Card Information</label>
+                {#if (!is_valid.card_number || !is_valid.exp || !is_valid.cvc)}
+                  <label class="form-label-invalid">Invalid</label>
+                {/if}
+              </div>
               <div class="group-form-input-wrapper" id="card-form-input-wrapper">
                 <input class="group-full-input-fields" id="card-number-field" type="text"
                   style="--card-number-field-border-color: {border_color_card_number}"
@@ -440,7 +453,12 @@
             </div>
 
             <div class="group-form-subsection">
-              <label>Name on card</label>
+              <div class="group-form-label-wrapper">
+                <label class="form-label-title">Name on card</label>
+                {#if !is_valid.name}
+                  <label class="form-label-invalid">Invalid</label>
+                {/if}
+              </div>
               <div class="group-form-input-wrapper" id="form-name-wrapper">
                 <input class="group-full-input-fields" id="name-field" type="text"
                   style="--name-field-border-color: {border_color_name}"
@@ -450,7 +468,12 @@
             </div>
 
             <div class="group-form-subsection">
-              <label> Country / Region </label>
+              <div class="group-form-label-wrapper">
+                <label class="form-label-title"> Country / Region </label>
+                {#if !is_valid.postal_code}
+                  <label class="form-label-invalid">Invalid</label>
+                {/if}
+              </div>
               <div class="group-form-input-wrapper" id="region-form-input-wrapper">
                 <select class="group-full-input-fields" id="region-country-field" type="text"
                   bind:value={payment_form.country} on:change={format_postal_code}> 
@@ -497,13 +520,14 @@
       justify-center
     ;
     width: 100vw;
-    background: linear-gradient(to right, rgba(222,220,181,1) 50%, rgba(242,241,240,1) 50%);
+    background: linear-gradient(to right, rgba(227,216,209,1) 50%, rgba(242,241,240,1) 50%);
+    /* background: linear-gradient(to right, rgba(222,220,181,1) 50%, rgba(242,241,240,1) 50%); */
     /* border: 2px solid yellow; */
   }
 
   .donate-inner-wrapper{
     margin-top: 0.3rem;
-    height: 1000px;
+    height: 900px;
     width: 1285px;
     display: grid;
     grid-template-columns: repeat(5, [col] 20%);
@@ -540,7 +564,8 @@
       justify-end
     ;
     grid-column: 1 / span 2;
-    background-image: linear-gradient(to right, rgba(222,220,181,1), rgba(230, 229, 218,1));
+    background-image: linear-gradient(to right, rgba(227,216,209,1), rgba(230, 229, 218,1));
+    /* background-image: linear-gradient(to right, rgba(222,220,181,1), rgba(230, 229, 218,1)); */
     /* border: 4px solid red; */
     /* background-color: rgba(186, 222, 215, 1); */
     /* background-color: rgba(222, 220, 186, 1); */
@@ -663,7 +688,7 @@
     @apply
       flex
       justify-start
-      py-[1rem]
+      py-[3rem]
     ;
     box-shadow: -4px 0 4px rgba(121,121,122,1);
     grid-column: 3 / span 3;
@@ -675,7 +700,7 @@
     @apply
       flex
       justify-center
-      py-[2rem]
+      py-[1.5rem]
     ;
     width: 100%;
     border: 2px solid green;
@@ -684,6 +709,7 @@
   .donate-payment-inner-wrapper{
     position: relative;
     width: 80%;
+    height: 100%;
     border: 4px solid green;
   }
   /* ---------------- Form Group ---------------- */
@@ -692,8 +718,9 @@
       flex
       flex-col
     ;
-    padding: 1rem 0px;
-    border: 2px solid blue;
+    padding: 0.7rem 0px;
+
+    /* border: 2px solid blue; */
   }
 
   .group-form-input-wrapper{
@@ -703,12 +730,12 @@
     text-align: center;
     width: 100%;
 
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
   }
 
   .group-full-input-fields{
     position: relative;
-    height: 2.5rem;
+    height: 2.9rem;
     width: 100%;
     font-size: 1.03rem;
     padding: 0px 2.1rem;
@@ -721,14 +748,39 @@
     width: 48%;
   }
 
-  label{
+  .group-form-label-wrapper{
+    margin-bottom: 0.1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, [col] 50%);
+    grid-template-rows: 100%;
+
+    /* border: 2px solid green; */
+  }
+
+  .form-label-title{
     padding: 0px 0.5rem;
     font-size: 1.1rem;
     font-weight: bold;
     width: 100%;
     white-space: nowrap;
     box-sizing: border-box;
-    border: 2px solid red;
+    grid-column: col 1 / span 1;
+
+    /* border: 2px solid red; */
+  }
+
+  .form-label-invalid{
+    padding: 0px 2rem;
+    color: red;
+    font-size: 1.1rem;
+    width: 100%;
+    white-space: nowrap;
+    text-align: right;
+    box-sizing: border-box;
+    grid-column: col 2 / span 1;
+
+    /* border: 2px solid red; */
   }
 
   input:focus{
@@ -869,6 +921,7 @@
   }
 
   #form-donate-button{
+    margin-top: 0.5rem;
     padding: 15px 0px;
     text-align: center;
     color: white;
@@ -885,15 +938,16 @@
     box-shadow: 0 0 4px black;  
   }
 
+  /* Negative value; review. TODO */
   #payment-separator-wrapper{
     width: 100%;
     height: 40px;
     display: grid;
-    margin: 0.5rem 0;
+    margin: 1.5rem 0 -0.2rem 0; 
     grid-template-columns: repeat(8, [col] 12.5%);
     grid-template-rows: 100%;
 
-    border: 2px red solid;
+    /* border: 2px red solid; */
   }
 
   hr{
