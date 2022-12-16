@@ -340,169 +340,173 @@
   <Navbar current_nav_page = 'donate'/>
 
   <div class="donate-outer-wrapper">
-    <div class="donate-inner-wrapper">
+    <div class="donate-mid-wrapper">
+      <div class="donate-mid-wrapper-cover">
+        <div class="donate-inner-wrapper">
 
-      <div class="donate-thank-you-panel">
-        <div id="group-thank-you-subsection">
+          <div class="donate-thank-you-panel">
+            <div id="group-thank-you-subsection">
 
-          <div id="amount-manual-wrapper">
-            <input class="group-full-input-fields" id="amount-manual-field" type="text" 
-              placeholder="$ 0" bind:value={payment_form.amount} />
-            <br />
-            <div id="amount-manual-field-text"> Amount </div>
-          </div> 
+              <div id="amount-manual-wrapper">
+                <input class="group-full-input-fields" id="amount-manual-field" type="text" 
+                  placeholder="$ 0" bind:value={payment_form.amount} />
+                <br />
+                <div id="amount-manual-field-text"> Amount </div>
+              </div> 
 
-          <div class="amount-options-outer-wrapper">
-            <div class="amount-options-inner-wrapper">
-             
-              <div class="group-amount-options block-select" id="first-amount-option"
-                on:mousedown={() => handle_click_release(1, 1)} on:mouseup={() => handle_click_release(0, 1)} 
-                style="--first-option-color: {first_option_color}">  
-                <div class="group-amount-option-text" id="first-amount-option-text">
-                  ${first_option_amount}
+              <div class="amount-options-outer-wrapper">
+                <div class="amount-options-inner-wrapper">
+                 
+                  <div class="group-amount-options block-select" id="first-amount-option"
+                    on:mousedown={() => handle_click_release(1, 1)} on:mouseup={() => handle_click_release(0, 1)} 
+                    style="--first-option-color: {first_option_color}">  
+                    <div class="group-amount-option-text" id="first-amount-option-text">
+                      ${first_option_amount}
+                    </div>
+                  </div>  
+                  <div class="group-amount-options block-select" id="second-amount-option" 
+                    on:mousedown={() => handle_click_release(1, 2)} on:mouseup={() => handle_click_release(0, 2)} 
+                    style="--second-option-color: {second_option_color}">  
+                    <div class="group-amount-option-text" id="second-amount-option-text">
+                      ${second_option_amount}
+                    </div>
+                  </div>  
+                  <div class="group-amount-options block-select" id="third-amount-option"
+                    on:mousedown={() => handle_click_release(1, 3)} on:mouseup={() => handle_click_release(0, 3)} 
+                    style="--third-option-color: {third_option_color}">  
+                    <div class="group-amount-option-text" id="third-amount-option-text">
+                      ${third_option_amount}
+                    </div>
+                  </div>  
+
                 </div>
-              </div>  
-              <div class="group-amount-options block-select" id="second-amount-option" 
-                on:mousedown={() => handle_click_release(1, 2)} on:mouseup={() => handle_click_release(0, 2)} 
-                style="--second-option-color: {second_option_color}">  
-                <div class="group-amount-option-text" id="second-amount-option-text">
-                  ${second_option_amount}
+              </div>
+              <div class="thank-you-message-wrapper">
+                <div id="thank-you-message-text">
+                  Thank You! 
                 </div>
-              </div>  
-              <div class="group-amount-options block-select" id="third-amount-option"
-                on:mousedown={() => handle_click_release(1, 3)} on:mouseup={() => handle_click_release(0, 3)} 
-                style="--third-option-color: {third_option_color}">  
-                <div class="group-amount-option-text" id="third-amount-option-text">
-                  ${third_option_amount}
-                </div>
-              </div>  
-
+              </div>
             </div>
           </div>
-          <div class="thank-you-message-wrapper">
-            <div id="thank-you-message-text">
-              Thank You! 
+
+          <div class="donate-payment-outer-wrapper">
+            <div class="donate-payment-mid-wrapper">
+              <div class="donate-payment-inner-wrapper">
+
+                <div class="ext-button-form-subsection">
+                  <a href="" id="paypal-donate-button">
+                    <img id="paypal-button-image" src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-color.svg" />
+                  </a>
+                </div>
+
+                <div class="ext-button-form-subsection">
+                  <a href="" id="gpay-donate-button">
+                    <img id="gpay-button-image" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" />
+                  </a>
+                </div>
+
+                <div id="payment-separator-wrapper">
+                  <div class="payment-separator-group-sides" id="payment-separator-start">
+                    <hr>
+                  </div>
+                  <div id="payment-separator-text">
+                    Or use a card
+                  </div>
+                  <div class="payment-separator-group-sides" id="payment-separator-end">
+                    <hr>
+                  </div>
+                </div>
+
+                <div class="group-form-subsection">
+                  <div class="group-form-label-wrapper">
+                    <label class="form-label-title">Email</label>
+                    {#if !is_valid.email}
+                      <label class="form-label-invalid">Invalid</label>
+                    {/if}
+                  </div>
+                  <div class="group-form-input-wrapper">
+                    <input class="group-full-input-fields" type="text" id="email-field"
+                      style="--email-field-border-color: {border_color_email}"
+                      placeholder="email@example.com" bind:value={payment_form.email} />
+                    <br />
+                  </div>
+                </div>
+
+                <div class="group-form-subsection">
+                  <div class="group-form-label-wrapper">
+                    <label class="form-label-title">Card Information</label>
+                    {#if (!is_valid.card_number || !is_valid.exp || !is_valid.cvc)}
+                      <label class="form-label-invalid">Invalid</label>
+                    {/if}
+                  </div>
+                  <div class="group-form-input-wrapper" id="card-form-input-wrapper">
+                    <input class="group-full-input-fields" id="card-number-field" type="text"
+                      style="--card-number-field-border-color: {border_color_card_number}"
+                      bind:value={payment_form.card_number} on:input={() => into_readable(0)}
+                      placeholder="1234 1234 1234 1234" maxlength="19"/>
+                    <input class="group-full-input-fields" id="card-exp-field" type="text"
+                      style="--exp-field-border-color: {border_color_exp}"
+                      on:input={() => into_readable(1)} bind:value={payment_form.exp} 
+                      placeholder="MM / YY" maxlength="7"/>
+                    <input class="group-full-input-fields" id="card-cvc-field" type="text"
+                      style="--cvc-field-border-color: {border_color_cvc}"
+                      bind:value={payment_form.cvc} placeholder="CVC" maxlength="3" />
+                  </div>
+                </div>
+
+                <div class="group-form-subsection">
+                  <div class="group-form-label-wrapper">
+                    <label class="form-label-title">Name on card</label>
+                    {#if !is_valid.name}
+                      <label class="form-label-invalid">Invalid</label>
+                    {/if}
+                  </div>
+                  <div class="group-form-input-wrapper" id="form-name-wrapper">
+                    <input class="group-full-input-fields" id="name-field" type="text"
+                      style="--name-field-border-color: {border_color_name}"
+                      placeholder="Josaphine Doe" bind:value={payment_form.name} />
+                    <br />
+                  </div>
+                </div>
+
+                <div class="group-form-subsection">
+                  <div class="group-form-label-wrapper">
+                    <label class="form-label-title"> Country / Region </label>
+                    {#if !is_valid.postal_code}
+                      <label class="form-label-invalid">Invalid</label>
+                    {/if}
+                  </div>
+                  <div class="group-form-input-wrapper" id="region-form-input-wrapper">
+                    <select class="group-full-input-fields" id="region-country-field" type="text"
+                      bind:value={payment_form.country} on:change={format_postal_code}> 
+                      <option selected value="canada">Canada</option>
+                      <option value="dominican republic">Dominican Republic</option>
+                      <option value="france">France</option>
+                      <option value="haiti">Haiti</option>
+                      <option value="united states">United States</option>
+                    </select>
+                    <input class="group-full-input-fields" id="region-postal-code-field" type="text" 
+                      style="--postal-code-field-border-color: {border_color_postal_code}"
+                      bind:value={payment_form.postal_code} on:input={() => into_readable(2)} 
+                      placeholder={postal_code_placeholder} maxlength={postal_code_max_length}
+                      inputmode={postal_input_mode} />
+                  </div>
+                </div>
+
+                <div class="group-form-subsection" id="button-form-subsection">
+                  <div class="block-select" id="form-donate-button" style="--donate-button-color: {donate_button_color}"
+                  on:mousedown={() => handle_click_release(1, 4)} on:mouseup={() => handle_click_release(0, 4)} 
+                  on:click={test_send_to_back_end}
+                  >
+                    Donate
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div class="donate-payment-outer-wrapper">
-        <div class="donate-payment-mid-wrapper">
-          <div class="donate-payment-inner-wrapper">
-
-            <div class="ext-button-form-subsection">
-              <a href="" id="paypal-donate-button">
-                <img id="paypal-button-image" src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-color.svg" />
-              </a>
-            </div>
-
-            <div class="ext-button-form-subsection">
-              <a href="" id="gpay-donate-button">
-                <img id="gpay-button-image" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" />
-              </a>
-            </div>
-
-            <div id="payment-separator-wrapper">
-              <div class="payment-separator-group-sides" id="payment-separator-start">
-                <hr>
-              </div>
-              <div id="payment-separator-text">
-                Or use a card
-              </div>
-              <div class="payment-separator-group-sides" id="payment-separator-end">
-                <hr>
-              </div>
-            </div>
-
-            <div class="group-form-subsection">
-              <div class="group-form-label-wrapper">
-                <label class="form-label-title">Email</label>
-                {#if !is_valid.email}
-                  <label class="form-label-invalid">Invalid</label>
-                {/if}
-              </div>
-              <div class="group-form-input-wrapper">
-                <input class="group-full-input-fields" type="text" id="email-field"
-                  style="--email-field-border-color: {border_color_email}"
-                  placeholder="email@example.com" bind:value={payment_form.email} />
-                <br />
-              </div>
-            </div>
-
-            <div class="group-form-subsection">
-              <div class="group-form-label-wrapper">
-                <label class="form-label-title">Card Information</label>
-                {#if (!is_valid.card_number || !is_valid.exp || !is_valid.cvc)}
-                  <label class="form-label-invalid">Invalid</label>
-                {/if}
-              </div>
-              <div class="group-form-input-wrapper" id="card-form-input-wrapper">
-                <input class="group-full-input-fields" id="card-number-field" type="text"
-                  style="--card-number-field-border-color: {border_color_card_number}"
-                  bind:value={payment_form.card_number} on:input={() => into_readable(0)}
-                  placeholder="1234 1234 1234 1234" maxlength="19"/>
-                <input class="group-full-input-fields" id="card-exp-field" type="text"
-                  style="--exp-field-border-color: {border_color_exp}"
-                  on:input={() => into_readable(1)} bind:value={payment_form.exp} 
-                  placeholder="MM / YY" maxlength="7"/>
-                <input class="group-full-input-fields" id="card-cvc-field" type="text"
-                  style="--cvc-field-border-color: {border_color_cvc}"
-                  bind:value={payment_form.cvc} placeholder="CVC" maxlength="3" />
-              </div>
-            </div>
-
-            <div class="group-form-subsection">
-              <div class="group-form-label-wrapper">
-                <label class="form-label-title">Name on card</label>
-                {#if !is_valid.name}
-                  <label class="form-label-invalid">Invalid</label>
-                {/if}
-              </div>
-              <div class="group-form-input-wrapper" id="form-name-wrapper">
-                <input class="group-full-input-fields" id="name-field" type="text"
-                  style="--name-field-border-color: {border_color_name}"
-                  placeholder="Josaphine Doe" bind:value={payment_form.name} />
-                <br />
-              </div>
-            </div>
-
-            <div class="group-form-subsection">
-              <div class="group-form-label-wrapper">
-                <label class="form-label-title"> Country / Region </label>
-                {#if !is_valid.postal_code}
-                  <label class="form-label-invalid">Invalid</label>
-                {/if}
-              </div>
-              <div class="group-form-input-wrapper" id="region-form-input-wrapper">
-                <select class="group-full-input-fields" id="region-country-field" type="text"
-                  bind:value={payment_form.country} on:change={format_postal_code}> 
-                  <option selected value="canada">Canada</option>
-                  <option value="dominican republic">Dominican Republic</option>
-                  <option value="france">France</option>
-                  <option value="haiti">Haiti</option>
-                  <option value="united states">United States</option>
-                </select>
-                <input class="group-full-input-fields" id="region-postal-code-field" type="text" 
-                  style="--postal-code-field-border-color: {border_color_postal_code}"
-                  bind:value={payment_form.postal_code} on:input={() => into_readable(2)} 
-                  placeholder={postal_code_placeholder} maxlength={postal_code_max_length}
-                  inputmode={postal_input_mode} />
-              </div>
-            </div>
-
-            <div class="group-form-subsection" id="button-form-subsection">
-              <div class="block-select" id="form-donate-button" style="--donate-button-color: {donate_button_color}"
-              on:mousedown={() => handle_click_release(1, 4)} on:mouseup={() => handle_click_release(0, 4)} 
-              on:click={test_send_to_back_end}
-              >
-                Donate
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
+      </div> 
     </div>
   </div>
 
@@ -520,9 +524,34 @@
       justify-center
     ;
     width: 100vw;
-    background: linear-gradient(to right, rgba(227,216,209,1) 50%, rgba(242,241,240,1) 50%);
+    background-image: url("../../../static/final_donate_thankyou_bg.jpg");
+
+    /* background: linear-gradient(to right, rgba(227,216,209,1) 50%, rgba(242,241,240,1) 50%); */
     /* background: linear-gradient(to right, rgba(222,220,181,1) 50%, rgba(242,241,240,1) 50%); */
     /* border: 2px solid yellow; */
+  }
+
+  .donate-mid-wrapper{
+    @apply
+      flex
+      justify-center
+    ;
+    width: 100%;
+    height: 100%;
+    border: 2px solid red;
+
+    background: linear-gradient(to right, rgba(186,184,182,0) 50%, rgba(242,241,240,1) 50%);
+  }
+
+  .donate-mid-wrapper-cover{
+    @apply
+      flex
+      justify-center
+    ;
+    width: 100%;
+    height: 100%;
+    /* background-color: rgba(242,241,240,0.3); */
+    background: linear-gradient(to right, rgba(130,129,129,0.56) 50%, rgba(230,229,218,0) 50%);
   }
 
   .donate-inner-wrapper{
@@ -560,15 +589,19 @@
   .donate-thank-you-panel{
     @apply
       flex
-      py-[3rem]
+      py-[2rem]
       justify-end
     ;
     grid-column: 1 / span 2;
-    background-image: linear-gradient(to right, rgba(227,216,209,1), rgba(230, 229, 218,1));
+    /* background-image: linear-gradient(to right, rgba(186,184,182,1), rgba(230, 229, 218,1)); */
+
+    /* background-image: linear-gradient(to right, rgba(227,216,209,1), rgba(230, 229, 218,1)); */
     /* background-image: linear-gradient(to right, rgba(222,220,181,1), rgba(230, 229, 218,1)); */
     /* border: 4px solid red; */
     /* background-color: rgba(186, 222, 215, 1); */
     /* background-color: rgba(222, 220, 186, 1); */
+
+    border: 2px solid blue;
   }
 
   #group-thank-you-subsection{
@@ -688,7 +721,7 @@
     @apply
       flex
       justify-start
-      py-[3rem]
+      py-[2rem]
     ;
     box-shadow: -4px 0 4px rgba(121,121,122,1);
     grid-column: 3 / span 3;
@@ -740,6 +773,7 @@
     font-size: 1.03rem;
     padding: 0px 2.1rem;
     box-sizing: border-box;
+    border: 3px solid;
   }
 
   .group-half-input-fields{
@@ -874,6 +908,7 @@
     grid-row: row 1 / span 1;
     border-radius: 10px 10px 0px 0px;
     border-color: var(--card-number-field-border-color);
+    border-bottom: 1px;
   }
 
   #card-exp-field{
@@ -881,6 +916,7 @@
     grid-row: row 2 / span 1;
     border-radius: 0px 0px 0px 10px;
     border-color: var(--exp-field-border-color);
+    border-right: 1px;
   }
 
   #card-cvc-field{
@@ -905,7 +941,7 @@
     background-color: white;
     border-radius: 10px 0px 0px 10px;
     grid-column: col 1 / span 1;
-    border: 2px solid black;
+    border-right: 1px;
   }
 
   #region-country-field:focus{

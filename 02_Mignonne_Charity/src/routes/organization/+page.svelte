@@ -135,7 +135,7 @@
     background-position-x: -445px;
     background-position-y: -200px;
     background-repeat: repeat-x;
-    background-image: url("./../../../static/backgrounds/old_img_black_group.webp");
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/old_img_black_group.webp");
   }
   
   .panels-background-filter{
@@ -192,7 +192,7 @@
     background-attachment: local;
     background-position-x: -300px;
     background-position-y: -1200px;
-    background-image: url("./../../../static/backgrounds/paper-texture-6.jpg");
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/paper-texture-6.jpg");
 
     overflow: hidden;
     border-bottom: 3px solid;

@@ -137,7 +137,8 @@
     height: 100%;
     float: left;
 
-    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png");
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/impact_0_banner_fill_check_2.png");
+    /* background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png"); */
     background-size: 2720px;
     /* animation: slide 385s linear infinite; */
     animation: slide 90s linear infinite;
@@ -154,7 +155,8 @@
     height: 100%;
     float: left;
     
-    background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png");
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/impact_0_banner_fill_check_2.png");
+    /* background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png"); */
     background-size: 2720px;
     /* animation: slide 385s linear infinite; */
     animation: slide 90s linear infinite;
