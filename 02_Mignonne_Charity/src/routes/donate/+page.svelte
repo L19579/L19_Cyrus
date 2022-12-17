@@ -1,4 +1,6 @@
 <script>
+  // lots of redundancies under style tag; clean up.
+
   import { writable } from 'svelte/store'
 
   import Navbar from './../shared/Navbar.svelte'
@@ -393,13 +395,13 @@
             <div class="donate-payment-mid-wrapper">
               <div class="donate-payment-inner-wrapper">
 
-                <div class="ext-button-form-subsection">
+                <div class="ext-button-form-subsection block-select">
                   <a href="" id="paypal-donate-button">
                     <img id="paypal-button-image" src="https://www.paypalobjects.com/paypal-ui/logos/svg/paypal-color.svg" />
                   </a>
                 </div>
 
-                <div class="ext-button-form-subsection">
+                <div class="ext-button-form-subsection block-select">
                   <a href="" id="gpay-donate-button">
                     <img id="gpay-button-image" src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Google_Pay_Logo.svg" />
                   </a>
@@ -427,7 +429,7 @@
                   <div class="group-form-input-wrapper">
                     <input class="group-full-input-fields" type="text" id="email-field"
                       style="--email-field-border-color: {border_color_email}"
-                      placeholder="email@example.com" bind:value={payment_form.email} />
+                      placeholder="example@email.com" bind:value={payment_form.email} />
                     <br />
                   </div>
                 </div>
@@ -492,13 +494,23 @@
                       inputmode={postal_input_mode} />
                   </div>
                 </div>
-
+                  
+                <!-- TODO id rename reqd -->
                 <div class="group-form-subsection" id="button-form-subsection">
                   <div class="block-select" id="form-donate-button" style="--donate-button-color: {donate_button_color}"
                   on:mousedown={() => handle_click_release(1, 4)} on:mouseup={() => handle_click_release(0, 4)} 
                   on:click={test_send_to_back_end}
                   >
                     Donate
+                  </div>
+                </div>
+
+                <div id="donate-secured-by-stripe-wrapper">
+                  <div id="donate-secured-by-stripe-text">
+                    Secured by <img 
+                    id="donate-secured-by-stripe-img"
+                    src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" 
+                    alt="Stripe" />
                   </div>
                 </div>
 
@@ -524,7 +536,6 @@
       justify-center
     ;
     width: 100vw;
-    background-image: url("../../../static/final_donate_thankyou_bg.jpg");
 
     /* background: linear-gradient(to right, rgba(227,216,209,1) 50%, rgba(242,241,240,1) 50%); */
     /* background: linear-gradient(to right, rgba(222,220,181,1) 50%, rgba(242,241,240,1) 50%); */
@@ -540,7 +551,7 @@
     height: 100%;
     border: 2px solid red;
 
-    background: linear-gradient(to right, rgba(186,184,182,0) 50%, rgba(242,241,240,1) 50%);
+    /* background: linear-gradient(to right, rgba(186,184,182,0) 50%, rgba(242,241,240,1) 50%); */
   }
 
   .donate-mid-wrapper-cover{
@@ -551,7 +562,9 @@
     width: 100%;
     height: 100%;
     /* background-color: rgba(242,241,240,0.3); */
-    background: linear-gradient(to right, rgba(130,129,129,0.56) 50%, rgba(230,229,218,0) 50%);
+    /* background: linear-gradient(to right, rgba(186,184,182,0) 50%, rgba(242,241,240,1) 50%); */
+
+    background-color: rgba(242,241,240,1);
   }
 
   .donate-inner-wrapper{
@@ -589,7 +602,7 @@
   .donate-thank-you-panel{
     @apply
       flex
-      py-[2rem]
+      py-[4rem]
       justify-end
     ;
     grid-column: 1 / span 2;
@@ -601,26 +614,38 @@
     /* background-color: rgba(186, 222, 215, 1); */
     /* background-color: rgba(222, 220, 186, 1); */
 
-    border: 2px solid blue;
+    /* background: linear-gradient(to right, rgba(184,184,184,1), rgba(230,229,218,0)); */
+    /* border: 2px solid blue; */
   }
 
   #group-thank-you-subsection{
-    display: block;
+    display: grid;
+    padding-top: 1rem;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(40, [row] 2.5%);
     width: 100%;
-    padding: 1rem 0px;
-    border: 2px solid blue;
+    background-image: url("../../../static/final_donate_thankyou_bg.jpg");
+    background-size: 120%;
+    background-position-y: -100px;
+    background-position-x: -10px;
+    border-radius: 10px 0px 0px 10px;
+    box-shadow: -4px 0 6px rgba(121,121,122,1);
+    overflow: hidden;
+    border: 2px solid black;
   }
 
+  /* --------------------------------------------- GRID  */
   #amount-manual-wrapper{
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     justify-content: center;
     display: block;
     text-align: center;
     width: 100%;
-    height: 100px;
+    height: 100%;
     box-sizing: border-box;
 
-    /* border: 4px solid blue; */
+    /* border: 4px solid red; */
+    grid-row: row 3 / span 5;
   }
 
   #amount-manual-field{
@@ -641,12 +666,16 @@
     font-weight: bold;
   }
 
+  /* --------------------------------------------- GRID  */
   .amount-options-outer-wrapper{
     @apply
       flex
       justify-center
     ;
+    grid-row: row 8 / span 26;
     width: 100%;
+    height: 100%;
+    /* border: 4px solid purple; */
   }
 
   .amount-options-inner-wrapper{
@@ -656,7 +685,7 @@
     width: 80%;
     box-sizing: border-box;
 
-    border: 4px solid purple;
+    /* border: 4px solid purple; */
   }
 
   .group-amount-options{
@@ -673,7 +702,7 @@
     transition: box-shadow 100ms;
     border-radius: 10px;
     box-sizing: border-box;
-    border: 2px solid green;
+    border: 2px solid black;
   }
 
   .group-amount-options:hover{
@@ -697,23 +726,26 @@
     background-color: var(--third-option-color);
   }
 
+  /* ----------- GRID  something off here; width not full on certain views*/
   .thank-you-message-wrapper{
     @apply
       flex
       flex-col
       justify-center
-      my-[2rem]
-      py-[auto]
     ;
+    grid-row: row 35 / span 7;
+
     width: 100%;
-    height: 7rem;
-    border: 2px solid red;
+    height: 100%;
+    background-color: black;
+    /* border: 2px solid red; */
   }  
 
   #thank-you-message-text{
     font-size: 50px;
     font-weight: bold;
     text-align: center;
+    color: white;
   }  
 
   /* ---------------- Donate Form Section ---------------- */
@@ -723,7 +755,7 @@
       justify-start
       py-[2rem]
     ;
-    box-shadow: -4px 0 4px rgba(121,121,122,1);
+    /* box-shadow: -4px 0 4px rgba(121,121,122,1); */ 
     grid-column: 3 / span 3;
     background-color: rgba(242, 241, 240, 1);
     /* border: 4px solid blue; <--- might need */
@@ -733,17 +765,20 @@
     @apply
       flex
       justify-center
-      py-[1.5rem]
+      py-[2.2rem]
     ;
+    box-shadow: 4px 0 6px rgba(121,121,122,1);
+    background-color: rgba(232,227,223,0.3);
+    border-radius: 10px;
     width: 100%;
-    border: 2px solid green;
+    border: 2px solid black;
   }
 
   .donate-payment-inner-wrapper{
     position: relative;
     width: 80%;
     height: 100%;
-    border: 4px solid green;
+    /* border: 4px solid green; */
   }
   /* ---------------- Form Group ---------------- */
   .group-form-subsection{
@@ -768,9 +803,9 @@
 
   .group-full-input-fields{
     position: relative;
-    height: 2.9rem;
+    height: 3.2rem;
     width: 100%;
-    font-size: 1.03rem;
+    font-size: 1.2rem;
     padding: 0px 2.1rem;
     box-sizing: border-box;
     border: 3px solid;
@@ -828,7 +863,7 @@
       flex-col
     ;
     padding: 0.5rem 0px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
   }
 
   #paypal-donate-button{ /* some in efficiencies w/ wrapper */
@@ -957,7 +992,7 @@
   }
 
   #form-donate-button{
-    margin-top: 0.5rem;
+    margin-top: 1rem;
     padding: 15px 0px;
     text-align: center;
     color: white;
@@ -972,6 +1007,30 @@
 
   #form-donate-button:hover{
     box-shadow: 0 0 4px black;  
+  }
+
+  #donate-secured-by-stripe-wrapper{
+    margin-top: 0.5rem;
+    width: 100%;
+    height: 20px;
+    /* border: 2px solid red; */
+  }
+
+  #donate-secured-by-stripe-text{
+    @apply
+      flex
+      justify-center
+    ;
+
+    white-space: nowrap;
+    width: 100%; 
+    text-align: center;
+  }
+
+  #donate-secured-by-stripe-img{
+    margin-top: -0.1rem;
+    height: auto;
+    width: 50px;
   }
 
   /* Negative value; review. TODO */

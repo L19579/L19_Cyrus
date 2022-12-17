@@ -123,7 +123,7 @@
     ;
     padding-left: 4rem;
     padding-right: 4rem;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
 
   #nav-title{

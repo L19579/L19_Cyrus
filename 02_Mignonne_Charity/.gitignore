@@ -9,3 +9,4 @@ node_modules
 !.env.example
 /linode_obj_bucket
 /temp_hold
+/edits
