@@ -27,58 +27,22 @@
 					<h2>~ Progress Bar Animation Here ~</h2>
         </div>
         <div class="panel-1-illustration-outer-wrapper">
-          <div id="panel-1-illustration-1-wrapper"> 
+          <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-1-wrapper"> 
             <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
+							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/wide_teens_bad_edit.png" 
+							class="panel-1-group-illustrations" id="panel-1-illustration-1" 
 						/> 
           </div>
-          <div id="panel-1-illustration-2-wrapper"> 
+          <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-2-wrapper"> 
             <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
+							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/narrow_smiling_young.png" 
+							class="panel-1-group-illustrations" id="panel-1-illustration-2" 
 						/> 
           </div>
-          <div id="panel-1-illustration-3-wrapper"> 
+          <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-3-wrapper"> 
             <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
-						/> 
-          </div>
-          <div id="panel-1-illustration-4-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
-						/> 
-          </div>
-          <div id="panel-1-illustration-5-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
-						/> 
-          </div>
-          <div id="panel-1-illustration-6-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
-						/> 
-          </div>
-          <div id="panel-1-illustration-7-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
-						/> 
-          </div>
-          <div id="panel-1-illustration-8-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
-						/> 
-          </div>
-          <div id="panel-1-illustration-9-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/temp_goal_commission_1.png" 
-							id="panel-1-illustration-1" 
+							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/narrow_smiling_young.png" 
+							class="panel-1-group-illustrations" id="panel-1-illustration-3" 
 						/> 
           </div>
 
@@ -157,7 +121,7 @@
   }
 
   .panel-1-text-outer-wrapper{
-    grid-column: col 1 / span 10;
+    grid-column: col 1 / span 11;
     grid-row: 4 / span 13;
     border: blue solid 2px;
   }
@@ -175,14 +139,14 @@
 			justify-center
 		;
 		text-align: center;
-		grid-column: col 1 / span 10;	
+		grid-column: col 1 / span 11;	
 		grid-row: row 17 / span 3;	
 
     border: purple solid 2px;
 	}
 
 	.panel-1-illustration-outer-wrapper{
-		grid-column: col 11 / span 10;	
+		grid-column: col 12 / span 9;	
 		grid-row: row 4 / span 17;	
 		
 			
@@ -192,78 +156,61 @@
     border: blue solid 2px;
 	}
 
-	#panel-1-illustration-1-wrapper{
-		grid-column: col 2 / span 6; 
-		grid-row: row 2 / span 6; 
+	.panel-1-group-illustration-wrapper{
+		background-color: rgba(255,255,255,1);
+		box-shadow: 0 0 3px black;
+		border-radius: 5px;
+	}
 
+	#panel-1-illustration-1-wrapper{
+		@apply
+			flex
+			justify-center
+		;
+
+		grid-column: col 2 / span 12; 
+		grid-row: row 3 / span 6; 
 		width: 100%;	
 		height: auto;	
-		border: 1px solid red;
+		z-index: 3;
 	}
+
 	#panel-1-illustration-2-wrapper{
-		grid-column: col 8 / span 6; 
-		grid-row: row 2 / span 6; 
-		
+		@apply
+			flex
+			flex-col
+			justify-center
+		;
+		grid-column: col 13 / span 7; 
+		grid-row: row 5 / span 11; 
 		width: 100%;	
 		height: auto;	
-		border: 1px solid red;
+		z-index: 5;
 	}
+
 	#panel-1-illustration-3-wrapper{
-		grid-column: col 14 / span 6; 
-		grid-row: row 2 / span 6; 
-		
+		@apply
+			flex
+			justify-center
+		;
+		grid-column: col 2 / span 12; 
+		grid-row: row 10 / span 10; 
 		width: 100%;	
 		height: auto;	
-		border: 1px solid red;
-	}
-	#panel-1-illustration-4-wrapper{
-		grid-column: col 2 / span 6; 
-		grid-row: row 8 / span 6; 
-		
-		width: 100%;	
-		height: auto;	
-		border: 1px solid red;
-	}
-	#panel-1-illustration-5-wrapper{
-		grid-column: col 8 / span 6; 
-		grid-row: row 8 / span 6; 
-		width: 100%;	
-		height: auto;	
-		border: 1px solid red;
-	}
-	#panel-1-illustration-6-wrapper{
-		grid-column: col 14 / span 6; 
-		grid-row: row 8 / span 6; 
-		width: 100%;	
-		height: auto;	
-		border: 1px solid red;
-	}
-	#panel-1-illustration-7-wrapper{
-		grid-column: col 2 / span 6; 
-		grid-row: row 14 / span 6; 
-		width: 100%;	
-		height: auto;	
-		border: 1px solid red;
-	}
-	#panel-1-illustration-8-wrapper{
-		grid-column: col 8 / span 6; 
-		grid-row: row 14 / span 6; 
-		width: 100%;	
-		height: auto;	
-		border: 1px solid red;
-	}
-	#panel-1-illustration-9-wrapper{
-		grid-column: col 14 / span 6; 
-		grid-row: row 14 / span 6; 
-		width: 100%;	
-		height: auto;	
-		border: 1px solid red;
+		z-index: 3;
 	}
 
 	#panel-1-illustration-1{
+		width: auto;
+		height: 100%;
+	}
+	#panel-1-illustration-2{
 		width: 100%;
 		height: auto;
-		
+	}
+	#panel-1-illustration-3{
+		width: auto;
+		height: 100%;
 	}
 
   /* --------------- Panel 2 --------------- */
