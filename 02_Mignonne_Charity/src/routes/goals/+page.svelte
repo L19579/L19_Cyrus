@@ -1,9 +1,21 @@
 <script>
-  import Navbar from './../shared/Navbar.svelte'
-  import Footer from './../shared/Footer.svelte'
+  import Navbar from './../shared/Navbar.svelte';
+	import Chart from './Chart.svelte';
+  import Footer from './../shared/Footer.svelte';
   import Todo from './../shared/Todo.svelte'
+	import { tweened } from 'svelte/motion';
+	import { cubicOut } from 'svelte/easing';
   
   let ipsum_text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+
+	const progress_families_fed = tweened(0, {
+		duration: 700, 
+		easing: cubicOut
+	});
+	const progress_youth_enrolled = tweened(0, {
+		duration: 700, 
+		easing: cubicOut
+	});
 </script>
 
 <Navbar current_nav_page = 'goals'/>
@@ -24,7 +36,11 @@
           </div>
         </div>
         <div class="panel-1-progress-bar-wrapper">
-					<h2>~ Progress Bar Animation Here ~</h2>
+					<div class="progress-bar-wrapper">
+						<div class="progress-bar">
+							<Chart />
+						</div>
+					</div>
         </div>
         <div class="panel-1-illustration-outer-wrapper">
           <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-1-wrapper"> 
@@ -151,7 +167,7 @@
 
   .panel-1-text-outer-wrapper{
     grid-column: col 1 / span 11;
-    grid-row: 4 / span 13;
+    grid-row: 4 / span 10;
     border: blue solid 2px;
   }
 
@@ -169,7 +185,7 @@
 		;
 		text-align: center;
 		grid-column: col 1 / span 11;	
-		grid-row: row 17 / span 3;	
+		grid-row: row 14 / span 6;	
 
     border: purple solid 2px;
 	}
@@ -188,8 +204,9 @@
 	.panel-1-group-illustration-wrapper{
 		/* background-color: rgba(255,255,255,1); */
 		/* background-color: rgba(204, 232, 237,1); */
-		background-color: rgba(218, 241, 245,1);
-		box-shadow: 0 0 3px black;
+		/* background-color: rgba(218, 241, 245,1); */
+		background-color: rgba(245,240,244,1); 
+		box-shadow: 0 0 4px black;
 		border-radius: 5px;
 		overflow: hidden;
 	}
@@ -242,6 +259,10 @@
 	}
 
   /* --------------- Panel 2 --------------- */
+  #panel-2-outer-wrapper{
+		background-color: rgba(245,245,244,1);
+	}
+
   #panel-2-inner-wrapper{
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
@@ -295,7 +316,8 @@
 		
 		border-radius: 10px;
 		box-sizing: border-box;
-		border: 2px solid green;
+		box-shadow: 0 0 6px black;
+		/* border: 2px solid green; */
 	}
 
 	#panel-2-video{
