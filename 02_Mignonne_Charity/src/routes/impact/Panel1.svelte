@@ -5,8 +5,8 @@
 <div class="background-wrapper">
   <div class="panel-0-outer-wrapper">
     <div class="panel-0-description-wrapper">
-      <h2 class="temp-panel-0">
-        Panel 0 overlay text here ; black gradient at max
+      <h2 id="temp-panel-0">
+        <!-- Cancelled planned for text ; temp hold -->
       </h2>
     </div>
     <div class="panel-0-background-wrapper">
@@ -18,10 +18,10 @@
   </div>
 
   <div class="panels-group-outer-wrapper" id="panel-1-outer-wrapper">
-    <div class="panels-group-background" id="panel-1-background">
-      <div class="panels-group-background-cover" id="panel-1-background-cover">
-        <div class="panels-group-background-cover-2" id="panel-1-background-cover-2">
-          <div class="panels-group-inner-wrapper">
+    <div class="panels-group-background" id="panel-1-background-1"> <!-- bit messy refactor TODO -->
+      <div class="panels-group-background" id="panel-1-background-2">
+        <div id="panel-1-background-cover">
+          <div class="panels-group-inner-wrapper" id="panel-1-inner-wrapper">
             <div class="panels-group-title-wrapped" id="panel-1-title-wrapper">
               <h2 class="panels-group-title-text" id="panel-1-title-text">
                 Food for X Program
@@ -40,25 +40,27 @@
   </div>
 
   <div class="panels-group-outer-wrapper" id="panel-2-outer-wrapper">
-    <div id="panel-2-background">
-      <div id="panel-2-background-center-cover">
-        <div id="panel-2-background-left-cover">
-          <div id="panel-2-background-right-cover">
-            <div class="panels-group-inner-wrapper" id="panel-2-inner-wrapper">
-              <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
-                <h2 class="panels-group-title-text" id="panel-2-title-text">
-                  Youth Recreation Group
-                </h2>
-              </div>
-              <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
-                <p>
-                  -- Write up not clean; throwing thoughts around -- <br />
-                  We're strong believers in bringing positive and constructive activies to 
-                  Haiti's children and young adults. Whether that's piano lessons, a listening ear, 
-                  a local checkers tournament or help with brain teaser on a school assignment; 
-                  we provide the space and tools for our young to build lasting bonds and critical 
-                  life skills.
-                </p>
+    <div id="panel-2-background-1">
+      <div id="panel-2-background-2">
+        <div id="panel-2-background-center-cover">
+          <div id="panel-2-background-left-cover">
+            <div id="panel-2-background-right-cover">
+              <div class="panels-group-inner-wrapper" id="panel-2-inner-wrapper">
+                <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
+                  <h2 class="panels-group-title-text" id="panel-2-title-text">
+                    Youth Recreation Group
+                  </h2>
+                </div>
+                <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
+                  <p>
+                    -- Write up not clean; throwing thoughts around -- <br />
+                    We're strong believers in bringing positive and constructive activies to 
+                    Haiti's children and young adults. Whether that's piano lessons, a listening ear, 
+                    a local checkers tournament or help with brain teaser on a school assignment; 
+                    we provide the space and tools for our young to build lasting bonds and critical 
+                    life skills.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -103,7 +105,7 @@
       w-[100%]
     ;
     overflow: hidden;
-    border: 2px solid black; 
+    /* border: 2px solid black; */
   }
   
   /* Panel 0 specifics */
@@ -111,7 +113,7 @@
   .panel-0-outer-wrapper{
     /*width: 11100px;*/
     width: 2720px;
-    border: 5px solid black;
+    /* border: 5px solid black; */
   }
 
   .panel-0-background-wrapper{
@@ -125,7 +127,7 @@
     left: 0px;
     overflow: hidden;
     background-color: black;
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
   }
   
   .panel-0-background-1{
@@ -137,13 +139,14 @@
     height: 100%;
     float: left;
 
-    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/impact_0_banner_fill_check_2.png");
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_impact_0_banner_fill_check_2.png");
+    /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/impact_0_banner_fill_check_2.png"); */
     /* background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png"); */
     background-size: 2720px;
     /* animation: slide 385s linear infinite; */
     animation: slide 90s linear infinite;
 
-    border: 4px solid green;
+    /* border: 4px solid green; */
   }
 
   .panel-0-background-2{
@@ -155,13 +158,14 @@
     height: 100%;
     float: left;
     
-    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/impact_0_banner_fill_check_2.png");
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_impact_0_banner_fill_check_2.png");
+    /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/impact_0_banner_fill_check_2.png"); */
     /* background-image: url("./../../../static/temporary/impact_0_banner_fill_check_2.png"); */
     background-size: 2720px;
     /* animation: slide 385s linear infinite; */
     animation: slide 90s linear infinite;
 
-    border: 4px solid red;
+    /* border: 4px solid red; */
   }
 
   @keyframes slide{
@@ -183,8 +187,8 @@
     width: 100%;
     height: 141px;
     position: absolute;
-    background-color: rgba(28, 25, 23, 0.2);
-    border: 4px solid blue;
+    background-color: rgba(28, 25, 23, 0.1);
+    /* border: 4px solid blue; */
   }
 
   h2{
@@ -202,7 +206,7 @@
     width: 100%;
     height: 700px;
     background-color: white;
-    border: 2px solid red; 
+    /* border: 2px solid red; */
   }
 
   .panels-group-background{
@@ -214,7 +218,7 @@
     overflow: hidden;
     height: 100%; 
     width: 100%;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
   }
   
   .panels-group-inner-wrapper{
@@ -227,7 +231,7 @@
     ;
     height: 100%;
     width: 1200px;
-    border: 2px solid white; 
+    /* border: 2px solid white; */
   }
   
   .panels-group-title-wrapped{
@@ -256,7 +260,9 @@
   #panel-1-outer-wrapper{
     width: 100%;
     overflow: hidden;
-    background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(38,38,38,1) 50%);
+    /* background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(38,38,38,1) 50%); */
+    /* background-color: rgb(229,231,235); */
+    background-color: rgb(228,228,228);
     border: 2px solid blue;
   }
 
@@ -265,44 +271,55 @@
     solid: 2px solid black;
   }
 
-  #panel-1-background{
+  #panel-1-background-1{
     @apply
-      relative
+      flex
+      justify-center
     ;
     overflow: hidden;
-    width: 1700px;
-    background-attachment: local;
-    background-size: 1600px;
-    background-position-y: -200px; 
-    background-position-x: 370px; 
-    background-repeat: no-repeat;
-    background-image: url(../../../static/bg_impact/panel_1_bg_kids_eating.webp);
-  }
-  
-  #panel-1-background-cover{
-    @apply
-      flex
-      relative
-      justify-center
-    ;
     width: 100%;
-    
-    background: radial-gradient(circle, rgba(9,9,121,0) 70%, rgba(38,38,38,1) 90%);
-    border: 2px solid green;
-  }
-  
-  #panel-1-background-cover-2{
-    @apply
-      flex
-      relative
-      justify-center
-    ;
-    min-width: 100%;
-    
-    background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(74,74,74,0) 80%);
+    background-attachment: local;
+    background-size: 67rem;
+    background-position-y: 10rem; 
+    background-position-x: 110%; 
+    background-repeat: no-repeat;
+    /* background-image: url(../../../static/bg_impact/panel_1_bg_kids_eating.webp); */
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_2_panel_1_bg_kids_eating.png");
     border: 2px solid red;
   }
 
+  #panel-1-background-2{
+    @apply
+      flex
+      justify-center
+    ;
+    overflow: hidden;
+    width: 100%;
+    background-attachment: local;
+    background-size: 1000px;
+    background-position-y: 15rem; 
+    background-position-x: -10rem; 
+    background-repeat: no-repeat;
+    /* background-image: url(../../../static/bg_impact/panel_1_bg_kids_eating.webp); */
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_1_panel_1_bg_kids_eating.png");
+    border: 2px solid black;
+  }
+
+  #panel-1-background-cover{
+    @apply
+      flex
+      justify-center
+    ;
+    overflow: hidden;
+    width: 100%;
+    background-color: rgba(228,228,228,0.2);
+  }
+
+  #panel-1-inner-wrapper{
+    z-index: 2;  
+    width: 1200px;
+  }
+  
   #panel-1-title-wrapper{
     @apply
       flex
@@ -332,17 +349,34 @@
     background-color: rgba(245,245,244,1);
   }
   
-  #panel-2-background{
+  #panel-2-background-1{
     @apply
       flex
       justify-center
     ;
     
-    width: 2000px;
-    background-position-y: -400px; 
-    /* background-position-x: 100px; */
-    background-size: 2200px;
-    background-image: url(../../../static/bg_impact/panel_2_bg_boys_soccer.jpeg);
+    width: 100%;
+    background-position-y: 22rem; 
+    background-position-x: right;
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_panel_2_bg_boys_soccer.png");
+
+    border: yellow solid 2px;
+  } 
+
+  #panel-2-background-2{
+    @apply
+      flex
+      justify-center
+    ;
+    
+    width: 100%;
+    background-position-y: 22rem; 
+    background-position-x: 0%;
+    background-size: 1500px;
+    background-repeat: no-repeat;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_1_panel_2_bg_boys_soccer.png");
 
     border: yellow solid 2px;
   } 
@@ -365,7 +399,8 @@
     ;
     height: 100%;
     width: 100%;
-    background: linear-gradient(90deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%);
+    /* background: linear-gradient(90deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%); */
+    background-color: rgba(245,245,244,0.01);
     border: solid 2px red;
   }
 
@@ -377,7 +412,7 @@
     ;
     height: 100%;
     width: 100%;
-    background: linear-gradient(270deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%);
+    /* background: linear-gradient(270deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%); */
     border: solid 2px green;
   }
     

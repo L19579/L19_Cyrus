@@ -1,8 +1,9 @@
 <script>
+
 	import { scaleLinear } from 'd3-scale';
 	import points from './chart_data.js';
 
-	const yTicks = [0, 20, 40, 60, 80, 100, 120, 140];
+	const yTicks = [0, 20, 40, 60, 80, 100, 120, 140, 160];
 	const xTicks = [0, 2, 4, 6, 8, 10, 12];
 	const padding = { top: 20, right: 15, bottom: 20, left: 25 };
 
@@ -34,7 +35,7 @@
 			{#each yTicks as tick}
 				<g class="tick tick-{tick}" transform="translate(0, {yScale(tick) - padding.bottom})">
 					<line x2="100%"></line>
-					<text y="-4">{tick} {tick === 140 ? ' > Our Target' : ''}</text>
+					<text y="-4">{tick} {tick === 160 ? ' > Our Target' : ''}</text>
 				</g>
 			{/each}
 		</g>
@@ -62,7 +63,7 @@
 <style>
 	.chart, h2, p {
 		width: 100%;
-		max-width: 500px;
+		max-width: 550px;
 		margin-left: auto;
 		margin-right: auto;
 	}
@@ -102,10 +103,22 @@
 		stroke: rgb(0,100,100);
 		stroke-linejoin: round;
 		stroke-linecap: round;
-		stroke-width: 2;
+		stroke-width: 3;
+
+    stroke-opacity: 100%;
+    stroke-dasharray: 1000;
+    animation: dash 2s linear forwards;
 	}
 
 	.path-area {
 		fill: rgba(0,100,100,0.2);
 	}
+
+  @keyframes dash{
+    from{
+      stroke-dashoffset: 1000;
+    } to {
+      stroke-dashoffset: 0;
+    }
+  }
 </style>

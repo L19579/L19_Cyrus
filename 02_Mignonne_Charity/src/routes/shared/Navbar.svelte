@@ -97,6 +97,8 @@
       xl:pt-9
       xl:pb-7
     ;
+    border-bottom: 1px solid rgb(30,41,59);
+    box-shadow: 0 0.2px 2px rgb(30,41,59);
   }
 
   #nav-mid-wrapper{
