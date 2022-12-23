@@ -1,11 +1,12 @@
 <script>
   // lots of redundancies under style tag; clean up.
 
-  import { writable } from 'svelte/store'
-
-  import Navbar from './../shared/Navbar.svelte'
-  import Footer from './../shared/Footer.svelte'
-  import Todo from './../shared/Todo.svelte'
+  import Navbar from './../shared/Navbar.svelte'; 
+  import Footer from './../shared/Footer.svelte';
+  import Todo from './../shared/Todo.svelte'; 
+  
+  import { donation_choice } from './+page.js';
+  let current_donate_page = remove_slash_ws(donation_choice);
 
   let payment_form = {
     name: "",
@@ -339,7 +340,7 @@
   }
 </script>
 
-  <Navbar current_nav_page = 'donate'/>
+  <Navbar current_nav_page = {current_donate_page}/>
 
   <div class="donate-outer-wrapper">
     <div class="donate-mid-wrapper">
@@ -353,7 +354,14 @@
                 <input class="group-full-input-fields" id="amount-manual-field" type="text" 
                   placeholder="$ 0" bind:value={payment_form.amount} />
                 <br />
-                <div id="amount-manual-field-text"> Amount </div>
+                <div id="amount-manual-field-text"> 
+                  {#if (donation_choice.length < 2)}
+                    Amount 
+                  {:else}
+                    To {donation_choice}
+                  {/if}
+
+                </div>
               </div> 
 
               <div class="amount-options-outer-wrapper">
@@ -385,7 +393,7 @@
               </div>
               <div class="thank-you-message-wrapper">
                 <div id="thank-you-message-text">
-                  Thank You! 
+                  Thank You!
                 </div>
               </div>
             </div>

@@ -5,6 +5,24 @@
   let languageNavVisible = false;
   
   import Wopprompt from './Wopprompt.svelte';
+  import { invalidateAll } from '$app/navigation';
+  
+  /* Taking shortcuts here; may not be readable on review. Pulling */
+  /* value from donate/page.js and repurposing function here for chop */
+  function refresh_donate(){
+    console.log("refresh_donate called; current_nav_page: " + current_nav_page);
+    switch(current_nav_page){
+      case "FoodDonationProgram":
+      case "YouthRecreationGroup":
+      case "PrayerService":
+        console.log("found reason to invalidate page.");
+        invalidateAll();
+        break;
+      default:
+        console.log("NO invalidation.");
+        break;
+    };
+  };
 </script>
 
 <Wopprompt />
@@ -71,7 +89,7 @@
               </div>
           </li>
         </ul>
-        <a href="/donate" class="nav-donate">Donate</a>
+        <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-donate">Donate</a>
       </nav>
     </div>
   </div>

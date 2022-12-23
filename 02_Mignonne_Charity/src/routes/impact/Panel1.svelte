@@ -187,7 +187,7 @@
     width: 100%;
     height: 141px;
     position: absolute;
-    background-color: rgba(28, 25, 23, 0.1);
+    /* background-color: rgba(28, 25, 23, 0); */
     /* border: 4px solid blue; */
   }
 
