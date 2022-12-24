@@ -33,6 +33,11 @@
                 {ipsum}
               </p>
             </div>
+            <div class="panels-group-donate-button-wrapper" id="panel-1-donate-button-wrapper">
+              <a href="/donate-food" class="panels-group-donate-button" id="panel-1-donate-button">
+                Contribute To Food Bank
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -61,6 +66,11 @@
                     life skills.
                   </p>
                 </div>
+                <div class="panels-group-donate-button-wrapper" id="panel-2-donate-button-wrapper">
+                  <a href="/donate-recreation" class="panels-group-donate-button" id="panel-2-donate-button">
+                    Support Youth Programs
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -79,7 +89,7 @@
               Sunday Prayer Service
             </h2>
           </div>
-          <div class="panels-description-wrapper" id="panel-3-description-wrapper">
+          <div class="panels-group-description-wrapper" id="panel-3-description-wrapper">
             <p>
               -- Write up not clean; throwing thoughts around -- <br />
               Besides running charity programs our founder hosts weekly virtual weekly virtual
@@ -89,6 +99,11 @@
               of God.
               
             </p>
+          </div>
+          <div class="panels-group-donate-button-wrapper" id="panel-3-donate-button-wrapper">
+            <a href="/donate-church" class="panels-group-donate-button" id="panel-3-donate-button">
+              Help Our Prayer Service Efforts
+            </a>
           </div>
         </div>
       </div>
@@ -253,8 +268,44 @@
       text-left
     ;
     font-weight: 500;
+    height: 63%;
   }
   
+  .panels-group-donate-button-wrapper{ 
+    @apply
+      flex
+    ;
+    height: 10px;
+    height: 10%;
+    border: 2px solid red;
+  }
+
+  .panels-group-donate-button{ 
+    @apply
+      p-[10px]
+      m-[auto]
+      /* ml-[10%] */
+    ;
+    width: 80%;
+    text-decoration: none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+    white-space: nowrap;
+    background-color: rgba(0,0,0,0.97);
+    border: black 1px solid;
+    border-radius: 15px;
+
+    will-change: transform;
+  }
+
+  .panels-group-donate-button:hover{ 
+    box-shadow: 0 0 7px black;
+    transition-duration: 200ms;
+    transform: scale(102%);
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
   /* ------------------------------------------------------------------------------- Panel 1 specific */
 
   #panel-1-outer-wrapper{
@@ -340,7 +391,6 @@
       pl-12
       pr-40
     ;
-    height: 80%;
     border: 1px solid orange;
   }
 
@@ -436,7 +486,6 @@
       pl-12
       pr-40
     ;
-    height: 80%;
     border: 1px solid orange;
   }
 
@@ -497,7 +546,6 @@
       pl-12
       pr-40
     ;
-    height: 80%;
     border: 1px solid orange;
   }
 </style>
