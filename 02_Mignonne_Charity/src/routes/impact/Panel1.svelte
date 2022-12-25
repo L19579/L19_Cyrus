@@ -68,7 +68,7 @@
                 </div>
                 <div class="panels-group-donate-button-wrapper" id="panel-2-donate-button-wrapper">
                   <a href="/donate-recreation" class="panels-group-donate-button" id="panel-2-donate-button">
-                    Support Youth Programs
+                    Support Youth Program
                   </a>
                 </div>
               </div>
@@ -286,7 +286,7 @@
       m-[auto]
       /* ml-[10%] */
     ;
-    width: 80%;
+    width: 70%;
     text-decoration: none;
     text-align: center;
     font-weight: bold;

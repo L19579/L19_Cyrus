@@ -1,6 +1,12 @@
 <div class="footer-wrapper">
   <!-- Contact Panel-->
   <div class="contact-top-panel-wrapper">
+    <div class="contact-group-images-wrapper" id="contact-left-images-wrapper">
+      <div class="contact-group-images" id="contact-left-image-1">
+      </div>
+      <div class="contact-group-images" id="contact-left-image-2">
+      </div>
+    </div>
     <div class="contact-top-panel-main-section">
       <div class="contact-top-panel-main-section-text">
         Contact us
@@ -14,7 +20,12 @@
         </a>
       </div>
     </div>
-    <!-- SOCIAL MEDIA BUTTONS -->
+    <div class="contact-group-images-wrapper" id="contact-right-images-wrapper">
+      <div class="contact-group-images" id="contact-right-image-1">
+      </div>
+      <div class="contact-group-images" id="contact-right-image-2">
+      </div>
+    </div>
   </div>
 
   <!-- Company Panel-->
@@ -152,11 +163,68 @@
 .contact-top-panel-wrapper{
     @apply
       bg-indigo-600
+      flex
+      justify-center
     ;
     height: 300px;
     width: 100%;
     overflow: hidden;
-    border: 2px solid red;
+    /* border: 2px solid red; */
+  }
+
+  /* -------------------------------- Donate images group */
+
+  .contact-group-images-wrapper{
+    @apply
+      flex
+      justify-center
+    ;
+    margin-top: 2rem;
+    height: 100%;
+    min-width: 590px;
+    overflow: hidden;
+    /* border: 2px solid yellow; */
+  }
+
+  .contact-group-images{
+    width: 50%; 
+    height: 98%;
+    background-repeat: no-repeat;
+    /* border: 1px solid red; */
+  }
+
+  /* -------------------------------- Donate images left */
+  #contact-left-images-wrapper{
+    
+  }
+
+  #contact-left-image-1{
+    z-index: 1; 
+    background-position-y: 6rem;
+    background-size: 100%;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_lady_typewriter.png");
+  }
+
+  #contact-left-image-2{
+    z-index: 2; 
+    background-size: 90%;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_smiling_man_on_phone.png");
+  }
+
+
+  /* -------------------------------- Donate images right */
+  #contact-right-images-wrapper{
+  
+  }
+
+  #contact-right-image-1{
+    background-size: 80%;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_woman_pointing_to_phone.png");
+  }
+
+  #contact-right-image-2{
+    background-size: 80%;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_business_man_old_phone.png");
   }
   
   .contact-top-panel-main-section{
@@ -167,8 +235,10 @@
       items-center
       pt-2
     ;
-    height: 240px;
-    border: 2px solid yellow;
+    margin-top: 1rem;
+    min-width: 500px;
+    height: 80%;
+    /* border: 2px solid yellow; */
   }
  
   .contact-top-panel-main-section-text{
