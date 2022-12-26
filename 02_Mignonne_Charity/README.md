@@ -6,18 +6,23 @@
 
 Live view [here](https://dieupeutcharity.com).
 
-## Current state 
-
-Focused on getting CSS, and SVG details right on reference site at the moment.
-Work done on some components to observe scaling behaviour.
-
 ## Changelog
 
 ### [Production WApp]
+25/12/22
+- home outline extended, impact summary filled w/ stat counter effect.
+- /impact 3/3 panel UI structured (text needed); backgrounds reworked for legitibility.
+- /goals 2/2 panel UI structured (text/background spice needed).
+- /donate UI structured (connection to back end needed); added program choice for donation.
+- /donate field input validation added; 
+- backend code complete (private repo); ready for connection to front end.
+- footer UI structured.
+
+  NOTE: UI currently only proportioned for desktop viewport.
 
 22/10/22
   - /organization outline, background, & colors for non cell sized viewports.
-  - /impact 2/4 layer outlines.
+  - /impact 2/3 panel outlines.
   - footer for large viewports complete
 
 04/10/22

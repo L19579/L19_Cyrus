@@ -24,78 +24,85 @@
   <div class="goal-inner-wrapper">
 
     <div class="group-panel-outer-wrapper" id="panel-1-outer-wrapper">
-      <div class="group-panel-inner-wrapper" id="panel-1-inner-wrapper">
-        <div class="panel-1-title-wrapper">
-          <div id="panel-1-title-text">
-            <h1>Example Title That Should Be THIS Long</h1>
+      <div class="group-panel-mid-wrapper" id="panel-1-mid-wrapper">
+        <div class="group-panel-inner-wrapper" id="panel-1-inner-wrapper">
+          <div class="panel-1-title-wrapper">
+            <div id="panel-1-title-text">
+              <h1>Example Title That Should Be THIS Long</h1>
+            </div>
           </div>
-        </div>
-        <div class="panel-1-text-outer-wrapper">
-          <div id="panel-1-text">
-            {ipsum_text}
+          <div class="panel-1-text-outer-wrapper">
+            <div id="panel-1-text">
+              {ipsum_text}
+            </div>
           </div>
-        </div>
-        <div class="panel-1-progress-bar-wrapper">
-					<div class="progress-bar-wrapper">
-						<div class="progress-bar">
-							<Chart />
-						</div>
-					</div>
-        </div>
-        <div class="panel-1-illustration-outer-wrapper">
-          <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-1-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/wide_teens_bad_edit.png" 
-							class="panel-1-group-illustrations" id="panel-1-illustration-1" 
-						/> 
+          <div class="panel-1-progress-bar-wrapper">
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar">
+                <Chart />
+              </div>
+            </div>
           </div>
-          <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-2-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/narrow_old.png" 
-							class="panel-1-group-illustrations" id="panel-1-illustration-2" 
-						/> 
-          </div>
-          <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-3-wrapper"> 
-            <img 
-							src="https://dieupeut-bucket.us-east-1.linodeobjects.com/narrow_smiling_young.png" 
-							class="panel-1-group-illustrations" id="panel-1-illustration-3" 
-						/> 
-          </div>
+          <div class="panel-1-illustration-outer-wrapper">
+            <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-1-wrapper"> 
+              <img 
+                src="https://dieupeut-bucket.us-east-1.linodeobjects.com/wide_teens_bad_edit.png" 
+                class="panel-1-group-illustrations" id="panel-1-illustration-1" 
+              /> 
+            </div>
+            <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-2-wrapper"> 
+              <img 
+                src="https://dieupeut-bucket.us-east-1.linodeobjects.com/narrow_old.png" 
+                class="panel-1-group-illustrations" id="panel-1-illustration-2" 
+              /> 
+            </div>
+            <div class="panel-1-group-illustration-wrapper" id="panel-1-illustration-3-wrapper"> 
+              <img 
+                src="https://dieupeut-bucket.us-east-1.linodeobjects.com/narrow_smiling_young.png" 
+                class="panel-1-group-illustrations" id="panel-1-illustration-3" 
+              /> 
+            </div>
 
+          </div>
         </div>
       </div>
     </div>
+
     <div class="group-panel-outer-wrapper" id="panel-2-outer-wrapper">
-      <div class="group-panel-inner-wrapper" id="panel-2-inner-wrapper">
+      <div class="group-panel-mid-wrapper" id="panel-2-mid-outer-wrapper">
+        <div class="group-panel-mid-wrapper" id="panel-2-mid-inner-wrapper">
+          <div class="group-panel-inner-wrapper" id="panel-2-inner-wrapper">
 
-				<div id="panel-2-title-wrapper">
-					<h1 id="panel-2-title-text">
-						Example Title For Panel Two
-					</h1>
-				</div>
-				<div id="panel-2-text-wrapper">
-					<div id="panel-2-text">
-							{ipsum_text}
-					</div>
-				</div>
-				<div id="panel-2-video-upper-wrapper">	
-					<div id="panel-2-video-inner-wrapper">	
-						<video
-							id="panel-2-video"
-							autoplay
-							muted
-							loop
-							width=100%
-							height=auto
-						>
-							<source 
-								src="https://dieupeut-bucket.us-east-1.linodeobjects.com/video_goal_EDIT.mp4"
-								type="video/mp4" 
-							/>
-						</video>
-					</div>	
-				</div>	
+            <div id="panel-2-title-wrapper">
+              <h1 id="panel-2-title-text">
+                Example Title For Panel Two
+              </h1>
+            </div>
+            <div id="panel-2-text-wrapper">
+              <div id="panel-2-text">
+                  {ipsum_text}
+              </div>
+            </div>
+            <div id="panel-2-video-upper-wrapper">	
+              <div id="panel-2-video-inner-wrapper">	
+                <video
+                  id="panel-2-video"
+                  autoplay
+                  muted
+                  loop
+                  width=100%
+                  height=auto
+                >
+                  <source 
+                    src="https://dieupeut-bucket.us-east-1.linodeobjects.com/video_goal_EDIT.mp4"
+                    type="video/mp4" 
+                  />
+                </video>
+              </div>	
+            </div>	
 
+          </div>
+        </div>
       </div>
     </div>
 
@@ -133,6 +140,15 @@
     border: 2px solid red;
   }
 
+  .group-panel-mid-wrapper{
+    @apply
+      flex
+      justify-center
+    ;
+    width: 100%;
+    border: 2px solid red;
+  }
+
   .group-panel-inner-wrapper{
     width: 1285px;
     height: 700px;
@@ -140,6 +156,25 @@
   }
 
   /* --------------- Panel 1 --------------- */
+  @media (min-width: 1700px){
+    #panel-1-outer-wrapper{
+      background-repeat: no-repeat;
+      background-position-x: 105%;
+      background-position-y: 150%;
+      background-size: 300px;
+      background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_note_img.png");
+    }
+  
+    #panel-1-mid-wrapper{
+      background-repeat: no-repeat;
+      background-position-x: -5%;
+      background-position-y: -30%;
+      background-size: 270px;
+      background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_counting_frame.png");
+    }
+  
+  }
+
   #panel-1-inner-wrapper{
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
@@ -262,6 +297,25 @@
   #panel-2-outer-wrapper{
 		background-color: rgba(245,245,244,1);
 	}
+
+  @media (min-width: 1700px){
+    #panel-2-mid-outer-wrapper{
+      background-repeat: no-repeat;
+      background-position-x: 105%;
+      background-position-y: 10%;
+      background-size: 300px;
+      background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_flying_birds.png");
+    }
+  
+    #panel-2-mid-inner-wrapper{
+      background-repeat: no-repeat;
+      background-position-x: 2%;
+      background-position-y: 110%;
+      background-size: 270px;
+      background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_two_crosses.png");
+    }
+  
+  }
 
   #panel-2-inner-wrapper{
     display: grid;
