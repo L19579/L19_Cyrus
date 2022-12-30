@@ -128,7 +128,18 @@
 
     <div class="info-panel-group-outer-wrapper" id="info-panel-2-outer-wrapper">
       <div class="info-panel-group-inner-wrapper" id="info-panel-2-inner-wrapper">
+        <div class="info-panel-group-title-wrapper" id="info-panel-2-title-wrapper">
+          <div class="info-panel-group-title" id="info-panel-2-title">
+            We Want To Do More!
+          </div>
+        </div>
+        <div class="info-panel-group-description-wrapper" id="info-panel-2-description-wrapper">
+          <div class="info-panel-group-description" id="info-panel-2-description">
+            {staff_quotes[0].quote}
+          </div>
+        </div>
       </div>
+
       <div class="info-panel-group-footer-outer-wrapper" id="info-panel-2-footer-outer-wrapper"> 
         <div class="info-panel-group-footer-inner-wrapper" id="info-panel-2-footer-inner-wrapper"> 
           <div class="info-panel-group-footer-button-wrapper" id="info-panel-2-footer-button-wrapper">
@@ -370,8 +381,50 @@
     position: relative;
     margin-top: 40px;
     height: 600px;
+    display: grid;
+    grid-template-columns: 100%; 
+    grid-template-rows: repeat(20, [row] 5%); 
     border: 2px solid black;
   } 
+
+  #info-panel-2-title-wrapper{
+    @apply
+      flex
+      flex-col
+      justify-center
+    ;
+    grid-row: row 2 / span 5;
+    border: 2px solid red;
+  }
+
+  #info-panel-2-title{
+    @apply
+      text-[clamp(40px,9vw,60px)]
+    ;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  #info-panel-2-description-wrapper{
+    @apply
+      flex
+      flex-col
+      justify-center
+    ;
+    grid-row: row 8 / span 12;
+    border: 2px solid red;
+  }
+
+  #info-panel-2-description{
+    @apply
+      text-[clamp(28px,8.5vw,30px)]
+    ;
+    text-align: center;
+    line-height: 2.6rem;
+    padding-left: 8%;
+    padding-right: 8%;
+    font-weight: 540;
+  }
 
 /* ---------------------------------- Panel 3 ---------------------------------- */
   #info-panel-3-outer-wrapper{

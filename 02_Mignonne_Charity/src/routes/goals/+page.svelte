@@ -84,6 +84,8 @@
               </div>
             </div>
             <div id="panel-2-video-upper-wrapper">	
+              <div id="panel-2-video-background-1">
+              <div id="panel-2-video-background-2">
               <div id="panel-2-video-inner-wrapper">	
                 <video
                   id="panel-2-video"
@@ -98,6 +100,8 @@
                     type="video/mp4" 
                   />
                 </video>
+              </div>
+              </div>
               </div>	
             </div>	
 
@@ -344,7 +348,7 @@
 
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
-		grid-row: row 5 / span 7;
+		grid-row: row 5 / span 6;
 		border: 2px solid red;
 	}
 
@@ -354,8 +358,8 @@
 			justify-center
 		;
 		grid-column: col 1 / span 20;
-		grid-row: row 12 / span 8;
-		border: 2px solid blue;
+		grid-row: row 11 / span 10;
+		/* border: 2px solid blue; */
 	}
 	
 	#panel-2-text{
@@ -363,9 +367,43 @@
 		font-size: 1.5rem;
 	}
 
+  #panel-2-video-background-1{
+    @apply
+      flex
+      justify-center
+    ;
+    width: 93%;
+    height: 100%;
+    box-sizing: border-box;
+    background-position-x: left;
+    background-position-y: 7rem;
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_1.png");
+    /* border: 2px red solid; */
+  }
+
+  #panel-2-video-background-2{
+    @apply
+      flex
+      justify-center
+    ;
+    width: 100%;
+    height: 100%;
+    background-position-x: right;
+    background-size: 22%;
+    background-position-y: 7rem;
+    background-repeat: no-repeat;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_2.png");
+    /* border: 2px blue solid; */
+  }
+
 	#panel-2-video-inner-wrapper{
-		width: 65%;		
-		height: 100%;		
+    @apply
+      m-[auto]
+    ;
+		width: 72%;		
+		height: 90%;		
 		overflow: hidden;
 		
 		border-radius: 10px;

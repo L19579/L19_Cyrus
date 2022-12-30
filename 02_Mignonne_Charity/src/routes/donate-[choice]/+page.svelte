@@ -743,6 +743,7 @@
     ;
     grid-row: row 35 / span 7;
 
+    left: 0;
     width: 100%;
     height: 100%;
     background-color: black;

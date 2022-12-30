@@ -61,13 +61,10 @@
   .panels{
 		@apply
       block
-      xsm:pt-[45px]
-      sm:pt-[45px]
-      md:pt-[110px]
-      xl:pt-[110px]
       /* xl:min-h-[810px]  Not req */ 
     ; 
     width: 100%;
+    border: 2px solid blue;
   }
   
   /* Panel 1 specific */
@@ -81,7 +78,6 @@
       lg:h-screen
       xl:h-screen
       justify-center
-      pb-10
 		;
     width: 100%;
     border: 2px solid red;
@@ -89,6 +85,11 @@
 	
   .panel-1-inner-wrapper{
     @apply
+      xsm:pt-[45px]
+      sm:pt-[45px]
+      md:pt-[110px]
+      xl:pt-[110px]
+
       lg:px-10
       md:px-8
       sm:px-4
@@ -97,6 +98,11 @@
     ;
     min-height: 500px;
     max-width: 1200px; 
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_full_collage_1.png");
+    background-size: 45%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
     border: 2px solid purple;
     
   }
