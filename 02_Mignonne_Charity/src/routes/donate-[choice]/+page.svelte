@@ -19,6 +19,18 @@
     postal_code: ""
   };
 
+  let formatted_payment_form = {
+    name: "",
+    email: "",
+    amount: 0,
+    card_number: "",
+    exp_month: 0,
+    exp_year: 0,
+    cvc: "",
+    country: "canada",
+    postal_code: ""
+  };
+
   // ----------------------------------------- Thank You Section 
 
   let colors = [
@@ -194,6 +206,7 @@
       && (temp_email.length - temp_email.indexOf(".")) < 2) {
       return 0;
     };
+    formatted_payment_form.email = temp_email;
     return 1; 
   }
 
@@ -269,10 +282,12 @@
         }
         break;
     }; 
+    formatted_payment_form.postal_code = payment_form.postal_code.toLowerCase();
     return 1;
   }
   
   // boiler plate; TODO
+  // Check Exp dates; TODO
   function validate_form(){ 
     let all_valid = 1;
     if (!is_valid_email_format()){
@@ -288,6 +303,7 @@
       is_valid.card_number = 0;
       all_valid = 0;
     } else {
+      formatted_payment_form.card_number = payment_form.card_number;
       border_color_card_number = 'black';
     }; 
     if (!is_all_number(payment_form.exp) 
@@ -296,6 +312,8 @@
       is_valid.exp = 0;
       all_valid = 0;
     } else {
+      formatted_payment_form.exp_month = parseInt(payment_form.exp.substr(0,2));
+      formatted_payment_form.exp_year = parseInt(payment_form.exp.substr(5,2));
       border_color_exp = 'black';
     };
     if (!is_all_number(payment_form.cvc) 
@@ -304,6 +322,7 @@
       is_valid.cvc = 0;  
       all_valid = 0;
     } else {
+      formatted_payment_form.cvc = payment_form.cvc;
       border_color_cvc = 'black';
     };
     if (payment_form.name < 2){ // weak sauce; is no last name a thing in the yr of our lord?
@@ -311,6 +330,7 @@
       is_valid.name = 0;
       all_valid = 0;
     } else {
+      formatted_payment_form.name = payment_form.name; 
       border_color_name = 'black';
     };
     if (!is_valid_postal_code_format()){
@@ -320,23 +340,23 @@
     } else {
       border_color_postal_code = 'black';
     };
-    
+   
+    formatted_payment_form.amount = payment_form.amount * 100;
     console.log("DEBUG: all_valid: " + all_valid);
+    console.log("DEBUG: Formatted form: " + JSON.stringify(formatted_payment_form));
+    console.log("DEBUG: payment_form.amount: " + payment_form.amount);
     return all_valid;
   }
 
   // ----------------------------------------- Send To Backend 
 
   function test_send_to_back_end (){
-    // clean up trailing whitespace ; trim error TODO
-    // payment_form.email = payment_form.email.trim();
-    // payment_form.name = payment_form.name.trim();
-
     if (!validate_form()){
       console.log("Form is invalid");
     } else {
       console.log("We've got a valid form!!")
     };
+
   }
 </script>
 
@@ -436,7 +456,7 @@
                   </div>
                   <div class="group-form-input-wrapper">
                     <input class="group-full-input-fields" type="text" id="email-field"
-                      style="--email-field-border-color: {border_color_email}"
+                      style="--email-field-border-color: {border_color_email}" maxlength="50"
                       placeholder="example@email.com" bind:value={payment_form.email} />
                     <br />
                   </div>
@@ -473,7 +493,7 @@
                   </div>
                   <div class="group-form-input-wrapper" id="form-name-wrapper">
                     <input class="group-full-input-fields" id="name-field" type="text"
-                      style="--name-field-border-color: {border_color_name}"
+                      style="--name-field-border-color: {border_color_name}" maxlength="50"
                       placeholder="Josaphine Doe" bind:value={payment_form.name} />
                     <br />
                   </div>

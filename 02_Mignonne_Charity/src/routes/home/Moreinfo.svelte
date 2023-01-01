@@ -62,90 +62,98 @@
 <div class="info-panels-outer-wrapper">
   <div class="info-panels-inner-wrapper">
     <div class="info-panel-group-outer-wrapper" id="info-panel-1-outer-wrapper">
-      <div class="info-panel-group-inner-wrapper" id="info-panel-1-inner-wrapper">
-        <div id="info-panel-1-stats-grid">
-          <div class="info-panel-1-stat-group" id="info-panel-1-stat-1">
-            <div class="stat-number-group" id="stat-number-1">
-              {counter_families_fed}+
+      <div class="info-panel-group-mid-wrapper" id="info-panel-1-mid-wrapper">
+        <div class="info-panel-group-inner-wrapper" id="info-panel-1-inner-wrapper">
+          <div id="info-panel-1-stats-grid">
+            <div class="info-panel-1-stat-group" id="info-panel-1-stat-1">
+              <div class="stat-number-group" id="stat-number-1">
+                {counter_families_fed}+
+              </div>
+              <div class="stat-description-group" id="stat-description-1">
+                Families Fed
+              </div>
             </div>
-            <div class="stat-description-group" id="stat-description-1">
-              Families Fed
+            <div class="info-panel-1-stat-group" id="info-panel-1-stat-2">
+              <div class="stat-number-group" id="stat-number-2">
+                {counter_enrolled_youths}+
+              </div>
+              <div class="stat-description-group" id="stat-description-2">
+                Enrolled Youths
+              </div>
+            </div>
+            <div class="info-panel-1-stat-group" id="info-panel-1-stat-3">
+              <div class="stat-number-group" id="stat-number-3">
+                {counter_sunday_service_attendees}+
+              </div>
+              <div class="stat-description-group" id="stat-description-3">
+                Sunday Service Attendees
+              </div>
             </div>
           </div>
-          <div class="info-panel-1-stat-group" id="info-panel-1-stat-2">
-            <div class="stat-number-group" id="stat-number-2">
-              {counter_enrolled_youths}+
-            </div>
-            <div class="stat-description-group" id="stat-description-2">
-              Enrolled Youths
-            </div>
+          <div id="info-panel-1-counter-note">
+            {#if show_counter_notes}
+              <Typewriter mode="cascade" interval="50" cursor="false">
+                ...and counting.
+              </Typewriter>
+            {/if}
           </div>
-          <div class="info-panel-1-stat-group" id="info-panel-1-stat-3">
-            <div class="stat-number-group" id="stat-number-3">
-              {counter_sunday_service_attendees}+
-            </div>
-            <div class="stat-description-group" id="stat-description-3">
-              Sunday Service Attendees
-            </div>
+          <div id="info-panel-1-description">
+            Since our founding(??) we've dedicated resources to helping
+            families and children in critical need in Haiti, and Canada.
+            The hardships we aim to ameliorate have been experienced by
+            our staff first hand. Our mission is to reduce the number of
+            people forced to walk difficult paths alone. Programs currently
+            supported by our donors include meal assitance, and youth social
+            programs. We also host prayer services in person and online.
           </div>
-        </div>
-        <div id="info-panel-1-counter-note">
-          {#if show_counter_notes}
-            <Typewriter mode="cascade" interval="50" cursor="false">
-              ...and counting.
-            </Typewriter>
+          {#if debug}
+            <div>
+              screen_height: {innerHeight} <br />
+              screen_width: {innerWidth} <br />
+              Distance scrolled on Y-Axis: {y_scroll_distance} <br />
+              show_counter_notes: {show_counter_notes}
+            </div>
           {/if}
         </div>
-        <div id="info-panel-1-description">
-          Since our founding(??) we've dedicated resources to helping
-          families and children in critical need in Haiti, and Canada.
-          The hardships we aim to ameliorate have been experienced by
-          our staff first hand. Our mission is to reduce the number of
-          people forced to walk difficult paths alone. Programs currently
-          supported by our donors include meal assitance, and youth social
-          programs. We also host prayer services in person and online.
-        </div>
-        {#if debug}
-          <div>
-            screen_height: {innerHeight} <br />
-            screen_width: {innerWidth} <br />
-            Distance scrolled on Y-Axis: {y_scroll_distance} <br />
-            show_counter_notes: {show_counter_notes}
-          </div>
-        {/if}
       </div>
 
       <div class="info-panel-group-footer-outer-wrapper" id="info-panel-1-footer-outer-wrapper"> 
-        <div class="info-panel-group-footer-inner-wrapper" id="info-panel-1-footer-inner-wrapper"> 
-          <div class="info-panel-group-footer-button-wrapper" id="info-panel-1-footer-button-wrapper">
-            <a href="/impact" class="info-panel-group-footer-button" id="info-panel-1-footer-button">
-              Read More >
-            </a>
+        <div class="info-panel-group-footer-mid-wrapper" id="info-panel-1-footer-mid-wrapper"> 
+          <div class="info-panel-group-footer-inner-wrapper" id="info-panel-1-footer-inner-wrapper"> 
+            <div class="info-panel-group-footer-button-wrapper" id="info-panel-1-footer-button-wrapper">
+              <a href="/impact" class="info-panel-group-footer-button" id="info-panel-1-footer-button">
+                Read More >
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
     <div class="info-panel-group-outer-wrapper" id="info-panel-2-outer-wrapper">
-      <div class="info-panel-group-inner-wrapper" id="info-panel-2-inner-wrapper">
-        <div class="info-panel-group-title-wrapper" id="info-panel-2-title-wrapper">
-          <div class="info-panel-group-title" id="info-panel-2-title">
-            We Want To Do More!
+      <div class="info-panel-group-mid-wrapper" id="info-panel-2-mid-wrapper">
+        <div class="info-panel-group-inner-wrapper" id="info-panel-2-inner-wrapper">
+          <div class="info-panel-group-title-wrapper" id="info-panel-2-title-wrapper">
+            <div class="info-panel-group-title" id="info-panel-2-title">
+              We Want To Do More!
+            </div>
           </div>
-        </div>
-        <div class="info-panel-group-description-wrapper" id="info-panel-2-description-wrapper">
-          <div class="info-panel-group-description" id="info-panel-2-description">
-            {staff_quotes[0].quote}
+          <div class="info-panel-group-description-wrapper" id="info-panel-2-description-wrapper">
+            <div class="info-panel-group-description" id="info-panel-2-description">
+              {staff_quotes[0].quote}
+            </div>
           </div>
         </div>
       </div>
 
       <div class="info-panel-group-footer-outer-wrapper" id="info-panel-2-footer-outer-wrapper"> 
-        <div class="info-panel-group-footer-inner-wrapper" id="info-panel-2-footer-inner-wrapper"> 
-          <div class="info-panel-group-footer-button-wrapper" id="info-panel-2-footer-button-wrapper">
-            <a href="/goals" class="info-panel-group-footer-button" id="info-panel-2-footer-button">
-              Read More >
-            </a>
+        <div class="info-panel-group-footer-mid-wrapper" id="info-panel-2-footer-mid-wrapper"> 
+          <div class="info-panel-group-footer-inner-wrapper" id="info-panel-2-footer-inner-wrapper"> 
+            <div class="info-panel-group-footer-button-wrapper" id="info-panel-2-footer-button-wrapper">
+              <a href="/goals" class="info-panel-group-footer-button" id="info-panel-2-footer-button">
+                Read More >
+              </a>
+            </div>
           </div>
         </div>
       </div>
@@ -197,18 +205,33 @@
     @apply
       flex
       flex-col
-      mr-3 /* don't rly care for this */
+      mr-3 /* don't rly care for this -- attempt at center; issue likely borders - TODO */
     ;
     width: 100vw;
-    height: 760px;
-    border: solid 10px cyan;
+    max-height: 760px;
+    border: solid 2px cyan;
   }  
+
+  .info-panel-group-mid-wrapper{
+    @apply
+      flex
+      flex-col
+    ;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_top.png");
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: bottom;
+    border: solid 1px red;
+  }
 
   .info-panel-group-inner-wrapper{
     @apply
       mx-[auto]
     ;
-    width: 1280px; /* <-- weird, expected 1200px */
+    max-width: 1280px; /* <-- weird, expected 1200px */
   }
 
 /* /// ----------------- Group Footer --------------------- /// */
@@ -216,8 +239,22 @@
   .info-panel-group-footer-outer-wrapper{
     height: 140px;
     width: 100%;
-    background-color: black;
+    /* background-color: black; */
+    background-image: url("https://i.pinimg.com/originals/50/3b/17/503b174d539eb6e6a2a8ceca6ced9b04.jpg");
+    background-size: 70%;
+    background-position-y: -2rem;
     border: 2px red solid;
+  }
+
+  .info-panel-group-footer-mid-wrapper{
+    height: 100%;
+    width: 100%;
+      
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_bottom.png");
+    background-size: 400px;
+    background-repeat: no-repeat;
+    background-position-x: left;
+    background-position-y: top;
   }
 
   .info-panel-group-footer-inner-wrapper{
@@ -438,7 +475,7 @@
       py-[0.5rem]
     ;
     height: 98%;
-    width: 1280px;
+    max-width: 1280px;
     border: 2px solid red;
   }
 
