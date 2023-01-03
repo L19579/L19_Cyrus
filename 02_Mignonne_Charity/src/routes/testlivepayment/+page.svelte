@@ -7,8 +7,7 @@
 	
 	
 	export const user = writable ({
-	first_name: "Gigi",
-	last_name: "Fifi",
+	name: "Gigi LoLo",
 	email: "Gigi@fifi.com",
 	phone: "1112223344",
 	address: {
@@ -35,8 +34,7 @@ async function doyathingtwentyone () {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-          first_name: "Test",
-          last_name: "Jay",
+          name: "Test Jat",
           email: "test@jaykjnhkbj.com",
           phone: "1112223344",
           address: {

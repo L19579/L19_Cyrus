@@ -22,15 +22,23 @@
   let formatted_payment_form = {
     name: "",
     email: "",
-    amount: 0,
-    card_number: "",
-    exp_month: 0,
-    exp_year: 0,
-    cvc: "",
-    country: "canada",
-    postal_code: ""
+    address: {
+      postal_code: "",
+      country: "",
+    },
+    card: {
+      amount: 0,
+      number: "",
+      cvc: "",
+      exp_month: 0,
+      exp_year: 0,
+    },
   };
 
+  function show_amount(){
+    console.log("DEBUG - show_me_amount(): non formatted: " + payment_form.amount);
+    console.log("DEBUG - show_me_amount(): formatted: " + formatted_payment_form.card.amount);
+  }
   // ----------------------------------------- Thank You Section 
 
   let colors = [
@@ -51,7 +59,11 @@
   let first_option_color = colors[0];
   let second_option_color = colors[2];
   let third_option_color = colors[4];
+
   let donate_button_color = colors[6];
+  let donate_button_text = "Donate";
+  let donate_button_cursor = "pointer";
+  let donate_button_loading_gif = 0;
 
   function handle_click_release(is_down, option_id){
     console.log("got a click/release");
@@ -70,9 +82,11 @@
         third_option_color = !is_down ? colors[4] : colors[5]; 
         break;
       case 4:
+        // can improve; TODO.
+        donation_amount = payment_form.amount;
         donate_button_color = !is_down ? colors[6] : colors[7]; 
         break;
-    }
+    };
     payment_form.amount = is_down ? donation_amount : payment_form.amount; 
     
     console.log("DEBUG: variables: " + is_down + " " + option_id + " " 
@@ -282,7 +296,8 @@
         }
         break;
     }; 
-    formatted_payment_form.postal_code = payment_form.postal_code.toLowerCase();
+    formatted_payment_form.address.postal_code = payment_form.postal_code.toLowerCase();
+    formatted_payment_form.address.country = payment_form.country;
     return 1;
   }
   
@@ -303,7 +318,7 @@
       is_valid.card_number = 0;
       all_valid = 0;
     } else {
-      formatted_payment_form.card_number = payment_form.card_number;
+      formatted_payment_form.card.number = payment_form.card_number;
       border_color_card_number = 'black';
     }; 
     if (!is_all_number(payment_form.exp) 
@@ -312,8 +327,8 @@
       is_valid.exp = 0;
       all_valid = 0;
     } else {
-      formatted_payment_form.exp_month = parseInt(payment_form.exp.substr(0,2));
-      formatted_payment_form.exp_year = parseInt(payment_form.exp.substr(5,2));
+      formatted_payment_form.card.exp_month = parseInt(payment_form.exp.substr(0,2));
+      formatted_payment_form.card.exp_year = parseInt(payment_form.exp.substr(5,2));
       border_color_exp = 'black';
     };
     if (!is_all_number(payment_form.cvc) 
@@ -322,7 +337,7 @@
       is_valid.cvc = 0;  
       all_valid = 0;
     } else {
-      formatted_payment_form.cvc = payment_form.cvc;
+      formatted_payment_form.card.cvc = payment_form.cvc;
       border_color_cvc = 'black';
     };
     if (payment_form.name < 2){ // weak sauce; is no last name a thing in the yr of our lord?
@@ -341,7 +356,7 @@
       border_color_postal_code = 'black';
     };
    
-    formatted_payment_form.amount = payment_form.amount * 100;
+    formatted_payment_form.card.amount = payment_form.amount * 100;
     console.log("DEBUG: all_valid: " + all_valid);
     console.log("DEBUG: Formatted form: " + JSON.stringify(formatted_payment_form));
     console.log("DEBUG: payment_form.amount: " + payment_form.amount);
@@ -350,13 +365,39 @@
 
   // ----------------------------------------- Send To Backend 
 
-  function test_send_to_back_end (){
+  async function test_send_to_back_end(){
     if (!validate_form()){
-      console.log("Form is invalid");
+      console.log("DEBUG: Form is invalid");
+    } else if (formatted_payment_form.card.amount < 1){
+      console.log("DEBUG: Missing Amount; Form valid");
+      donate_button_text = "Please Insert Amount";
+      donate_button_color = "rgb(224,56,56)";
     } else {
-      console.log("We've got a valid form!!")
-    };
+      console.log("DEBUG: We've got a valid form!!");
+      console.log("DEBUG: Sending payment to back end");
+      console.log("DEBUG: Sending payment to back end ; amount: " + formatted_payment_form.card.amount);
+     
+      donate_button_loading_gif = 1;
+      const response = await fetch('http://127.0.0.1:8000/doyathingtwentyone', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formatted_payment_form) 
+      });
 
+      donate_button_loading_gif = 0;
+      if (response.ok){
+        console.log("stripe submission successful");
+        donate_button_text = "Success!";
+        donate_button_cursor = "not-allowed";
+      } else {
+        console.log("stripe submission failed");
+        donate_button_text = "Couldn't Process. Try again";
+        /* donate_button_color = "rgb(242,70,70)"; */
+        donate_button_color = "rgb(224,56,56)";
+      };
+    };
   }
 </script>
 
@@ -371,8 +412,8 @@
             <div id="group-thank-you-subsection">
 
               <div id="amount-manual-wrapper">
-                <input class="group-full-input-fields" id="amount-manual-field" type="text" 
-                  placeholder="$ 0" bind:value={payment_form.amount} />
+                <input class="group-full-input-fields" id="amount-manual-field" type="text" maxlength="4" 
+                  placeholder="$ 0" bind:value={payment_form.amount} on:change={() => show_amount()}/>
                 <br />
                 <div id="amount-manual-field-text"> 
                   {#if (donation_choice.length < 2)}
@@ -525,11 +566,24 @@
                   
                 <!-- TODO id rename reqd -->
                 <div class="group-form-subsection" id="button-form-subsection">
-                  <div class="block-select" id="form-donate-button" style="--donate-button-color: {donate_button_color}"
+                  <div class="block-select" id="form-donate-button" 
+                  style="--donate-button-color: {donate_button_color}"
                   on:mousedown={() => handle_click_release(1, 4)} on:mouseup={() => handle_click_release(0, 4)} 
-                  on:click={test_send_to_back_end}
+                  on:click={() => test_send_to_back_end()}
                   >
-                    Donate
+                    <div
+                    class="form-donate-button-click-cover" 
+                    style="--donate-button-cursor: {donate_button_cursor}"
+                    >
+                      {#if donate_button_loading_gif}
+                        <div id="form-donate-button-loading-gif-wrapper">
+                          <img id="form-donate-button-loading-gif"
+                            src="https://dieupeut-bucket.us-east-1.linodeobjects.com/donate_loading.svg">
+                        </div>
+                      {:else}
+                        {donate_button_text}
+                      {/if}
+                    </div>
                   </div>
                 </div>
 
@@ -1022,20 +1076,48 @@
 
   #form-donate-button{
     margin-top: 1rem;
-    padding: 15px 0px;
     text-align: center;
     color: white;
     font-size: 21px;
     font-weight: bold;
     background-color: var(--donate-button-color);
     width: 100%;
+    height: 100%; 
+    overflow: hidden;
     border-radius: 10px;
     border: 2px solid orange;
-    cursor: pointer;
   }
 
   #form-donate-button:hover{
     box-shadow: 0 0 4px black;  
+    overflow: hidden;
+  }
+
+  .form-donate-button-click-cover{
+    /* padding: 15px 0px; */
+    @apply
+      flex
+      flex-col
+      justify-center
+    ;
+    width: 100%;
+    height: 50px;
+    cursor: var(--donate-button-cursor);
+    text-align: center;
+    overflow: hidden;
+    /* border: 3px solid blue; */
+  }
+
+  #form-donate-button-loading-gif-wrapper{
+    width: 100%;
+    overflow: hidden;
+    box-sizing: content-box;
+    /* border: 2px red solid; */
+  }
+
+  #form-donate-button-loading-gif{
+    width: auto;
+    height: 2.9rem;
   }
 
   #donate-secured-by-stripe-wrapper{
