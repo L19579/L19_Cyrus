@@ -1,5 +1,37 @@
 <script>
   import Moreinfo from './Moreinfo.svelte'
+ 
+  /* Dropped need offset for Nav space.
+  function scroll_into_view({ target }){
+    const element = document.querySelector(target.getAttribute('href'));
+    if (!element) return;
+    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+  };
+  */
+
+  function scroll_to_end_of_screen({ target }){
+    const element = document.querySelector(target.getAttribute('href'));
+    const end_offset = 5000; 
+    const element_pos = element.getBoundingClientRect().bottom;
+    const offset_pos = element_pos + end_offset;
+
+    window.scrollTo({
+      top: offset_pos,
+      behavior: "smooth"
+    });
+  };
+
+  function scroll_to_target_with_offset({ target }){
+    const element = document.querySelector(target.getAttribute('href'));
+    const start_offset = 100; 
+    const element_pos = element.getBoundingClientRect().top;
+    const offset_pos = element_pos - start_offset;
+
+    window.scrollTo({
+      top: offset_pos,
+      behavior: "smooth"
+    });
+  }
 </script>
 
 <div class="panels"> 
@@ -24,10 +56,14 @@
                   Lorem Ipsum has been the industry's standard dummy
                 </p>
             </div>
-            <div class="leading-title-statement-description-main-buttons-wrapper">
-              <div class="panel-1-buttons-wrapper">
-                <a href="/" class="panel-1-buttons" id="contact-button">Contact us</a>
-                <a href="/" class="panel-1-buttons" id="learn-button">Learn more</a>
+            <div class="leading-title-statement-lower-section">
+              <div class="leading-title-statement-description-main-buttons-wrapper">
+                <div class="panel-1-buttons-wrapper">
+                  <a href="#more-info-section" on:click|preventDefault={scroll_to_end_of_screen}
+                    class="panel-1-buttons" id="contact-button" >Contact us</a>
+                  <a href="#more-info-section" on:click|preventDefault={scroll_to_target_with_offset}
+                    class="panel-1-buttons" id="learn-button">Learn more</a>
+                </div>
               </div>
             </div>
           </div>
@@ -36,7 +72,9 @@
     </div>
   </div>
 
-  <Moreinfo />
+  <div id="more-info-section">
+    <Moreinfo />
+  </div>
   
   <div class="panel-video-outer-wrapper">
     <div class="panel-video-inner-wrapper">
@@ -79,6 +117,7 @@
       xl:h-screen
       justify-center
 		;
+    min-height: 900px;
     width: 100%;
     border: 2px solid red;
 	}	
@@ -96,7 +135,7 @@
       xsm:px-4
       flex
     ;
-    min-height: 500px;
+    /* min-height: 500px; */
     max-width: 1200px; 
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_full_collage_1.png");
     background-size: 45%;
@@ -109,27 +148,34 @@
 
  .leading-title-statement-wrapper{
   @apply
+    relative
     grow
     flex
     flex-col
     justify-between
+    mt-[7%]
   ;
+    display: grid;
+    border: 2px solid blue;
  }
   
   .leading-title-statement{
-      @apply
-        text-[clamp(28px,8.5vw,68px)]
-        lg:w-2/3
-        xl:w-2/3
-        xl:pr-96
-      ;
+    @apply
+      text-[clamp(28px,8.5vw,68px)]
+      lg:w-2/3
+      xl:w-2/3
+      xl:pr-96
+    ;
+    border: 2px solid red;
   }
 
   .leading-title-statement-description-main-text-wrapper{
-      @apply
-        xl:pr-96
-        pb-7
-      ;
+    @apply
+      xl:pr-10
+      pb-7
+    ;
+    margin-right: 33rem;
+    border: 2px solid red;
   }
 
   .leading-title-statement-description-main-text{
@@ -142,11 +188,24 @@
       text-left
     ;
   }
-  
+ 
+  .leading-title-statement-lower-section{
+    @apply
+      flex flex-col
+      justify-center
+    ;
+    padding-right: 40%;
+    min-height: 100px;
+     
+    border: 2px blue solid;
+  }
+
   .panel-1-buttons-wrapper{
     @apply
       flex
     ;
+    min-height: 30px;
+    border: 2px blue solid;
   }
 
   .panel-1-buttons{
@@ -163,6 +222,7 @@
     white-space: nowrap;
     text-decoration: none;
     will-change: transform;
+    border: 1px black solid;
   }
   
   .panel-1-buttons:hover{

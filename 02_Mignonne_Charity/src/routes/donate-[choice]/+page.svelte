@@ -39,6 +39,35 @@
     console.log("DEBUG - show_me_amount(): non formatted: " + payment_form.amount);
     console.log("DEBUG - show_me_amount(): formatted: " + formatted_payment_form.card.amount);
   }
+  
+  function clear_forms(){
+    payment_form = {
+      name: "",
+      email: "",
+      amount: 0,
+      card_number: "",
+      exp: "",
+      cvc: "",
+      country: "canada",
+      postal_code: ""
+    };
+
+    formatted_payment_form = {
+      name: "",
+      email: "",
+      address: {
+        postal_code: "",
+        country: "",
+      },
+      card: {
+        amount: 0,
+        number: "",
+        cvc: "",
+        exp_month: 0,
+        exp_year: 0,
+      },
+    };
+  }
   // ----------------------------------------- Thank You Section 
 
   let colors = [
@@ -310,6 +339,7 @@
       is_valid.email = 0;
       all_valid = 0;
     } else {
+      is_valid.email = 1;
       border_color_email = 'black';
     };
     if (!is_all_number(payment_form.card_number) 
@@ -319,6 +349,7 @@
       all_valid = 0;
     } else {
       formatted_payment_form.card.number = payment_form.card_number;
+      is_valid.card_number = 1;
       border_color_card_number = 'black';
     }; 
     if (!is_all_number(payment_form.exp) 
@@ -329,6 +360,7 @@
     } else {
       formatted_payment_form.card.exp_month = parseInt(payment_form.exp.substr(0,2));
       formatted_payment_form.card.exp_year = parseInt(payment_form.exp.substr(5,2));
+      is_valid.exp = 1;
       border_color_exp = 'black';
     };
     if (!is_all_number(payment_form.cvc) 
@@ -338,6 +370,7 @@
       all_valid = 0;
     } else {
       formatted_payment_form.card.cvc = payment_form.cvc;
+      is_valid.cvc = 1;  
       border_color_cvc = 'black';
     };
     if (payment_form.name < 2){ // weak sauce; is no last name a thing in the yr of our lord?
@@ -346,6 +379,7 @@
       all_valid = 0;
     } else {
       formatted_payment_form.name = payment_form.name; 
+      is_valid.name = 1;
       border_color_name = 'black';
     };
     if (!is_valid_postal_code_format()){
@@ -353,6 +387,7 @@
       is_valid.postal_code = 0;
       all_valid = 0;
     } else {
+      is_valid.postal_code = 1;
       border_color_postal_code = 'black';
     };
    
@@ -364,7 +399,7 @@
   }
 
   // ----------------------------------------- Send To Backend 
-
+  // ------------ Add timeout ; TODO  
   async function test_send_to_back_end(){
     if (!validate_form()){
       console.log("DEBUG: Form is invalid");
@@ -390,7 +425,8 @@
       if (response.ok){
         console.log("stripe submission successful");
         donate_button_text = "Success!";
-        donate_button_cursor = "not-allowed";
+        /* donate_button_cursor = "not-allowed"; */
+        clear_forms();
       } else {
         console.log("stripe submission failed");
         donate_button_text = "Couldn't Process. Try again";
@@ -618,9 +654,10 @@
       justify-center
     ;
     width: 100vw;
-
-    /* background: linear-gradient(to right, rgba(227,216,209,1) 50%, rgba(242,241,240,1) 50%); */
-    /* background: linear-gradient(to right, rgba(222,220,181,1) 50%, rgba(242,241,240,1) 50%); */
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bg_donate.jpg");
+    background-repeat: no-repeat;
+    background-position-y: -30rem;
+    background-size: 120%;
     /* border: 2px solid yellow; */
   }
 
@@ -632,8 +669,6 @@
     width: 100%;
     height: 100%;
     border: 2px solid red;
-
-    /* background: linear-gradient(to right, rgba(186,184,182,0) 50%, rgba(242,241,240,1) 50%); */
   }
 
   .donate-mid-wrapper-cover{
@@ -643,10 +678,7 @@
     ;
     width: 100%;
     height: 100%;
-    /* background-color: rgba(242,241,240,0.3); */
-    /* background: linear-gradient(to right, rgba(186,184,182,0) 50%, rgba(242,241,240,1) 50%); */
-
-    background-color: rgba(242,241,240,1);
+    background-color: rgba(242,241,240,0.7); /* EDIT HERE ------------- background */
   }
 
   .donate-inner-wrapper{
@@ -706,7 +738,8 @@
     grid-template-columns: 100%;
     grid-template-rows: repeat(40, [row] 2.5%);
     width: 100%;
-    background-image: url("../../../static/final_donate_thankyou_bg.jpg");
+    background-image: url("../../../static/final_donate_thankyou_bg.jpg"); 
+    /* background-color: rgb(232,227,223); */
     background-size: 120%;
     background-position-y: -100px;
     background-position-x: -10px;
@@ -840,7 +873,7 @@
     ;
     /* box-shadow: -4px 0 4px rgba(121,121,122,1); */ 
     grid-column: 3 / span 3;
-    background-color: rgba(242, 241, 240, 1);
+    background-color: rgba(242, 241, 240, 0);
     /* border: 4px solid blue; <--- might need */
   }
 
@@ -851,7 +884,7 @@
       py-[2.2rem]
     ;
     box-shadow: 4px 0 6px rgba(121,121,122,1);
-    background-color: rgba(232,227,223,0.3);
+    background-color: rgba(232,227,223,1);
     border-radius: 10px;
     width: 100%;
     border: 2px solid black;
