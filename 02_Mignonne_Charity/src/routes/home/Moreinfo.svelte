@@ -240,9 +240,10 @@
     height: 140px;
     width: 100%;
     /* background-color: black; */
-    background-image: url("https://i.pinimg.com/originals/50/3b/17/503b174d539eb6e6a2a8ceca6ced9b04.jpg");
-    background-size: 70%;
-    background-position-y: -2rem;
+    /* background-image: url("https://i.pinimg.com/originals/50/3b/17/503b174d539eb6e6a2a8ceca6ced9b04.jpg"); */
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/cropped_night_landscape_1.png");
+    background-size: 100%;
+    background-position-y: -120px;
     border: 2px red solid;
   }
 
