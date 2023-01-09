@@ -219,12 +219,8 @@
     ;
     width: 100%;
     height: 100%;
-    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_top.png");
-    background-size: 400px;
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: bottom;
-    border: solid 1px red;
+    /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_top.png"); */
+    /* border: solid 1px red; */
   }
 
   .info-panel-group-inner-wrapper{
@@ -244,19 +240,17 @@
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/cropped_night_landscape_1.png");
     background-size: 100%;
     background-position-y: -120px;
-    border: 2px red solid;
+    overflow-x: hidden;
+    /* border: 2px red solid; */
   }
 
   .info-panel-group-footer-mid-wrapper{
     height: 100%;
-    width: 100%;
-      
-    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_bottom.png");
-    background-size: 400px;
-    background-repeat: no-repeat;
-    background-position-x: left;
-    background-position-y: top;
+    width: 100%; 
+    /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_bottom.png"); */
   }
+
+  
 
   .info-panel-group-footer-inner-wrapper{
     @apply
@@ -305,6 +299,14 @@
 /* ---------------------------------- Panel 1 ---------------------------------- */
   #info-panel-1-outer-wrapper{
     border: 2px solid blue; 
+  }
+
+  #info-panel-1-mid-wrapper{
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/crop_kids_portrait_8_top.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position-x: -40px;
+    background-position-y: bottom;
   }
 
   #info-panel-1-inner-wrapper{
@@ -409,10 +411,25 @@
     border: 2px solid blue;
   }
 
+  #info-panel-1-footer-mid-wrapper{
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/crop_kids_portrait_8_bottom.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position-x: -40px;
+    background-position-y: top;
+  }
 
 /* ---------------------------------- Panel 2 ---------------------------------- */
   #info-panel-2-outer-wrapper{
     border: 2px solid red; 
+  }
+
+  #info-panel-2-mid-wrapper{
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_kids_portrait_1_top.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position-x: -40px;
+    background-position-y: bottom;
   }
 
   #info-panel-2-inner-wrapper{
@@ -462,6 +479,14 @@
     padding-left: 8%;
     padding-right: 8%;
     font-weight: 540;
+  }
+
+  #info-panel-2-footer-mid-wrapper{
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_kids_portrait_1_bottom.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position-x: -40px;
+    background-position-y: top;
   }
 
 /* ---------------------------------- Panel 3 ---------------------------------- */
