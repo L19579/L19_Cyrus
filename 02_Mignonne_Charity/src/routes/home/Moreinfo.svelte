@@ -247,6 +247,7 @@
   .info-panel-group-footer-mid-wrapper{
     height: 100%;
     width: 100%; 
+    overflow: hidden;
     /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_bottom.png"); */
   }
 
@@ -313,7 +314,7 @@
     position: relative;
     margin-top: 40px;
     height: 600px;
-    border: 2px solid black;
+    /* border: 2px solid black; */
   } 
 
   #info-panel-1-stats-grid{
