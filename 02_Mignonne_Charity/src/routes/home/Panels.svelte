@@ -91,6 +91,13 @@
   </div>
   
   <div class="panel-video-outer-wrapper">
+    <div class="panel-video-description-upper-wrapper">
+      <div class="panel-video-description-inner-wrapper">
+        <div class="panel-video-svg-wrapper">
+          SVG TEXT HERE ;:::::
+        </div>
+      </div>
+    </div>
     <div class="panel-video-inner-wrapper">
       <div class="panel-video-video-wrapper">
         <video
@@ -100,7 +107,7 @@
           loop
         >
           <source
-            src="https://assets.mixkit.co/videos/preview/mixkit-animals-in-an-african-village-17221-large.mp4"
+            src="https://dieupeut-bucket.us-east-1.linodeobjects.com/video_kids_eating_2.mp4"
             type="video/mp4"
           />
         </video>
@@ -292,7 +299,7 @@
       justify-center
 		;
     width: 100%;
-    max-height: 200px;
+    max-height: 270px;
     border: 2px solid blue;
 	}	
 	
@@ -300,9 +307,35 @@
     @apply
       flex
     ;
-    width:2000px;
+    width:1600px; /* eh see ext eh*/
     width: full;
     border: 2px solid red;
+  }
+
+  .panel-video-description-upper-wrapper{
+    @apply
+      flex
+      justify-end
+    ;
+    top: 0px;
+    /* width: 30%; */
+    border: 3px solid green;
+  }
+
+  .panel-video-description-inner-wrapper{
+    @apply
+      flex
+      justify-end
+    ;
+    width: 1100px; 
+    height: 100%;
+    border: 2px solid red;
+  }
+
+  .panel-video-svg-wrapper{
+    min-width: 300px;
+    height: 100%;
+    border: 3px solid green;
   }
 
   .panel-video-video-wrapper{
@@ -311,7 +344,7 @@
       justify-around
       items-center
     ;
-    width: 100%;
+    min-width: 1600px; /* ext eh ; scaling issue; wrapper not enough; TODO*/
     border: 2px solid purple;
   }
 
@@ -320,5 +353,6 @@
     overflow: hidden;
     border: 2px solid blue;
     width: 100%;
+    transform: translateY(-170px);
   }
 </style>

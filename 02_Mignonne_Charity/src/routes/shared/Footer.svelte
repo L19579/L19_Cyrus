@@ -208,7 +208,7 @@
 
   /* -------------------------------- Donate images left */
   #contact-svg-left-wrapper{
-    margin-top: 1.2%;
+    margin-top: 1%;
     fill: white;
     max-width: 10px;
     /*border: solid 2px white;*/  
@@ -217,7 +217,7 @@
   #contact-svg-left{
     width: 2700%;
     height: auto; 
-    transform: translate(10%);
+    transform: translate(5%);
   }
 
   #contact-left-images-wrapper{
