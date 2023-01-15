@@ -33,7 +33,9 @@
       <nav id="nav-low-wrapper" x-data="">
       <!-- TODO FIX LINK -->
         <a href="/" id="title-text-wrapper">
-          <span id="nav-title">Dieu Peut</span>
+          <span id="nav-title">
+            <img id="nav-title-sub" src="https://dieupeut-bucket.us-east-1.linodeobjects.com/logo_text_and_symbol_stacked.png">
+          </span>
       <!-- TODO Insert Title SVG here -->
         </a>
       <!-- TODO Nav buttons here -->
@@ -141,14 +143,17 @@
       before:w-10 /* prob not needed */
       md:before:hidden
     ;
-    padding-left: 4rem;
-    padding-right: 4rem;
+      padding-left: 4rem;
+      padding-right: 4rem;
     /* border: 2px solid green; */
   }
 
   #nav-title{
     @apply
-      block w-[150px]
+      block 
+      /* w-[150px] */
+      w-[110px]
+      h-[39px]
       -mt-2.5
       md:mt-0
       translate-x-3
@@ -162,9 +167,13 @@
     ;
     text-decoration: none;
     display: flex;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
-  
+
+  #nav-title-sub{
+    transform: scale(1.55) translateY(8%) translateX(-7%);
+  }
+
   /* !! hidden no use, refactor; px-0 voodoo fix for left margin */
   .nav-link-wrapper{
     @apply
@@ -177,10 +186,11 @@
       justify-around
       items-center
       w-full
-      max-w-3xl
+      /* max-w-3xl */
+      max-w-2xl
     ;
     list-style: none;
-    border: 2px solid black;
+    /* border: 2px solid black; */
   }
 
   /*
@@ -225,8 +235,10 @@
 
   .nav-text-selected{
     text-decoration: none; 
-    color: red;
-    stroke: red;
+    /* color: red; */
+    /* stroke: red; */
+    color: rgb(24,0,101);
+    stroke: rgb(24,0,101);
   }
 
   svg{
@@ -242,7 +254,8 @@
       bottom-[5px]
       h-2.5
     ;
-    stroke: red;
+    /* stroke: red; */
+    stroke: rgb(24,0,101);
     stroke-width: 4;
     stroke-linecap: round;
     /* border: 0.2px solid orange; */
@@ -257,11 +270,15 @@
   }
   
   #nav-link-items:hover .nav-text{
+    /* 
     @apply
-      text-red-600
+      text-red-600 
     ;
+    */
     /* for language svg */
-    stroke: red; 
+    /* stroke: red; */
+    stroke: rgb(24,0,101);
+    color: rgb(24,0,101);
     stroke-opacity: 100%;
   }
   
@@ -293,7 +310,7 @@
       xl:block
       py-2
       px-8
-      bg-indigo-700
+      /* bg-indigo-700 */
       text-white
       font-bold
       text-xl
@@ -305,6 +322,12 @@
       motion-reduce:transition-none
       */
     ;
+    /* color: rgb(254,189,44); */
+    border: 1px solid rgb(254,189,44);
+    /* background-color: rgb(27,4,110);*/
+    /* background-color: rgb(54, 7, 224);*/
+    /* background-color: rgb(69,61,204); */
+    background-color: rgb(45,10,171);
     will-change: transform;
     text-decoration: none;
   }

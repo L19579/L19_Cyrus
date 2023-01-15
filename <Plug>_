@@ -269,7 +269,7 @@
     background-size: 100%;
     /* background-position-y: -120px; */
     overflow-x: hidden;
-    /* border: 2px red solid; */
+    border: 2px red solid; 
   }
 
   .info-panel-group-footer-mid-wrapper{
@@ -278,7 +278,7 @@
     overflow: hidden;
     padding-left: 2rem;
     /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/man_bottom.png"); */
-    /* border: 2px solid blue; */
+    border: 2px solid blue;
   }
 
   .info-panel-group-footer-inner-wrapper{
@@ -289,13 +289,13 @@
     grid-template-columns: repeat(20, [col] 5%);
     max-width: 1200px;
     height: 99%;
-    /* border: 1px solid white; */
+    border: 1px solid white;
   }
 
   .info-panel-group-footer-svg-wrapper{
     grid-column: col 1 / span 15;
     transform: translateY(-0.5rem);
-    /* border: 2px solid purple; */
+    border: 2px solid purple;
   }
   
   .info-panel-group-footer-button-wrapper{
@@ -305,7 +305,7 @@
       mr-[10px]
     ;
     grid-column: col 16 / span 4;
-    /* border: solid blue 2px; */
+    border: solid blue 2px;
   }
 
   .info-panel-group-footer-button{
@@ -367,7 +367,7 @@
 
     width: 100%;
     height: 150px;
-    /* border: 2px solid green; */
+    border: 2px solid green;
   }
 
   .info-panel-1-stat-group{
@@ -430,7 +430,7 @@
     text-align: center;
     margin-top: 0.6rem;
 
-    border: 2px solid rgba(0,0,0,0);
+    border: 2px solid black;
   }
 
   /* minimized frame */
@@ -441,14 +441,14 @@
     ;
     height: 0.1px;
     width: 100%;
-    /* border: 2px solid red; */
+    border: 2px solid red;
   }
 
   #info-panel-1-smiley-svg{
     height: 10rem; 
-    width: 100%;
+    width: auto;
     stroke: rgb(45,10,171);
-    transform: translateX(50rem) translateY(-8rem);  
+    transform: translateX(50rem) translateY(-10rem);  
   }
 
   .info-panel-1-svg-checklist-words{
@@ -462,7 +462,7 @@
       text-[clamp(28px,8.5vw,30px)]
     ;
     line-height: 2.6rem;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
     padding-left: 8%;
     padding-right: 8%;
     text-align: center;

@@ -175,10 +175,11 @@
   
 .contact-top-panel-wrapper{
     @apply
-      bg-indigo-600
+      /* bg-indigo-600 */
       flex
       justify-center
     ;
+    background-color: rgb(69,61,204);
     height: 300px;
     width: 100%;
     overflow: hidden;

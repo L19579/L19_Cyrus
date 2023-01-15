@@ -94,7 +94,7 @@
     <div class="panel-video-description-upper-wrapper">
       <div class="panel-video-description-inner-wrapper">
         <div class="panel-video-svg-wrapper">
-          SVG TEXT HERE ;:::::
+          <h1>SVG TEXT HERE ;::::: </h1> 
         </div>
       </div>
     </div>
@@ -194,17 +194,18 @@
     @apply 
       flex
       mt-[auto]
-      mb-[20%]
+      mb-[14%]
       justify-center 
     ;
-    grid-column: col 15 / span 6;
+    grid-column: col 14 / span 8;
     /* border: 2px green solid; */
   }
 
   #leading-title-welcome-svg{
-    width: 120%;
+    width: 26rem;
     height: auto;
-    fill: rgb(67,56,202);
+    /* fill: rgb(67,56,202); */
+    fill: rgb(45,10,171);
     
     stroke-dasharray: 1000;
     animation: dash 0.7s linear forwards;
@@ -294,12 +295,13 @@
 		@apply
       flex
 			relative
-			bg-stone-100
+			/* bg-stone-100 */
+      bg-black
 			overflow-hidden
       justify-center
 		;
     width: 100%;
-    max-height: 270px;
+    max-height: 230px;
     border: 2px solid blue;
 	}	
 	
@@ -335,6 +337,7 @@
   .panel-video-svg-wrapper{
     min-width: 300px;
     height: 100%;
+    color: white;
     border: 3px solid green;
   }
 
@@ -353,6 +356,6 @@
     overflow: hidden;
     border: 2px solid blue;
     width: 100%;
-    transform: translateY(-170px);
+    transform: translateY(-200px);
   }
 </style>
