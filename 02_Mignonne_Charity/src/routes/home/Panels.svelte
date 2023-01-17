@@ -156,14 +156,15 @@
       xsm:px-4
       flex
     ;
-    /* min-height: 500px; */
+    min-height: 500px;
+    max-height: 100%; /* redundant but testing TODO */ 
     max-width: 1200px; 
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_full_collage_1.png");
     background-size: 45%;
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
-    /* border: 2px solid purple; */
+    border: 2px solid red;
     
   }
 
@@ -241,11 +242,12 @@
  
   .leading-title-statement-lower-section{
     @apply
-      flex flex-col
-      justify-center
+      flex
+      flex-col
+      justify-end
     ;
     padding-right: 40%;
-    min-height: 100px;
+    height: 7rem;
      
     border: 2px blue solid;
   }
