@@ -1,6 +1,12 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+</head>
+
 <script>
-  import Moreinfo from './Moreinfo.svelte'
- 
+  import Moreinfo from './Moreinfo.svelte';
+
   /* Dropped need offset for Nav space.
   function scroll_into_view({ target }){
     const element = document.querySelector(target.getAttribute('href'));
@@ -93,12 +99,15 @@
   <div class="panel-video-outer-wrapper">
     <div class="panel-video-description-upper-wrapper">
       <div class="panel-video-description-inner-wrapper">
-        <div class="panel-video-svg-wrapper">
-          <h1>SVG TEXT HERE ;::::: </h1> 
+        <div class="panel-video-text-wrapper">
+          "Give thanks to the Lord, for He is good; his love endures forever" <br>
+          <div class= "panel-video-text-sub">Psalm 136:1</div>
         </div>
       </div>
     </div>
     <div class="panel-video-inner-wrapper">
+      <div class="panel-video-video-cover">
+      </div>
       <div class="panel-video-video-wrapper">
         <video
           class="panel-video-video"
@@ -123,7 +132,7 @@
       /* xl:min-h-[810px]  Not req */ 
     ; 
     width: 100%;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
   }
   
   /* Panel 1 specific */
@@ -226,7 +235,7 @@
       pb-7
     ;
     margin-right: 33rem;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .leading-title-statement-description-main-text{
@@ -249,7 +258,7 @@
     padding-right: 40%;
     height: 7rem;
      
-    border: 2px blue solid;
+    /* border: 2px blue solid; */
   }
 
   .panel-1-buttons-wrapper{
@@ -257,7 +266,7 @@
       flex
     ;
     min-height: 30px;
-    border: 2px blue solid;
+    /* border: 2px blue solid; */
   }
 
   .panel-1-buttons{
@@ -274,7 +283,7 @@
     white-space: nowrap;
     text-decoration: none;
     will-change: transform;
-    border: 1px black solid;
+    border: 1px black solid; 
   }
   
   .panel-1-buttons:hover{
@@ -304,7 +313,7 @@
 		;
     width: 100%;
     max-height: 230px;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
 	}	
 	
   .panel-video-inner-wrapper{
@@ -313,7 +322,7 @@
     ;
     width:1600px; /* eh see ext eh*/
     width: full;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .panel-video-description-upper-wrapper{
@@ -323,7 +332,7 @@
     ;
     top: 0px;
     /* width: 30%; */
-    border: 3px solid green;
+    /* border: 3px solid green; */
   }
 
   .panel-video-description-inner-wrapper{
@@ -333,14 +342,26 @@
     ;
     width: 1100px; 
     height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
-  .panel-video-svg-wrapper{
-    min-width: 300px;
-    height: 100%;
+  .panel-video-text-wrapper{
+    @apply
+      flex
+      flex-col
+      justify-center
+    ;
+    text-align: center;
+    font-size: 2rem;
+    max-width: 400px;
+    height: 97%;
     color: white;
-    border: 3px solid green;
+    font-family: 'Permanent Marker', cursive;
+    /* border: 3px solid green; */
+  }
+  
+  .panel-video-text-sub{
+    color: rgb(45,10,171); 
   }
 
   .panel-video-video-wrapper{
@@ -350,14 +371,24 @@
       items-center
     ;
     min-width: 1600px; /* ext eh ; scaling issue; wrapper not enough; TODO*/
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
   }
 
   .panel-video-video{
+    z-index: 5;
     display: block;
     overflow: hidden;
-    border: 2px solid blue;
     width: 100%;
-    transform: translateY(-200px);
+    transform: translateX(-300px) translateY(-200px);
+    /* border: 2px solid blue; */
+  }
+
+  .panel-video-video-cover{
+    z-index: 10;
+    min-width: 300px;
+    height: 110%;
+    background-image: linear-gradient(to right, rgba(0,0,0,1) 10%, rgba(0,0,0,0));
+    transform: translateX(50%);
+    transform: translateY(-5%);
   }
 </style>

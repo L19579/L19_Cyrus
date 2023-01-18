@@ -168,7 +168,7 @@
 
   .footer-wrapper{
     width: 100%;  
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
   
   /* Contact information panel */
