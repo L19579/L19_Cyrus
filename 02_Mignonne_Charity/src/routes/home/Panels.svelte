@@ -149,7 +149,7 @@
 		;
     min-height: 900px;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 	}	
 	
   .panel-1-inner-wrapper{
@@ -173,7 +173,7 @@
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     
   }
 

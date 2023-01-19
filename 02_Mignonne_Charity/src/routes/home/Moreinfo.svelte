@@ -86,7 +86,7 @@
                 {counter_sunday_service_attendees}+
               </div>
               <div class="stat-description-group" id="stat-description-3">
-                Prayer Service Attendees
+                Prayer Attendees
               </div>
             </div>
           </div>
@@ -242,7 +242,7 @@
       justify-center
     ;
     width: 100vw;
-    border: 3px solid red;
+    /* border: 3px solid red; */
   }
 
 
@@ -255,7 +255,7 @@
     ;
     width: 100vw;
     max-height: 760px;
-    border: solid 2px cyan;
+    /* border: solid 2px cyan; */
   }  
 
   .info-panel-group-mid-wrapper{
@@ -354,7 +354,12 @@
 
 /* ---------------------------------- Panel 1 ---------------------------------- */
   #info-panel-1-outer-wrapper{
-    border: 2px solid blue; 
+    background-size: 13.5%;
+    background-position-x: right;
+    background-position-y: 20%;
+    background-repeat: no-repeat;
+    /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_kid_swing.png"); */
+    /* border: 2px solid blue;*/
   }
 
   #info-panel-1-mid-wrapper{
@@ -377,9 +382,10 @@
       flex
       justify-around
     ;
+    margin-top: 2rem;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(3, [col] 30%);
+    grid-template-columns: repeat(3, [col] 33%);
     grid-template-rows: 100%;
     grid-gap: 2px;
 
@@ -395,10 +401,20 @@
       text-xl
       justify-around
     ;
+    /* color: rgb(87,83,78); */
     width: 100%;
     text-align: center;
+    /* font-size: 50px; */
     font-weight: 700; 
-    border: 2px solid black;
+    /* border: 2px solid black; */
+  }
+
+  #info-panel-1-stat-1{
+    border-right: 5px solid black;
+  }
+
+  #info-panel-1-stat-2{
+    border-right: 5px solid black;
   }
 
   .stat-number-group{
