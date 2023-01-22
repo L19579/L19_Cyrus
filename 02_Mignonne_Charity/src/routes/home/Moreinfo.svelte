@@ -67,7 +67,7 @@
           <div id="info-panel-1-stats-grid">
             <div class="info-panel-1-stat-group" id="info-panel-1-stat-1">
               <div class="stat-number-group" id="stat-number-1">
-                {counter_families_fed}+
+                {counter_families_fed} <span class="stat-plus-sign-group">+</span>
               </div>
               <div class="stat-description-group" id="stat-description-1">
                 Families Fed
@@ -75,7 +75,7 @@
             </div>
             <div class="info-panel-1-stat-group" id="info-panel-1-stat-2">
               <div class="stat-number-group" id="stat-number-2">
-                {counter_enrolled_youths}+
+                {counter_enrolled_youths} <span class="stat-plus-sign-group">+</span>
               </div>
               <div class="stat-description-group" id="stat-description-2">
                 Youths Enrolled
@@ -83,7 +83,7 @@
             </div>
             <div class="info-panel-1-stat-group" id="info-panel-1-stat-3">
               <div class="stat-number-group" id="stat-number-3">
-                {counter_sunday_service_attendees}+
+                {counter_sunday_service_attendees} <span class="stat-plus-sign-group">+</span>
               </div>
               <div class="stat-description-group" id="stat-description-3">
                 Prayer Attendees
@@ -91,11 +91,19 @@
             </div>
           </div>
           <div id="info-panel-1-counter-note">
+            ...and counting.
+            <div id="info-panel-1-counter-note-underline-svg-wrapper">
+              <svg id="info-panel-1-counter-note-underline-svg">
+              viewBox="0 0 222 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 3.3747C19.2499 3.3747 35.4399 2.59015 51.6818 2.18685C76.7698 1.5639 101.744 2.64436 126.813 3.29551C144.782 3.76223 162.601 3.03127 180.543 2.5432C193.873 2.18061 205.294 1.96511 218.59 2.54321" stroke-width="3" stroke-linecap="round"/>
+                <path d="M36.5901 2.86385C51.4246 2.86385 66.2516 2.75191 81.0748 3.45777C102.58 4.48183 123.945 5.35832 145.476 5.35832C163.498 5.35832 180.593 5.43445 198.59 6.35736" stroke-width="3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <!-- Disabled
             {#if show_counter_notes}
-              <Typewriter mode="cascade" interval="50" cursor="false">
-                ...and counting.
-              </Typewriter>
+              <Typewriter mode="cascade" interval="50" cursor="false"> </Typewriter> 
             {/if}
+            -->
           </div>
           <div id="info-panel-1-smiley-svg-wrapper">
             <!-- TODO -->
@@ -423,15 +431,19 @@
       text-xl
       text-[clamp(28px,8.5vw,60px)]
     ;
+    color: rgb(45,10,171); 
+  }
+
+  .stat-plus-sign-group{
+    color: black;
   }
 
   .stat-description-group{
     @apply
       block
       text-xl
-      text-[clamp(28px,8.5vw,35px)]
+      text-[clamp(28px,8.5vw,45px)]
     ;
-    
   }
 
   #info-panel-1-stat-1{
@@ -457,14 +469,34 @@
       relative
       block
       text-[clamp(28px,8.5vw,30px)]
+      flex flex-col
+      justify-center
     ;
     font-weight: 600; 
-    height: 15%;
+    height: 10%;
     width: 100%;
     text-align: center;
-    margin-top: 0.6rem;
+    margin-top: 2rem;
+    overflow: hidden;
 
-    border: 2px solid rgba(0,0,0,0);
+    /* border: 2px solid red; */
+  }
+
+  #info-panel-1-counter-note-underline-svg-wrapper{
+    @apply
+      flex
+      justify-center
+    ;
+    position: relative;
+    height: 30%;
+    width: 100%;
+    /* border: 2px solid green; */
+  }
+
+  #info-panel-1-counter-note-underline-svg{
+    stroke: rgb(45,10,171);
+    width: 14rem;
+    height: auto;
   }
 
   /* minimized frame -- TODO, create new svg */

@@ -147,17 +147,20 @@
       xl:h-screen
       justify-center
 		;
-    min-height: 900px;
+    min-height: 800px;
     width: 100%;
     /* border: 2px solid red; */
 	}	
 	
   .panel-1-inner-wrapper{
     @apply
+      pt-[5%]
+      /*
       xsm:pt-[45px]
       sm:pt-[45px]
       md:pt-[110px]
       xl:pt-[110px]
+      */
 
       lg:px-10
       md:px-8
@@ -165,15 +168,15 @@
       xsm:px-4
       flex
     ;
-    min-height: 500px;
-    max-height: 100%; /* redundant but testing TODO */ 
+    /* min-height: 500px; */
+    max-height: 100%; 
     max-width: 1200px; 
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_full_collage_1.png");
     background-size: 45%;
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
-    /* border: 2px solid red; */
+    border: 2px solid red; 
     
   }
 
@@ -188,7 +191,7 @@
     ;
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
-    /* border: 2px solid blue; */
+    border: 2px solid blue; 
  }
   
   .leading-title-statement{
@@ -197,7 +200,7 @@
       /* xl:pr-96 */
     ;
     grid-column: col 1 / span 13;
-    /* border: 2px solid red; */
+    border: 2px solid red;
   }
 
   .leading-title-welcome-svg-wrapper{
@@ -208,7 +211,7 @@
       justify-center 
     ;
     grid-column: col 14 / span 8;
-    /* border: 2px green solid; */
+    border: 2px green solid;
   }
 
   #leading-title-welcome-svg{
@@ -232,10 +235,9 @@
   .leading-title-statement-description-main-text-wrapper{
     @apply
       xl:pr-10
-      pb-7
     ;
     margin-right: 33rem;
-    /* border: 2px solid red; */
+    border: 2px solid red; 
   }
 
   .leading-title-statement-description-main-text{
@@ -247,6 +249,7 @@
       leading-[1.75]
       text-left
     ;
+    border: 2px solid blue; 
   }
  
   .leading-title-statement-lower-section{
@@ -254,19 +257,21 @@
       flex
       flex-col
       justify-end
+      relative
     ;
     padding-right: 40%;
     height: 7rem;
      
-    /* border: 2px blue solid; */
+    border: 2px yellow solid;
   }
 
   .panel-1-buttons-wrapper{
     @apply
       flex
     ;
+    margin-bottom: 7px;
     min-height: 30px;
-    /* border: 2px blue solid; */
+    border: 2px blue solid;
   }
 
   .panel-1-buttons{
