@@ -154,6 +154,13 @@
           <div class="info-panel-group-title-wrapper" id="info-panel-2-title-wrapper">
             <div class="info-panel-group-title" id="info-panel-2-title">
               We Want To Do More!
+              <div id="info-panel-2-title-underline-svg-wrapper">
+                <svg id="info-panel-2-title-underline-svg">
+                viewBox="0 0 377 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.08685 14.6427C44.6003 14.6427 84.9527 13.9796 125.426 12.2476C155.447 10.9629 185.446 10.6414 215.492 10.4851C262.336 10.2415 309.08 11.2262 355.901 12.6091" stroke-width="4" stroke-linecap="round"/>
+                  <path d="M15 10.3044C22.7014 13.0607 35.8026 11.7775 43.81 11.6601C58.7682 11.4409 73.6676 10.3735 88.6398 10.44C119.383 10.5763 150.11 12.3693 180.83 10.3044C244.833 6.00233 309.216 8.63894 372.984 15.0495" stroke-width="4" stroke-linecap="round"/>
+                </svg>
+              </div>
               <div id="info-panel-2-title-sub-svg-wrapper">
                 <svg id="info-panel-2-title-sub-svg"
                 viewBox="0 0 227 137" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -580,7 +587,7 @@
     display: grid;
     grid-template-columns: 100%; 
     grid-template-rows: repeat(20, [row] 5%); 
-    border: 2px solid black;
+    /* border: 2px solid black; */
   } 
 
   #info-panel-2-title-wrapper{
@@ -590,19 +597,41 @@
       justify-center
     ;
     grid-row: row 2 / span 5;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #info-panel-2-title{
     @apply
-      text-[clamp(40px,9vw,60px)]
+      text-[clamp(40px,9vw,70px)]
     ;
     text-align: center;
     font-weight: bold;
   }
+  #info-panel-2-title-underline-svg-wrapper{
+    @apply
+      flex 
+      justify-center
+      mx-[auto]
+    ;
+    height: 0px;
+    width: 24rem;
+    /* border: solid red 2px; */
+  }
+
+  #info-panel-2-title-underline-svg{
+    @apply
+      flex
+    ;
+    stroke: rgb(45,10,171);
+    transform: scale(160%);
+    height: 20px;
+    width: 100%;
+    /* border: solid black 2px; */
+  }
 
   #info-panel-2-title-sub-svg-wrapper{
     height: 0px;
+    /* border: solid blue 2px; */
   }
 
   #info-panel-2-title-sub-svg{
@@ -618,7 +647,7 @@
       justify-center
     ;
     grid-row: row 8 / span 12;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #info-panel-2-description{
