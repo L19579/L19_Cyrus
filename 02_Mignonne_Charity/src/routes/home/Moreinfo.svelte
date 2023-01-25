@@ -8,7 +8,7 @@
       name: "Williane Moise",
       title_en: "Founder",
       title_fr: "PDG",
-      portrait: "temporary/williane.png",
+      portrait: "https://dieupeut-bucket.us-east-1.linodeobjects.com/williane_portrait.png",
       quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
     }
   ];
@@ -475,7 +475,7 @@
     @apply
       relative
       block
-      text-[clamp(28px,8.5vw,30px)]
+      text-[clamp(28px,8.5vw,35px)]
       flex flex-col
       justify-center
     ;
