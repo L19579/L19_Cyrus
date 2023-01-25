@@ -1,3 +1,9 @@
+<head>
+  <title>
+    Our Team
+  </title>
+</head>
+
 <script>
   import Navbar from './../shared/Navbar.svelte'
   import Footer from './../shared/Footer.svelte'
@@ -306,7 +312,7 @@
     ;
     width: 270px;
     height: 270px;
-    border: red solid 2px;
+    /* border: red solid 2px; */
   }  
 
   .portrait-imgs{
@@ -337,6 +343,7 @@
     @apply
       text-4xl
     ;
+    margin-top: 4px;
     font-weight: 700;
     text-align: center;
     /* border: 2px solid green; */
@@ -353,11 +360,12 @@
 
   .employee-bio{
     @apply
-      text-lg
+      text-xl
       px-14
     ;
+    /* color: rgb(61, 60, 58); */
     text-align: center;
-    font-weight: 500;
-    border: 2px solid red; 
+    font-weight: 600;
+    /* border: 2px solid red; */
   }
 </style>

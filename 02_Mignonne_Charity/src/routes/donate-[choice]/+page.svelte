@@ -1,3 +1,9 @@
+<head>
+  <title>
+    Thank You!
+  </title>
+</head>
+
 <script>
   // lots of redundancies under style tag; clean up.
 

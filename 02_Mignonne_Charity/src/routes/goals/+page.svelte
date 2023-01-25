@@ -1,3 +1,9 @@
+<head>
+  <title>
+    Goals
+  </title>
+</head>
+
 <script>
   import Navbar from './../shared/Navbar.svelte';
 	import Chart from './Chart.svelte';

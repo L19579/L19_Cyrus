@@ -1,3 +1,9 @@
+<head>
+  <title>
+    Impact
+  </title>
+</head>
+
 <script>
   const ipsum = "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy";
 </script>
