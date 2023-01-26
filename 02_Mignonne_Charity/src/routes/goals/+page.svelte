@@ -1,8 +1,8 @@
-<head>
+<svelte:head>
   <title>
     Goals
   </title>
-</head>
+</svelte:head>
 
 <script>
   import Navbar from './../shared/Navbar.svelte';

@@ -1,4 +1,4 @@
-<head>
+<svelte:head>
   <title>
     Welcome!
   </title>
@@ -6,7 +6,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
-</head>
+</svelte:head>
 
 <script>
   import Moreinfo from './Moreinfo.svelte';

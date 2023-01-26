@@ -1,8 +1,8 @@
-<head>
+<svelte:head>
   <title>
     Thank You!
   </title>
-</head>
+</svelte:head>
 
 <script>
   // lots of redundancies under style tag; clean up.

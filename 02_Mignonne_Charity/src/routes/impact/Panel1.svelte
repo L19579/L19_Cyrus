@@ -1,8 +1,8 @@
-<head>
+<svelte:head>
   <title>
     Impact
   </title>
-</head>
+</svelte:head>
 
 <script>
   const ipsum = "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy";

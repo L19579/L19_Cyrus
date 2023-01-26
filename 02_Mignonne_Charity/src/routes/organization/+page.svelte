@@ -1,8 +1,8 @@
-<head>
+<svelte:head>
   <title>
     Our Team
   </title>
-</head>
+</svelte:head>
 
 <script>
   import Navbar from './../shared/Navbar.svelte'
@@ -138,12 +138,16 @@
     ;
     position: relative;
     overflow: hidden;
+    background-size: 190px;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_logo_text_and_symbol_tilted.png");
+    /*
     background-attachment: local;
     background-size: 2000px;
     background-position-x: -445px;
     background-position-y: -200px;
     background-repeat: repeat-x;
-    /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/old_img_black_group.webp"); */
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/old_img_black_group.webp"); 
+     */
   }
   
   .panels-background-filter{
@@ -151,6 +155,8 @@
       w-full
       h-full
     ;
+    background: radial-gradient(rgba(255,255,255,0.96) 68%, rgba(255,255,255, 0.2) 110%);
+    /* background-color: rgba(255,255,255,0.9); */
     /* background-color: rgba(41,37,36,0.4); */
   }
 
@@ -168,7 +174,7 @@
       mb-0
     ;
 
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
   
   .panel-1-inner-wrapper{
@@ -181,7 +187,7 @@
     overflow: hidden;
     width: 1200px;
     height: 1200px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
     /* border-radius: 20px; */
     /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/paper-texture-6.jpg"); */
   }
@@ -257,7 +263,8 @@
     display: grid;
     grid-template-columns: repeat(2, [col], 50%);
     grid-template-rows: repeat(2, [row], 50%);
-    border: 2px solid green;
+    background-color: rgba(255,255,255,0.1);
+    /* border: 2px solid green; */
   }
 
   .meet-the-team-portraits{
