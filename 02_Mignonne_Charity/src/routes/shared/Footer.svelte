@@ -323,7 +323,7 @@
 			pb-5
     ;
 		overflow: hidden;
-    height: 200px;
+    min-height: 200px;
     width: 100%;
     /* border: 2px solid red; */
   }
@@ -333,22 +333,22 @@
 			text-stone-300
     ;
     display: grid;
-    grid-template-columns: repeat(10, [col] 10%);
-    grid-template-rows: minmax(0, 1fr) repeat(5, [row] 20%);
+    grid-template-columns: repeat(20, [col] 5%);
+    grid-template-rows: minmax(0, 1fr) repeat(20, [row] 5%);
     height: 90%;
     width: 1200px;
     /* border: 2px solid red; */
   }
-  
+
   .company-dieu-peu-top-wrapper{
-    grid-column: col / span 7;
-    grid-row: row / span 5;
-   /* border: 2px solid pink; */
+    grid-column: col / span 15;
+    grid-row: row / span 20;
+    /* border: 2px solid pink; */
   }
   
   .company-dieu-peu-lower-wrapper{
     display: grid;
-    grid-template-columns: repeat(10, [col] 10%);
+    grid-template-columns: repeat(20, [col] 5%);
     grid-template-rows: repeat(4, [row] 25%);
     height: 99%; /* <-- minor overlap at 100%, gap somewhere? */
     /* border: 2px solid blue; */
@@ -363,7 +363,7 @@
 		min-width: 100%;
 		font-weight: 700;
     text-align: left;
-    grid-column: col / span 4;
+    grid-column: col / span 8;
     grid-row: row;
     white-space: nowrap;
     /* border: 2px solid white; */
@@ -379,22 +379,21 @@
 		;
 	}
   
-  .company-dieu-peu-social-media{
-    grid-column: col 5 / span 6;
-    grid-row: row;
-    /* border: 2px solid purple; */
-  }
-  
   .buttons-social-media-top-wrapper{
     @apply
       flex
       justify-center
-      pl-8
     ;
     height: 90%; /* This is producing minor misalignment @ 100%, no margins */
     /* border: 2px solid yellow; */
   }
-  
+
+  .company-dieu-peu-social-media{
+    grid-column: col 10 / span 9;
+    grid-row: row;
+    /* border: 2px solid red; */
+  }
+
   .buttons-social-media-lower-wrapper{
     @apply
       flex
@@ -435,7 +434,7 @@
   /* @@@@@@@ */
 		.company-dieu-peu-address-all-wrapper{
 			padding-top: 2rem;
-			grid-column: col 1 / span 10;
+			grid-column: col 1 / span 20;
 			grid-row: row 2 / span 4;
 			
 			display: grid;	
@@ -536,10 +535,10 @@
 	.company-dieu-peu-copyright-wrapper{
 		padding-right: 1.8rem;
     overflow: hidden;
-    grid-column: col 8 / span 3;
-    grid-row: row 1 / span 2;
+    grid-column: col 16 / span 5;
+    grid-row: row 1 / span 8;
 		height: 100%;
-    /* border: 2px solid yellow; */
+    /*border: 2px solid yellow; */
 
 	}
 	
@@ -554,12 +553,12 @@
 		line-height: 1.4rem;
 		padding-right: 1.8rem;
     overflow: hidden;
-    grid-column: col 8 / span 3;
-    grid-row: row 3 / span 3;
-    /* border: 2px solid yellow; */
+    grid-column: col 16 / span 5;
+    grid-row: row 9 / span 12;
 		padding-top: 0.7rem;
 	
     text-align: right;
+    /* border: 2px solid yellow; */
   }
 		
   .company-l19579-description{
@@ -618,6 +617,68 @@
 			text-stone-100
 		;
 	}
+
+  /* @media only screen and (max-width: 640px){ */
+  @media only screen and (max-width: 780px){
+    .company-lower-panel-wrapper{
+      @apply 
+        flex flex-col
+      ;
+    }
+    
+    .company-dieu-peu-top-wrapper{
+      display: inline-block;
+      width: 100%;
+    }
+
+    .company-dieu-peu-title{
+      padding-left: 1rem;
+    }
+    
+    .company-dieu-peu-social-media{
+      grid-column: col 12 / span 9;
+    }
+
+    .buttons-social-media-top-wrapper{
+      @apply
+        justify-end
+      ;
+      margin-right: 1rem;
+    }
+
+    .company-dieu-peu-copyright-wrapper{
+      margin-top: 2rem;
+      
+      grid-column: col 1 / span 2; 
+      /* border: 2px solid red; */
+    }
+
+    .company-dieu-peu-copyright-text{
+      text-align: center;
+    }
+
+    .company-l19579-description{
+      padding-top: 0rem;
+    }
+
+    .company-l19579-wrapper{
+      text-align: center;
+      padding-top: 0rem;
+      padding-right: 0rem;
+      margin-top: 0.4rem; 
+      grid-column: col 12 / span 9;
+      /* border: 2px solid white; */
+    }
+
+    .l19579-mit-license-text{
+      @apply
+        justify-center
+      ;
+      width: 100%;
+      /* border: 2px solid red; */
+    }
+
+  }
 		
 	#social-media-button-github{
 		@apply
