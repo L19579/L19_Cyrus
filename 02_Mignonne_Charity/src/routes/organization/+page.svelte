@@ -155,9 +155,9 @@
       w-full
       h-full
     ;
-    background: radial-gradient(rgba(255,255,255,0.96) 68%, rgba(255,255,255, 0.2) 110%);
-    /* background-color: rgba(255,255,255,0.9); */
-    /* background-color: rgba(41,37,36,0.4); */
+    background: 
+      linear-gradient(to left, rgba(255,255,255,0.2) -30%, rgba(255,255,255,0.97) 10%,  
+          rgba(255,255,255,0.97) 90%, rgba(255,255,255, 0.2) 130%);
   }
 
   /* 
@@ -214,7 +214,7 @@
       flex
       /* h-[107px] */
       justify-center
-      mb-10
+      mb-2
       h-[140px]
     ;
     background-attachment: local;
@@ -249,8 +249,8 @@
     ;
     margin: auto;
     text-align: center;
-    border: 3px solid red;
     white-space: nowrap;
+    /* border: 3px solid red; */
   }
   
   .meet-the-team-portraits-wrapper{

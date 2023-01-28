@@ -133,12 +133,12 @@
       justify-center
     ;
     width: 100vw; 
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
   .goal-inner-wrapper{
     width: 100%; 
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
 
   .group-panel-outer-wrapper{
@@ -147,7 +147,7 @@
       justify-center
     ;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .group-panel-mid-wrapper{
@@ -156,13 +156,13 @@
       justify-center
     ;
     width: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .group-panel-inner-wrapper{
     width: 1285px;
     height: 700px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
 
   /* --------------- Panel 1 --------------- */
@@ -202,7 +202,7 @@
       
     width: 100%; 
     box-sizing: border-box;
-    border: 1px solid green;
+    /* border: 1px solid green; */
   }
 
   #panel-1-title-text{
@@ -213,7 +213,7 @@
   .panel-1-text-outer-wrapper{
     grid-column: col 1 / span 11;
     grid-row: 4 / span 10;
-    border: blue solid 2px;
+    /* border: blue solid 2px; */
   }
 
   #panel-1-text{
@@ -232,7 +232,7 @@
 		grid-column: col 1 / span 11;	
 		grid-row: row 14 / span 6;	
 
-    border: purple solid 2px;
+    /* border: purple solid 2px; */
 	}
 
 	.panel-1-illustration-outer-wrapper{
@@ -243,7 +243,7 @@
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
     grid-template-rows: repeat(20, [row] 5%);
-    border: blue solid 2px;
+    /* border: blue solid 2px; */
 	}
 
 	.panel-1-group-illustration-wrapper{
@@ -340,11 +340,11 @@
       justify-center
     ;
     grid-column: col 1 / span 20;
-    grid-row: row 2 / span 2;
+    grid-row: row 2 / span 3;
       
     width: 100%; 
     box-sizing: border-box;
-    border: 1px solid green;
+    /* border: 1px solid green; */
 	}
 
   #panel-2-title-text{
@@ -355,7 +355,7 @@
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
 		grid-row: row 5 / span 6;
-		border: 2px solid red;
+		/* border: 2px solid red; */
 	}
 
 	#panel-2-video-upper-wrapper{
@@ -364,7 +364,7 @@
 			justify-center
 		;
 		grid-column: col 1 / span 20;
-		grid-row: row 11 / span 10;
+		grid-row: row 10 / span 11;
 		/* border: 2px solid blue; */
 	}
 	
@@ -382,7 +382,7 @@
     height: 100%;
     box-sizing: border-box;
     background-position-x: left;
-    background-position-y: 7rem;
+    background-position-y: 9rem;
     background-size: 20%;
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_1.png");
@@ -398,7 +398,7 @@
     height: 100%;
     background-position-x: right;
     background-size: 22%;
-    background-position-y: 7rem;
+    background-position-y: 9rem;
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_2.png");
     /* border: 2px blue solid; */

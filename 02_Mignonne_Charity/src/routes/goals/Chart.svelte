@@ -100,7 +100,7 @@
 
 	.path-line {
 		fill: none;
-		stroke: rgb(0,100,100);
+		stroke: rgb(45,10,171);
 		stroke-linejoin: round;
 		stroke-linecap: round;
 		stroke-width: 3;
@@ -111,7 +111,7 @@
 	}
 
 	.path-area {
-		fill: rgba(0,100,100,0.2);
+		fill: rgba(45,10,171,0.2);
 	}
 
   @keyframes dash{
