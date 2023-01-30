@@ -116,28 +116,30 @@
       <li id="nav-link-items">
       <div>
         <ul class="burger-nav-language-buttons-wrapper">
-          <li class="burger-menu-nested-link-items">
+          <li class="burger-menu-nested-link-items" id="nav-link-items">
             <button class="nav-language-button nav-text">
-              EN 
+              🇺🇸 
             </button>
           </li>
           <li class="burger-menu-nested-link-separators" id="nav-link-items">|</li>
           <li class="burger-menu-nested-link-items" id="nav-link-items">
             <button class="nav-language-button nav-text">
-              FR 
+              🇫🇷
             </button> 
           </li>
           <li class="burger-menu-nested-link-separators" id="nav-link-items">|</li>
           <li class="burger-menu-nested-link-items" id="nav-link-items">
             <button class="nav-language-button nav-text">
-              KR
+              🇭🇹
             </button> 
           </li>
         </ul>
       </div>
       </li>
     </ul>
-    <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-mobile-donate">Donate</a>
+    <div class="nav-mobile-donate-wrapper">
+      <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-mobile-donate">Donate</a>
+    </div>
   </div>
 </div>
 
@@ -190,7 +192,6 @@
     ;
     padding-left: 4rem;
     padding-right: 4rem;
-    border: 2px solid green;
   }
 
   #nav-title{
@@ -419,7 +420,16 @@
     text-decoration: none;
   }
 
-  .nav-mobile-donate{
+  .nav-mobile-donate-wrapper{
+    @apply
+      flex 
+      justify-center
+    ;
+    padding-left: 25px;
+    /* border: 2px solid green; */
+  }
+
+  .nav-mobile-donate{ /* simplify w/ above */
     @apply
       xl:block
       py-2
@@ -463,23 +473,33 @@
 
   /* -------------------------- burger menu dropdown */
   .burger-menu-dropdown-wrapper{
+    @apply
+      flex
+      justify-center
+    ;
     visibility: hidden;
     position: fixed;
     z-index: 29;
     background-color: rgb(245,245,244);
     height: 110vh;
-    width: 101vw;
+    width: 103vw;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(-105%);
+    will-change: transform;
+    /* border: 2px solid red; */
   }
 
   .active.burger-menu-dropdown-wrapper{
+    transform: translateY(0%);
     visibility: visible;
   }
 
   .burger-menu-dropdown-options-wrapper{
-    margin-top: 30%;
+    margin-top: 30vh;
+    width: 90%;
     height: 400px;  
     padding-right: 4px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .burger-menu-dropdown-nav-link-wrapper{
@@ -489,7 +509,7 @@
       justify-around
     ;
     height: 70%;
-    border: 2px solid blue; 
+    /* border: 2px solid blue; */
   }
 
   /* -------------------------- burger menu activation */
@@ -514,7 +534,8 @@
     display: flex;
     justify-content: center;
     max-height: 50px;
-    border: 2px solid red;
+    padding-right: 35px;
+    /* border: 2px solid red; */
   }
 
   .burger-menu-nested-link-items{
