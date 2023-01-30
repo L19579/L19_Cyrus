@@ -301,7 +301,7 @@
     ;
     text-decoration: none;
     height: 36px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
     font-size: 18px;
     font-family: Real, sans-serif;
   }
@@ -349,7 +349,7 @@
   .company-dieu-peu-lower-wrapper{
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
-    grid-template-rows: repeat(4, [row] 25%);
+    grid-template-rows: repeat(20, [row] 5%);
     height: 99%; /* <-- minor overlap at 100%, gap somewhere? */
     /* border: 2px solid blue; */
   }
@@ -364,7 +364,7 @@
 		font-weight: 700;
     text-align: left;
     grid-column: col / span 8;
-    grid-row: row;
+    grid-row: row / span 5;
     white-space: nowrap;
     /* border: 2px solid white; */
   }
@@ -390,7 +390,7 @@
 
   .company-dieu-peu-social-media{
     grid-column: col 10 / span 9;
-    grid-row: row;
+    grid-row: row / span 5;
     /* border: 2px solid red; */
   }
 
@@ -405,9 +405,15 @@
   }
 
 	#social-media-button-facebook{
-			padding-left: 1.4px;
+			padding-top: 1px;
+			padding-left: 1.37px;
 	}
   
+	#social-media-button-twitter{
+			padding-top: 1px;
+			padding-left: 1.37px;
+	}
+
   .social-media-buttons{
     @apply
       flex
@@ -435,7 +441,7 @@
 		.company-dieu-peu-address-all-wrapper{
 			padding-top: 2rem;
 			grid-column: col 1 / span 20;
-			grid-row: row 2 / span 4;
+			grid-row: row 6 / span 15;
 			
 			display: grid;	
       grid-template-columns: repeat(30, [col] 1%);
@@ -628,26 +634,44 @@
     
     .company-dieu-peu-top-wrapper{
       display: inline-block;
-      width: 100%;
+      min-height: 300px;
+    }
+  
+    /* this is.. eh */
+    .company-dieu-peu-lower-wrapper{
+      min-height: 300px;
     }
 
     .company-dieu-peu-title{
-      padding-left: 1rem;
+      @apply
+        flex
+        justify-center
+      ;
+      grid-column: col / span 20; 
+      grid-row: row / span 3;
+      /* padding-left: 1rem; */
+      /* border: 2px solid white; */
     }
     
     .company-dieu-peu-social-media{
-      grid-column: col 12 / span 9;
+      grid-column: col 1 / span 20;
+      grid-row: row 5 / span 3; 
+      /* border: 2px solid red;*/
     }
 
     .buttons-social-media-top-wrapper{
       @apply
-        justify-end
+        justify-center
       ;
-      margin-right: 1rem;
     }
 
+		.company-dieu-peu-address-all-wrapper{
+      grid-row: row 9 / span 11; 
+    }
+    
     .company-dieu-peu-copyright-wrapper{
       margin-top: 2rem;
+      padding-left: 30px;
       
       grid-column: col 1 / span 2; 
       /* border: 2px solid red; */
@@ -665,7 +689,7 @@
       text-align: center;
       padding-top: 0rem;
       padding-right: 0rem;
-      margin-top: 0.4rem; 
+      margin-top: 1rem; 
       grid-column: col 12 / span 9;
       /* border: 2px solid white; */
     }

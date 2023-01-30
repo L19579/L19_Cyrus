@@ -118,8 +118,8 @@
   .panels-top-wrapper{
     @apply
       block
-      xsm:pt-[45px]
-      sm:pt-[45px]
+      xsm:pt-[106px]
+      sm:pt-[106px]
       md:pt-[106px]
       xl:pt-[106px]
       bg-stone-100
@@ -186,7 +186,7 @@
     ;
     overflow: hidden;
     width: 1200px;
-    height: 1200px;
+    height: 1300px;
     /* border: 2px solid red; */
     /* border-radius: 20px; */
     /* background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/paper-texture-6.jpg"); */
@@ -245,7 +245,7 @@
     @apply
       relative
       mt-3
-      text-[clamp(28px,8.5vw,70px)]
+      text-[clamp(60px,8.5vw,70px)]
     ;
     margin: auto;
     text-align: center;
@@ -272,9 +272,10 @@
       mx-5
       /* bg-stone-300 */
     ;
+    padding-top: 30px;
     min-width: 480px;
-    height: 490px; 
-    border-radius: 20px;
+    height: 570px; 
+    /* border-radius: 20px; */
     /* border: 2px solid black; */
   }
 
@@ -297,7 +298,7 @@
     grid-column: col 2 / span 1;    
     grid-row: row 2 / span 1;    
   }
-  
+ /* 
   #portrait-5{
     grid-column: col 1 / span 1;    
     grid-row: row 3 / span 1;    
@@ -306,6 +307,37 @@
   #portrait-6{
     grid-column: col 2 / span 1;    
     grid-row: row 3 / span 1;    
+  }
+  */
+
+  @media only screen and (max-width: 900px){ 
+    .panel-1-inner-wrapper{
+      height: 2600px;
+    }
+    .meet-the-team-portraits-wrapper{
+      grid-template-columns: repeat(1, [col], 100%);
+      grid-template-rows: repeat(4, [row], 25%);
+    }
+
+    #portrait-1{
+      grid-column: col 1 / span 1;    
+      grid-row: row 1 / span 1;    
+    }
+    
+    #portrait-2{
+      grid-column: col 1 / span 1;    
+      grid-row: row 2 / span 1;    
+    }
+
+    #portrait-3{
+      grid-column: col 1 / span 1;    
+      grid-row: row 3 / span 1;    
+    }
+    
+    #portrait-4{
+      grid-column: col  / span 1;    
+      grid-row: row 4 / span 1;    
+    }
   }
 
   .portrait-img-wrapper{

@@ -14,8 +14,8 @@
   .panels{
     @apply
       block
-      xsm:pt-[45px]
-      sm:pt-[45px]
+      xsm:pt-[110px]
+      sm:pt-[110px]
       md:pt-[123px]
       lg:pt-[127px]
       xl:pt-[110px]

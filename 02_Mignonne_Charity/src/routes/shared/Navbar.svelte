@@ -23,25 +23,30 @@
         break;
     };
   };
+
+  let active = "";
+  function burger_menu_toggle(){
+    active === "active" ? active = "" : active = "active";
+  };
 </script>
 
-<Wopprompt />
+<!-- <Wopprompt /> -->
 <header id="header">
   <div id="nav-top-wrapper">
     <div id="nav-mid-wrapper">
-      <!-- TODO fill x-data, breaking atm -->
-      <nav id="nav-low-wrapper" x-data="">
+      <!-- Mobile menu -->
+      <div class="burger-menu-wrapper">
+        <button class="burger-menu {active}" on:click={() => burger_menu_toggle()}></button>
+      </div>
+      <nav id="nav-low-wrapper">
       <!-- TODO FIX LINK -->
         <a href="/" id="title-text-wrapper">
           <span id="nav-title">
             <img id="nav-title-sub" src="https://dieupeut-bucket.us-east-1.linodeobjects.com/logo_text_and_symbol_stacked.png">
           </span>
-      <!-- TODO Insert Title SVG here -->
         </a>
-      <!-- TODO Nav buttons here -->
         <ul class="nav-link-wrapper">
           <li id="nav-link-items">
-      <!-- TODO FIX LINK -->
             <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">Impact</a>
             <div class="nav-svg-wrapper">
               <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +58,6 @@
           </li>
 
           <li id="nav-link-items">
-      <!-- TODO FIX LINK -->
             <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">Goals</a>
             <div class="nav-svg-wrapper">
               <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +67,6 @@
           </li>
 
           <li id="nav-link-items">
-      <!-- TODO FIX LINK -->
             <a href="/organization" class="place-items-center {current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">Organization</a>
             <div class="nav-svg-wrapper">
               <svg width="100%" height="auto" viewBox="0 0 184 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -91,11 +94,53 @@
               </div>
           </li>
         </ul>
-        <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-donate">Donate</a>
+        <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-donate" id="donate-web">Donate</a>
       </nav>
     </div>
   </div>
+
 </header>
+
+<div class="burger-menu-dropdown-wrapper {active}">
+  <div class="burger-menu-dropdown-options-wrapper">
+    <ul class="burger-menu-dropdown-nav-link-wrapper"> 
+      <li id="nav-link-items">
+        <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">Impact</a>
+      </li>
+      <li id="nav-link-items">
+        <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">Goals</a>
+      </li>
+      <li id="nav-link-items">
+        <a href="/organization" class="{current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">Organization</a>
+      </li>
+      <li id="nav-link-items">
+      <div>
+        <ul class="burger-nav-language-buttons-wrapper">
+          <li class="burger-menu-nested-link-items">
+            <button class="nav-language-button nav-text">
+              EN 
+            </button>
+          </li>
+          <li class="burger-menu-nested-link-separators" id="nav-link-items">|</li>
+          <li class="burger-menu-nested-link-items" id="nav-link-items">
+            <button class="nav-language-button nav-text">
+              FR 
+            </button> 
+          </li>
+          <li class="burger-menu-nested-link-separators" id="nav-link-items">|</li>
+          <li class="burger-menu-nested-link-items" id="nav-link-items">
+            <button class="nav-language-button nav-text">
+              KR
+            </button> 
+          </li>
+        </ul>
+      </div>
+      </li>
+    </ul>
+    <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-mobile-donate">Donate</a>
+  </div>
+</div>
+
 
 <style>
 
@@ -143,9 +188,9 @@
       before:w-10 /* prob not needed */
       md:before:hidden
     ;
-      padding-left: 4rem;
-      padding-right: 4rem;
-    /* border: 2px solid green; */
+    padding-left: 4rem;
+    padding-right: 4rem;
+    border: 2px solid green;
   }
 
   #nav-title{
@@ -225,6 +270,52 @@
       text-stone-600
     ;
     text-decoration: none;
+  }
+
+  /* -------------------------- burger menu */
+  .burger-menu-wrapper{
+    visibility: hidden;
+    margin-left: 88%;
+    height: 0px;
+  }
+  
+  .burger-menu{
+    transform: translateY(20px);
+
+    outline: none;
+    height: 20px;
+    width: 15px;
+    border: 0px;
+    padding: 0px;
+    background: transparent;
+    transition: all 250ms ease-out;
+    cursor: pointer;
+  }
+
+  .burger-menu:before, .burger-menu:after{
+    content: '';
+    width: 24px;
+    height: 2px;
+    position: absolute;
+    background: rgb(26,26,26); /* fix TODO */
+    transition: all 250ms ease-out;
+    will-change: transform;
+  }
+
+  .burger-menu:before{
+    transform: translateY(-3px);
+  }
+
+  .burger-menu:after{
+    transform: translateY(3px);
+  }
+
+  .active.burger-menu:before{
+    transform: translateY(0) rotate(45deg);
+  }
+
+  .active.burger-menu:after{
+    transform: translateY(0) rotate(-45deg);
   }
 
   .nav-text{
@@ -322,17 +413,29 @@
       motion-reduce:transition-none
       */
     ;
-    /* color: rgb(254,189,44); */
     border: 1px solid rgb(254,189,44);
-    /* background-color: rgb(27,4,110);*/
-    /* background-color: rgb(54, 7, 224);*/
-    /* background-color: rgb(69,61,204); */
     background-color: rgb(45,10,171);
     will-change: transform;
     text-decoration: none;
   }
-  
-  .nav-donate:hover, #nav-title:hover {
+
+  .nav-mobile-donate{
+    @apply
+      xl:block
+      py-2
+      px-8
+      text-white
+      font-bold
+      text-xl
+      rounded-full
+    ;
+    border: 1px solid rgb(254,189,44);
+    background-color: rgb(45,10,171);
+    will-change: transform;
+    text-decoration: none;
+  }
+
+  .nav-mobile-donate:hover, .nav-donate:hover, #nav-title:hover {
     transition-duration: 200ms;
     transform: scale(1.1);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -356,6 +459,70 @@
       flex
     ;
     stroke-opacity: 100%;
+  }
+
+  /* -------------------------- burger menu dropdown */
+  .burger-menu-dropdown-wrapper{
+    visibility: hidden;
+    position: fixed;
+    z-index: 29;
+    background-color: rgb(245,245,244);
+    height: 110vh;
+    width: 101vw;
+  }
+
+  .active.burger-menu-dropdown-wrapper{
+    visibility: visible;
+  }
+
+  .burger-menu-dropdown-options-wrapper{
+    margin-top: 30%;
+    height: 400px;  
+    padding-right: 4px;
+    border: 2px solid red;
+  }
+
+  .burger-menu-dropdown-nav-link-wrapper{
+    @apply
+      flex
+      flex-col
+      justify-around
+    ;
+    height: 70%;
+    border: 2px solid blue; 
+  }
+
+  /* -------------------------- burger menu activation */
+  @media only screen and (max-width: 767px){
+    .burger-menu-wrapper{
+      visibility: visible;
+    }
+    
+    #title-text-wrapper{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    } 
+  }
+
+  @media only screen and (min-width: 768px){
+    .active.burger-menu-dropdown-wrapper{
+      visibility: hidden;
+    }
+  }
+  
+  .burger-nav-language-buttons-wrapper{
+    display: flex;
+    justify-content: center;
+    max-height: 50px;
+    border: 2px solid red;
+  }
+
+  .burger-menu-nested-link-items{
+    @apply
+      flex
+    ;
+    overflow-y: hidden;
+    /* border: 2px solid blue; */
   }
 
 </style>

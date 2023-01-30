@@ -652,8 +652,8 @@
   .donate-outer-wrapper{
     @apply
       flex
-      xsm:pt-[45px]
-      sm:pt-[45px]
+      xsm:pt-[110px]
+      sm:pt-[110px]
       md:pt-[110px]
       xl:pt-[110px]
       xl:min-h-[410px]
