@@ -127,7 +127,7 @@
       /*xl:min-h-[410px]*/
     ;
     overflow: hidden; 
-    border: 3px solid purple;
+    /* border: 3px solid purple; */
   }
   
   .panels-lower-wrapper{
@@ -245,7 +245,7 @@
     @apply
       relative
       mt-3
-      text-[clamp(60px,8.5vw,70px)]
+      text-[clamp(50px,8.5vw,70px)]
     ;
     margin: auto;
     text-align: center;

@@ -640,6 +640,18 @@
     transform: translateX(45rem) translateY(-8rem);  
   }
 
+  @media only screen and (max-width: 1787px){
+    #info-panel-2-title-sub-svg-wrapper{
+      visibility: hidden;
+    }
+
+    #info-panel-2-title-sub-svg{
+      visibility: hidden;
+      transform: translateX(0rem) translateY(-8rem);  
+    }
+  }
+
+
   #info-panel-2-description-wrapper{
     @apply
       flex

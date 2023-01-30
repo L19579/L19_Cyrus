@@ -425,7 +425,7 @@
       flex 
       justify-center
     ;
-    padding-left: 25px;
+    padding-left: 45px;
     /* border: 2px solid green; */
   }
 
@@ -482,7 +482,7 @@
     z-index: 29;
     background-color: rgb(245,245,244);
     height: 110vh;
-    width: 103vw;
+    width: 100vw;
     transition: all 0.5s ease-in-out;
     transform: translateY(-105%);
     will-change: transform;
@@ -495,10 +495,10 @@
   }
 
   .burger-menu-dropdown-options-wrapper{
-    margin-top: 30vh;
+    margin-top: 20vh;
     width: 90%;
     height: 400px;  
-    padding-right: 4px;
+    padding-right: 25px;
     /* border: 2px solid red; */
   }
 

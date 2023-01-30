@@ -28,13 +28,13 @@
       <div class="panels-group-background" id="panel-1-background-2">
         <div id="panel-1-background-cover">
           <div class="panels-group-inner-wrapper" id="panel-1-inner-wrapper">
-            <div class="panels-group-title-wrapped" id="panel-1-title-wrapper">
+            <div class="panels-group-title-wrapper" id="panel-1-title-wrapper">
               <h2 class="panels-group-title-text" id="panel-1-title-text">
                 Food for X Program
               </h2>
             </div>
             <div class="panels-group-description-wrapper" id="panel-1-description-wrapper">
-              <p>
+              <p class="panels-group-description-text">
                 -- Write up not clean; throwing thoughts around -- <br />
                 {ipsum}
               </p>
@@ -63,7 +63,7 @@
                   </h2>
                 </div>
                 <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
-                  <p>
+                  <p class="panels-group-description-text">
                     -- Write up not clean; throwing thoughts around -- <br />
                     We're strong believers in bringing positive and constructive activies to 
                     Haiti's children and young adults. Whether that's piano lessons, a listening ear, 
@@ -96,7 +96,7 @@
             </h2>
           </div>
           <div class="panels-group-description-wrapper" id="panel-3-description-wrapper">
-            <p>
+            <p class=""panels-group-description-text>
               -- Write up not clean; throwing thoughts around -- <br />
               Besides running charity programs our founder hosts weekly virtual weekly virtual
               and in person prayer groups for a Haitian audience accross the world (?). Our
@@ -108,7 +108,7 @@
           </div>
           <div class="panels-group-donate-button-wrapper" id="panel-3-donate-button-wrapper">
             <a href="/donate-church" class="panels-group-donate-button" id="panel-3-donate-button">
-              Help Our Prayer Service Efforts
+              Help Prayer Service
             </a>
           </div>
         </div>
@@ -227,7 +227,7 @@
     width: 100%;
     height: 700px;
     background-color: white;
-    /* border: 2px solid red; */
+    /* border: 2px solid blue; */
   }
 
   .panels-group-background{
@@ -247,21 +247,20 @@
       xsm:px-4
       md:px-8
       lg:px-10
-
-      justify-center
+      
     ;
-    height: 100%;
+    height: 98%;
     width: 1200px;
-    /* border: 2px solid white; */
+    border: 3px solid red;
   }
   
-  .panels-group-title-wrapped{
-    /* ---- temp ---- */
+  .panels-group-title-wrapper{
+    /* TEMP */
   }
 
   .panels-group-title-text{
     @apply
-      text-[clamp(28px,5vw,50px)]
+      text-[clamp(30px,8.5vw,70px)]
     ;
     white-space: nowrap;
   }
@@ -274,15 +273,21 @@
       text-left
     ;
     font-weight: 500;
-    height: 63%;
+    height: 68%;
+    padding-right: 40px;
+    
+    border: 1px solid orange;
   }
-  
+
+  .panels-group-description-text{ 
+    border: 2px solid blue;
+  }
+
   .panels-group-donate-button-wrapper{ 
     @apply
       flex
     ;
-    height: 10px;
-    height: 10%;
+    height: 60px;
     border: 2px solid red;
   }
 
@@ -312,13 +317,12 @@
     transform: scale(102%);
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
+
   /* ------------------------------------------------------------------------------- Panel 1 specific */
 
   #panel-1-outer-wrapper{
     width: 100%;
     overflow: hidden;
-    /* background: linear-gradient(120deg, rgba(214,211,209,1) 37%, rgba(38,38,38,1) 50%); */
-    /* background-color: rgb(229,231,235); */
     background-color: rgb(228,228,228);
     border: 2px solid blue;
   }
@@ -340,7 +344,6 @@
     background-position-y: 10rem; 
     background-position-x: 110%; 
     background-repeat: no-repeat;
-    /* background-image: url(../../../static/bg_impact/panel_1_bg_kids_eating.webp); */
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_2_panel_1_bg_kids_eating.png");
     border: 2px solid red;
   }
@@ -357,7 +360,6 @@
     background-position-y: 15rem; 
     background-position-x: -10rem; 
     background-repeat: no-repeat;
-    /* background-image: url(../../../static/bg_impact/panel_1_bg_kids_eating.webp); */
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_1_panel_1_bg_kids_eating.png");
     border: 2px solid black;
   }
@@ -393,13 +395,15 @@
     @apply
       flex
       text-black
-      pt-12
+      /* pt-12 */
       pl-12
-      pr-40
     ;
-    border: 1px solid orange;
+    background: 
+      linear-gradient(to right, rgba(229,229,229,0.2) 0%, rgba(229,229,229,0.90) 10%, 
+          rgba(229,229,229,0.90) 90%, rgba(229,229,229,0.2) 100%);
+    ;
   }
-
+  
   /* ------------------------------------------------------------------------------- Panel 2 specific */
   #panel-2-outer-wrapper{
     background-color: rgba(245,245,244,1);
@@ -488,16 +492,53 @@
     @apply
       flex
       text-black
-      pt-12
       pl-12
-      pr-40
     ;
-    border: 1px solid orange;
   }
 
+  @media only screen and (max-width: 1200px){
+    #panel-2-background-2{
+      background-image: url("");
+    }
+  } 
+
+  @media only screen and (max-width: 960px){
+    #panel-1-background-1{
+      background-image: url("");
+    }
+  }
+
+  @media only screen and (max-width: 561px){
+    .panels-group-outer-wrapper{
+    }
+    #panel-1-background-2{
+
+    }
+  }
+
+  @media only screen and (max-width: 478px){
+    .panels-group-outer-wrapper{
+      /* height: 1200px; */
+    }
+    .panels-group-description-wrapper{ 
+      padding-right: 0px;
+    }
+    .panels-group-description-text{ 
+      margin-left: -40px;
+    }
+  }
+
+  @media only screen and (max-width: 405px){
+    .panels-group-description-wrapper{ 
+      /* height: 60%; TEMP*/
+    }
+  }
+  
   /* ------------------------------------------------------------------------------- Panel 3 specific */
 
   #panel-3-outer-wrapper{
+    width: 100%;
+    overflow: hidden;
     background-color: rgba(38,38,38,1);
   }
   
@@ -507,7 +548,8 @@
       justify-center
     ;
     
-    width: 2000px;
+    /* width: 2000px; */
+    width: 100%;
     background-position-y: -100px;
     background-position-x: 100px;
     background-size: 1900px;
@@ -548,10 +590,7 @@
     @apply
       flex
       text-white
-      pt-12
       pl-12
-      pr-40
     ;
-    border: 1px solid orange;
   }
 </style>
