@@ -32,8 +32,8 @@
     <div class="group-panel-outer-wrapper" id="panel-1-outer-wrapper">
       <div class="group-panel-mid-wrapper" id="panel-1-mid-wrapper">
         <div class="group-panel-inner-wrapper" id="panel-1-inner-wrapper">
-          <div class="panel-1-title-wrapper">
-            <h2 id="panel-1-title-text">
+          <div class="panels-group-title-wrapper" id="panel-1-title-wrapper">
+            <h2 class="panels-group-title-text" id="panel-1-title-text">
               Title One
             </h2>
           </div>
@@ -79,10 +79,10 @@
         <div class="group-panel-mid-wrapper" id="panel-2-mid-inner-wrapper">
           <div class="group-panel-inner-wrapper" id="panel-2-inner-wrapper">
 
-            <div id="panel-2-title-wrapper">
-              <h1 id="panel-2-title-text">
-                Example Title For Panel Two
-              </h1>
+            <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
+              <h2 class="panels-group-title-text" id="panel-2-title-text">
+                Title Two
+              </h2>
             </div>
             <div id="panel-2-text-wrapper">
               <div id="panel-2-text">
@@ -165,6 +165,25 @@
     border: 2px solid green;
   }
 
+  .panels-group-title-wrapper{
+    @apply
+      flex flex-col
+      justify-center
+    ;
+      
+    box-sizing: border-box;
+    border: 3px solid red; 
+  }
+
+  .panels-group-title-text{
+    text-align: center;
+    white-space: nowrap;
+    font-size: clamp(60px,8.5vw,70px);
+    
+    border: 1px solid orange;
+  }
+
+
   /* --------------- Panel 1 --------------- */
   @media (min-width: 1700px){
     #panel-1-outer-wrapper{
@@ -191,24 +210,12 @@
     grid-template-rows: repeat(20, [row] 5%);
   }
 
-  .panel-1-title-wrapper{
-    @apply
-      flex flex-col
-      justify-center
-    ;
+  #panel-1-title-wrapper{
     grid-column: col 1 / span 20;
     grid-row: row 1 / span 3;
-      
-    box-sizing: border-box;
-    border: 3px solid red; 
   }
 
   #panel-1-title-text{
-    text-align: center;
-    white-space: nowrap;
-    font-size: clamp(50px,8.5vw,70px);
-    
-    border: 1px solid orange;
   }
 
   .panel-1-text-outer-wrapper{
@@ -254,9 +261,6 @@
 	}
 
 	.panel-1-group-illustration-wrapper{
-		/* background-color: rgba(255,255,255,1); */
-		/* background-color: rgba(204, 232, 237,1); */
-		/* background-color: rgba(218, 241, 245,1); */
 		background-color: rgba(245,240,244,1); 
 		box-shadow: 0 0 4px black;
 		border-radius: 5px;
@@ -310,97 +314,6 @@
 		height: 100%;
 	}
 
-  @media (max-width: 1030px){
-    #panel-1-inner-wrapper{
-      grid-template-columns: repeat(1, [col] 100%);
-      grid-template-rows: repeat(20, [row] 5%);
-      height: auto;
-      max-height: 900px;
-    }
-
-    .panel-1-title-wrapper{
-      grid-row: 1 / span 2;
-    }
-    .panel-1-text-outer-wrapper{
-      @apply
-        leading-[1.7]
-      ;
-      padding: 30px;
-      line-height: 1.3; 
-      grid-row: 3 / span 8;
-    }
-
-    .panel-1-progress-bar-wrapper{
-      grid-row: 11 / span 4;
-    }
-
-    .panel-1-illustration-outer-wrapper{
-      grid-column: col 1;
-      grid-row: 15 / span 5;
-    }
-  }
-
-  @media (max-width: 800px){
-    .panel-1-text-outer-wrapper{
-      padding: 0px;
-    }
-    #panel-1-inner-wrapper{
-      max-height: 1000px;
-    }
-    .panel-1-progress-bar-wrapper{
-      grid-row: 11 / span 5;
-    }
-    .panel-1-illustration-outer-wrapper{
-      grid-column: col 1;
-      grid-row: 16 / span 5;
-    }
-  }
-
-  @media (max-width: 767px){
-    .panel-1-title-wrapper{
-      grid-row: row 1 / span 2;
-    }
-  }
-  /* small border overlap between title and text here */
-  @media (max-width: 520px){
-    #panel-1-inner-wrapper{
-      max-height: 1400px;
-    }
-    .panel-1-text-outer-wrapper{
-      grid-row: 3 / span 9;
-    }
-    .panel-1-progress-bar-wrapper{
-      grid-row: 12 / span 4;
-    }
-  }
-
-  @media (max-width: 394px){
-    #panel-1-inner-wrapper{
-      max-height: 1500px;
-    }
-    .panel-1-text-outer-wrapper{
-      grid-row: 3 / span 10;
-    }
-    .panel-1-progress-bar-wrapper{
-      grid-row: 13 / span 3;
-    }
-  }
-
-  @media (max-width: 360px){
-    #panel-1-inner-wrapper{
-      max-height: 1800px;
-    }
-    .panel-1-text-outer-wrapper{
-      grid-row: 3 / span 10;
-    }
-    .panel-1-progress-bar-wrapper{
-      grid-row: 13 / span 3;
-    }
-    .panel-1-illustration-outer-wrapper{
-      grid-column: col 1;
-      grid-row: 16 / span 5;
-    }
-  }
   /* --------------- Panel 2 --------------- */
   #panel-2-outer-wrapper{
 		background-color: rgba(245,245,244,1);
@@ -453,7 +366,12 @@
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
 		grid-row: row 5 / span 6;
-		/* border: 2px solid red; */
+		border: 2px solid red;
+	}
+
+	#panel-2-text{
+    padding: 1.5rem;
+		font-size: 1.5rem;
 	}
 
 	#panel-2-video-upper-wrapper{
@@ -462,15 +380,10 @@
 			justify-center
 		;
 		grid-column: col 1 / span 20;
-		grid-row: row 10 / span 11;
-		/* border: 2px solid blue; */
+		grid-row: row 11 / span 10;
+		border: 2px solid blue;
 	}
 	
-	#panel-2-text{
-    padding: 1.5rem;
-		font-size: 1.5rem;
-	}
-
   #panel-2-video-background-1{
     @apply
       flex
@@ -480,7 +393,7 @@
     height: 100%;
     box-sizing: border-box;
     background-position-x: left;
-    background-position-y: 9rem;
+    background-position-y: 95%;
     background-size: 20%;
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_1.png");
@@ -496,10 +409,10 @@
     height: 100%;
     background-position-x: right;
     background-size: 22%;
-    background-position-y: 9rem;
+    background-position-y: 99%;
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_2.png");
-    /* border: 2px blue solid; */
+    border: 2px blue solid;
   }
 
 	#panel-2-video-inner-wrapper{
@@ -507,18 +420,205 @@
       m-[auto]
     ;
 		width: 72%;		
-		height: 90%;		
+		height: 85%;		
 		overflow: hidden;
 		
 		border-radius: 10px;
 		box-sizing: border-box;
 		box-shadow: 0 0 6px black;
-		/* border: 2px solid green; */
+		border: 2px solid green; 
 	}
 
 	#panel-2-video{
 		box-sizing: border-box;
 		object-position: 0 -2.8rem;
 	}	
-    
+
+  /* ---------------------------------------------------------------------- mobile */
+  
+  /* REFACTOR TODO */
+
+  @media (max-width: 1279px){
+    #panel-2-video-background-1{
+      width: 100%;
+      /*background-position-y: 85%; */
+    }
+    #panel-2-video-background-2{
+      width: 100%;
+      /*background-position-y: 85%; */
+    }
+  }
+
+  @media (max-width: 1030px){
+    #panel-1-inner-wrapper{
+      grid-template-columns: repeat(1, [col] 100%);
+      grid-template-rows: repeat(20, [row] 5%);
+      height: auto;
+      max-height: 900px;
+    }
+
+    #panel-1-title-wrapper{
+      grid-row: 1 / span 2;
+    }
+    .panel-1-text-outer-wrapper{
+      @apply
+        leading-[1.7]
+      ;
+      padding: 30px;
+      line-height: 1.3; 
+      grid-row: 3 / span 8;
+    }
+
+    .panel-1-progress-bar-wrapper{
+      grid-row: 11 / span 4;
+    }
+
+    .panel-1-illustration-outer-wrapper{
+      @apply
+        px-[23%]
+      ;
+      grid-column: col 1;
+      grid-row: 15 / span 5;
+    }
+
+    #panel-2-text-wrapper{
+      grid-row: row 5 / span 7;
+    }
+
+    #panel-2-video-upper-wrapper{
+      grid-row: row 12 / span 9;
+    }
+
+    #panel-2-inner-wrapper{
+      min-height: 800px;
+    }
+  }
+
+  @media (max-width: 860px){
+    #panel-2-text-wrapper{
+      grid-row: row 5 / span 8;
+    }
+    #panel-2-video-upper-wrapper{
+      grid-row: row 13 / span 7;
+    }
+  }
+
+  @media (max-width: 800px){
+    .panel-1-text-outer-wrapper{
+      padding: 0px;
+    }
+    #panel-1-inner-wrapper{
+      max-height: 1000px;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 11 / span 5;
+    }
+    .panel-1-illustration-outer-wrapper{
+      grid-column: col 1;
+      grid-row: 16 / span 5;
+    }
+    #panel-2-video-upper-wrapper{
+      /* grid-row: row 13 / span 7; */
+    }
+  }
+
+  @media (max-width: 767px){
+    #panel-1-title-wrapper{
+      grid-row: row 1 / span 2;
+    }
+    #panel-2-video-background-1{
+      background-image: url("");
+    }
+    #panel-2-video-background-2{
+      background-image: url("");
+    }
+  }
+
+  @media (max-width: 704px){
+    #panel-2-text-wrapper{
+      grid-row: row 5 / span 9;
+    }
+    #panel-2-video-upper-wrapper{
+      grid-row: row 14 / span 5;
+    }
+  }
+
+  /* small border overlap between title and text here */
+  @media (max-width: 520px){
+    #panel-1-inner-wrapper{
+      max-height: 1400px;
+    }
+    .panel-1-text-outer-wrapper{
+      grid-row: 3 / span 9;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 12 / span 4;
+    }
+
+    #panel-2-text-wrapper{
+      grid-row: row 5 / span 12;
+    }
+    #panel-2-video-upper-wrapper{
+      grid-row: row 17 / span 4;
+    }
+
+  }
+
+  @media (max-width: 443px){
+    #panel-2-inner-wrapper{
+      height: 850px;
+    }
+
+    #panel-2-video-upper-wrapper{
+      grid-row: row 17 / span 3;
+    }
+
+    #panel-2-video-inner-wrapper{
+      width: 262px;
+      height: 104px;
+    }
+  }
+
+  @media (max-width: 394px){
+    #panel-1-inner-wrapper{
+      max-height: 1500px;
+    }
+    .panel-1-text-outer-wrapper{
+      grid-row: 3 / span 10;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 13 / span 3;
+    }
+
+    #panel-2-inner-wrapper{
+      height: 900px;
+    }
+
+    #panel-2-text-wrapper{
+      grid-row: row 5 / span 13;
+    }
+    #panel-2-video-upper-wrapper{
+      grid-row: row 18 / span 3;
+    }
+  }
+
+  @media (max-width: 360px){
+    #panel-1-inner-wrapper{
+      max-height: 1800px;
+    }
+    .panel-1-text-outer-wrapper{
+      grid-row: 3 / span 10;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 13 / span 3;
+    }
+    .panel-1-illustration-outer-wrapper{
+      grid-column: col 1;
+      grid-row: 16 / span 5;
+    }
+
+    #panel-2-inner-wrapper{
+      height: 1000px;
+    }
+  }
 </style>
