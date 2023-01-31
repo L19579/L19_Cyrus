@@ -59,7 +59,7 @@
               <div class="panels-group-inner-wrapper" id="panel-2-inner-wrapper">
                 <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
                   <h2 class="panels-group-title-text" id="panel-2-title-text">
-                    Youth Recreation Group
+                    Recreation Group
                   </h2>
                 </div>
                 <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
@@ -92,11 +92,11 @@
         <div class="panels-group-inner-wrapper" id="panel-3-inner-wrapper">
           <div class="panels-group-title-wrapper" id="panel-3-title-wrapper">
             <h2 class="panels-group-title-text" id="panel-3-title-text">
-              Sunday Prayer Service
+              Prayer Service
             </h2>
           </div>
           <div class="panels-group-description-wrapper" id="panel-3-description-wrapper">
-            <p class=""panels-group-description-text>
+            <p class="panels-group-description-text">
               -- Write up not clean; throwing thoughts around -- <br />
               Besides running charity programs our founder hosts weekly virtual weekly virtual
               and in person prayer groups for a Haitian audience accross the world (?). Our
@@ -281,6 +281,9 @@
 
   .panels-group-description-text{ 
     border: 2px solid blue;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 99%;
   }
 
   .panels-group-donate-button-wrapper{ 
@@ -297,6 +300,7 @@
       m-[auto]
       /* ml-[10%] */
     ;
+    min-width: 250px;
     width: 70%;
     text-decoration: none;
     text-align: center;
@@ -323,7 +327,7 @@
   #panel-1-outer-wrapper{
     width: 100%;
     overflow: hidden;
-    background-color: rgb(228,228,228);
+    /* background-color: rgb(228,228,228); */
     border: 2px solid blue;
   }
 
@@ -406,6 +410,8 @@
   
   /* ------------------------------------------------------------------------------- Panel 2 specific */
   #panel-2-outer-wrapper{
+    width: 100%;
+    overflow: hidden;
     background-color: rgba(245,245,244,1);
   }
   
@@ -496,44 +502,6 @@
     ;
   }
 
-  @media only screen and (max-width: 1200px){
-    #panel-2-background-2{
-      background-image: url("");
-    }
-  } 
-
-  @media only screen and (max-width: 960px){
-    #panel-1-background-1{
-      background-image: url("");
-    }
-  }
-
-  @media only screen and (max-width: 561px){
-    .panels-group-outer-wrapper{
-    }
-    #panel-1-background-2{
-
-    }
-  }
-
-  @media only screen and (max-width: 478px){
-    .panels-group-outer-wrapper{
-      /* height: 1200px; */
-    }
-    .panels-group-description-wrapper{ 
-      padding-right: 0px;
-    }
-    .panels-group-description-text{ 
-      margin-left: -40px;
-    }
-  }
-
-  @media only screen and (max-width: 405px){
-    .panels-group-description-wrapper{ 
-      /* height: 60%; TEMP*/
-    }
-  }
-  
   /* ------------------------------------------------------------------------------- Panel 3 specific */
 
   #panel-3-outer-wrapper{
@@ -592,5 +560,55 @@
       text-white
       pl-12
     ;
+ }
+
+  /* ------------------------------------------------------------------------------- Mobile */
+
+  @media only screen and (max-width: 1200px){
+    #panel-2-background-2{
+      background-image: url("");
+    }
+  } 
+
+  @media only screen and (max-width: 960px){
+    #panel-1-background-1{
+      background-image: url("");
+    }
   }
+
+  @media only screen and (max-width: 561px){
+    .panels-group-outer-wrapper{
+    }
+    #panel-1-background-2{
+
+    }
+  }
+
+  @media only screen and (max-width: 478px){
+    .panels-group-outer-wrapper{
+      /* height: 1200px; */
+    }
+    .panels-group-description-wrapper{ 
+      padding-right: 0px;
+    }
+    .panels-group-description-text{ 
+      margin-left: -40px;
+    }
+  }
+
+  @media only screen and (max-width: 405px){
+    .panels-group-description-wrapper{ 
+      height: 78%;
+    }
+  }
+
+  @media only screen and (max-width: 332px){
+    .panels-group-description-wrapper{ 
+      @apply
+        leading-[1.5]
+      ;
+      /* height: 80%; */
+    }
+  }
+  
 </style>

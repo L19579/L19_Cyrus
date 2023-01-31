@@ -33,9 +33,9 @@
       <div class="group-panel-mid-wrapper" id="panel-1-mid-wrapper">
         <div class="group-panel-inner-wrapper" id="panel-1-inner-wrapper">
           <div class="panel-1-title-wrapper">
-            <div id="panel-1-title-text">
-              <h1>Example Title That Should Be THIS Long</h1>
-            </div>
+            <h2 id="panel-1-title-text">
+              Title One
+            </h2>
           </div>
           <div class="panel-1-text-outer-wrapper">
             <div id="panel-1-text">
@@ -127,7 +127,7 @@
       flex
       xsm:pt-[110px]
       sm:pt-[110px]
-      md:pt-[110px]
+      md:pt-[127px]
       xl:pt-[110px]
       xl:min-h-[410px]
       justify-center
@@ -162,7 +162,7 @@
   .group-panel-inner-wrapper{
     width: 1285px;
     height: 700px;
-    /* border: 2px solid green; */
+    border: 2px solid green;
   }
 
   /* --------------- Panel 1 --------------- */
@@ -193,32 +193,39 @@
 
   .panel-1-title-wrapper{
     @apply
+      flex flex-col
+      justify-center
+    ;
+    grid-column: col 1 / span 20;
+    grid-row: row 1 / span 3;
+      
+    box-sizing: border-box;
+    border: 3px solid red; 
+  }
+
+  #panel-1-title-text{
+    text-align: center;
+    white-space: nowrap;
+    font-size: clamp(50px,8.5vw,70px);
+    
+    border: 1px solid orange;
+  }
+
+  .panel-1-text-outer-wrapper{
+    @apply
       flex
       flex-col
       justify-center
     ;
-    grid-column: col 1 / span 20;
-    grid-row: row 2 / span 2;
-      
-    width: 100%; 
-    box-sizing: border-box;
-    /* border: 1px solid green; */
-  }
-
-  #panel-1-title-text{
-    width: 100%;
-    text-align: center;
-  }
-
-  .panel-1-text-outer-wrapper{
     grid-column: col 1 / span 11;
     grid-row: 4 / span 10;
-    /* border: blue solid 2px; */
+    border: blue solid 2px;
   }
 
   #panel-1-text{
     padding: 1.5rem;
 		font-size: 1.5rem;
+    border: red solid 2px;
     
   }
 
@@ -232,7 +239,7 @@
 		grid-column: col 1 / span 11;	
 		grid-row: row 14 / span 6;	
 
-    /* border: purple solid 2px; */
+    border: purple solid 2px; 
 	}
 
 	.panel-1-illustration-outer-wrapper{
@@ -243,7 +250,7 @@
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
     grid-template-rows: repeat(20, [row] 5%);
-    /* border: blue solid 2px; */
+    border: blue solid 2px;
 	}
 
 	.panel-1-group-illustration-wrapper{
@@ -303,6 +310,97 @@
 		height: 100%;
 	}
 
+  @media (max-width: 1030px){
+    #panel-1-inner-wrapper{
+      grid-template-columns: repeat(1, [col] 100%);
+      grid-template-rows: repeat(20, [row] 5%);
+      height: auto;
+      max-height: 900px;
+    }
+
+    .panel-1-title-wrapper{
+      grid-row: 1 / span 2;
+    }
+    .panel-1-text-outer-wrapper{
+      @apply
+        leading-[1.7]
+      ;
+      padding: 30px;
+      line-height: 1.3; 
+      grid-row: 3 / span 8;
+    }
+
+    .panel-1-progress-bar-wrapper{
+      grid-row: 11 / span 4;
+    }
+
+    .panel-1-illustration-outer-wrapper{
+      grid-column: col 1;
+      grid-row: 15 / span 5;
+    }
+  }
+
+  @media (max-width: 800px){
+    .panel-1-text-outer-wrapper{
+      padding: 0px;
+    }
+    #panel-1-inner-wrapper{
+      max-height: 1000px;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 11 / span 5;
+    }
+    .panel-1-illustration-outer-wrapper{
+      grid-column: col 1;
+      grid-row: 16 / span 5;
+    }
+  }
+
+  @media (max-width: 767px){
+    .panel-1-title-wrapper{
+      grid-row: row 1 / span 2;
+    }
+  }
+  /* small border overlap between title and text here */
+  @media (max-width: 520px){
+    #panel-1-inner-wrapper{
+      max-height: 1400px;
+    }
+    .panel-1-text-outer-wrapper{
+      grid-row: 3 / span 9;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 12 / span 4;
+    }
+  }
+
+  @media (max-width: 394px){
+    #panel-1-inner-wrapper{
+      max-height: 1500px;
+    }
+    .panel-1-text-outer-wrapper{
+      grid-row: 3 / span 10;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 13 / span 3;
+    }
+  }
+
+  @media (max-width: 360px){
+    #panel-1-inner-wrapper{
+      max-height: 1800px;
+    }
+    .panel-1-text-outer-wrapper{
+      grid-row: 3 / span 10;
+    }
+    .panel-1-progress-bar-wrapper{
+      grid-row: 13 / span 3;
+    }
+    .panel-1-illustration-outer-wrapper{
+      grid-column: col 1;
+      grid-row: 16 / span 5;
+    }
+  }
   /* --------------- Panel 2 --------------- */
   #panel-2-outer-wrapper{
 		background-color: rgba(245,245,244,1);
