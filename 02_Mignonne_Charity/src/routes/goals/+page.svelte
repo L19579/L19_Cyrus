@@ -13,6 +13,7 @@
 	import { cubicOut } from 'svelte/easing';
   
   let ipsum_text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+  let ipsum_short = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.";
 
 	const progress_families_fed = tweened(0, {
 		duration: 700, 
@@ -86,7 +87,7 @@
             </div>
             <div id="panel-2-text-wrapper">
               <div id="panel-2-text">
-                  {ipsum_text}
+                  {ipsum_short}
               </div>
             </div>
             <div id="panel-2-video-upper-wrapper">	
@@ -106,6 +107,10 @@
                     type="video/mp4" 
                   />
                 </video>
+                <img 
+                  id="panel-2-gif"
+                  src="https://dieupeut-bucket.us-east-1.linodeobjects.com/video_goal.gif" 
+                />
               </div>
               </div>
               </div>	
@@ -185,7 +190,7 @@
 
 
   /* --------------- Panel 1 --------------- */
-  @media (min-width: 1700px){
+  @media only screen and (min-width: 1700px){
     #panel-1-outer-wrapper{
       background-repeat: no-repeat;
       background-position-x: 105%;
@@ -213,9 +218,6 @@
   #panel-1-title-wrapper{
     grid-column: col 1 / span 20;
     grid-row: row 1 / span 3;
-  }
-
-  #panel-1-title-text{
   }
 
   .panel-1-text-outer-wrapper{
@@ -253,7 +255,6 @@
 		grid-column: col 12 / span 9;	
 		grid-row: row 4 / span 17;	
 		
-			
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
     grid-template-rows: repeat(20, [row] 5%);
@@ -265,6 +266,7 @@
 		box-shadow: 0 0 4px black;
 		border-radius: 5px;
 		overflow: hidden;
+    border: solid 2px rgba(45,10,171,1);
 	}
 
 	#panel-1-illustration-1-wrapper{
@@ -319,7 +321,7 @@
 		background-color: rgba(245,245,244,1);
 	}
 
-  @media (min-width: 1700px){
+  @media only screen and (min-width: 1700px){
     #panel-2-mid-outer-wrapper{
       background-repeat: no-repeat;
       background-position-x: 105%;
@@ -366,7 +368,7 @@
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
 		grid-row: row 5 / span 6;
-		border: 2px solid red;
+		border: 2px solid red; 
 	}
 
 	#panel-2-text{
@@ -397,7 +399,7 @@
     background-size: 20%;
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_1.png");
-    /* border: 2px red solid; */
+    border: 2px red solid; 
   }
 
   #panel-2-video-background-2{
@@ -422,23 +424,40 @@
 		width: 72%;		
 		height: 85%;		
 		overflow: hidden;
-		
+	  
+    display: grid;
+    grid-template-columns: repeat(1, [col] 100%);
+    grid-template-rows: repeat(1, [row] 100%);
+    
 		border-radius: 10px;
 		box-sizing: border-box;
 		box-shadow: 0 0 6px black;
-		border: 2px solid green; 
+    border: solid 2px rgba(45,10,171,1);
+		/* border: 2px solid green; */
 	}
 
 	#panel-2-video{
+    grid-column: 1; 
+    grid-row: 1; 
 		box-sizing: border-box;
 		object-position: 0 -2.8rem;
+	}	
+
+	#panel-2-gif{
+    grid-column: 1; 
+    grid-row: 1; 
+		object-position: 0 -1rem;
+    width: 100%;
+    height: auto;
+    visibility: hidden;
+    border: 2px solid red;
 	}	
 
   /* ---------------------------------------------------------------------- mobile */
   
   /* REFACTOR TODO */
 
-  @media (max-width: 1279px){
+  @media only screen and (max-width: 1279px){
     #panel-2-video-background-1{
       width: 100%;
       /*background-position-y: 85%; */
@@ -449,7 +468,7 @@
     }
   }
 
-  @media (max-width: 1030px){
+  @media only screen and (max-width: 1030px){
     #panel-1-inner-wrapper{
       grid-template-columns: repeat(1, [col] 100%);
       grid-template-rows: repeat(20, [row] 5%);
@@ -494,7 +513,7 @@
     }
   }
 
-  @media (max-width: 860px){
+  @media only screen and (max-width: 860px){
     #panel-2-text-wrapper{
       grid-row: row 5 / span 8;
     }
@@ -503,7 +522,7 @@
     }
   }
 
-  @media (max-width: 800px){
+  @media only screen and (max-width: 800px){
     .panel-1-text-outer-wrapper{
       padding: 0px;
     }
@@ -522,7 +541,7 @@
     }
   }
 
-  @media (max-width: 767px){
+  @media only screen and (max-width: 767px){
     #panel-1-title-wrapper{
       grid-row: row 1 / span 2;
     }
@@ -534,7 +553,7 @@
     }
   }
 
-  @media (max-width: 704px){
+  @media only screen and (max-width: 704px){
     #panel-2-text-wrapper{
       grid-row: row 5 / span 9;
     }
@@ -544,7 +563,7 @@
   }
 
   /* small border overlap between title and text here */
-  @media (max-width: 520px){
+  @media only screen and (max-width: 551px){
     #panel-1-inner-wrapper{
       max-height: 1400px;
     }
@@ -562,15 +581,44 @@
       grid-row: row 17 / span 4;
     }
 
+    #panel-2-video{
+      z-index: 2;
+      visibility: hidden;
+    }
+
+    #panel-2-gif{
+      left: 0;
+      margin-left: 0px;
+      margin-right: auto;
+      z-index: 1;
+      visibility: visible;
+    }
   }
 
-  @media (max-width: 443px){
+  @media only screen and (max-width: 443px){
+    #panel-1-illustration-1-wrapper{
+      padding-top: 1rem;
+      grid-column: col 2 / span 13; 
+      grid-row: row 3 / span 6; 
+    }
+
+    #panel-1-illustration-2-wrapper{
+      padding-top: 2rem;
+      grid-column: col 13 / span 8; 
+      grid-row: row 5 / span 9; 
+    }
+
+    #panel-1-illustration-3-wrapper{
+      padding-top: 1rem;
+      grid-column: col 2 / span 13; 
+      grid-row: row 10 / span 10; 
+    }
     #panel-2-inner-wrapper{
       height: 850px;
     }
 
     #panel-2-video-upper-wrapper{
-      grid-row: row 17 / span 3;
+      grid-row: row 18 / span 3;
     }
 
     #panel-2-video-inner-wrapper{
@@ -579,7 +627,7 @@
     }
   }
 
-  @media (max-width: 394px){
+  @media only screen and (max-width: 394px){
     #panel-1-inner-wrapper{
       max-height: 1500px;
     }
@@ -602,7 +650,7 @@
     }
   }
 
-  @media (max-width: 360px){
+  @media only screen and (max-width: 373px){
     #panel-1-inner-wrapper{
       max-height: 1800px;
     }
@@ -617,8 +665,50 @@
       grid-row: 16 / span 5;
     }
 
+    #panel-1-illustration-2-wrapper{
+      height: 50%;  
+      width: auto;
+      padding-top: 2rem;
+      grid-column: col 12 / span 9; 
+      grid-row: row 6 / span 9; 
+    }
+
     #panel-2-inner-wrapper{
       height: 1000px;
+    }
+
+    @media only screen and (max-width: 326px){
+      #panel-2-inner-wrapper{
+        height: 1200px;
+      }
+      #panel-2-video-inner-wrapper{
+        width: 200px;
+        height: 69px;
+      }
+    }
+
+    @media only screen and (max-width: 275px){
+      #panel-2-inner-wrapper{
+        height: 1350px;
+      }
+      #panel-2-video-upper-wrapper{
+        grid-row: row 19 / span 2;
+      }
+    }
+
+    @media only screen and (max-width: 275px){
+      #panel-2-inner-wrapper{
+        height: 1200px;
+      }
+      #panel-2-text-wrapper{
+        grid-row: 5 / span 17;
+      }
+      #panel-2-video-upper-wrapper{
+        visibility: hidden;
+      }
+      #panel-2-video{
+        visibility: hidden;
+      }
     }
   }
 </style>

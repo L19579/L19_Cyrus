@@ -360,7 +360,7 @@
       text-3xl
       leading-10
     ;
-		min-width: 100%;
+		/*min-width: 100%; */
 		font-weight: 700;
     text-align: left;
     grid-column: col / span 8;
@@ -647,22 +647,23 @@
         flex
         justify-center
       ;
+      padding-right: 1rem;
       grid-column: col / span 20; 
       grid-row: row / span 3;
-      /* padding-left: 1rem; */
       /* border: 2px solid white; */
     }
     
     .company-dieu-peu-social-media{
       grid-column: col 1 / span 20;
       grid-row: row 5 / span 3; 
-      /* border: 2px solid red;*/
+      /* border: 2px solid red; */
     }
 
     .buttons-social-media-top-wrapper{
       @apply
         justify-center
       ;
+      padding-right: 0.7rem;
     }
 
 		.company-dieu-peu-address-all-wrapper{
