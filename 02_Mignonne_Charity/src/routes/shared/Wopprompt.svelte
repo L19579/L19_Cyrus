@@ -2,7 +2,7 @@
 
 <div class="top-wrapper">
   <div class="statement">
-    This website is under active development 
+    This website is under active development.
   </div>
 </div>
 

@@ -647,7 +647,7 @@
         flex
         justify-center
       ;
-      padding-right: 1rem;
+      padding-right: 1.3rem;
       grid-column: col / span 20; 
       grid-row: row / span 3;
       /* border: 2px solid white; */
@@ -663,7 +663,7 @@
       @apply
         justify-center
       ;
-      padding-right: 0.7rem;
+      padding-right: 0.5rem;
     }
 
 		.company-dieu-peu-address-all-wrapper{

@@ -9,7 +9,8 @@
       title_en: "Founder",
       title_fr: "PDG",
       portrait: "https://dieupeut-bucket.us-east-1.linodeobjects.com/williane_portrait.png",
-      quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+      quote: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      quote_short: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop pub."
     }
   ];
   
@@ -220,28 +221,30 @@
     <div class="info-panel-group-outer-wrapper" id="info-panel-3-outer-wrapper">
       <div class="info-panel-group-outer-wrapper" id="info-panel-3-outer-wrapper-cover">
         <div class="info-panel-group-inner-wrapper" id="info-panel-3-inner-wrapper">
-          <div id="info-panel-3-portrait-wrapper">
-            <img id="info-panel-3-portrait" src="{staff_quotes[0].portrait}" />
-          </div>
           <div id="info-panel-3-quote-wrapper">
+            <div id="info-panel-3-portrait-wrapper">
+              <img id="info-panel-3-portrait" src="{staff_quotes[0].portrait}" />
+            </div>
             <div id="info-panel-3-quote">
-              "{staff_quotes[0].quote}"
+              "{staff_quotes[0].quote_short}"
             </div>
             <div id="info-panel-3-quote-name-wrapper">
               <div id="info-panel-3-quote-name">
                 {staff_quotes[0].name}
               </div>
-            </div>
-            <div id="info-panel-3-quote-title-wrapper">
               <div id="info-panel-3-quote-title">
                 {staff_quotes[0].title_en}
               </div>
-            </div>
-            <div id="info-panel-3-button-wrapper">
               <a href="/organization" id="info-panel-3-button">
-                Meet the Team! >
+                Meet the Team!
               </a>
             </div>
+            <!-- 
+            <div id="info-panel-3-quote-title-wrapper">
+            </div>
+            <div id="info-panel-3-button-wrapper">
+            </div>
+            -->
           </div>
         </div>
       </div>
@@ -256,7 +259,7 @@
       flex
       justify-center
     ;
-    width: 100vw;
+    width: 100%;
     /* border: 3px solid red; */
   }
 
@@ -266,7 +269,7 @@
     @apply
       flex
       flex-col
-      mr-3 /* don't rly care for this -- attempt at center; issue likely borders - TODO */
+      /* mr-3 don't rly care for this -- attempt at center; issue likely borders - TODO */
     ;
     width: 100vw;
     max-height: 760px;
@@ -541,11 +544,13 @@
     text-align: center;
     font-weight: 540;
 
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
   }
 
   #info-panel-1-footer-outer-wrapper{
     background-position-y: -160px;
+    width: 100%;
+    /* margin-left: 2px; countering some flaw here */
   }
 
   #info-panel-1-footer-mid-wrapper{
@@ -569,7 +574,7 @@
 /* ---------------------------------- Panel 2 ---------------------------------- */
   #info-panel-2-outer-wrapper{
     background-color: rgb(245,245,244);
-    border: 2px solid red; 
+    /* border: 2px solid red; */
   }
 
   #info-panel-2-mid-wrapper{
@@ -651,7 +656,6 @@
     }
   }
 
-
   #info-panel-2-description-wrapper{
     @apply
       flex
@@ -717,6 +721,7 @@
     width: 100%;
     height: 100%;
     /* background-color: rgba(255,255,255,0.8); */
+    box-sizing: border-box;
     background-image: linear-gradient( rgba(255,255,255,1) 50%, rgba(255,255,255,0.8)); 
   }
 
@@ -724,67 +729,82 @@
     @apply
       flex
       py-[0.5rem]
+      px-[5rem]
     ;
-    height: 98%;
+    height: 97%;
     max-width: 1280px;
-    /* border: 2px solid red; */
+    border: 2px solid red;
   }
-
-  #info-panel-3-portrait-wrapper{
-    @apply
-      my-[auto]
-    ;
-    position: relative;
-    padding: auto;
-    height: 90%;
-    width: 30%; 
-    margin-left: 3%;
-    
-    /* border: 2px solid blue; */
-  } 
-
-  #info-panel-3-portrait{
-    height: 90%; 
-    width: auto; 
-  } 
 
   #info-panel-3-quote-wrapper{
     @apply
       my-[auto]
+      mx-[2%]
     ;
     display: grid;
-    grid-template-columns: 100%;
+    grid-template-columns: repeat(20, [col] 5%);
     grid-template-rows: repeat(20, [row] 5%);
 
-    margin-left: 2%;
-    margin-right: 2%;
     width: 100%;
     height: 90%;
     text-align: center;
-    /* border: 2px solid purple; */
+    border: 2px solid purple;
   }
+
+  #info-panel-3-portrait-wrapper{
+    @apply
+      flex
+      flex-col
+      justify-center
+    ;
+    position: relative;
+    padding: auto;
+    /* max-height: 400px; */
+    /*
+    height: 100%;
+    width: 100%; 
+    */
+    margin-left: 3%;
+    
+    grid-column: col 2 / span 4;
+    grid-row: row 2 / span 19;
+
+    border: 2px solid blue; 
+  } 
+
+  #info-panel-3-portrait{
+      position: relative;
+      height: auto; 
+      width: 100%; 
+    /* height: 270px; */
+    /* width: 264px; */
+      border: 2px solid red;
+  } 
 
   #info-panel-3-quote{
     @apply
       flex
-      py-[2%]
-      px-[10%]
-      text-[clamp(12px,5.5vw,22px)]
+      my-[auto]
+      px-[4%]
+      /* text-[clamp(12px,30px,30px)] */
     ;
     font-style: italic;
+    font-size: 1.5rem;
+    grid-column: col  6 / span 14;
     grid-row: row 1 / span 13;
 
-    /* height: 90%; */
-    /* border: 2px solid black; */
+    border: 2px solid black;
   }
 
   #info-panel-3-quote-name-wrapper{
     @apply
       flex
-      text-[clamp(12px,5.5vw,22px)]
+      flex-col
+      text-[clamp(12px,5.5vw,30px)]
     ;
-    height: 100%;
-    grid-row: row 14 / span 2;
+    /*height: 100px; doesn't play nice with grid */
+    grid-column: col 6 / span 14;
+    grid-row: row 14 / span 6;
     border: 2px solid red;
   }
 
@@ -800,8 +820,8 @@
     @apply
       flex
     ;
-    height: 100%;
-    grid-row: row 16 / span 2;
+    max-height: 100%;
+    /* grid-row: row 16 / span 2; */
     border: 2px solid blue;
   }
 
@@ -820,8 +840,8 @@
       py-[auto]
     ;
     height: 100%;
-    grid-row: row 18 / span 3;
-    /* border: 2px solid green; */
+    /* grid-row: row 18 / span 3; */
+    border: 2px solid green; 
   }
 
   #info-panel-3-button{
@@ -835,16 +855,115 @@
       rounded-full
       bg-indigo-700;
     ;
+    border: 1px solid black;
     white-space: nowrap;
     text-decoration: none;
     will-change: transform;
-
-    /* border: 2px solid red; */
   }
 
   #info-panel-3-button:hover{
     transition-duration: 200ms;
     transform: scale(1.1); 
     transition-timing-function: cubic-bezier(0.4,0.2,1);
+  }
+
+
+/* ---------------------------------- Mobile ---------------------------------- */
+  @media only screen and (max-width: 1279px){
+    #info-panel-3-portrait-wrapper{
+      grid-column: col 1 / span 5;
+      grid-row: row 2 / span 19;
+    } 
+    #info-panel-3-quote{
+      grid-column: col  6 / span 15;
+      grid-row: row 1 / span 13;
+    }
+    #info-panel-3-quote-name-wrapper{
+      grid-column: col 6 / span 15;
+      grid-row: row 14 / span 6;
+    }
+  }
+  @media only screen and (max-width: 1050px){
+    #info-panel-3-outer-wrapper{
+      /* height: 500px; */
+    } 
+    #info-panel-3-inner-wrapper{
+      @apply
+        px-[2rem]
+      ;
+      height: 97%;
+      max-width: 1280px;
+      border: 2px solid red;
+    }
+    #info-panel-3-portrait-wrapper{
+      grid-column: col 3 / span 4;
+      grid-row: row 10 / span 11;
+    }
+    #info-panel-3-quote{
+      @apply
+        px-[5%]
+      ;
+      grid-column: col 1 / span 20;
+      grid-row: row 1 / span 9;
+    }
+    #info-panel-3-quote-name-wrapper{
+      grid-column: col 7 / span 11;
+      grid-row: row 12 / span 7;
+    }
+  }
+
+  @media only screen and (max-width: 940px){
+    #info-panel-3-outer-wrapper{
+      height: 400px;
+    } 
+    #info-panel-3-quote-name-wrapper{
+      padding-bottom: 2.5%;
+    }
+  }
+  @media only screen and (max-width: 767px){
+    #info-panel-3-outer-wrapper{
+      height: 600px;
+    } 
+    #info-panel-3-portrait-wrapper{
+      width: 110%;
+      grid-column: col 7 / span 6;
+      grid-row: row 10 / span 7;
+    }
+    #info-panel-3-quote-name-wrapper{
+      padding-top: 2.5%;
+      grid-column: col 1 / span 20;
+      grid-row: row 17 / span 4;
+    }
+  }
+  @media only screen and (max-width: 530px){
+    #info-panel-3-outer-wrapper{
+      height: 700px;
+    } 
+    #info-panel-3-quote{
+      grid-row: row 1 / span 11;
+    }
+    #info-panel-3-portrait-wrapper{
+      grid-column: col 7 / span 6;
+      grid-row: row 12 / span 5;
+    }
+  }
+  @media only screen and (max-width: 430px){
+    #info-panel-3-outer-wrapper{
+      height: 750px;
+    } 
+    #info-panel-3-quote{
+      grid-row: row 1 / span 11;
+    }
+  }
+  @media only screen and (max-width: 380px){
+    #info-panel-3-portrait-wrapper{
+      grid-column: col 7 / span 6;
+      grid-row: row 15 / span 3;
+    }
+    #info-panel-3-quote-name-wrapper{
+      padding-top: 2.5%;
+      grid-column: col 1 / span 20;
+      grid-row: row 18 / span 3;
+    }
   }
 </style>

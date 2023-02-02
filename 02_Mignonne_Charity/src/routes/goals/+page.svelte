@@ -165,7 +165,7 @@
   }
 
   .group-panel-inner-wrapper{
-    width: 1285px;
+    max-width: 1285px;
     height: 700px;
     border: 2px solid green;
   }
@@ -177,7 +177,7 @@
     ;
       
     box-sizing: border-box;
-    border: 3px solid red; 
+    /* border: 3px solid red; */
   }
 
   .panels-group-title-text{
@@ -185,7 +185,7 @@
     white-space: nowrap;
     font-size: clamp(60px,8.5vw,70px);
     
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
   }
 
 
@@ -228,13 +228,13 @@
     ;
     grid-column: col 1 / span 11;
     grid-row: 4 / span 10;
-    border: blue solid 2px;
+    /* border: blue solid 2px; */
   }
 
   #panel-1-text{
     padding: 1.5rem;
 		font-size: 1.5rem;
-    border: red solid 2px;
+    /* border: red solid 2px; */
     
   }
 
@@ -248,7 +248,7 @@
 		grid-column: col 1 / span 11;	
 		grid-row: row 14 / span 6;	
 
-    border: purple solid 2px; 
+    /* border: purple solid 2px; */
 	}
 
 	.panel-1-illustration-outer-wrapper{
@@ -258,15 +258,15 @@
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
     grid-template-rows: repeat(20, [row] 5%);
-    border: blue solid 2px;
+    /* border: blue solid 2px; */
 	}
 
 	.panel-1-group-illustration-wrapper{
 		background-color: rgba(245,240,244,1); 
 		box-shadow: 0 0 4px black;
 		border-radius: 5px;
-		overflow: hidden;
     border: solid 2px rgba(45,10,171,1);
+		overflow: hidden;
 	}
 
 	#panel-1-illustration-1-wrapper{
@@ -368,10 +368,11 @@
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
 		grid-row: row 5 / span 6;
-		border: 2px solid red; 
+		/* border: 2px solid red; */
 	}
 
 	#panel-2-text{
+    display: block;
     padding: 1.5rem;
 		font-size: 1.5rem;
 	}
@@ -383,7 +384,7 @@
 		;
 		grid-column: col 1 / span 20;
 		grid-row: row 11 / span 10;
-		border: 2px solid blue;
+		/* border: 2px solid blue; */
 	}
 	
   #panel-2-video-background-1{
@@ -399,7 +400,7 @@
     background-size: 20%;
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_1.png");
-    border: 2px red solid; 
+    /* border: 2px red solid; */
   }
 
   #panel-2-video-background-2{
@@ -414,13 +415,14 @@
     background-position-y: 99%;
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/colored_bouquet_flowers_2.png");
-    border: 2px blue solid;
+    /* border: 2px blue solid; */
   }
 
 	#panel-2-video-inner-wrapper{
     @apply
       m-[auto]
     ;
+    display: block; /* likely not helping overlap TODO */
 		width: 72%;		
 		height: 85%;		
 		overflow: hidden;
@@ -431,8 +433,7 @@
     
 		border-radius: 10px;
 		box-sizing: border-box;
-		box-shadow: 0 0 6px black;
-    border: solid 2px rgba(45,10,171,1);
+		box-shadow: 0 0 20px black;
 		/* border: 2px solid green; */
 	}
 
@@ -441,6 +442,7 @@
     grid-row: 1; 
 		box-sizing: border-box;
 		object-position: 0 -2.8rem;
+    box-sizing: border-box;
 	}	
 
 	#panel-2-gif{
@@ -450,7 +452,7 @@
     width: 100%;
     height: auto;
     visibility: hidden;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 	}	
 
   /* ---------------------------------------------------------------------- mobile */
@@ -513,7 +515,7 @@
     }
   }
 
-  @media only screen and (max-width: 860px){
+  @media only screen and (max-width: 874px){
     #panel-2-text-wrapper{
       grid-row: row 5 / span 8;
     }
@@ -575,10 +577,10 @@
     }
 
     #panel-2-text-wrapper{
-      grid-row: row 5 / span 12;
+      grid-row: row 5 / span 10;
     }
     #panel-2-video-upper-wrapper{
-      grid-row: row 17 / span 4;
+      grid-row: row 15 / span 5;
     }
 
     #panel-2-video{
@@ -595,7 +597,7 @@
     }
   }
 
-  @media only screen and (max-width: 443px){
+  @media only screen and (max-width: 454px){
     #panel-1-illustration-1-wrapper{
       padding-top: 1rem;
       grid-column: col 2 / span 13; 
@@ -618,12 +620,12 @@
     }
 
     #panel-2-video-upper-wrapper{
-      grid-row: row 18 / span 3;
+      grid-row: row 16 / span 4;
     }
 
     #panel-2-video-inner-wrapper{
-      width: 262px;
-      height: 104px;
+      width: 300px;
+      height: 150px;
     }
   }
 
@@ -643,10 +645,10 @@
     }
 
     #panel-2-text-wrapper{
-      grid-row: row 5 / span 13;
+      grid-row: row 5 / span 11;
     }
     #panel-2-video-upper-wrapper{
-      grid-row: row 18 / span 3;
+      grid-row: row 16 / span 4;
     }
   }
 
@@ -679,11 +681,17 @@
 
     @media only screen and (max-width: 326px){
       #panel-2-inner-wrapper{
-        height: 1200px;
+        height: 1050px;
+      }
+      #panel-2-text-wrapper{
+        grid-row: row 5 / span 12;
+      }
+      #panel-2-video-upper-wrapper{
+        grid-row: row 17 / span 3;
       }
       #panel-2-video-inner-wrapper{
-        width: 200px;
-        height: 69px;
+        width: 270px;
+        height: 120px;
       }
     }
 
@@ -698,7 +706,7 @@
 
     @media only screen and (max-width: 275px){
       #panel-2-inner-wrapper{
-        height: 1200px;
+        height: 1100px;
       }
       #panel-2-text-wrapper{
         grid-row: 5 / span 17;
@@ -706,7 +714,15 @@
       #panel-2-video-upper-wrapper{
         visibility: hidden;
       }
+      #panel-2-video-inner-wrapper{
+        width: 0px;
+        visibility: hidden;
+      }
       #panel-2-video{
+        visibility: hidden;
+      }
+
+      #panel-2-gif{
         visibility: hidden;
       }
     }

@@ -30,7 +30,7 @@
   };
 </script>
 
-<!-- <Wopprompt /> -->
+<Wopprompt />
 <header id="header">
   <div id="nav-top-wrapper">
     <div id="nav-mid-wrapper">
@@ -499,6 +499,7 @@
     width: 90%;
     height: 400px;  
     padding-right: 25px;
+    margin-right: 0.7rem;
     /* border: 2px solid red; */
   }
 
@@ -535,6 +536,7 @@
     justify-content: center;
     max-height: 50px;
     padding-right: 35px;
+    transform: translateX(-0.5rem);
     /* border: 2px solid red; */
   }
 

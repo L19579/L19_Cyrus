@@ -87,6 +87,8 @@
                     class="panel-1-buttons" id="contact-button" >Contact us</a>
                   <a href="#more-info-section" on:click|preventDefault={scroll_to_target_with_offset}
                     class="panel-1-buttons" id="learn-button">Learn more</a>
+                  <a href="/donate-standard"
+                    class="panel-1-buttons" id="donate-button">Donate</a>
                 </div>
               </div>
             </div>
@@ -110,8 +112,7 @@
       </div>
     </div>
     <div class="panel-video-inner-wrapper">
-      <div class="panel-video-video-cover">
-      </div>
+      <div class="panel-video-video-cover"></div>
       <div class="panel-video-video-wrapper">
         <video
           class="panel-video-video"
@@ -135,7 +136,7 @@
       block
       /* xl:min-h-[810px]  Not req */ 
     ; 
-    width: 100%;
+    width: 100vw;
     /* border: 2px solid blue; */
   }
   
@@ -303,7 +304,19 @@
   #learn-button{
     @apply bg-stone-600;
   }
-  
+  /* Rearrange main page button format */
+  #donate-button{
+    display: flex;
+    justify-content: center;
+    min-width: 90px;
+    visibility: hidden;
+    @apply bg-stone-600;
+  }
+
+  /* Moreinfo specific */
+  #more-info-section{
+    width: 100%;
+  }
   /* Panel-video specific */
 
 	.panel-video-outer-wrapper{
@@ -315,6 +328,7 @@
 			overflow-hidden
       justify-center
 		;
+    box-sizing: border-box;
     width: 100%;
     max-height: 230px;
     /* border: 2px solid blue; */
@@ -324,9 +338,9 @@
     @apply
       flex
     ;
+    box-sizing: border-box;
     width:1600px; /* eh see ext eh*/
     width: full;
-    /* border: 2px solid red; */
   }
 
   .panel-video-description-upper-wrapper{
@@ -377,7 +391,6 @@
     min-width: 1600px; /* ext eh ; scaling issue; wrapper not enough; TODO*/
     /* border: 2px solid purple; */
   }
-
   .panel-video-video{
     z-index: 5;
     display: block;
@@ -386,13 +399,20 @@
     transform: translateX(-300px) translateY(-200px);
     /* border: 2px solid blue; */
   }
-
   .panel-video-video-cover{
     z-index: 10;
     min-width: 300px;
     height: 110%;
     background-image: linear-gradient(to right, rgba(0,0,0,1) 10%, rgba(0,0,0,0));
-    transform: translateX(50%);
-    transform: translateY(-5%);
+    transform: translateX(-1%);
+  }
+  /* -------------------------------------------- mobile */
+  @media only screen and (max-width: 1279px){
+    #learn-button{
+      display: none;
+    }
+    #donate-button{
+      visibility: visible;
+    }
   }
 </style>
