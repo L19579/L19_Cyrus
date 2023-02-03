@@ -156,11 +156,12 @@
             <div class="info-panel-group-title" id="info-panel-2-title">
               We Want To Do More!
               <div id="info-panel-2-title-underline-svg-wrapper">
-                <svg id="info-panel-2-title-underline-svg">
-                viewBox="0 0 377 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M4.08685 14.6427C44.6003 14.6427 84.9527 13.9796 125.426 12.2476C155.447 10.9629 185.446 10.6414 215.492 10.4851C262.336 10.2415 309.08 11.2262 355.901 12.6091" stroke-width="4" stroke-linecap="round"/>
-                  <path d="M15 10.3044C22.7014 13.0607 35.8026 11.7775 43.81 11.6601C58.7682 11.4409 73.6676 10.3735 88.6398 10.44C119.383 10.5763 150.11 12.3693 180.83 10.3044C244.833 6.00233 309.216 8.63894 372.984 15.0495" stroke-width="4" stroke-linecap="round"/>
+                <svg id="info-panel-2-title-underline-svg"
+                viewBox="0 0 1017 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4.08685 14.6428C44.6003 14.6428 84.9527 13.9797 125.426 12.2477C155.447 10.9629 185.446 10.6414 215.492 10.4852C262.336 10.2416 939.179 17.1171 986 18.5" stroke="#2D0AAB" stroke-width="8" stroke-linecap="round"/>
+                <path d="M15 10.3044C22.7014 13.0607 35.8026 11.7775 43.81 11.6601C58.7682 11.4409 73.6676 10.3735 88.6398 10.44C119.383 10.5764 150.11 12.3693 180.83 10.3044C244.833 6.00234 943.232 8.08945 1007 14.5" stroke="#2D0AAB" stroke-width="8" stroke-linecap="round"/>
                 </svg>
+
               </div>
               <div id="info-panel-2-title-sub-svg-wrapper">
                 <svg id="info-panel-2-title-sub-svg"
@@ -272,7 +273,7 @@
       /* mr-3 don't rly care for this -- attempt at center; issue likely borders - TODO */
     ;
     width: 100vw;
-    max-height: 760px;
+    /* max-height: 760px; */
     /* border: solid 2px cyan; */
   }  
 
@@ -297,7 +298,7 @@
 /* /// ----------------- Group Footer --------------------- /// */
 
   .info-panel-group-footer-outer-wrapper{
-    height: 140px;
+    height: 120px;
     width: 100%;
     /* background-color: black; */
     /* background-image: url("https://i.pinimg.com/originals/50/3b/17/503b174d539eb6e6a2a8ceca6ced9b04.jpg"); */
@@ -321,16 +322,17 @@
     @apply
       mx-[auto]
     ;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
-    max-width: 1200px;
+    max-width: 1000px;
     height: 99%;
-    /* border: 1px solid white; */
+    border: 1px solid white;
   }
 
   .info-panel-group-footer-svg-wrapper{
     grid-column: col 1 / span 15;
-    transform: translateY(-0.5rem);
+    transform: translateY(-0.7rem);
     /* border: 2px solid purple; */
   }
   
@@ -398,6 +400,7 @@
   #info-panel-1-stats-grid{
     @apply
       flex
+      mx-[auto]
       justify-around
     ;
     margin-top: 2rem;
@@ -407,7 +410,7 @@
     grid-template-rows: 100%;
     grid-gap: 2px;
 
-    width: 100%;
+    width: 98%;
     height: 150px;
     /* border: 2px solid green; */
   }
@@ -439,8 +442,9 @@
     @apply
       block
       text-xl
-      text-[clamp(28px,8.5vw,60px)]
+      text-[clamp(30px,8.5vw,60px)]
     ;
+    margin-left: 2rem;
     color: rgb(45,10,171); 
   }
 
@@ -453,7 +457,11 @@
       block
       text-xl
       text-[clamp(28px,8.5vw,45px)]
+      mx-[5%]
     ;
+    text-align: center;
+    margin-top: 18px;
+    line-height: 1.03;
   }
 
   #info-panel-1-stat-1{
@@ -472,6 +480,10 @@
     grid-column: col 3;
     padding-top: 15px;
     padding-bottom: 5px;
+  }
+
+  #stat-number-3{
+    margin-left: 1.1rem;
   }
 
   #info-panel-1-counter-note{
@@ -607,7 +619,7 @@
 
   #info-panel-2-title{
     @apply
-      text-[clamp(40px,9vw,70px)]
+      text-[clamp(30px,8.5vw,70px)]
     ;
     text-align: center;
     font-weight: bold;
@@ -618,8 +630,9 @@
       justify-center
       mx-[auto]
     ;
-    height: 0px;
-    width: 24rem;
+    height: 30%;
+    /* width: 53%; */
+    width: 10em;
     /* border: solid red 2px; */
   }
 
@@ -627,9 +640,9 @@
     @apply
       flex
     ;
+    /* transform: scale(135%); */
     stroke: rgb(45,10,171);
-    transform: scale(160%);
-    height: 20px;
+    height: auto;
     width: 100%;
     /* border: solid black 2px; */
   }
@@ -690,7 +703,7 @@
   }
 
   #info-panel-2-footer-svg-wrapper{
-    transform: translateY(-0.9rem);
+    transform: translateY(-0.4rem);
   }
 
   #info-panel-2-footer-svg{
@@ -699,8 +712,8 @@
       m-[auto]
     ;
     fill: white;
-    height: auto;
-    width: 80%;
+    height: 105%;
+    width: auto;
     transform: rotate(2deg);
   }
 
@@ -869,7 +882,37 @@
 
 
 /* ---------------------------------- Mobile ---------------------------------- */
+  @media only screen and (max-width: 1925px){
+    #info-panel-1-mid-wrapper{
+      background-position-x: -100px;
+    }
+    #info-panel-1-footer-mid-wrapper{
+      background-position-x: -100px;
+    }
+  }
+  @media only screen and (max-width: 1800px){
+    #info-panel-1-mid-wrapper{
+      background-position-x: -225px;
+    }
+    #info-panel-1-footer-mid-wrapper{
+      background-position-x: -225px;
+    }
+  }
+  @media only screen and (max-width: 1543px){
+    #info-panel-1-mid-wrapper{
+      background-position-x: -350px;
+    }
+    #info-panel-1-footer-mid-wrapper{
+      background-position-x: -350px;
+    }
+  }
   @media only screen and (max-width: 1279px){
+    #info-panel-1-mid-wrapper{
+      background-position-x: -390px;
+    }
+    #info-panel-1-footer-mid-wrapper{
+      background-position-x: -390px;
+    }
     #info-panel-3-portrait-wrapper{
       grid-column: col 1 / span 5;
       grid-row: row 2 / span 19;
@@ -884,6 +927,9 @@
     }
   }
   @media only screen and (max-width: 1050px){
+    #info-panel-1-inner-wrapper{
+      height: 700px
+    }
     #info-panel-3-outer-wrapper{
       /* height: 500px; */
     } 
@@ -919,8 +965,55 @@
     #info-panel-3-quote-name-wrapper{
       padding-bottom: 2.5%;
     }
+    #info-panel-1-description{
+      padding-left: 9%;
+    }
   }
   @media only screen and (max-width: 767px){
+    #info-panel-1-inner-wrapper{
+      height: 1200px
+    }
+    #info-panel-1-stats-grid{
+      @apply
+        mx-[auto]
+      ;
+      height: 500px;
+      width: 90%;
+      grid-template-columns: repeat(1, [col] 100%);
+      grid-template-rows: repeat(3, [row] 33%);
+    }
+    #info-panel-1-stat-1{
+      grid-row: row 1;
+      grid-column: col 1;
+    }
+
+    #info-panel-1-stat-2{
+      grid-row: row 2;
+      grid-column: col 1;
+    }
+
+    #info-panel-1-stat-3{
+      grid-row: row 3;
+      grid-column: col 1;
+    }
+    #info-panel-1-stat-1{
+      border-right: 0px;
+      border-bottom: 2px solid black;
+    }
+
+    #info-panel-1-stat-2{
+      border-right: 0px;
+      border-bottom: 2px solid black;
+    }
+    .stat-description-group{
+      margin-top: 0px;
+    }
+    #info-panel-1-mid-wrapper{
+      background-image: url("");
+    }
+    #info-panel-1-footer-mid-wrapper{
+      background-image: url("");
+    }
     #info-panel-3-outer-wrapper{
       height: 600px;
     } 
@@ -933,6 +1026,20 @@
       padding-top: 2.5%;
       grid-column: col 1 / span 20;
       grid-row: row 17 / span 4;
+    }
+  }
+  @media only screen and (max-width: 630px){
+    #info-panel-1-inner-wrapper{
+      height: 1400px
+    }
+    #info-panel-2-inner-wrapper{
+      height: 800px
+    }
+    #info-panel-2-title-wrapper{
+      grid-row: row 1 / span 4;
+    }
+    #info-panel-2-description-wrapper{
+      grid-row: row 6 / span 12;
     }
   }
   @media only screen and (max-width: 530px){
@@ -948,6 +1055,12 @@
     }
   }
   @media only screen and (max-width: 430px){
+    #info-panel-1-inner-wrapper{
+      height: 1500px
+    }
+    #info-panel-1-stats-grid{
+      height: 430px;
+    }
     #info-panel-3-outer-wrapper{
       height: 750px;
     } 
@@ -956,6 +1069,9 @@
     }
   }
   @media only screen and (max-width: 380px){
+    #info-panel-1-inner-wrapper{
+      height: 1650px
+    }
     #info-panel-3-portrait-wrapper{
       grid-column: col 7 / span 6;
       grid-row: row 15 / span 3;
@@ -965,5 +1081,13 @@
       grid-column: col 1 / span 20;
       grid-row: row 18 / span 3;
     }
+  }
+  @media only screen and (max-width: 332px){
+    #info-panel-1-inner-wrapper{
+      height: 1750px
+    }
+    #info-panel-3-outer-wrapper{
+      /* TODO */
+    } 
   }
 </style>
