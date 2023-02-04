@@ -293,11 +293,10 @@
     @apply
       flex
       flex-col
-      /* mr-3 don't rly care for this -- attempt at center; issue likely borders - TODO */
     ;
     width: 100vw;
     /* max-height: 760px; */
-    /* border: solid 2px cyan; */
+    border: solid 2px cyan;
   }  
 
   .info-panel-group-mid-wrapper{
@@ -334,7 +333,6 @@
     height: 100%;
     width: 100%; 
     overflow: hidden;
-    padding-left: 2rem;
     /* border: 2px solid blue; */
   }
 
@@ -351,6 +349,7 @@
   }
 
   .info-panel-group-footer-svg-wrapper{
+    min-width: 300px; 
     grid-column: col 1 / span 15;
     transform: translateY(-0.7rem);
     border: 2px solid purple;
@@ -371,7 +370,7 @@
     ;
     height: 0px;
     width: 0px;
-    border: 3px solid green;
+    /* border: 3px solid green; */
   }
   
 
@@ -626,7 +625,6 @@
 /* ---------------------------------- Panel 2 ---------------------------------- */
   #info-panel-2-outer-wrapper{
     background-color: rgb(245,245,244);
-    /* border: 2px solid red; */
   }
 
   #info-panel-2-mid-wrapper{
@@ -641,11 +639,11 @@
     position: relative;
     margin-top: 40px;
     height: 600px;
+    width: 100%;
     display: grid;
     grid-template-columns: 100%; 
     grid-template-rows: repeat(20, [row] 5%); 
-    /* border: 2px solid black; */
-  } 
+  }
 
   #info-panel-2-title-wrapper{
     @apply
@@ -653,7 +651,7 @@
       flex-col
       justify-center
     ;
-    grid-row: row 2 / span 5;
+    grid-row: row 1 / span 4;
     /* border: 2px solid red; */
   }
 
@@ -715,18 +713,20 @@
       flex-col
       justify-center
     ;
-    grid-row: row 8 / span 12;
-    /* border: 2px solid red; */
+    grid-row: row 7 / span 12;
+    border: 2px solid red;
   }
 
   #info-panel-2-description{
     @apply
       text-[clamp(28px,8.5vw,30px)]
     ;
-    text-align: center;
+    font-weight: 200;
     line-height: 2.6rem;
+    margin-top: 2rem;
     padding-left: 8%;
     padding-right: 8%;
+    text-align: center;
     font-weight: 540;
   }
 
@@ -768,7 +768,6 @@
     */
     background-size: 4%;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_dark_logo_symbol.png");
-    /* border: 2px solid green; */
   }
 
   #info-panel-3-outer-wrapper-cover{
@@ -974,6 +973,9 @@
     .info-panel-group-footer-svg-wrapper-clickable-overlay{
       visibility: visible;
     }
+    .info-panel-group-footer-mid-wrapper{
+      padding-left: 2.7rem;
+    }
     .info-panel-group-footer-inner-wrapper{
       @apply
         mx-[auto]
@@ -1035,6 +1037,32 @@
     }
   }
   @media only screen and (max-width: 767px){
+    .info-panel-group-footer-mid-wrapper{
+      @apply
+        flex
+        justify-center
+      ;
+    }
+    .info-panel-group-footer-mid-wrapper{
+      padding-left: 0;
+    }
+    .info-panel-group-footer-inner-wrapper{
+      @apply
+        mx-[1%]
+      ;
+      max-width: 400px;
+      display: flex;
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+    .info-panel-group-footer-button-wrapper{
+      display: none;
+      visibility: hidden;
+      border: 3px solid red;
+    }
+    .info-panel-group-footer-svg-wrapper-clickable-overlay{
+      pointer-events: auto;
+    }
     #info-panel-1-inner-wrapper{
       height: 1200px
     }
@@ -1125,6 +1153,9 @@
     }
     #info-panel-1-stats-grid{
       height: 430px;
+    }
+    #info-panel-2-inner-wrapper{
+      height: 870px
     }
     #info-panel-3-outer-wrapper{
       height: 750px;
