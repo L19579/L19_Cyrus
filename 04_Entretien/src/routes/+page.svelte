@@ -1,12 +1,14 @@
 <script>
   import Temphome from "./temp_home/Temphome.svelte";
+  import Wopprompt from "./../shared/Wopprompt.svelte";
 </script>
+  <Wopprompt />
   <div class="outer-wrapper">
     <div class="company-wrapper">
       <div class="main-section">
         Entretien
         <svg class="logo-svg"
-        width="910" height="727" viewBox="0 0 910 727" fill="none" xmlns="http://www.w3.org/2000/svg">
+        viewBox="0 0 910 727" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g filter="url(#filter0_d_12_3)">
           <mask id="path-1-inside-1_12_3" fill="white">
           <path d="M364.783 525.444C363.243 521.562 350.618 521.861 340.763 524.847C330.909 527.832 325.366 526.937 304.118 527.235C282.87 527.534 270.861 532.311 269.013 532.908C267.165 533.505 235.139 548.733 222.822 552.614C210.504 556.496 198.802 552.614 198.802 552.614C198.802 552.614 212.968 566.05 232.984 555.301C232.984 555.301 216.355 564.259 205.577 565.453C205.577 565.453 221.66 568.723 235.256 563.027C236.473 562.517 237.671 561.935 238.835 561.273C247.345 557.173 254.929 553.993 261.777 551.524C300.74 537.473 315.894 546.42 342.611 539.775"/>
@@ -563,22 +565,27 @@
         </div>
       </div>
       <div class="l19579-wrapper">
-        <div class="l19579-reference">
-          <div class="l19579-reference-text" id="reference ">
-            Written By
-            <span>
+        <div class="l19579-reference" id="reference">
+          <a href="https://github.com/L19579"> 
+            <div class="l19579-description"> 
+              écrit et géré par
+            </div>
             <div class="l19579-logo-wrapper">
               <img class="l19579-logo" src="https://avatars.githubusercontent.com/u/98875234?v=4" />
             </div>
-            <div class="l19579-links">
-              <a href="https://github.com/L19579"> 
+            <div class="l19579-link">
                 L19579
-              </a>
             </div>
-            </span>
-          </div>
-        </div>
+          </a>
       </div>
+    </div>
+    <video 
+      src="https://dieupeut-bucket.us-east-1.linodeobjects.com/russian_kid_dancing.mp4" 
+      type="video/mp4"
+      autoplay
+      loop
+      muted
+      />
   </div>
 
 <style>
@@ -587,6 +594,10 @@
     display: flex;
     justify-content: center;
     width: 100vw;
+    height: 100vh;
+    overflow-x: hidden;
+    background-size: 30%;
+    background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/pattern_bg.jpg");
   }
 
   .company-wrapper{
@@ -600,49 +611,163 @@
 
   .main-section{
     display: flex;
-    height: 200px;
-    justify-content: around;
+    height: 150px;
+    /* widgth: 1116px; */
+    min-width: 800px;
     text-align: center;
-    font-size: 10rem;
+    font-size: 8rem;
     font-family: "Times New Roman", Times, sans-serif;
-    /* border: 2px solid red; */
+    margin-left: 100px;
+    border: 2px solid red;
   }
 
   .logo-svg{
     width: 10%;
     height: auto;
-    transform: translateY(-2px);
+    transform: translateY(4px);
   }
 
   .l19579-wrapper{
-    z-index: 1;
-    height: 150px;
-    margin-top: 199px;
     position: fixed;
-    width: 100%;
+    z-index: 1;
+    height: 70px;
+    margin-top: 149px;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: black;
+    /* background: linear-gradient(to right, rgb(14,17,17), rgb(53,56,57), rgb(14,17,17)); */
+    background-color: rgb(14,17,17);
     border: 2px solid blue;
   }
 
+  .l19579-reference{
+    display: flex;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+    border: 2px red solid; 
+  }
+
+  .l19579-description{
+    color: white;
+    float: left;
+    border: 2px green solid; 
+  }
+
   .l19579-logo-wrapper{
-    
+    float: left; 
+    border: 2px white solid; 
   }
 
   .l19579-logo{
-    width: auto; 
-    height: 50px;
+    margin-top: 2px;
+    width: 40px; 
+    height: 40px;
     border-radius: 50%;
     text-decoration: none;
-    border: 2px solid green;
+    margin-left: 20px;
+    margin-right: 10px;
+    border: 2px solid rgb(53,56,57);
+    animation: rotation 5s infinite linear;
+  }
+
+  @keyframes rotation{
+    from{
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(359deg);
+    }
+  }
+  
+  .l19579-link{
+    float: left; 
+    border: 2px blue solid; 
   }
 
   a{
-    color: white;
-    font-size: 4rem;
+    color: inherit;
     text-decoration: none;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
+
+  video{
+    height: auto; 
+    max-width: 700px;
+    margin-top: 250px;
+  }
+
+/* --------------------------------------------------------- mobile */
+
+@media only screen and (max-width: 930px){
+  .main-section{
+    margin-top: 10px;
+    margin-left: 160px;
+    height: 120px;
+    font-size: 100px; 
+  }
+  .l19579-wrapper{
+    margin-top: 130px;
+  }
+  video{
+    max-width: 600px; 
+  }
+}
+@media only screen and (max-width: 690px){
+  .main-section{
+    padding-top: 10px;
+    margin-top: 10px;
+    margin-left: 200px;
+    height: 80px;
+    font-size: 70px; 
+    padding-left: 150px; 
+  }
+  .l19579-wrapper{
+    margin-top: 90px;
+  }
+  .l19579-reference{
+    padding-top: 10px;
+    font-size: 2.1rem;
+  }
+  .l19579-logo{
+    width: 30px; 
+    height: 30px;
+  }
+  video{
+    max-width: 490px; 
+width: auto;
+    margin-top: 120px;
+  }
+}
+@media only screen and (max-width: 479px){
+  .main-section{
+    padding-top: 30px;
+    margin-top: 10px;
+    margin-left: 300px;
+    height: 60px;
+    padding-bottom: 20; 
+    font-size: 35px; 
+    padding-left: 250px; 
+  }
+  .logo-svg{
+    width: 5%;
+    transform: translateY(-10px);
+  }
+  .l19579-wrapper{
+    margin-top: 100px;
+  }
+  .l19579-reference{
+    padding-top: 10px;
+    font-size: 1.56rem;
+  }
+  .l19579-logo{
+    width: 20px; 
+    height: 20px;
+  }
+  video{
+    max-width: 450px; 
+    margin-top: 120px;
+  }
+}
 </style>
