@@ -377,8 +377,7 @@
   .info-panel-group-footer-button-wrapper{
     @apply
       my-[auto]
-      ml-[auto]
-      mr-[10px]
+      mx-[auto]
     ;
     grid-column: col 16 / span 4;
     /* border: solid blue 2px; */
@@ -394,7 +393,7 @@
       bg-white
       my-[auto]
       py-2
-      px-8
+      px-6
       mx-2
       /* text-[clamp(28px,8.5vw,30px)] */
     ;

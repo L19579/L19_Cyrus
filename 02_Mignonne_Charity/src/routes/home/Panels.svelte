@@ -94,6 +94,13 @@
               </svg>
               <div class="leading-title-statement-description-main-buttons-wrapper">
                 <div class="panel-1-buttons-wrapper">
+                  <a href="#more-info-section" on:click|preventDefault={scroll_to_target_with_offset}>
+                    <svg 
+                      id="learn-button-svg-mobile"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                      <path fill="black" d="M20 2A17.882 17.882 0 0 0 7.272 7.272C3.872 10.672 2 15.192 2 20s1.872 9.328 5.272 12.728C10.672 36.128 15.192 38 20 38s9.328-1.872 12.728-5.272C36.128 29.328 38 24.808 38 20s-1.872-9.328-5.272-12.728C29.328 3.872 24.808 2 20 2m0-2c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm6.076 20.41l-1.278-1.458-3.636 3.402V13.39h-2.124v8.964l-3.636-3.402-1.278 1.458 5.976 5.364 5.976-5.364z" />
+                    </svg>
+                  </a>
                   <a href="#more-info-section" on:click|preventDefault={scroll_to_end_of_screen}
                     class="panel-1-buttons" id="contact-button" >Contact us</a>
                   <a href="#more-info-section" on:click|preventDefault={scroll_to_target_with_offset}
@@ -164,7 +171,8 @@
       xl:h-screen
       justify-center
 		;
-    min-height: 900px;
+    /* Need virtual height adjs here. TODO. */
+    min-height: 600px;
     height: 100vh;
     width: 100%;
     /* border: 2px solid red; */
@@ -183,7 +191,7 @@
       xsm:px-4
       flex
     ;
-    min-height: 500px;
+    min-height: 590px;
     /* max-height: 100%; redundant but testing TODO */ 
     max-width: 1200px; 
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/bw_full_collage_1.png");
@@ -202,9 +210,8 @@
       flex
       flex-col
       justify-between
-      /* mt-[5%] */
     ;
-    height: 50%;
+    height: 40%;
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
     border: 2px solid blue; 
@@ -212,10 +219,10 @@
   
   .leading-title-statement{
     @apply
-      text-[clamp(28px,8.5vw,90px)]
+      text-[clamp(28px,8.5vw,74px)]
       /* xl:pr-96 */
     ;
-    grid-column: col 1 / span 13;
+    grid-column: col 1 / span 14;
     border: 2px solid red;
   }
 
@@ -226,7 +233,7 @@
       mb-[14%]
       justify-center 
     ;
-    grid-column: col 14 / span 8;
+    grid-column: col 15 / span 7;
     border: 2px green solid; 
   }
 
@@ -303,9 +310,9 @@
       flex
       text-white
       font-bold
-      text-xl
-      py-2
-      px-8
+      text-lg
+      py-1
+      px-4
       mx-2
       rounded-full
     ;
@@ -317,19 +324,22 @@
   
   .panel-1-buttons:hover{
     transition-duration: 200ms;
-    transform: scale(1.1);
+    transform: scale(1.04);
     transition-timing-function: cubic-bezier(0.4, 0.2, 1);
   }
 
   #contact-button{
+display: none;
     @apply bg-indigo-700;
   }
 
   #learn-button{
+display: none;
     @apply bg-stone-600;
   }
   /* Rearrange main page button format */
   #donate-button{
+display: none;
     display: flex;
     justify-content: center;
     min-width: 90px;
@@ -340,6 +350,12 @@
   /* Moreinfo specific */
   #more-info-section{
     width: 100%;
+    height: auto;
+  }
+  #more-info-section-mobile{
+    width: 2px;
+    height: 2px;
+    border: 2px solid red;
   }
   /* Panel-video specific */
 
@@ -464,12 +480,16 @@
         flex
         justify-center 
       ;
-      min-width: 270px;
-      padding-left: 40%;
+      min-width: 220px;
+      max-width: 270px; 
+      margin-left: 60%;
       border: 1px red solid;
     }
     #leading-title-welcome-svg{
       height: auto;
+    }
+    .panel-1-buttons-wrapper{
+      margin-top: 40px;
     }
     #learn-button{
       display: none;
@@ -477,5 +497,45 @@
     #donate-button{
       visibility: visible;
     }
+  }
+  @media only screen and (max-width: 768px){
+    #leading-title-welcome-svg-mobile{
+      margin-left: 47%;
+    }
+  }
+  @media only screen and (max-width: 567px){
+    #leading-title-welcome-svg-mobile{
+      margin-left: 40%;
+    }
+    .panel-1-buttons-wrapper{
+      margin-top: 20px;
+      width: 100px;
+    }
+    .panel-1-buttons{
+      @apply
+        flex
+        text-white
+        font-bold
+        py-1
+        px-2
+        mx-2
+        rounded-full
+      ;
+      text-align: center;
+      min-width: 100px;
+      font-size: 15px;
+    }
+    #contact-button{
+      display: none;
+    }
+    #donate-button{
+      display: none;
+    }
+    #learn-button{
+      display: block;
+    }
+  }
+  @media only screen and (max-width: 450px){
+    
   }
 </style>
