@@ -15,6 +15,6 @@
     width: 100vw;
     height: 20px;
     background-color: orange;
-    border: 2px solid red;
+    border: 2px solid red; 
   }
 </style>

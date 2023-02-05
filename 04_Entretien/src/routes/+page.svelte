@@ -618,7 +618,6 @@
     font-size: 8rem;
     font-family: "Times New Roman", Times, sans-serif;
     margin-left: 100px;
-    border: 2px solid red;
   }
 
   .logo-svg{
@@ -638,7 +637,6 @@
     justify-content: center;
     /* background: linear-gradient(to right, rgb(14,17,17), rgb(53,56,57), rgb(14,17,17)); */
     background-color: rgb(14,17,17);
-    border: 2px solid blue;
   }
 
   .l19579-reference{
@@ -646,18 +644,15 @@
     justify-content: center;
     color: white;
     font-size: 2.5rem;
-    border: 2px red solid; 
   }
 
   .l19579-description{
     color: white;
     float: left;
-    border: 2px green solid; 
   }
 
   .l19579-logo-wrapper{
     float: left; 
-    border: 2px white solid; 
   }
 
   .l19579-logo{
@@ -683,7 +678,7 @@
   
   .l19579-link{
     float: left; 
-    border: 2px blue solid; 
+    border: 0px;
   }
 
   a{
