@@ -495,6 +495,11 @@
       visibility: visible;
     }
   }
+  @media only screen and (max-width: 838px){
+    #leading-title-welcome-svg-mobile{
+      margin-left: 35%;
+    }
+  }
   @media only screen and (max-width: 768px){
     #leading-title-welcome-svg-mobile{
       margin-left: 47%;
@@ -502,7 +507,7 @@
   }
   @media only screen and (max-width: 567px){
     #leading-title-welcome-svg-mobile{
-      margin-left: 40%;
+      margin-left: 20%;
     }
     .panel-1-buttons-wrapper{
       margin-top: 20px;

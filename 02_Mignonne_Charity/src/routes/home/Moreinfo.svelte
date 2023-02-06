@@ -25,6 +25,7 @@
   let tweened_families_fed = tweened(0);
   let tweened_enrolled_youths = tweened(0);
   let tweened_sunday_service_attendees = tweened(0);
+  let tweened_lives_improved = tweened(0);
 
   $: if (y_scroll_distance > 470) {
     setTimeout(() =>{
@@ -48,13 +49,21 @@
     }, 300); 
 
     setTimeout(() =>{
+      setInterval(() => {
+        if ($tweened_lives_improved < 300) $tweened_lives_improved++;   
+      }, 100);
+    }, 300); 
+
+    setTimeout(() =>{
       show_counter_notes = true;
     }, 2200); 
   };
-
+  
+  /* floor(n/1) being used to get int out of object here.. ikik. */ 
   $: counter_families_fed = Math.floor($tweened_families_fed / 1);
   $: counter_enrolled_youths = Math.floor($tweened_enrolled_youths / 1);
   $: counter_sunday_service_attendees = Math.floor($tweened_sunday_service_attendees / 1);
+  $: counter_lives_improved = Math.floor($tweened_lives_improved / 1);
 
 </script>
 
@@ -91,6 +100,13 @@
               </div>
             </div>
           </div>
+          <div id="info-panel-1-stats-grid-mobile">
+            <div class="info-panel-1-stat-group" id="info-panel-1-stat-1">
+              <div class="stat-number-group" id="stat-number-1">
+                {counter_lives_improved}<span class="stat-plus-sign-group">+ lives improved</span>
+              </div>
+            </div>
+          </div>
           <div id="info-panel-1-counter-note">
             ...and counting.
             <div id="info-panel-1-counter-note-underline-svg-wrapper">
@@ -109,7 +125,7 @@
           <div id="info-panel-1-smiley-svg-wrapper">
             <!-- TODO -->
           </div>
-          <div id="info-panel-1-description">
+          <div class="info-panel-group-description" id="info-panel-1-description">
             Since our founding(??) we've dedicated resources to helping
             families and children in critical need in Haiti, and Canada.
             The hardships we aim to ameliorate have been experienced by
@@ -541,6 +557,24 @@
     /* border: 2px solid red; */
   }
 
+  #info-panel-1-stats-grid-mobile{
+    @apply
+      flex
+      mx-[auto]
+      justify-around
+    ;
+    margin-top: 2rem;
+    position: relative;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+
+    width: 98%;
+    height: 50px;
+    display: none;
+    /* border: 2px solid green; */
+  }
+
   #info-panel-1-counter-note-underline-svg-wrapper{
     @apply
       flex
@@ -584,7 +618,7 @@
     @apply
       relative
       block
-      text-[clamp(28px,8.5vw,30px)]
+      text-[clamp(15px,8.5vw,30px)]
     ;
     font-weight: 200;
     line-height: 2.6rem;
@@ -592,9 +626,9 @@
     padding-left: 8%;
     padding-right: 8%;
     text-align: center;
-    font-weight: 540;
+    /* font-weight: 400; */
 
-    /* border: 2px solid blue; */
+    border: 2px solid red;
   }
 
   #info-panel-1-footer-outer-wrapper{
@@ -718,15 +752,15 @@
 
   #info-panel-2-description{
     @apply
-      text-[clamp(28px,8.5vw,30px)]
+      text-[clamp(15px,7.5vw,30px)]
     ;
     font-weight: 200;
     line-height: 2.6rem;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     padding-left: 8%;
     padding-right: 8%;
     text-align: center;
-    font-weight: 540;
+    /* font-weight: 540; */
   }
 
   #info-panel-2-footer-outer-wrapper{
@@ -819,15 +853,14 @@
     margin-left: 3%;
     
     grid-column: col 2 / span 4;
-    grid-row: row 2 / span 19;
-
+    grid-row: row 2 / span 19;  
     border: 2px solid blue; 
   } 
 
   #info-panel-3-portrait{
       position: relative;
       height: auto; 
-      width: 100%; 
+      width: 99%; 
     /* height: 270px; */
     /* width: 264px; */
       border: 2px solid red;
@@ -936,6 +969,12 @@
     #info-panel-1-footer-mid-wrapper{
       background-position-x: -225px;
     }
+    #info-panel-2-mid-wrapper{
+      background-position-x: -140px;
+    }
+    #info-panel-2-footer-mid-wrapper{
+      background-position-x: -140px;
+    }
   }
   @media only screen and (max-width: 1543px){
     #info-panel-1-mid-wrapper{
@@ -944,6 +983,20 @@
     #info-panel-1-footer-mid-wrapper{
       background-position-x: -350px;
     }
+    #info-panel-2-mid-wrapper{
+      background-position-x: -255px;
+    }
+    #info-panel-2-footer-mid-wrapper{
+      background-position-x: -255px;
+    }
+  }
+  @media only screen and (max-width: 1326px){
+    #info-panel-2-mid-wrapper{
+      background-image: url("");
+    }
+    #info-panel-2-footer-mid-wrapper{
+      background-image: url("");
+    }
   }
   @media only screen and (max-width: 1279px){
     #info-panel-1-mid-wrapper{
@@ -951,6 +1004,9 @@
     }
     #info-panel-1-footer-mid-wrapper{
       background-position-x: -390px;
+    }
+    #info-panel-2-description{
+      margin-top: 1rem;
     }
     #info-panel-3-portrait-wrapper{
       grid-column: col 1 / span 5;
@@ -967,7 +1023,7 @@
   }
   @media only screen and (max-width: 1050px){
     #info-panel-1-inner-wrapper{
-      height: 700px
+      height: 700px;
     }
     .info-panel-group-footer-svg-wrapper-clickable-overlay{
       visibility: visible;
@@ -997,7 +1053,7 @@
       width: auto;
     }
     #info-panel-3-outer-wrapper{
-      /* height: 500px; */
+      height: 400px;
     } 
     #info-panel-3-inner-wrapper{
       @apply
@@ -1025,17 +1081,30 @@
   }
 
   @media only screen and (max-width: 940px){
+    #info-panel-1-description{
+      padding-left: 9%;
+    }
     #info-panel-3-outer-wrapper{
       height: 400px;
     } 
     #info-panel-3-quote-name-wrapper{
       padding-bottom: 2.5%;
     }
-    #info-panel-1-description{
-      padding-left: 9%;
-    }
   }
   @media only screen and (max-width: 767px){
+    #info-panel-1-description{
+      font-size: 1.37rem;
+      padding-left: 4%;
+      padding-right: 4%;
+    }
+    #info-panel-2-description{
+      font-size: 1.37rem;
+      padding-left: 4%;
+      padding-right: 4%;
+    }
+    #info-panel-3-quote{
+      font-size: 1.3rem;
+    }
     .info-panel-group-footer-mid-wrapper{
       @apply
         flex
@@ -1063,9 +1132,13 @@
       pointer-events: auto;
     }
     #info-panel-1-inner-wrapper{
-      height: 1200px
+      height: 500px;
+    }
+    #info-panel-1-stats-grid-mobile{
+      display: block;
     }
     #info-panel-1-stats-grid{
+      display: none;
       @apply
         mx-[auto]
       ;
@@ -1075,27 +1148,9 @@
       grid-template-rows: repeat(3, [row] 33%);
     }
     #info-panel-1-stat-1{
+      border: 0px;
       grid-row: row 1;
       grid-column: col 1;
-    }
-
-    #info-panel-1-stat-2{
-      grid-row: row 2;
-      grid-column: col 1;
-    }
-
-    #info-panel-1-stat-3{
-      grid-row: row 3;
-      grid-column: col 1;
-    }
-    #info-panel-1-stat-1{
-      border-right: 0px;
-      border-bottom: 2px solid black;
-    }
-
-    #info-panel-1-stat-2{
-      border-right: 0px;
-      border-bottom: 2px solid black;
     }
     .stat-description-group{
       margin-top: 0px;
@@ -1122,33 +1177,46 @@
   }
   @media only screen and (max-width: 630px){
     #info-panel-1-inner-wrapper{
-      height: 1400px
+      height: 600px
     }
     #info-panel-2-inner-wrapper{
-      height: 800px
+      height: 700px
     }
     #info-panel-2-title-wrapper{
       grid-row: row 1 / span 4;
     }
     #info-panel-2-description-wrapper{
-      grid-row: row 6 / span 12;
+      grid-row: row 6 / span 14;
     }
+    #info-panel-2-description{
+      margin-top: 0px;
+    }
+    #info-panel-3-outer-wrapper{
+      height: 750px;
+    } 
+    /* TODO Panel 3 scaling */
   }
   @media only screen and (max-width: 530px){
-    #info-panel-3-outer-wrapper{
+    #info-panel-1-inner-wrapper{
       height: 700px;
+    }
+    #info-panel-3-outer-wrapper{
+      height: 800px;
     } 
     #info-panel-3-quote{
       grid-row: row 1 / span 11;
     }
     #info-panel-3-portrait-wrapper{
-      grid-column: col 7 / span 6;
+      grid-column: col 6 / span 9;
       grid-row: row 12 / span 5;
+    }
+    #info-panel-3-quote-name-wrapper{
+      grid-row: row 18 / span 3;
     }
   }
   @media only screen and (max-width: 430px){
     #info-panel-1-inner-wrapper{
-      height: 1500px
+      height: 820px;
     }
     #info-panel-1-stats-grid{
       height: 430px;
@@ -1157,19 +1225,16 @@
       height: 870px
     }
     #info-panel-3-outer-wrapper{
-      height: 750px;
+      height: 770px;
     } 
     #info-panel-3-quote{
       grid-row: row 1 / span 11;
     }
   }
   @media only screen and (max-width: 380px){
-    #info-panel-1-inner-wrapper{
-      height: 1650px
-    }
     #info-panel-3-portrait-wrapper{
-      grid-column: col 7 / span 6;
-      grid-row: row 15 / span 3;
+      grid-column: col 5 / span 9;
+      grid-row: row 12 / span 5;
     }
     #info-panel-3-quote-name-wrapper{
       padding-top: 2.5%;
@@ -1179,10 +1244,10 @@
   }
   @media only screen and (max-width: 332px){
     #info-panel-1-inner-wrapper{
-      height: 1750px
+      height: 1000px
     }
     #info-panel-3-outer-wrapper{
-      /* TODO */
+      height: 900px;
     } 
   }
 </style>
