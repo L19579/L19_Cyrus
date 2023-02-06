@@ -1152,6 +1152,9 @@
       grid-row: row 1;
       grid-column: col 1;
     }
+    .stat-number-group{
+      margin-left: 0px;
+    }
     .stat-description-group{
       margin-top: 0px;
     }

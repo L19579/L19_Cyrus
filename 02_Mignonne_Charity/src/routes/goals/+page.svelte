@@ -357,7 +357,7 @@
       
     width: 100%; 
     box-sizing: border-box;
-    /* border: 1px solid green; */
+    border: 1px solid green; 
 	}
 
   #panel-2-title-text{
@@ -368,7 +368,7 @@
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
 		grid-row: row 5 / span 6;
-		/* border: 2px solid red; */
+		border: 2px solid red;
 	}
 
 	#panel-2-text{
@@ -384,7 +384,7 @@
 		;
 		grid-column: col 1 / span 20;
 		grid-row: row 11 / span 10;
-		/* border: 2px solid blue; */
+		border: 2px solid blue;
 	}
 	
   #panel-2-video-background-1{
@@ -452,7 +452,7 @@
     width: 100%;
     height: auto;
     visibility: hidden;
-    /* border: 2px solid red; */
+    border: 2px solid red;
 	}	
 
   /* ---------------------------------------------------------------------- mobile */

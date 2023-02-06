@@ -463,7 +463,6 @@
                   {:else}
                     To {donation_choice}
                   {/if}
-
                 </div>
               </div> 
 
@@ -504,6 +503,17 @@
 
           <div class="donate-payment-outer-wrapper">
             <div class="donate-payment-mid-wrapper">
+              <div class="donate-payment-amount-field-mobile">
+                <input class="group-full-input-fields" id="amount-manual-field-mobile" type="text" maxlength="4" 
+                  placeholder="$ 0" bind:value={payment_form.amount} on:change={() => show_amount()}/>
+              </div>
+              <div id="amount-manual-field-text-mobile"> 
+                {#if (donation_choice.length < 2)}
+                  Amount 
+                {:else}
+                  To {donation_choice}
+                {/if}
+              </div>
               <div class="donate-payment-inner-wrapper">
 
                 <div class="ext-button-form-subsection block-select">
@@ -674,7 +684,7 @@
     ;
     width: 100%;
     height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .donate-mid-wrapper-cover{
@@ -726,15 +736,6 @@
       justify-end
     ;
     grid-column: 1 / span 2;
-    /* background-image: linear-gradient(to right, rgba(186,184,182,1), rgba(230, 229, 218,1)); */
-
-    /* background-image: linear-gradient(to right, rgba(227,216,209,1), rgba(230, 229, 218,1)); */
-    /* background-image: linear-gradient(to right, rgba(222,220,181,1), rgba(230, 229, 218,1)); */
-    /* border: 4px solid red; */
-    /* background-color: rgba(186, 222, 215, 1); */
-    /* background-color: rgba(222, 220, 186, 1); */
-
-    /* background: linear-gradient(to right, rgba(184,184,184,1), rgba(230,229,218,0)); */
     /* border: 2px solid blue; */
   }
 
@@ -787,6 +788,33 @@
     font-weight: bold;
   }
 
+  #amount-manual-field-mobile{
+    @apply
+      mx-[auto]
+    ;
+    display: none;
+    text-align: center;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    height: 4rem;
+    border: 0px;
+    width: 80%;
+    margin-top: 20px;
+    border-bottom: 3px solid black;
+    background-color: rgba(0,0,0,0);
+  }
+
+  #amount-manual-field-text-mobile{
+    @apply
+      mx-[auto]
+    ;
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-size: 1.7rem;
+    font-weight: bold;
+  }
   /* --------------------------------------------- GRID  */
   .amount-options-outer-wrapper{
     @apply
@@ -880,7 +908,7 @@
     /* box-shadow: -4px 0 4px rgba(121,121,122,1); */ 
     grid-column: 3 / span 3;
     background-color: rgba(242, 241, 240, 0);
-    /* border: 4px solid blue; <--- might need */
+    /* border: 4px solid blue; */
   }
 
   .donate-payment-mid-wrapper{
@@ -900,7 +928,7 @@
     position: relative;
     width: 80%;
     height: 100%;
-    /* border: 4px solid green; */
+    /* border: 2px solid green;  */
   }
   /* ---------------- Form Group ---------------- */
   .group-form-subsection{
@@ -1225,4 +1253,47 @@
     grid-column: col 6 / span 3;
   }
 
+/* ----------------------------------------------------------- mobile */
+
+@media only screen and (max-width: 767px){
+  .donate-inner-wrapper{
+    margin-top: 0px;
+  }
+  .donate-thank-you-panel{
+    display: none;
+  }
+  .donate-payment-outer-wrapper{
+    background-image: url("");
+    background-color: rgb(232,227,223);
+    grid-column: col 1 / span 5;
+    width: 100%;
+  }
+  .donate-payment-mid-wrapper{
+    @apply
+      flex-col
+    ; 
+    border-radius: 0px;
+    border: 0px;
+    box-shadow: 0px 0 0px;
+  }
+
+  .donate-payment-inner-wrapper{
+    @apply
+      mx-[auto]
+    ;
+    height: 100%;
+  }
+  #amount-manual-field-mobile{
+    display: block;
+  }
+  #amount-manual-field-text-mobile{
+    display: block;
+  }
+  #payment-separator-wrapper{
+    margin-top: -10px;
+  }
+  #gpay-donate-button{
+    display: none;  
+  }
+}
 </style>
