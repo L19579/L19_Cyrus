@@ -49,6 +49,5 @@ Live view [here](https://dieupeutcharity.com).
 ---
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/L19579/L19_Cyrus/main/02_Mignonne_Charity/imgs/reference_3.png">
-  <img src="https://raw.githubusercontent.com/L19579/L19_Cyrus/main/02_Mignonne_Charity/imgs/reference_4.png">
+  <img src="https://raw.githubusercontent.com/L19579/L19_Cyrus/main/02_Mignonne_Charity/imgs/reference_5.png">
 </p>
