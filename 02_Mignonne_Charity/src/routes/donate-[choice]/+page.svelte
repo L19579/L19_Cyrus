@@ -1282,6 +1282,7 @@
       mx-[auto]
     ;
     height: 100%;
+    width: 90%;
   }
   #amount-manual-field-mobile{
     display: block;

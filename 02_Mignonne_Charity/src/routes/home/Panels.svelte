@@ -19,6 +19,8 @@
   };
   */
 
+  /* REFACTOR TODO */
+
   function scroll_to_end_of_screen({ target }){
     const element = document.querySelector(target.getAttribute('href'));
     const end_offset = 5000; 
@@ -36,6 +38,16 @@
     const start_offset = 100; 
     const element_pos = element.getBoundingClientRect().top;
     const offset_pos = element_pos - start_offset;
+
+    window.scrollTo({
+      top: offset_pos,
+      behavior: "smooth"
+    });
+  }
+
+  function scroll_to_target_mobile({ target }){
+    const element = document.querySelector(target.getAttribute('href'));
+    const element_pos = element.getBoundingClientRect().top;
 
     window.scrollTo({
       top: offset_pos,
@@ -94,7 +106,7 @@
               </svg>
               <div class="leading-title-statement-description-main-buttons-wrapper">
                 <div class="panel-1-buttons-wrapper">
-                  <a href="#more-info-section" on:click|preventDefault={scroll_to_target_with_offset} 
+                  <a href="#learn-button-svg-mobile" on:click={scroll_to_target_mobile} 
                   id="learn-button-svg-mobile">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
                       <path fill="black" d="M20 2A17.882 17.882 0 0 0 7.272 7.272C3.872 10.672 2 15.192 2 20s1.872 9.328 5.272 12.728C10.672 36.128 15.192 38 20 38s9.328-1.872 12.728-5.272C36.128 29.328 38 24.808 38 20s-1.872-9.328-5.272-12.728C29.328 3.872 24.808 2 20 2m0-2c11.046 0 20 8.954 20 20s-8.954 20-20 20S0 31.046 0 20 8.954 0 20 0zm6.076 20.41l-1.278-1.458-3.636 3.402V13.39h-2.124v8.964l-3.636-3.402-1.278 1.458 5.976 5.364 5.976-5.364z" />
@@ -566,7 +578,8 @@
       display: none;
     }
     .panel-1-buttons-wrapper{
-      margin-top: 90%;
+      height: 44px;
+      margin-top: 80%;
     }
   }
 </style>
