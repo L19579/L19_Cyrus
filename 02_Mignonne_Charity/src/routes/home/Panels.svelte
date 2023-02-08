@@ -167,7 +167,7 @@
     ; 
     width: 100vw;
     overflow: hidden;
-    border: 2px solid blue; 
+    /* border: 2px solid blue; */
   }
   
   /* Panel 1 specific */
@@ -210,7 +210,7 @@
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: bottom;
-    border: 4px solid green;
+    /* border: 4px solid green; */
     
   }
 
@@ -225,7 +225,7 @@
     height: 40%;
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
-    border: 2px solid blue; 
+    /* border: 2px solid blue;*/
  }
   
   .leading-title-statement{
@@ -234,7 +234,7 @@
       /* xl:pr-96 */
     ;
     grid-column: col 1 / span 14;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .leading-title-welcome-svg-wrapper{
@@ -245,7 +245,7 @@
       justify-center 
     ;
     grid-column: col 15 / span 7;
-    border: 2px green solid; 
+    /* border: 2px green solid; */
   }
 
   #leading-title-welcome-svg{
@@ -281,7 +281,7 @@
       /* pb-7 */
     ;
     margin-right: 27rem;
-    border: 2px solid orange;
+    /* border: 2px solid orange; */
   }
 
   .leading-title-statement-description-main-text{
@@ -293,7 +293,7 @@
       leading-[1.75]
       text-left
     ;
-    border: 2px green solid; 
+    /* border: 2px green solid; */
   }
  
   .leading-title-statement-lower-section{
@@ -306,14 +306,14 @@
     padding-top: 30px;
     min-height: 1.1rem;
      
-    border: 2px cyan solid; 
+    /* border: 2px cyan solid; */
   }
 
   .panel-1-buttons-wrapper{
     @apply
       flex
     ;
-    border: 2px blue solid; 
+    /* border: 2px blue solid; */
   }
 
   .panel-1-buttons{
@@ -330,7 +330,7 @@
     white-space: nowrap;
     text-decoration: none;
     will-change: transform;
-    border: 1px black solid; 
+    border: 1px black solid;  /* functional */
   }
   
   .panel-1-buttons:hover{
@@ -364,7 +364,7 @@
     display: none;
     width: 40px;
     height: 40px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
   /* Panel-video specific */
 
@@ -492,7 +492,7 @@
       min-width: 220px;
       max-width: 270px; 
       margin-left: 60%;
-      border: 1px red solid;
+      /* border: 1px red solid; */
     }
     #leading-title-welcome-svg{
       height: auto;

@@ -312,7 +312,7 @@
     ;
     width: 100vw;
     /* max-height: 760px; */
-    border: solid 2px cyan;
+    /* border: solid 2px cyan; */
   }  
 
   .info-panel-group-mid-wrapper{
@@ -361,14 +361,14 @@
     grid-template-columns: repeat(20, [col] 5%);
     max-width: 1000px;
     height: 99%;
-    border: 1px solid white;
+    /* border: 1px solid white; */
   }
 
   .info-panel-group-footer-svg-wrapper{
     min-width: 300px; 
     grid-column: col 1 / span 15;
     transform: translateY(-0.7rem);
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
   }
 
   .info-panel-group-footer-svg-wrapper-clickable-overlay{
@@ -628,7 +628,7 @@
     text-align: center;
     /* font-weight: 400; */
 
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #info-panel-1-footer-outer-wrapper{
@@ -747,7 +747,7 @@
       justify-center
     ;
     grid-row: row 7 / span 12;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #info-panel-2-description{
@@ -819,7 +819,7 @@
     ;
     height: 97%;
     max-width: 1280px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #info-panel-3-quote-wrapper{
@@ -834,7 +834,7 @@
     width: 100%;
     height: 90%;
     text-align: center;
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
   }
 
   #info-panel-3-portrait-wrapper{
@@ -854,7 +854,7 @@
     
     grid-column: col 2 / span 4;
     grid-row: row 2 / span 19;  
-    border: 2px solid blue; 
+    /* border: 2px solid blue; */
   } 
 
   #info-panel-3-portrait{
@@ -863,7 +863,7 @@
       width: 99%; 
     /* height: 270px; */
     /* width: 264px; */
-      border: 2px solid red;
+     /* border: 2px solid red; */
   } 
 
   #info-panel-3-quote{
@@ -878,7 +878,7 @@
     grid-column: col  6 / span 14;
     grid-row: row 1 / span 13;
 
-    border: 2px solid black;
+    /* border: 2px solid black; */
   }
 
   #info-panel-3-quote-name-wrapper{
@@ -890,7 +890,7 @@
     /*height: 100px; doesn't play nice with grid */
     grid-column: col 6 / span 14;
     grid-row: row 14 / span 6;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #info-panel-3-quote-name{
@@ -926,7 +926,7 @@
     ;
     height: 100%;
     /* grid-row: row 18 / span 3; */
-    border: 2px solid green; 
+    /* border: 2px solid green; */
   }
 
   #info-panel-3-button{
@@ -940,7 +940,7 @@
       rounded-full
       bg-indigo-700;
     ;
-    border: 1px solid black;
+    border: 1px solid black; /* Functional */
     white-space: nowrap;
     text-decoration: none;
     will-change: transform;
@@ -1061,7 +1061,7 @@
       ;
       height: 97%;
       max-width: 1280px;
-      border: 2px solid red;
+      /* border: 2px solid red; */
     }
     #info-panel-3-portrait-wrapper{
       grid-column: col 3 / span 4;
@@ -1128,7 +1128,7 @@
     .info-panel-group-footer-button-wrapper{
       display: none;
       visibility: hidden;
-      border: 3px solid red;
+      /* border: 3px solid red; */
     }
     .info-panel-group-footer-svg-wrapper-clickable-overlay{
       pointer-events: auto;

@@ -251,7 +251,7 @@
     ;
     height: 98%;
     width: 1200px;
-    border: 3px solid red;
+    /* border: 3px solid red; */
   }
   
   .panels-group-title-wrapper{
@@ -276,7 +276,7 @@
     height: 68%;
     padding-right: 40px;
     
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
   }
 
   .panels-group-description-text{ 
@@ -291,7 +291,7 @@
       flex
     ;
     height: 60px;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   .panels-group-donate-button{ 
@@ -328,7 +328,7 @@
     width: 100%;
     overflow: hidden;
     /* background-color: rgb(228,228,228); */
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
   }
 
   /* This is inheriting a "relative" attr thats not needed; untis affected */
@@ -349,7 +349,7 @@
     background-position-x: 110%; 
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_2_panel_1_bg_kids_eating.png");
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #panel-1-background-2{
@@ -365,7 +365,7 @@
     background-position-x: -10rem; 
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_1_panel_1_bg_kids_eating.png");
-    border: 2px solid black;
+    /* border: 2px solid black; */
   }
 
   #panel-1-background-cover{
@@ -392,7 +392,11 @@
     ;
     margin: auto;
     height: 10;
-    border: 1px solid green;
+    background: 
+      linear-gradient(to right, rgba(229,229,229,0.2) 0%, rgba(229,229,229,0.90) 10%, 
+          rgba(229,229,229,0.90) 90%, rgba(229,229,229,0.2) 100%);
+    ;
+    /* border: 1px solid green; */
   }
 
  #panel-1-description-wrapper{
@@ -428,7 +432,7 @@
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_panel_2_bg_boys_soccer.png");
 
-    border: yellow solid 2px;
+    /* border: yellow solid 2px; */
   } 
 
   #panel-2-background-2{
@@ -444,7 +448,7 @@
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_1_panel_2_bg_boys_soccer.png");
 
-    border: yellow solid 2px;
+    /* border: yellow solid 2px; */
   } 
 
   #panel-2-background-center-cover{
@@ -467,7 +471,7 @@
     width: 100%;
     /* background: linear-gradient(90deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%); */
     background-color: rgba(245,245,244,0.01);
-    border: solid 2px red;
+    /* border: solid 2px red; */
   }
 
   #panel-2-background-right-cover{
@@ -479,7 +483,7 @@
     height: 100%;
     width: 100%;
     /* background: linear-gradient(270deg, rgba(245,245,244,1) 5%, rgba(74,74,74,0) 30%); */
-    border: solid 2px green;
+    /* border: solid 2px green; */
   }
     
   #panel-2-title-wrapper{
@@ -491,7 +495,7 @@
     ;
     margin: auto;
     height: 10;
-    border: 1px solid green;
+    /* border: 1px solid green; */ 
   }
 
  #panel-2-description-wrapper{
@@ -523,7 +527,7 @@
     background-size: 1900px;
     background-image: url(../../../static/bg_impact/panel_3_church_goers.jpg);
 
-    border: yellow solid 2px;
+    /* border: yellow solid 2px; */
   } 
 
   #panel-3-background-side-cover{
@@ -551,7 +555,7 @@
     ;
     margin: auto;
     height: 10;
-    border: 1px solid green;
+    /* border: 1px solid green; */
   }
 
  #panel-3-description-wrapper{
