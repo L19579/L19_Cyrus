@@ -1,3 +1,12 @@
+<script>
+  import { language } from './LanguageData.js';
+
+  let lang;
+  language.subscribe(value => {
+    lang = value; 
+  });
+</script>
+
 <div class="footer-wrapper">
   <!-- Contact Panel-->
   <div class="contact-top-panel-wrapper">
@@ -26,10 +35,10 @@
       </div>
       <div class="contact-top-panel-main-section-buttons">
         <a href="tel:4376006987" class="contact-buttons" id="button-phone">
-          +1(437) 600-6987
+          {lang.footer.phone_number_button}
         </a>
         <a href="mailto:contact@dieupeut.com" class="contact-buttons" id="button-email">
-          contact@dieupeut.com
+          {lang.footer.email_button}
         </a>
       </div>
     </div>
@@ -47,7 +56,7 @@
       <div class="company-dieu-peu-top-wrapper">
         <div class="company-dieu-peu-lower-wrapper">
           <div class="company-dieu-peu-title">
-            <span class="company-dieu-peu-title-text">Dieu Peut Charity</span>
+            <span class="company-dieu-peu-title-text">{lang.footer.title}</span>
           </div>
           <div class="company-dieu-peu-social-media">
             <div class="buttons-social-media-top-wrapper">
@@ -104,7 +113,7 @@
 								<div class="company-dieu-peu-address-1-title" id="address-text"> 
 								</div>
 								<div class="company-dieu-peu-address-1-address" id="address-text"> 
-									Dieu Peut Charity <br />
+                  {lang.footer.title} <br />
 									123 Temporary Ave <br />
 									Toronto, Ontario, M6T 2SR <br />
 									Canada<br />
@@ -116,7 +125,7 @@
 								<div class="company-dieu-peu-address-2-title" id="address-text"> 
 								</div>
 								<div class="company-dieu-peu-address-2-address" id="address-text"> 
-									Haitian office: <br />
+                  {lang.footer.haitian_office} <br />
 									321 Blvd. Faux Chemin, <br />
 									Port-au-Prince, Ouest, 6221<br />
 									Haiti<br />
@@ -128,7 +137,7 @@
 								<div class="company-dieu-peu-address-3-title" id="address-text"> 
 								</div>
 								<div class="company-dieu-peu-address-3-address" id="address-text"> 
-									DR office: <br />
+                  {lang.footer.dr_office} <br />
 									10129, Av. John F Kennedy, <br />
 									Santo Domingo, Distrito Nacional<br />
 									Dominican Republic, 10126 <br />
@@ -140,20 +149,20 @@
 			</div>
 			<div class="company-dieu-peu-copyright-wrapper">
 				<div class="company-dieu-peu-copyright-text">
-					Copyright &copy 2023 Dieu Peut Charity. <br />
-					All rights reserved.
+          {lang.footer.copyright_part_1} <br />
+          {lang.footer.copyright_part_2} 
 				</div>
 			</div>
       <div class="company-l19579-wrapper">
         <div class="company-l19579-description">
 						<a id="managed-by-statement-link" href="https://www.l19579.com" target="_blank">
-							Written, and managed by&nbsp
+              {lang.footer.written_by_part_1}&nbsp
 							<img id="l19579-logo" src="https://avatars.githubusercontent.com/u/98875234?v=4" alt="L19579" /> L19579 <br />
 						</a>
 					</div>
 					<div class="l19579-mit-license-wrapper">
 						<a class="l19579-mit-license-text" href="https://github.com/L19579/L19_Cyrus/tree/main/02_Mignonne_Charity" target="_blank">
-							Apache-2.0 / MIT license &nbsp
+              {lang.footer.written_by_part_2_link}&nbsp&nbsp
 						</a>
 					</div>
       </div>

@@ -1,7 +1,13 @@
 <script>
   import Typewriter from 'svelte-typewriter';
   import { tweened } from 'svelte/motion';
+  import { language } from './../shared/LanguageData.js';
   /* import { backInOut } from 'svelte/easing'; */
+
+  let lang;
+  language.subscribe( value => {
+    lang = value;  
+  });
 
   const staff_quotes = [
     { 
@@ -80,7 +86,7 @@
                 {counter_families_fed} <span class="stat-plus-sign-group">+</span>
               </div>
               <div class="stat-description-group" id="stat-description-1">
-                Families Fed
+                {lang.home.panel_1.stat_1_title}
               </div>
             </div>
             <div class="info-panel-1-stat-group" id="info-panel-1-stat-2">
@@ -88,7 +94,7 @@
                 {counter_enrolled_youths} <span class="stat-plus-sign-group">+</span>
               </div>
               <div class="stat-description-group" id="stat-description-2">
-                Youths Enrolled
+                {lang.home.panel_1.stat_2_title}
               </div>
             </div>
             <div class="info-panel-1-stat-group" id="info-panel-1-stat-3">
@@ -96,19 +102,19 @@
                 {counter_sunday_service_attendees} <span class="stat-plus-sign-group">+</span>
               </div>
               <div class="stat-description-group" id="stat-description-3">
-                Prayer Attendees
+                {lang.home.panel_1.stat_3_title}
               </div>
             </div>
           </div>
           <div id="info-panel-1-stats-grid-mobile">
             <div class="info-panel-1-stat-group" id="info-panel-1-stat-1">
               <div class="stat-number-group" id="stat-number-1">
-                {counter_lives_improved}<span class="stat-plus-sign-group">+ lives improved</span>
+                {counter_lives_improved}<span class="stat-plus-sign-group">+ {lang.home.panel_1.stat_mobile_title}</span>
               </div>
             </div>
           </div>
           <div id="info-panel-1-counter-note">
-            ...and counting.
+            {lang.home.panel_1.stat_description}
             <div id="info-panel-1-counter-note-underline-svg-wrapper">
               <svg id="info-panel-1-counter-note-underline-svg">
               viewBox="0 0 222 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -126,13 +132,7 @@
             <!-- TODO -->
           </div>
           <div class="info-panel-group-description" id="info-panel-1-description">
-            Since our founding(??) we've dedicated resources to helping
-            families and children in critical need in Haiti, and Canada.
-            The hardships we aim to ameliorate have been experienced by
-            our staff first hand. Our mission is to reduce the number of
-            people forced to walk difficult paths alone. Programs currently
-            supported by our donors include meal assitance, and youth social
-            programs. We also host prayer services in person and online.
+            {lang.home.panel_1.description}
           </div>
           {#if debug}
             <div>
@@ -168,7 +168,7 @@
             </div>
             <div class="info-panel-group-footer-button-wrapper" id="info-panel-1-footer-button-wrapper">
               <a href="/impact" class="info-panel-group-footer-button" id="info-panel-1-footer-button">
-                Read More >
+                {lang.common.read_more_button}
               </a>
             </div>
           </div>
@@ -181,7 +181,7 @@
         <div class="info-panel-group-inner-wrapper" id="info-panel-2-inner-wrapper">
           <div class="info-panel-group-title-wrapper" id="info-panel-2-title-wrapper">
             <div class="info-panel-group-title" id="info-panel-2-title">
-              We Want To Do More!
+              {lang.home.panel_2.title}
               <div id="info-panel-2-title-underline-svg-wrapper">
                 <svg id="info-panel-2-title-underline-svg"
                 viewBox="0 0 1017 27" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -220,7 +220,7 @@
           </div>
           <div class="info-panel-group-description-wrapper" id="info-panel-2-description-wrapper">
             <div class="info-panel-group-description" id="info-panel-2-description">
-              {staff_quotes[0].quote}
+              {lang.home.panel_2.description}
             </div>
           </div>
         </div>
@@ -250,7 +250,7 @@
             </div>
             <div class="info-panel-group-footer-button-wrapper" id="info-panel-2-footer-button-wrapper">
               <a href="/goals" class="info-panel-group-footer-button" id="info-panel-2-footer-button">
-                Read More >
+                {lang.common.read_more_button}
               </a>
             </div>
           </div>
@@ -266,17 +266,17 @@
               <img id="info-panel-3-portrait" src="{staff_quotes[0].portrait}" />
             </div>
             <div id="info-panel-3-quote">
-              "{staff_quotes[0].quote_short}"
+              "{lang.home.panel_3.quote}"
             </div>
             <div id="info-panel-3-quote-name-wrapper">
               <div id="info-panel-3-quote-name">
-                {staff_quotes[0].name}
+                {lang.home.panel_3.name}
               </div>
               <div id="info-panel-3-quote-title">
-                {staff_quotes[0].title_en}
+                {lang.home.panel_3.founder_title}
               </div>
               <a href="/organization" id="info-panel-3-button">
-                Meet the Team!
+                {lang.home.panel_3.meet_team_button}
               </a>
             </div>
             <!-- 
@@ -962,6 +962,7 @@
       background-position-x: -100px;
     }
   }
+
   @media only screen and (max-width: 1800px){
     #info-panel-1-mid-wrapper{
       background-position-x: -225px;
@@ -976,6 +977,7 @@
       background-position-x: -140px;
     }
   }
+
   @media only screen and (max-width: 1543px){
     #info-panel-1-mid-wrapper{
       background-position-x: -350px;
@@ -1021,6 +1023,34 @@
       grid-row: row 14 / span 6;
     }
   }
+
+  @media only screen and (max-width: 1135px){
+    #info-panel-1-stats-grid-mobile{
+      display: block;
+    }
+    #info-panel-1-stats-grid{
+      display: none;
+      @apply
+        mx-[auto]
+      ;
+      height: 500px;
+      width: 90%;
+      grid-template-columns: repeat(1, [col] 100%);
+      grid-template-rows: repeat(3, [row] 33%);
+    }
+    #info-panel-1-stat-1{
+      border: 0px;
+      grid-row: row 1;
+      grid-column: col 1;
+    }
+    .stat-number-group{
+      margin-left: 0px;
+    }
+    .stat-description-group{
+      margin-top: 0px;
+    }
+  }
+
   @media only screen and (max-width: 1050px){
     #info-panel-1-inner-wrapper{
       height: 700px;
@@ -1091,6 +1121,7 @@
       padding-bottom: 2.5%;
     }
   }
+
   @media only screen and (max-width: 767px){
     #info-panel-1-description{
       line-height: 2.3rem;
@@ -1136,30 +1167,6 @@
     #info-panel-1-inner-wrapper{
       height: 500px;
     }
-    #info-panel-1-stats-grid-mobile{
-      display: block;
-    }
-    #info-panel-1-stats-grid{
-      display: none;
-      @apply
-        mx-[auto]
-      ;
-      height: 500px;
-      width: 90%;
-      grid-template-columns: repeat(1, [col] 100%);
-      grid-template-rows: repeat(3, [row] 33%);
-    }
-    #info-panel-1-stat-1{
-      border: 0px;
-      grid-row: row 1;
-      grid-column: col 1;
-    }
-    .stat-number-group{
-      margin-left: 0px;
-    }
-    .stat-description-group{
-      margin-top: 0px;
-    }
     #info-panel-1-mid-wrapper{
       background-image: url("");
     }
@@ -1180,6 +1187,7 @@
       grid-row: row 17 / span 4;
     }
   }
+
   @media only screen and (max-width: 630px){
     #info-panel-1-inner-wrapper{
       height: 570px

@@ -1,3 +1,5 @@
+import { writable } from 'svelte/store'; 
+
 export const common = {
   donate: {
     en: "Donate",
@@ -9,14 +11,36 @@ export const common = {
     fr: "Dieu Peut Charité",
     kr: "Dieu Peut Charite", 
   },
-  read_more_button: "Read More >",
+  read_more_button: {
+    en: "Read More >",
+  },
   country: {
     canada: "Canada",
     france: "France",
-  }
+  },
+  program: {
+    food_donation: {
+      en: "Food Donation Program",
+    },
+    youth_recreation: {
+      en: "Youth Recreation Group",
+    },
+    prayer_service: {
+      en: "Prayer Service",
+    },
+  },
 }
 
-export const english = {
+const english = {
+  wip: "This website is under active development.",
+  common: {
+    donate: common.donate.en,
+    dieu_peut_long: common.dieu_peut_long.en,
+    read_more_button: common.read_more_button.en,
+    food_donation_program: common.program.food_donation.en,
+    youth_recreation_program: common.program.youth_recreation.en,
+    prayer_service: common.program.prayer_service.en,
+  },
   navbar: {
     option_1: "Impact",
     option_2: "Goals",
@@ -24,18 +48,21 @@ export const english = {
     option_4: common.donate.en,
   },
   footer: {
-    contact: "Contact Us", 
+    contact: "Contact us", 
+    phone_number_button: "+1(647) 854-3160",
+    email_button: "contact@dieupeut.com",
     title: common.dieu_peut_long.en,
-    haitian_office: "Haitian office",
-    DR_office: "DR office",
+    haitian_office: "Haitian office:",
+    dr_office: "DR office:",
     copyright_part_1: "Copyright © 2023 Dieu Peut Charity.",
     copyright_part_2: "All rights reserved.",
     written_by_part_1: "Written, and managed by",
-    written_by_part_2_link: "Apache-2.0/MIT license",
+    written_by_part_2_link: "Apache-2.0 / MIT license",
   },
   home: {
     panel_0: {
-      title: "Focused on contributing to foundations of ....",
+      title_p1: "Focused on contributing",
+      title_p2: "to foundations of ....",
       description: "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry\'s standard dummy Lorem Ipsum has been the industry\'s standard dummy",
       contact_us_button: "Contact us",
       learn_more_button: "Learn more",
@@ -44,6 +71,7 @@ export const english = {
       stat_1_title: "Families Fed",
       stat_2_title: "Youths Enrolled",
       stat_3_title: "Prayer Attendees",
+      stat_mobile_title: "lives improved",
       stat_description: "...and counting.",
       description: "We’re dedicated to helping struggling families and orphaned children in Haiti, and Canada. Much of the hardships we hope to reduce have been experienced by our staff first hand – we’re familiar with the feeling of despair. Our mission is to offer a door to those who have nowhere to turn. Programs currently supported by our donors include meal assistance services, and youth social programs. We also host prayer services in person and online.",
       //description: "Since our founding(??) we've dedicated resources to helping families and children in critical need in Haiti, and Canada. The hardships we aim to ameliorate have been experienced by our staff first hand. Our mission is to reduce the number of people forced to walk difficult paths alone. Programs currently supported by our donors include meal assitance, and youth social programs. We also host prayer services in person and online.",
@@ -56,9 +84,10 @@ export const english = {
     panel_3:{
       //quote: "orem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop pub.",
       quote: "Dieu Peut Charity is an extension of various Haitian-Canadian church services under our leadership. Formalising the charity wing was a natural step forward. We have extensive experience in managing food drives, social events, and youth programs. Making that experience useful where it’s needed most in Haiti is a goal that is now possible with your backing. Thank you!",
+      name: "Williane Moise",
       founder_title: "Founder & President",
       meet_team_button: "Meet the Team!",
-    }
+    },
   },
   impact: {
     panel_1:{
@@ -133,6 +162,8 @@ export const english = {
     email: "Email",
     card_information: "Card Information",
     card_exp_placeholder: "MM / YY",
+    name_on_card: "Name on card",
+    card_country_region: "Country / Region",
     country: {
       canada: common.country.canada,
       dominican_republic: "Dominican Republic",
@@ -140,6 +171,13 @@ export const english = {
       haiti: "Haiti",
       united_states: "United States",
     },
+    _prompt: {
+      invalid: "Invalid",
+      success: "Success!",
+      donation_failed: "Couldn't process. Try again",
+    },
     secured_by: "Secured by",
   },
 };
+
+export const language = writable(english);

@@ -1,8 +1,15 @@
+<script>
+  import { language } from './LanguageData.js';
 
+  let wip;
+  language.subscribe(value =>{
+    wip = value.wip;    
+  });
+</script>
 
 <div class="top-wrapper">
   <div class="statement">
-    This website is under active development.
+    {wip}
   </div>
 </div>
 

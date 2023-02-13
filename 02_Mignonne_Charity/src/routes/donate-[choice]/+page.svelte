@@ -1,6 +1,6 @@
 <svelte:head>
   <title>
-    Thank You!
+    {lang.donate.thank_you}
   </title>
 </svelte:head>
 
@@ -10,6 +10,12 @@
   import Navbar from './../shared/Navbar.svelte'; 
   import Footer from './../shared/Footer.svelte';
   import Todo from './../shared/Todo.svelte'; 
+  import { language } from './../shared/LanguageData.js';
+
+  let lang;
+  language.subscribe(value =>{
+    lang = value;    
+  });
   
   import { donation_choice } from './+page.js';
   let current_donate_page = remove_slash_ws(donation_choice);
@@ -430,12 +436,12 @@
       donate_button_loading_gif = 0;
       if (response.ok){
         console.log("stripe submission successful");
-        donate_button_text = "Success!";
+        donate_button_text = lang.donate._prompt.success;
         /* donate_button_cursor = "not-allowed"; */
         clear_forms();
       } else {
         console.log("stripe submission failed");
-        donate_button_text = "Couldn't Process. Try again";
+        donate_button_text = lang.donate._prompt.donation_failed;
         /* donate_button_color = "rgb(242,70,70)"; */
         donate_button_color = "rgb(224,56,56)";
       };
@@ -509,7 +515,7 @@
               </div>
               <div id="amount-manual-field-text-mobile"> 
                 {#if (donation_choice.length < 2)}
-                  Amount 
+                  {lang.donate.amount} 
                 {:else}
                   To {donation_choice}
                 {/if}
@@ -533,7 +539,7 @@
                     <hr>
                   </div>
                   <div id="payment-separator-text">
-                    Or use a card
+                    {lang.donate.or_use_card}
                   </div>
                   <div class="payment-separator-group-sides" id="payment-separator-end">
                     <hr>
@@ -542,9 +548,9 @@
 
                 <div class="group-form-subsection">
                   <div class="group-form-label-wrapper">
-                    <label class="form-label-title">Email</label>
+                    <label class="form-label-title">{lang.donate.email}</label>
                     {#if !is_valid.email}
-                      <label class="form-label-invalid">Invalid</label>
+                      <label class="form-label-invalid">{lang.donate._prompt.invalid}</label>
                     {/if}
                   </div>
                   <div class="group-form-input-wrapper">
@@ -557,9 +563,9 @@
 
                 <div class="group-form-subsection">
                   <div class="group-form-label-wrapper">
-                    <label class="form-label-title">Card Information</label>
+                    <label class="form-label-title">{lang.donate.card_information}</label>
                     {#if (!is_valid.card_number || !is_valid.exp || !is_valid.cvc)}
-                      <label class="form-label-invalid">Invalid</label>
+                      <label class="form-label-invalid">{lang.donate._prompt.invalid}</label>
                     {/if}
                   </div>
                   <div class="group-form-input-wrapper" id="card-form-input-wrapper">
@@ -579,9 +585,9 @@
 
                 <div class="group-form-subsection">
                   <div class="group-form-label-wrapper">
-                    <label class="form-label-title">Name on card</label>
+                    <label class="form-label-title">{lang.donate.name_on_card}</label>
                     {#if !is_valid.name}
-                      <label class="form-label-invalid">Invalid</label>
+                      <label class="form-label-invalid">{lang.donate._prompt.invalid}</label>
                     {/if}
                   </div>
                   <div class="group-form-input-wrapper" id="form-name-wrapper">
@@ -594,19 +600,19 @@
 
                 <div class="group-form-subsection">
                   <div class="group-form-label-wrapper">
-                    <label class="form-label-title"> Country / Region </label>
+                    <label class="form-label-title"> {lang.donate.card_country_region} </label>
                     {#if !is_valid.postal_code}
-                      <label class="form-label-invalid">Invalid</label>
+                      <label class="form-label-invalid">{lang.donate._prompt.invalid}</label>
                     {/if}
                   </div>
                   <div class="group-form-input-wrapper" id="region-form-input-wrapper">
                     <select class="group-full-input-fields" id="region-country-field" type="text"
                       bind:value={payment_form.country} on:change={format_postal_code}> 
-                      <option selected value="canada">Canada</option>
-                      <option value="dominican republic">Dominican Republic</option>
-                      <option value="france">France</option>
-                      <option value="haiti">Haiti</option>
-                      <option value="united states">United States</option>
+                      <option selected value="canada">{lang.donate.country.canada}</option>
+                      <option value="dominican republic">{lang.donate.country.dominican_republic}</option>
+                      <option value="france">{lang.donate.country.france}</option>
+                      <option value="haiti">{lang.donate.country.haiti}</option>
+                      <option value="united states">{lang.donate.country.united_states}</option>
                     </select>
                     <input class="group-full-input-fields" id="region-postal-code-field" type="text" 
                       style="--postal-code-field-border-color: {border_color_postal_code}"
@@ -641,7 +647,7 @@
 
                 <div id="donate-secured-by-stripe-wrapper">
                   <div id="donate-secured-by-stripe-text">
-                    Secured by <img 
+                    {lang.donate.secured_by} <img 
                     id="donate-secured-by-stripe-img"
                     src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" 
                     alt="Stripe" />

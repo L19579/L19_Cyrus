@@ -11,6 +11,12 @@
   import Todo from './../shared/Todo.svelte'
 	import { tweened } from 'svelte/motion';
 	import { cubicOut } from 'svelte/easing';
+  import { language } from './../shared/LanguageData.js';
+
+  let lang;
+  language.subscribe(value => {
+    lang = value;    
+  });
   
   let ipsum_text = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
   let ipsum_short = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.";
@@ -35,12 +41,12 @@
         <div class="group-panel-inner-wrapper" id="panel-1-inner-wrapper">
           <div class="panels-group-title-wrapper" id="panel-1-title-wrapper">
             <h2 class="panels-group-title-text" id="panel-1-title-text">
-              Title One
+              {lang.goals.panel_1.title}
             </h2>
           </div>
           <div class="panel-1-text-outer-wrapper">
             <div id="panel-1-text">
-              {ipsum_text}
+              {lang.goals.panel_1.description}
             </div>
           </div>
           <div class="panel-1-progress-bar-wrapper">
@@ -82,12 +88,12 @@
 
             <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
               <h2 class="panels-group-title-text" id="panel-2-title-text">
-                Title Two
+                {lang.goals.panel_2.title}
               </h2>
             </div>
             <div id="panel-2-text-wrapper">
               <div id="panel-2-text">
-                  {ipsum_short}
+                {lang.goals.panel_2.description}
               </div>
             </div>
             <div id="panel-2-video-upper-wrapper">	

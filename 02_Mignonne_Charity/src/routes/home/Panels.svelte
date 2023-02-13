@@ -10,7 +10,13 @@
 
 <script>
   import Moreinfo from './Moreinfo.svelte';
+  import { language } from './../shared/LanguageData.js';  
 
+  let lang;
+  language.subscribe( value => {
+     lang = value; 
+  });
+  
   /* Dropped need offset for Nav space.
   function scroll_into_view({ target }){
     const element = document.querySelector(target.getAttribute('href'));
@@ -62,7 +68,7 @@
       <div class="panel-1-title">
         <div class="leading-title-statement-wrapper"> <!-- Additional wrappers for scale responsive test -->
           <h1 class="leading-title-statement">
-            Focused on contributing <br/> to foundations of ....
+            {lang.home.panel_0.title_p1} <br/> {lang.home.panel_0.title_p2}
           </h1>
           <div class="leading-title-welcome-svg-wrapper">
             <svg id="leading-title-welcome-svg"
@@ -84,11 +90,7 @@
             <div class="leading-title-statement-description-main-wrapper">
               <div class="leading-title-statement-description-main-text-wrapper">
                 <p class="leading-title-statement-description-main-text">
-                  Lorem Ipsum has been the industry's standard dummy
-                  Lorem Ipsum has been the industry's standard dummy
-                  Lorem Ipsum has been the industry's standard dummy
-                  Lorem Ipsum has been the industry's standard dummy
-                  Lorem Ipsum has been the industry's standard dummy
+                  {lang.home.panel_0.description}
                 </p>
             </div>
             <div class="leading-title-statement-lower-section">
@@ -113,11 +115,11 @@
                     </svg>
                   </a>
                   <a href="#more-info-section" on:click|preventDefault={scroll_to_end_of_screen}
-                    class="panel-1-buttons" id="contact-button" >Contact us</a>
+                    class="panel-1-buttons" id="contact-button">{lang.home.panel_0.contact_us_button}</a>
                   <a href="#more-info-section" on:click|preventDefault={scroll_to_target_with_offset}
-                    class="panel-1-buttons" id="learn-button">Learn more</a>
+                    class="panel-1-buttons" id="learn-button">{lang.home.panel_0.learn_more_button}</a>
                   <a href="/donate-standard"
-                    class="panel-1-buttons" id="donate-button">Donate</a>
+                    class="panel-1-buttons" id="donate-button">{lang.common.donate}</a>
                 </div>
               </div>
             </div>

@@ -5,6 +5,13 @@
 </svelte:head>
 
 <script>
+  import { language } from './../shared/LanguageData.js';
+
+  let lang;
+  language.subscribe(value => {
+    lang = value;    
+  });
+
   const ipsum = "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy";
 </script>
 
@@ -12,7 +19,7 @@
   <div class="panel-0-outer-wrapper">
     <div class="panel-0-description-wrapper">
       <h2 id="temp-panel-0">
-        <!-- Cancelled planned for text ; temp hold -->
+        <!-- Hover text cancelled -->
       </h2>
     </div>
     <div class="panel-0-background-wrapper">
@@ -30,7 +37,7 @@
           <div class="panels-group-inner-wrapper" id="panel-1-inner-wrapper">
             <div class="panels-group-title-wrapper" id="panel-1-title-wrapper">
               <h2 class="panels-group-title-text" id="panel-1-title-text">
-                Food for X Program
+                {lang.impact.panel_1.title}
               </h2>
             </div>
             <div class="panels-group-description-wrapper" id="panel-1-description-wrapper">
@@ -41,7 +48,7 @@
             </div>
             <div class="panels-group-donate-button-wrapper" id="panel-1-donate-button-wrapper">
               <a href="/donate-food" class="panels-group-donate-button" id="panel-1-donate-button">
-                Contribute To Food Bank
+                {lang.impact.panel_1.donate_link_text}
               </a>
             </div>
           </div>
@@ -59,7 +66,7 @@
               <div class="panels-group-inner-wrapper" id="panel-2-inner-wrapper">
                 <div class="panels-group-title-wrapper" id="panel-2-title-wrapper">
                   <h2 class="panels-group-title-text" id="panel-2-title-text">
-                    Recreation Group
+                    {lang.impact.panel_2.title}
                   </h2>
                 </div>
                 <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
@@ -74,7 +81,7 @@
                 </div>
                 <div class="panels-group-donate-button-wrapper" id="panel-2-donate-button-wrapper">
                   <a href="/donate-recreation" class="panels-group-donate-button" id="panel-2-donate-button">
-                    Support Youth Program
+                    {lang.impact.panel_2.donate_link_text}
                   </a>
                 </div>
               </div>
@@ -92,7 +99,7 @@
         <div class="panels-group-inner-wrapper" id="panel-3-inner-wrapper">
           <div class="panels-group-title-wrapper" id="panel-3-title-wrapper">
             <h2 class="panels-group-title-text" id="panel-3-title-text">
-              Prayer Service
+              {lang.impact.panel_3.title}
             </h2>
           </div>
           <div class="panels-group-description-wrapper" id="panel-3-description-wrapper">
@@ -108,7 +115,7 @@
           </div>
           <div class="panels-group-donate-button-wrapper" id="panel-3-donate-button-wrapper">
             <a href="/donate-church" class="panels-group-donate-button" id="panel-3-donate-button">
-              Help Prayer Service
+              {lang.impact.panel_3.donate_link_text}
             </a>
           </div>
         </div>
