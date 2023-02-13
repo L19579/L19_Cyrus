@@ -452,7 +452,7 @@
     width: 100%;
     height: auto;
     visibility: hidden;
-    border: 2px solid red;
+    /* border: 2px solid red; */ 
 	}	
 
   /* ---------------------------------------------------------------------- mobile */
