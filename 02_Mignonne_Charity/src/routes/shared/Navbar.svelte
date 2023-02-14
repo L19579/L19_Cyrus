@@ -1,4 +1,11 @@
 <script>
+  import { language } from './LanguageData.js';
+
+  let lang;
+  language.subscribe(value =>{
+    lang = value;    
+  });
+
   export let current_nav_page;   
 
   let mobileNavVisible = false;
@@ -47,7 +54,9 @@
         </a>
         <ul class="nav-link-wrapper">
           <li id="nav-link-items">
-            <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">Impact</a>
+            <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">
+              {lang.navbar.impact}
+            </a>
             <div class="nav-svg-wrapper">
               <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="{current_nav_page === 'impact' ? 'nav-svg-selected' : 'nav-svg'}" id="nav-svg-t1" d="M10 8C16.563 7.61394 23.1388 6.61704 29.6667 5.88889C41.2257 4.59953 52.3852 4 64 4C71 4 78 4 85 4" stroke-width="3" stroke-linecap="round"/>
@@ -58,7 +67,9 @@
           </li>
 
           <li id="nav-link-items">
-            <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">Goals</a>
+            <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">
+              {lang.navbar.goals}
+            </a>
             <div class="nav-svg-wrapper">
               <svg width="110" height="12" viewBox="0 0 110 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="{current_nav_page === 'goals' ? 'nav-svg-selected' : 'nav-svg'}" id="nav-svg-t1" d="M3 5.95367C35.9659 0.0413027 69.9108 4.50724 103 6.45367"/>
@@ -67,7 +78,9 @@
           </li>
 
           <li id="nav-link-items">
-            <a href="/organization" class="place-items-center {current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">Organization</a>
+            <a href="/organization" class="place-items-center {current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">
+              {lang.navbar.organization}
+            </a>
             <div class="nav-svg-wrapper">
               <svg width="100%" height="auto" viewBox="0 0 184 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path class="{current_nav_page === 'organization' ? 'nav-svg-selected' : 'nav-svg'}" id="nav-svg-t2"  d="M6 5.42224C33.6588 4.54107 61.4841 2.32714 89.1667 3.20002C107.107 3.76569 125.056 4.0542 142.972 5.20002C152.924 5.83644 163.582 5.53284 173.333 7.81113C175.186 8.24401 176.611 8.42224 178.5 8.42224">
@@ -94,7 +107,9 @@
               </div>
           </li>
         </ul>
-        <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-donate" id="donate-web">Donate</a>
+        <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-donate" id="donate-web">
+          {lang.navbar.donate}
+        </a>
       </nav>
     </div>
   </div>
@@ -105,13 +120,19 @@
   <div class="burger-menu-dropdown-options-wrapper">
     <ul class="burger-menu-dropdown-nav-link-wrapper"> 
       <li id="nav-link-items">
-        <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">Impact</a>
+        <a href="/impact" class="{current_nav_page === 'impact' ? 'nav-text-selected' : 'nav-text'}">
+          {lang.navbar.impact}
+        </a>
       </li>
       <li id="nav-link-items">
-        <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">Goals</a>
+        <a href="/goals" class="{current_nav_page === 'goals' ? 'nav-text-selected' : 'nav-text'}">
+          {lang.navbar.goals}
+        </a>
       </li>
       <li id="nav-link-items">
-        <a href="/organization" class="{current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">Organization</a>
+        <a href="/organization" class="{current_nav_page === 'organization' ? 'nav-text-selected' : 'nav-text'}">
+          {lang.navbar.organization}
+        </a>
       </li>
       <li id="nav-link-items">
       <div>
@@ -138,7 +159,9 @@
       </li>
     </ul>
     <div class="nav-mobile-donate-wrapper">
-      <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-mobile-donate">Donate</a>
+      <a on:click={() => refresh_donate()} href="/donate-standard" class="nav-mobile-donate">
+        {lang.navbar.donate}
+      </a>
     </div>
   </div>
 </div>

@@ -42,8 +42,16 @@
             </div>
             <div class="panels-group-description-wrapper" id="panel-1-description-wrapper">
               <p class="panels-group-description-text">
-                -- Write up not clean; throwing thoughts around -- <br />
-                {ipsum}
+                {lang.impact.panel_1.description} <br /><br />
+                <span id="panel-1-description-text-sub">
+                  <span id="panel-1-description-text-sub-asub-group">
+                    {lang.impact.panel_1.description_sub} <br />
+                  </span>
+                  <span id="panel-1-description-text-sub-tsub-group">
+                    &#x2022 {lang.impact.panel_1.description_sub_p1} 	&nbsp
+                    &#x2022 {lang.impact.panel_1.description_sub_p2} 
+                  </span>
+                </span>
               </p>
             </div>
             <div class="panels-group-donate-button-wrapper" id="panel-1-donate-button-wrapper">
@@ -71,12 +79,48 @@
                 </div>
                 <div class="panels-group-description-wrapper" id="panel-2-description-wrapper">
                   <p class="panels-group-description-text">
-                    -- Write up not clean; throwing thoughts around -- <br />
-                    We're strong believers in bringing positive and constructive activies to 
+                    {lang.impact.panel_2.description}
+
+                    <span id="panel-2-description-text-lower-section-wrapper">
+                      <span id="panel-2-description-text-lower-section-text-ext">
+                        {lang.impact.panel_2.description_ext}
+                      </span>
+
+                      <span id="panel-2-description-text-lower-section-wrapper-sub-group-wrapper">
+                        <span id="panel-2-description-text-lower-section-wrapper-sub-1-wrapper">
+                          <span class="panel-2-description-text-lower-section-nested-sub-group-title">
+                            {lang.impact.panel_2.description_sub_1}
+                          </span> 
+                          <span class="panel-2-description-text-lower-section-nested-sub-group-tsub-group">
+                            <ul class="panel-2-description-text-lower-section-nested-sub-group-tsub-group-sub">
+                              <li>{lang.impact.panel_2.description_sub_1_p1}</li>
+                              <li>{lang.impact.panel_2.description_sub_1_p2}<li>
+                              <li>{lang.impact.panel_2.description_sub_1_p3}</li>
+                            </ul>
+                          </span>
+                        </span>
+
+                        <span id="panel-2-description-text-lower-section-wrapper-sub-2-wrapper">
+                          <span class="panel-2-description-text-lower-section-nested-sub-group-title">
+                            {lang.impact.panel_2.description_sub_2}
+                          </span>
+                          <span class="panel-2-description-text-lower-section-nested-sub-group-tsub-group">
+                            <ul class="panel-2-description-text-lower-section-nested-sub-group-tsub-group-sub">
+                              <li>{lang.impact.panel_2.description_sub_2_p1}</li>
+                              <li>{lang.impact.panel_2.description_sub_2_p2}</li>
+                              <li>{lang.impact.panel_2.description_sub_2_p3}</li>
+                            </ul>
+                          </span>
+                        </span>
+                      </span>
+
+                    </span>
+
+                    <!-- We're strong believers in bringing positive and constructive activies to 
                     Haiti's children and young adults. Whether that's piano lessons, a listening ear, 
                     a local checkers tournament or help with brain teaser on a school assignment; 
                     we provide the space and tools for our young to build lasting bonds and critical 
-                    life skills.
+                    life skills. -->
                   </p>
                 </div>
                 <div class="panels-group-donate-button-wrapper" id="panel-2-donate-button-wrapper">
@@ -104,13 +148,39 @@
           </div>
           <div class="panels-group-description-wrapper" id="panel-3-description-wrapper">
             <p class="panels-group-description-text">
-              -- Write up not clean; throwing thoughts around -- <br />
-              Besides running charity programs our founder hosts weekly virtual weekly virtual
+              {lang.impact.panel_3.description}
+              
+              <span id="panel-3-link-wrapper">
+                <span id="panel-3-link-text">
+                  {lang.impact.panel_3.link_livestream_text}
+                </span>
+                <span id="panel-3-link-svg-upper-wrapper">
+                  <a id="panel-3-link-svg-lower-wrapper"
+                  href="https://www.facebook.com/">
+                    <svg 
+                      id="panel-3-link-svg"
+                      viewBox="0 0 386 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <g clip-path="url(#clip0_217_12)">
+                      <path d="M129.7 135.1C133.5 135.1 136.7 132 136.7 128.1V15.8999C136.7 12.0999 133.6 8.8999 129.7 8.8999H17.5C13.7 8.8999 10.5 11.9999 10.5 15.8999V128.1C10.5 131.9 13.6 135.1 17.5 135.1H129.7Z" fill="#3D5A98"/>
+                      <path d="M97.4999 135.1V86.2999H113.9L116.4 67.2999H97.4999V54.9999C97.4999 49.4999 98.9999 45.6999 106.9 45.6999H117V28.6999C115.3 28.4999 109.3 27.8999 102.3 27.8999C87.7999 27.8999 77.7999 36.7999 77.7999 53.0999V67.0999H61.3999V86.0999H77.7999V134.9H97.4999V135.1Z" fill="white"/>
+                      <path d="M368.5 135.1C372.3 135.1 375.5 132 375.5 128.1V15.8999C375.5 12.0999 372.4 8.8999 368.5 8.8999H156.8C153 8.8999 149.8 11.9999 149.8 15.8999V128.1C149.8 131.9 152.9 135.1 156.8 135.1H368.5Z" fill="#EE4242"/>
+                      <path fill-rule="evenodd" clip-rule="evenodd" d="M340.2 90.4997H315.2V75.4997H338.9V67.6997H315.2V53.4997H340.2V45.1997H305.6V98.5997H340.2V90.4997ZM277.9 98.6997L296.4 45.2997H286.2L272.9 87.5997H272.3L258.9 45.2997H248.4L267.1 98.6997H277.9ZM239.1 98.6997V45.2997H229.5V98.6997H239.1ZM219.2 90.2997H194.7V45.2997H185.1V98.6997H219.2V90.2997Z" fill="white"/>
+                      </g>
+                      <defs>
+                      <clipPath id="clip0_217_12">
+                      <rect width="386" height="144" fill="white"/>
+                      </clipPath>
+                      </defs>
+                    </svg>
+                  </a>
+                </span>
+              </span>
+
+              <!-- Besides running charity programs our founder hosts weekly virtual weekly virtual
               and in person prayer groups for a Haitian audience accross the world (?). Our
               efforts continue to grow with an increase in hosts, in-person events, and ... .
               We're building an inclusive community for those who seek to celebrate the word
-              of God.
-              
+              of God. -->
             </p>
           </div>
           <div class="panels-group-donate-button-wrapper" id="panel-3-donate-button-wrapper">
@@ -127,6 +197,13 @@
 </div>
 
 <style>
+  p{
+    display: flex flex-col;
+    justify-conter: around;
+    /* text-align: center; */
+    font-size: 1.6rem;
+  }
+
   .background-wrapper{
     @apply
       relative
@@ -353,7 +430,7 @@
     background-attachment: local;
     background-size: 67rem;
     background-position-y: 10rem; 
-    background-position-x: 110%; 
+    background-position-x: 115%; 
     background-repeat: no-repeat;
     background-image: url("https://dieupeut-bucket.us-east-1.linodeobjects.com/edited_sect_2_panel_1_bg_kids_eating.png");
     /* border: 2px solid red; */
@@ -382,7 +459,7 @@
     ;
     overflow: hidden;
     width: 100%;
-    background-color: rgba(228,228,228,0.2);
+    background: linear-gradient(to right, rgba(228,228,228,0.3) 0%, rgba(228,228,228,0.83) 20%, rgba(228,228,228,0.83) 80%, rgba(228,228,228, 0.3) 100%);
   }
 
   #panel-1-inner-wrapper{
@@ -399,10 +476,12 @@
     ;
     margin: auto;
     height: 10;
-    background: 
+  /*  
+  background: 
       linear-gradient(to right, rgba(229,229,229,0.2) 0%, rgba(229,229,229,0.90) 10%, 
           rgba(229,229,229,0.90) 90%, rgba(229,229,229,0.2) 100%);
     ;
+  */
     /* border: 1px solid green; */
   }
 
@@ -413,12 +492,37 @@
       /* pt-12 */
       pl-12
     ;
+    /*
     background: 
       linear-gradient(to right, rgba(229,229,229,0.2) 0%, rgba(229,229,229,0.90) 10%, 
           rgba(229,229,229,0.90) 90%, rgba(229,229,229,0.2) 100%);
     ;
+    */
   }
   
+  #panel-1-description-text-sub{
+    display: block;
+    text-align: center;
+    border: 2px red solid;
+    width: 100%;
+
+  }
+
+  #panel-1-description-text-sub-asub-group{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    width: 100%;
+    border: 2px blue solid;
+  }
+
+  #panel-1-description-text-sub-tsub-group{
+    display: flex;
+    justify-content: center;
+    border: 2px green solid;
+    width: 100%;
+  }
+
   /* ------------------------------------------------------------------------------- Panel 2 specific */
   #panel-2-outer-wrapper{
     width: 100%;
@@ -513,6 +617,46 @@
     ;
   }
 
+  #panel-2-description-text-lower-section-wrapper{
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+    border: 2px solid red;
+  }
+  #panel-2-description-text-lower-section-text-ext{
+    display: block;
+    font-weight: bold;
+    border: 2px solid blue;
+  }
+  #panel-2-description-text-lower-section-wrapper-sub-group-wrapper{
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid green;
+  }
+  #panel-2-description-text-lower-section-wrapper-sub-1-wrapper{
+    border: 2px solid black;
+  }
+  #panel-2-description-text-lower-section-wrapper-sub-2-wrapper{
+    border: 2px solid black;
+  }
+  .panel-2-description-text-lower-section-nested-sub-group-title{
+    display: block;
+    font-weight: bold;
+    border: 2px solid orange;
+  }
+  .panel-2-description-text-lower-section-nested-sub-group-tsub-group{
+    display: block;
+    border: 2px solid red;
+    width: 500px;
+  }
+  .panel-2-description-text-lower-section-nested-sub-group-tsub-group-sub{
+    display: flex;
+    font-size: 1.5rem;
+    margin: 0px 0px; /* ul auto adds margin; not always obv */
+    padding: 0px 0px;
+    list-style-type: none;
+    border: 2px solid black;
+  }
   /* ------------------------------------------------------------------------------- Panel 3 specific */
 
   #panel-3-outer-wrapper{
@@ -529,7 +673,7 @@
     
     /* width: 2000px; */
     width: 100%;
-    background-position-y: -100px;
+    background-position-y: -80px; 
     background-position-x: 100px;
     background-size: 1900px;
     background-image: url(../../../static/bg_impact/panel_3_church_goers.jpg);
@@ -550,7 +694,10 @@
     ;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgba(38,38,38,0.9) 10%, rgba(74,74,74,0) 40%);
+    background: 
+            linear-gradient(180deg, rgba(38,38,38,0.9) 10%, rgba(74,74,74,0) 40%)
+            rgba(0,0,0,0.3); 
+    ;
   }
 
   #panel-3-title-wrapper{
@@ -565,27 +712,68 @@
     /* border: 1px solid green; */
   }
 
- #panel-3-description-wrapper{
-    @apply
-      flex
-      text-white
-      pl-12
-    ;
- }
+   #panel-3-description-wrapper{
+      @apply
+        flex
+        text-white
+        pl-12
+      ;
+   }
+
+  #panel-3-link-wrapper{
+    display: block;
+    justify-content: space-around;
+    text-align: center; 
+    border: 2px solid red;
+  }
+
+  #panel-3-link-text{
+    margin-top: 30px;
+    display: block;
+    font-weight: bold;
+    border: 2px solid blue;
+  }
+
+  #panel-3-link-svg-upper-wrapper{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    border: 2px solid orange;
+    height: 43px;
+  }
+
+  #panel-3-link-svg-lower-wrapper{
+    display: flex;
+    justify-content: center;
+    border: 2px solid red;
+    height: 100%;
+    width: 120px;
+  }
+
+  #panel-3-link-svg{
+    height: 99%;
+    width: auto;
+  }
 
   /* ------------------------------------------------------------------------------- Mobile */
+  @media only screen and (max-width: 1800px){
+    #panel-1-background-1{
+      background-position-x: 125%;
+      /* background-image: url(""); */
+    }
+  }
+
+  @media only screen and (max-width: 1565px){
+    #panel-1-background-1{
+      background-image: url(""); 
+    }
+  }
 
   @media only screen and (max-width: 1200px){
     #panel-2-background-2{
       background-image: url("");
     }
   } 
-
-  @media only screen and (max-width: 960px){
-    #panel-1-background-1{
-      background-image: url("");
-    }
-  }
 
   @media only screen and (max-width: 561px){
     .panels-group-outer-wrapper{

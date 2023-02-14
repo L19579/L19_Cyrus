@@ -32,6 +32,7 @@ export const common = {
 }
 
 const english = {
+  language: "en-ca",
   wip: "This website is under active development.",
   common: {
     donate: common.donate.en,
@@ -42,10 +43,10 @@ const english = {
     prayer_service: common.program.prayer_service.en,
   },
   navbar: {
-    option_1: "Impact",
-    option_2: "Goals",
-    option_3: "Organization",
-    option_4: common.donate.en,
+    impact: "Impact",
+    goals: "Goals",
+    organization: "Organization",
+    donate: common.donate.en,
   },
   footer: {
     contact: "Contact us", 
@@ -93,7 +94,7 @@ const english = {
     panel_1:{
       title: "Food for X Program",
       description: "This program currently aims to provide meals to families and orphaned children in Haiti’s capital. Unimpeded inflation, fuel shortages, and violence along major transport routes have made food staples difficult to source. Port-au-Prince’s poorest are being priced out of local market prices and risk personal safety when forced to look to areas under bad actor influence. Our doors are kept open if they run out of options.",
-      description_sub: "We offer 2 services under this project:",
+      description_sub: "We provide two services under this initiative:",
       description_sub_p1: "Food Bank",
       description_sub_p2: "Meal To Home",
       donate_link_text: "Contribute To Food Bank",
@@ -103,20 +104,20 @@ const english = {
       description: "We’re strong believers in bringing constructive, group oriented, and positive sum activities to Haiti’s children and young adults. Dieu Peut hosts a number of organised and semi-formal events for those between the ages of 6 - 21. We provide the space and tools for our young to build lasting bonds and critical life skills.",
       description_ext: "Activities include:",
       description_sub_1: "Perpetual",
-      description_sub_1_p1: "Tutoring (ages 6 - 18)",
+      description_sub_1_p1: "Homework Assistance",
       description_sub_1_p2: "Piano lessons",
-      description_sub_1_p2: "Board games",
-      description_sub_1_p2: "Resume workshops",
+      description_sub_1_p3: "Resume workshops",
       description_sub_2: "Occasional",
-      description_sub_2_p2: "Local soccer tournaments",
+      description_sub_2_p1: "Local soccer tournaments",
       description_sub_2_p2: "Gardening workshops",
-      description_sub_2_p2: "Budgeting workshops",
+      description_sub_2_p3: "Budgeting workshops",
       donate_link_text: "Support Youth Program",
     }, 
     panel_3:{
       title: "Prayer Service",
-      description: "Besides running charity programs our founder hosts weekly virtual and in-person prayer groups for Haitians at home and abroad. We’re building an inclusive community for those who seek to celebrate the word of God. We’d love to have you with us for virtual prayer sessions! Live events are at 7:00pm on Sundays.",
-      link_livestream_text: "Livestream",
+      description: "Besides running charity programs our founder hosts weekly virtual and in-person prayer groups for Haitians at home and abroad. We’re building an inclusive community for those who seek to celebrate the word of God. We’d love to have you with us for virtual prayer sessions!",
+      //link_livestream_text: "Livestream",
+      link_livestream_text: "Live online events are held at 7:00pm every Sunday.",
       donate_link_text: "Help Prayer Service",
     }, 
   },

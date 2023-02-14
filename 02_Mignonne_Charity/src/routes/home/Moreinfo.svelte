@@ -359,9 +359,10 @@
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(20, [col] 5%);
+    transform: translateX(4rem);
     max-width: 1000px;
     height: 99%;
-    /* border: 1px solid white; */
+    /*border: 1px solid white;*/
   }
 
   .info-panel-group-footer-svg-wrapper{
