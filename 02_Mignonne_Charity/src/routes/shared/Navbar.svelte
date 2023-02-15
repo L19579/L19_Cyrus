@@ -437,7 +437,7 @@
       motion-reduce:transition-none
       */
     ;
-    border: 1px solid rgb(254,189,44);
+    border: 0.2px solid black;
     background-color: rgb(45,10,171);
     will-change: transform;
     text-decoration: none;

@@ -29,11 +29,25 @@ export const common = {
       en: "Prayer Service",
     },
   },
+  links: {
+    company: {
+      tiktok: "https://www.tiktok.com/@williane108",
+      facebook: "https://www.facebook.com/williane108",
+      twitter: "https://twitter.com/DieuPeutCharity",
+      intragram: "https://www.instagram.com/mignonew/",
+      youtube: "https://www.youtube.com/@dernierreve2951/videos",
+      nerlont: "https://www.nerlont.com/",
+    },
+  },
+  to_be_assigned: {
+    en: "TO BE ASSIGNED",
+  },
 }
 
 const english = {
   language: "en-ca",
   wip: "This website is under active development.",
+  links: common.links,
   common: {
     donate: common.donate.en,
     dieu_peut_long: common.dieu_peut_long.en,
@@ -41,6 +55,7 @@ const english = {
     food_donation_program: common.program.food_donation.en,
     youth_recreation_program: common.program.youth_recreation.en,
     prayer_service: common.program.prayer_service.en,
+    to_be_assigned: common.to_be_assigned.en,
   },
   navbar: {
     impact: "Impact",
@@ -55,16 +70,20 @@ const english = {
     title: common.dieu_peut_long.en,
     haitian_office: "Haitian office:",
     dr_office: "DR office:",
-    copyright_part_1: "Copyright © 2023 Dieu Peut Charity.",
-    copyright_part_2: "All rights reserved.",
+    copyright_part_1: "Copyright © 2023",
+    copyright_part_2: "Dieu Peut Charity.",
+    copyright_part_3: "All rights reserved.",
     written_by_part_1: "Written, and managed by",
     written_by_part_2_link: "Apache-2.0 / MIT license",
   },
   home: {
     panel_0: {
-      title_p1: "Focused on contributing",
-      title_p2: "to foundations of ....",
-      description: "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry\'s standard dummy Lorem Ipsum has been the industry\'s standard dummy",
+      title_p1: "Assistance for Haitians",
+      title_p2: "at home and abroad.",
+      description: "Our organisation is focused on reducing hardships for the vulnerable in our community. Your contributions help expand the reach of our meal assistance program and youth recreation group. For those looking for a prayer group, our doors are open!",
+      //title_p1: "Focused on contributing",
+      //title_p2: "to foundations of ....",
+      //description: "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry\'s standard dummy Lorem Ipsum has been the industry\'s standard dummy",
       contact_us_button: "Contact us",
       learn_more_button: "Learn more",
     },
@@ -84,7 +103,7 @@ const english = {
     },
     panel_3:{
       //quote: "orem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop pub.",
-      quote: "Dieu Peut Charity is an extension of various Haitian-Canadian church services under our leadership. Formalising the charity wing was a natural step forward. We have extensive experience in managing food drives, social events, and youth programs. Making that experience useful where it’s needed most in Haiti is a goal that is now possible with your backing. Thank you!",
+      quote: "Dieu Peut Charity is an extension of various Haitian-Canadian church services under our leadership. Formalising the charity wing was a natural step forward. We have extensive experience in managing food drives, social programs. Making that experience useful where it’s needed most in Haiti is a goal that is now possible with your backing. Thank you!",
       name: "Williane Moise",
       founder_title: "Founder & President",
       meet_team_button: "Meet the Team!",
@@ -92,9 +111,9 @@ const english = {
   },
   impact: {
     panel_1:{
-      title: "Food for X Program",
+      title: "Meal Assistance Program",
       description: "This program currently aims to provide meals to families and orphaned children in Haiti’s capital. Unimpeded inflation, fuel shortages, and violence along major transport routes have made food staples difficult to source. Port-au-Prince’s poorest are being priced out of local market prices and risk personal safety when forced to look to areas under bad actor influence. Our doors are kept open if they run out of options.",
-      description_sub: "Services under this initiative:",
+      description_sub: "Services under this initiative",
       description_sub_p1: "Food Bank",
       description_sub_p2: "Meal To Home",
       donate_link_text: "Contribute To Food Bank",
@@ -102,9 +121,9 @@ const english = {
     panel_2:{
       title: "Recreation Group",
       description: "We’re strong believers in bringing constructive, group oriented, and positive sum activities to Haiti’s children and young adults. Dieu Peut hosts a number of organised and semi-formal events for those between the ages of 6 - 21. We provide the space and tools for our young to build lasting bonds and critical life skills.",
-      description_ext: "Activities include:",
+      description_ext: "Activities included:",
       description_sub_1: "Perpetual",
-      description_sub_1_p1: "Homework Assistance",
+      description_sub_1_p1: "Homework assistance",
       description_sub_1_p2: "Piano lessons",
       description_sub_1_p3: "Resume workshops",
       description_sub_2: "Occasional",
@@ -123,12 +142,14 @@ const english = {
   },
   goals: {
     panel_1:{
-      title: "Title One",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      title: "Expanding Aid",
+      description: "Over 120 Haitian families have received assistance from Dieu Peut Charity, resulting in material relief from economic setbacks since our founding in 2022. This linear growth is critical to our mission. With your assistance we plan to expand our food donation initiatives beyond the borders of Port-au-Prince. We want to open remote meal delivery to rural areas without the transport infrastructure and local resources for food availability. Our secondary growth objective is to make youth programs available in Gonaives. We see value in closing educational gaps in cities with insufficient internet penetration. ",
+      //description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     },
     panel_2: {
-      title: "Title Two",
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.",
+      title: "Digital Growth",
+      description: "Making our prayer service more accessible and interactive for a global audience is also top of mind. We’re putting an extra emphasis on capital efficiency on this project. Most of our growth will be in online content delivery. The number of dedicated hosts and streams will increase in the near term, with content going beyond Sunday prayer. We’re building a team infrastructure to support live streams and other content across major streaming platforms and social media.",
+      //description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.",
     },
   },
   organization: {

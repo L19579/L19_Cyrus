@@ -173,7 +173,7 @@
   .group-panel-inner-wrapper{
     max-width: 1285px;
     height: 700px;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
 
   .panels-group-title-wrapper{
@@ -189,7 +189,8 @@
   .panels-group-title-text{
     text-align: center;
     white-space: nowrap;
-    font-size: clamp(60px,8.5vw,70px);
+    font-size: clamp(47px,8.5vw,70px);
+    padding: 0px 5px;
     
     /* border: 1px solid orange; */
   }
@@ -363,7 +364,7 @@
       
     width: 100%; 
     box-sizing: border-box;
-    border: 1px solid green; 
+    /* border: 1px solid green; */
 	}
 
   #panel-2-title-text{
@@ -374,7 +375,7 @@
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
 		grid-row: row 5 / span 6;
-		border: 2px solid red;
+		/* border: 2px solid red; */
 	}
 
 	#panel-2-text{
@@ -390,7 +391,7 @@
 		;
 		grid-column: col 1 / span 20;
 		grid-row: row 11 / span 10;
-		border: 2px solid blue;
+		/* border: 2px solid blue; */
 	}
 	
   #panel-2-video-background-1{

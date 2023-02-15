@@ -49,7 +49,7 @@
                   </span>
                   <span id="panel-1-description-text-sub-tsub-group">
                     <span class="panel-1-lazy-span">&#x2022 {lang.impact.panel_1.description_sub_p1}</span>
-                    <span class="panel-1-space">&nbsp</span>
+                    <span class="panel-1-space">&nbsp &nbsp &nbsp &nbsp &nbsp</span>
                     <span class="panel-1-lazy-span">&#x2022 {lang.impact.panel_1.description_sub_p2}</span> 
                   </span>
                 </span>
@@ -342,7 +342,7 @@
     ;
     height: 98%;
     width: 1200px;
-    border: 3px solid red; 
+    /* border: 3px solid red; */
   }
   
   .panels-group-title-wrapper{
@@ -371,10 +371,10 @@
   }
 
   .panels-group-description-text{ 
-    border: 2px solid blue;
     padding-left: 5px;
     padding-right: 5px;
     width: 99%;
+    /* border: 2px solid blue; */
   }
 
   .panels-group-donate-button-wrapper{ 
@@ -509,8 +509,8 @@
   #panel-1-description-text-sub{
     display: block;
     text-align: center;
-    border: 2px red solid;
     width: 100%;
+    /* border: 2px red solid; */
 
   }
 
@@ -519,14 +519,16 @@
     justify-content: center;
     font-weight: bold;
     width: 100%;
-    border: 2px blue solid;
+    border-bottom: 1px solid black;
+    /* border: 2px blue solid; */
   }
 
   #panel-1-description-text-sub-tsub-group{
     display: flex;
+    margin-top: 10px;
     justify-content: center;
-    border: 2px green solid;
     width: 100%;
+    /* border: 2px green solid; */
   }
 
   /* ------------------------------------------------------------------------------- Panel 2 specific */
@@ -624,36 +626,38 @@
   }
 
   #panel-2-description-text-lower-section-wrapper{
+    margin-top: 10px;
     display: block;
     justify-content: space-around;
     text-align: center;
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
   #panel-2-description-text-lower-section-text-ext{
     display: block;
     font-weight: bold;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
   }
   #panel-2-description-text-lower-section-wrapper-sub-group-wrapper{
     display: flex;
     justify-content: space-around;
-    border: 2px solid green;
+    /* border: 2px solid green; */
   }
   #panel-2-description-text-lower-section-wrapper-sub-1-wrapper{
-    border: 2px solid black;
+    /* border: 2px solid black; */
   }
   #panel-2-description-text-lower-section-wrapper-sub-2-wrapper{
-    border: 2px solid black;
+    /* border: 2px solid black; */
   }
   .panel-2-description-text-lower-section-nested-sub-group-title{
     display: block;
     font-weight: bold;
-    border: 2px solid orange;
+    border-bottom: 1px solid black;
+    /* border: 2px solid orange; */
   }
   .panel-2-description-text-lower-section-nested-sub-group-tsub-group{
     display: block;
-    border: 2px solid red;
     max-width: 500px;
+    /* border: 2px solid red; */
   }
   .panel-2-description-text-lower-section-nested-sub-group-tsub-group-sub{
     display: flex;
@@ -661,7 +665,7 @@
     margin: 0px 0px; /* ul auto adds margin; not always obv */
     padding: 0px 0px;
     list-style-type: none;
-    border: 2px solid black;
+    /* border: 2px solid black; */
   }
   /* ------------------------------------------------------------------------------- Panel 3 specific */
 
@@ -731,30 +735,30 @@
     display: block;
     justify-content: space-around;
     text-align: center; 
-    border: 2px solid red;
+    /* border: 2px solid red; */
   }
 
   #panel-3-link-text{
     margin-top: 30px;
     display: block;
     font-weight: bold;
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
   }
 
   #panel-3-link-svg-upper-wrapper{
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    border: 2px solid orange;
-    height: 43px;
+    height: 40px;
+    /* border: 2px solid orange; */
   }
 
   #panel-3-link-svg-lower-wrapper{
     display: flex;
     justify-content: center;
-    border: 2px solid red;
     height: 100%;
     width: 120px;
+    /* border: 2px solid red; */
   }
 
   #panel-3-link-svg{
@@ -800,7 +804,7 @@
     }
     #panel-2-background-1{
       background-position-y: bottom;
-      border: 2px solid green;
+      /* border: 2px solid green; */
     }
   }
 
@@ -847,11 +851,11 @@
     #panel-1-outer-wrapper{
       height: 650px;
     }
+    #panel-1-description-text-sub-tsub-group{
+      font-size: 1.3rem;
+    }
     #panel-2-outer-wrapper{
       height: 650px;
-    }
-    .panel-2-description-text-lower-section-nested-sub-group-tsub-group-sub{
-      font-size: 1.1.38rem;
     }
     #panel-3-outer-wrapper{
       height: 600px;

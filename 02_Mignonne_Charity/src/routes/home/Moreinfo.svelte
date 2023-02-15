@@ -1156,6 +1156,7 @@
       display: flex;
       padding-left: 0px;
       padding-right: 0px;
+      transform: translateX(0rem);
     }
     .info-panel-group-footer-button-wrapper{
       display: none;

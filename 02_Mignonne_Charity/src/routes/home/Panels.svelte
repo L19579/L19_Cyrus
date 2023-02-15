@@ -1,3 +1,4 @@
+<!-- TODO: 99% of devices won't have issues scaling but should support short viewport heights. -->
 <svelte:head>
   <title>
     Welcome!
@@ -264,7 +265,7 @@
     display: none;
     height: auto;
     fill: rgb(45,10,171);
-    
+    transform: scale(1.4);  /* late addition, may cause errors */
     stroke-dasharray: 1000;
     animation: dash 0.7s linear forwards;
   }
@@ -321,10 +322,11 @@
   .panel-1-buttons{
     @apply
       flex
+      flex-col
       text-white
       font-bold
       text-lg
-      py-1
+      py-2
       px-4
       mx-2
       rounded-full
@@ -348,10 +350,10 @@
   #learn-button{
     @apply bg-stone-600;
   }
-  /* Rearrange main page button format. TODO */
+  /* Rearrange main page button format. TODO; Also lots of dead CSS.*/
   #donate-button{
     display: flex;
-    justify-content: center;
+    text-align: center;
     min-width: 90px;
     visibility: hidden;
     @apply bg-stone-600;
