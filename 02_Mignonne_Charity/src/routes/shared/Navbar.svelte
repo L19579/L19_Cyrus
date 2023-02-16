@@ -37,7 +37,6 @@
   };
 </script>
 
-<Wopprompt />
 <header id="header">
   <div id="nav-top-wrapper">
     <div id="nav-mid-wrapper">
@@ -182,11 +181,14 @@
 
   #nav-top-wrapper{
     @apply
-      bg-stone-200
+      bg-stone-200 
       py-5
       xl:pt-9
       xl:pb-7
     ;
+    /* TODO: bg too bland, reconsider */
+    /* background-color: rgb(242,210,139); */
+    /* background-color: rgb(215,227,238); */
     border-bottom: 1px solid rgb(30,41,59);
     box-shadow: 0 0.2px 2px rgb(30,41,59);
   }
@@ -277,10 +279,11 @@
       block
       px-3
       py-2
-      text-xl
+      /* text-xl */
       font-bold
       justify-center
     ;
+    font-size: 1.34rem;
     stroke-opacity: 0%;
     flex-basis: 1;
     text-align: center;

@@ -111,7 +111,7 @@ const english = {
   },
   impact: {
     panel_1:{
-      title: "Meal Assistance Program",
+      title: "Meal Assistance",
       description: "This program currently aims to provide meals to families and orphaned children in Haiti’s capital. Unimpeded inflation, fuel shortages, and violence along major transport routes have made food staples difficult to source. Port-au-Prince’s poorest are being priced out of local market prices and risk personal safety when forced to look to areas under bad actor influence. Our doors are kept open if they run out of options.",
       description_sub: "Services under this initiative",
       description_sub_p1: "Food Bank",

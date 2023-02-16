@@ -425,7 +425,8 @@
       console.log("DEBUG: Sending payment to back end ; amount: " + formatted_payment_form.card.amount);
      
       donate_button_loading_gif = 1;
-      const response = await fetch('http://127.0.0.1:8000/doyathingtwentyone', {
+      //const response = await fetch('http://127.0.0.1:8000/doyathingtwentyone', {
+      const response = await fetch('https://payment.dieupeutcharity.com/donate', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -1027,9 +1028,6 @@
     text-align: center;
     font-size: 21px;
     font-weight: bold;
-    /* background-color: rgba(7,12,31,1); */
-    /* background-color: rgba(255,255,255,1); */
-    /* background-color: rgba(4,6,18,1); */
     background-color: rgba(184,193,224,1);
     width: 100%;
     height: 25px;
@@ -1041,7 +1039,8 @@
   }
 
   #paypal-donate-button:hover{
-    box-shadow: 0 0 4px rgba(21,56,191,1);
+    cursor: not-allowed;
+    /* box-shadow: 0 0 4px rgba(21,56,191,1); -- DISABLED TIL SETUP */
   }
 
   #paypal-button-image{
@@ -1049,6 +1048,7 @@
     height: 110%;
   }
 
+  /* Will be removed; Gpay essentially exists in chrome */
   #gpay-donate-button{
     padding: 15px 0px;
     text-align: center;
@@ -1066,7 +1066,8 @@
   }
 
   #gpay-donate-button:hover{
-    box-shadow: 0 0 4px black;
+    cursor: not-allowed;
+    /* box-shadow: 0 0 4px black; --DISABLED TIL SETUP */
   }
 
   #gpay-button-image{

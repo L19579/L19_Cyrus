@@ -116,7 +116,7 @@
                   {lang.footer.title} <br />
 									<span class="text-no-wrap">3827 Lawrence</span>
                   <span class="text-no-wrap">Avenue East</span> <br />
-									<span class="text-no-wrap">Scarborough, ON,</span> <span class="text-no-wrap">M1G 1R4</span> <br />
+									<span class="text-no-wrap">Toronto, ON,</span> <span class="text-no-wrap">M1G 1R4</span> <br />
 									<span class="text-no-wrap">Canada</span><br />
 								</div>
 							</div>
