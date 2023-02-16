@@ -225,6 +225,7 @@
   #panel-1-title-wrapper{
     grid-column: col 1 / span 20;
     grid-row: row 1 / span 3;
+    /* border: 2px solid green; */
   }
 
   .panel-1-text-outer-wrapper{
@@ -367,10 +368,6 @@
     /* border: 1px solid green; */
 	}
 
-  #panel-2-title-text{
-    width: 100%;
-    text-align: center;
-  }
 
 	#panel-2-text-wrapper{
 		grid-column: col 1 / span 20;
@@ -381,6 +378,7 @@
 	#panel-2-text{
     display: block;
     padding: 1.5rem;
+    padding: top 2px;
 		font-size: 1.5rem;
 	}
 
@@ -553,6 +551,9 @@
   @media only screen and (max-width: 767px){
     #panel-1-title-wrapper{
       grid-row: row 1 / span 2;
+    }
+    #panel-2-video-upper-wrapper{
+      margin-top: 2rem;
     }
     #panel-2-video-background-1{
       background-image: url("");

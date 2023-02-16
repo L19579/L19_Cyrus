@@ -5,9 +5,16 @@
 </svelte:head>
 
 <script>
-  import Navbar from './../shared/Navbar.svelte'
-  import Footer from './../shared/Footer.svelte'
-  import Todo from './../shared/Todo.svelte'
+  import Navbar from './../shared/Navbar.svelte';
+  import Footer from './../shared/Footer.svelte';
+  import Todo from './../shared/Todo.svelte';
+  import { language } from './../shared/LanguageData.js';
+
+  let lang;
+
+  language.subscribe(value => {
+    lang = value; 
+  });
 </script>
 
 <Navbar current_nav_page = 'organization'/>
@@ -17,7 +24,7 @@
     <div class="panels-background-filter">
       <div class="meet-the-team-title-wrapper">
         <div class="meet-the-team-title-wrapper-filter">
-          <h2 class="meet-the-team-title">Meet the team!</h2>
+          <h2 class="meet-the-team-title">{lang.organization.title}</h2>
         </div>
       </div>
       <div class="panel-1-outer-wrapper">
@@ -30,16 +37,14 @@
                 </div>
                 <div class="portrait-employee-info" id="portrait-1-emplopyee-info">
                   <div class="employee-name" id="employee-1-name">
-                    Williane Moise
+                    {lang.organization.staff[0].name}
                   </div>
                   <div class="employee-function" id="employee-1-function">
-                    President
+                    {lang.organization.staff[0].role}
                   </div>
                   <div class="employee-bio" id="employee-1-bio">
                     <p> 
-                      Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
-                      touch on relevant career hightlights. Include a couple non specific/relatable 
-                      attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                      {lang.organization.staff[0].bio}
                     </p>
                   </div>
                 </div>
@@ -50,16 +55,14 @@
                 </div>
                 <div class="portrait-employee-info" id="portrait-2-emplopyee-info">
                   <div class="employee-name" id="employee-2-name">
-                    Rubenson Alexandre
+                    {lang.organization.staff[1].name}
                   </div>
                   <div class="employee-function" id="employee-2-function">
-                    General Manager
+                    {lang.organization.staff[1].role}
                   </div>
                   <div class="employee-bio" id="employee-2-bio">
                     <p>
-                      Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
-                      touch on relevant career hightlights. Include a couple non specific/relatable 
-                      attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                      {lang.organization.staff[1].bio}
                     </p>
                   </div>
                 </div>
@@ -70,16 +73,14 @@
                 </div>
                 <div class="portrait-employee-info" id="portrait-3-emplopyee-info">
                   <div class="employee-name" id="employee-3-name">
-                    Wadlet Merassaint
+                    {lang.organization.staff[2].name}
                   </div>
                   <div class="employee-function" id="employee-3-function">
-                    Secretary
+                    {lang.organization.staff[2].role}
                   </div>
                   <div class="employee-bio" id="employee-3-bio">
                     <p>
-                      Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
-                      touch on relevant career hightlights. Include a couple non specific/relatable 
-                      attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                      {lang.organization.staff[2].bio}
                     </p>
                   </div>
                 </div>
@@ -90,16 +91,14 @@
                 </div>
                 <div class="portrait-employee-info" id="portrait-4-emplopyee-info">
                   <div class="employee-name" id="employee-4-name">
-                    Baudelaire Saintis
+                    {lang.organization.staff[3].name}
                   </div>
                   <div class="employee-function" id="employee-4-function">
-                    Coordinator
+                    {lang.organization.staff[3].role}
                   </div>
                   <div class="employee-bio" id="employee-4-bio">
                     <p>
-                      Bio of person in focus. Section should be 2 - 3 sentences long and briefly 
-                      touch on relevant career hightlights. Include a couple non specific/relatable 
-                      attribute or interest (i.e. "expert in all things tomatoes, ask about the farm!").
+                      {lang.organization.staff[3].bio}
                     </p>
                   </div>
                 </div>

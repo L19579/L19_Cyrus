@@ -81,9 +81,6 @@ const english = {
       title_p1: "Assistance for Haitians",
       title_p2: "at home and abroad.",
       description: "Our organisation is focused on reducing hardships for the vulnerable in our community. Your contributions help expand the reach of our meal assistance program and youth recreation group. For those looking for a prayer group, our doors are open!",
-      //title_p1: "Focused on contributing",
-      //title_p2: "to foundations of ....",
-      //description: "Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry's standard dummy Lorem Ipsum has been the industry\'s standard dummy Lorem Ipsum has been the industry\'s standard dummy",
       contact_us_button: "Contact us",
       learn_more_button: "Learn more",
     },
@@ -94,15 +91,12 @@ const english = {
       stat_mobile_title: "lives improved",
       stat_description: "...and counting.",
       description: "We’re dedicated to helping struggling families and orphaned children in Haiti, and Canada. Much of the hardships we hope to reduce have been experienced by our staff first hand – we’re familiar with the feeling of despair. Our mission is to offer a door to those who have nowhere to turn. Programs currently supported by our donors include meal assistance services, and youth social programs. We also host prayer services in person and online.",
-      //description: "Since our founding(??) we've dedicated resources to helping families and children in critical need in Haiti, and Canada. The hardships we aim to ameliorate have been experienced by our staff first hand. Our mission is to reduce the number of people forced to walk difficult paths alone. Programs currently supported by our donors include meal assitance, and youth social programs. We also host prayer services in person and online.",
     },
     panel_2: {
       title: "We Want To Do More!", 
       description: "We’re only in the early stages of our journey. The long term strategy of our effort is to have a meaningful impact on as many lives as possible. We hope to scale our operations to numerous high density jurisdictions in Haiti. Your support will allow us to make our meal assistance service available in remote areas; bringing food staples to those unable to travel. Plans are also in place for a more diversified, and career focused youth program portfolio.",
-      //description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     },
     panel_3:{
-      //quote: "orem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop pub.",
       quote: "Dieu Peut Charity is an extension of various Haitian-Canadian church services under our leadership. Formalising the charity wing was a natural step forward. We have extensive experience in managing food drives, social programs. Making that experience useful where it’s needed most in Haiti is a goal that is now possible with your backing. Thank you!",
       name: "Williane Moise",
       founder_title: "Founder & President",
@@ -135,7 +129,6 @@ const english = {
     panel_3:{
       title: "Prayer Service",
       description: "Besides running charity programs our founder hosts weekly virtual and in-person prayer groups for Haitians at home and abroad. We’re building an inclusive community for those who seek to celebrate the word of God. We’d love to have you with us for virtual prayer sessions!",
-      //link_livestream_text: "Livestream",
       link_livestream_text: "Live online events are held at 7:00pm every Sunday.",
       donate_link_text: "Help Prayer Service",
     }, 
@@ -144,12 +137,10 @@ const english = {
     panel_1:{
       title: "Expanding Aid",
       description: "Over 120 Haitian families have received assistance from Dieu Peut Charity, resulting in material relief from economic setbacks since our founding in 2022. This linear growth is critical to our mission. With your assistance we plan to expand our food donation initiatives beyond the borders of Port-au-Prince. We want to open remote meal delivery to rural areas without the transport infrastructure and local resources for food availability. Our secondary growth objective is to make youth programs available in Gonaives. We see value in closing educational gaps in cities with insufficient internet penetration. ",
-      //description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     },
     panel_2: {
       title: "Digital Growth",
-      description: "Making our prayer service more accessible and interactive for a global audience is also top of mind. We’re putting an extra emphasis on capital efficiency on this project. Most of our growth will be in online content delivery. The number of dedicated hosts and streams will increase in the near term, with content going beyond Sunday prayer. We’re building a team infrastructure to support live streams and other content across major streaming platforms and social media.",
-      //description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing.",
+      description: "Making our prayer service more accessible and interactive for a global audience is also top of mind. We’re putting an extra emphasis on capital efficiency here; most of our growth will be in online content delivery. The number of dedicated hosts will increase in the near term, with content going beyond Sunday prayer. We’re building the infrastructure to support live streams across major video platforms."
     },
   },
   organization: {
@@ -158,22 +149,22 @@ const english = {
       {
         name: "Williane Moise",
         role: "Founder & President",
-        bio: "Bio of person in focus. Section should be 2 - 3 sentences long and briefly touch on relevant career hightlights. Include a couple non specific/relatable attribute or interest (i.e. \"expert in all things tomatoes, ask about the farm!\").",
+        bio: "15 years in church operation; event and charity management. More than 20 years leading Sunday service. Proud mom of three and expert in all things music. Thankful for the opportunity to help our international community. Let’s make a difference!",
       },
       {
         name: "Rubenson Alexandre",
         role: "General Manager",
-        bio: "Bio of person in focus. Section should be 2 - 3 sentences long and briefly touch on relevant career hightlights. Include a couple non specific/relatable attribute or interest (i.e. \"expert in all things tomatoes, ask about the farm!\").",
+        bio: "Previously worked in audio broadcasting, now full-time with Dieu Peut. My natural interests are in public relations and education. Joining this effort allows me to take full advantage of my background for a good cause. ",
       },
       {
         name: "Wadlet Merassaint",
         role: "Secretary",
-        bio: "Bio of person in focus. Section should be 2 - 3 sentences long and briefly touch on relevant career hightlights. Include a couple non specific/relatable attribute or interest (i.e. \"expert in all things tomatoes, ask about the farm!\").",
+        bio: "I’m a business relations student in the Dominican Republic. I see a number of areas inter  business cooperation in Haiti can improve for the benefit of our clients. My hope is to see our non-profit benefit more people.",
       },
       {
         name: "Baudelaire Saintis",
         role: "Coordinator",
-        bio: "Bio of person in focus. Section should be 2 - 3 sentences long and briefly touch on relevant career hightlights. Include a couple non specific/relatable attribute or interest (i.e. \"expert in all things tomatoes, ask about the farm!\").",
+        bio: "Background in civil engineering. Over 10 years of experience teaching mathematics and physics. Screen printing has been a professional focus of mine since covid. My primary motive for joining Dieu Peut is to help educate the young.",
       },
     ],
   },

@@ -189,6 +189,10 @@
     /* TODO: bg too bland, reconsider */
     /* background-color: rgb(242,210,139); */
     /* background-color: rgb(215,227,238); */
+    /* background-color: rgb(202, 211, 200); */
+    /* background-color: rgb(236, 240, 241); grey */
+    /* background-color: rgb(210,215,211); darkey grey */
+    /* background-color: rgb(255, 218, 121); decent yellow, no match */
     border-bottom: 1px solid rgb(30,41,59);
     box-shadow: 0 0.2px 2px rgb(30,41,59);
   }

@@ -190,6 +190,8 @@
     height: 100vh;
     width: 100%;
     /* border: 2px solid red; */
+
+    background: linear-gradient(to top, rgb(214 211 209) -10%, rgb(245,245,244) 40%);
 	}	
 	
   .panel-1-inner-wrapper{
