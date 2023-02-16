@@ -193,6 +193,10 @@
     /* background-color: rgb(236, 240, 241); grey */
     /* background-color: rgb(210,215,211); darkey grey */
     /* background-color: rgb(255, 218, 121); decent yellow, no match */
+    /* background-color: rgb(227,225,240);  Close to ok */
+    /* background-color: rgba(235,233,242,1); ligher shade of below */
+    /* background-color: rgb(221,223,235,0.6); */
+    /* background-color: rgb(230,232,239);  liveable */
     border-bottom: 1px solid rgb(30,41,59);
     box-shadow: 0 0.2px 2px rgb(30,41,59);
   }

@@ -102,7 +102,7 @@
   let third_option_color = colors[4];
 
   let donate_button_color = colors[6];
-  let donate_button_text = "Donate";
+  let donate_button_text = lang.navbar.donate;
   let donate_button_cursor = "pointer";
   let donate_button_loading_gif = 0;
 
@@ -466,7 +466,7 @@
                 <br />
                 <div id="amount-manual-field-text"> 
                   {#if (donation_choice.length < 2)}
-                    Amount 
+                    {lang.donate.amount} 
                   {:else}
                     To {donation_choice}
                   {/if}
@@ -502,7 +502,7 @@
               </div>
               <div class="thank-you-message-wrapper">
                 <div id="thank-you-message-text">
-                  Thank You!
+                  {lang.donate.thank_you} 
                 </div>
               </div>
             </div>

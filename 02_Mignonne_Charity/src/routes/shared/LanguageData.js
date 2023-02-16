@@ -1,6 +1,17 @@
 import { writable } from 'svelte/store'; 
 
 export const common = {
+  identical: {
+    phone_number_button: "+1(647) 854-3160",
+    email_button: "contact@dieupeut.com",
+  },
+	staff_names: {
+		williane: "Williane Moise",
+		rubenson: "Rubenson Alexandre",
+		wadlet: "Wadlet Merassaint",
+		baudelaire: "Baudelaire Saintis",
+		
+	},
   donate: {
     en: "Donate",
     fr: "Donner",
@@ -13,6 +24,8 @@ export const common = {
   },
   read_more_button: {
     en: "Read More >",
+    fr: "",
+    cr: "",
   },
   country: {
     canada: "Canada",
@@ -64,9 +77,9 @@ const english = {
     donate: common.donate.en,
   },
   footer: {
-    contact: "Contact us", 
-    phone_number_button: "+1(647) 854-3160",
-    email_button: "contact@dieupeut.com",
+    contact_us: "Contact us", 
+    phone_number_button: common.identical.phone_number_button,
+    email_button: common.identical.email_button,
     title: common.dieu_peut_long.en,
     haitian_office: "Haitian office:",
     dr_office: "DR office:",
@@ -98,7 +111,7 @@ const english = {
     },
     panel_3:{
       quote: "Dieu Peut Charity is an extension of various Haitian-Canadian church services under our leadership. Formalising the charity wing was a natural step forward. We have extensive experience in managing food drives, social programs. Making that experience useful where it’s needed most in Haiti is a goal that is now possible with your backing. Thank you!",
-      name: "Williane Moise",
+			name: common.staff_names.williane,
       founder_title: "Founder & President",
       meet_team_button: "Meet the Team!",
     },
@@ -147,22 +160,22 @@ const english = {
     title: "Meet the team!",
     staff: [
       {
-        name: "Williane Moise",
+				name: common.staff_names.williane,
         role: "Founder & President",
         bio: "15 years in church operation; event and charity management. More than 20 years leading Sunday service. Proud mom of three and expert in all things music. Thankful for the opportunity to help our international community. Let’s make a difference!",
       },
       {
-        name: "Rubenson Alexandre",
+				name: common.staff_names.rubenson,
         role: "General Manager",
         bio: "Previously worked in audio broadcasting, now full-time with Dieu Peut. My natural interests are in public relations and education. Joining this effort allows me to take full advantage of my background for a good cause. ",
       },
       {
-        name: "Wadlet Merassaint",
+				name: common.staff_names.wadlet,
         role: "Secretary",
         bio: "I’m a business relations student in the Dominican Republic. I see a number of areas inter  business cooperation in Haiti can improve for the benefit of our clients. My hope is to see our non-profit benefit more people.",
       },
       {
-        name: "Baudelaire Saintis",
+				name: common.staff_names.baudelaire,
         role: "Coordinator",
         bio: "Background in civil engineering. Over 10 years of experience teaching mathematics and physics. Screen printing has been a professional focus of mine since covid. My primary motive for joining Dieu Peut is to help educate the young.",
       },
@@ -193,4 +206,303 @@ const english = {
   },
 };
 
-export const language = writable(english);
+const french = {
+  language: "",
+  wip: "Ce site est en cours de développement.",
+  links: common.links,
+  common: {
+    donate: common.donate.fr,
+    dieu_peut_long: common.dieu_peut_long.fr,
+    read_more_button: common.read_more_button.fr,
+    food_donation_program: common.program.food_donation.fr,
+    youth_recreation_program: common.program.youth_recreation.fr,
+    prayer_service: common.program.prayer_service.fr,
+    to_be_assigned: common.to_be_assigned.fr,
+  },
+  navbar: {
+    impact: "Impact",
+    goals: "Objectifs",
+    organization: "Organisation",
+    donate: common.donate.fr,
+  },
+  footer: {
+    contact_us: "Contactez-nous", 
+    phone_number_button: common.identical.phone_number_button,
+    email_button: common.identical.email_button,
+    title: common.dieu_peut_long.fr,
+    haitian_office: "Bureau Haïtien:",
+    dr_office: "Bureau RD",
+    copyright_part_1: "Copyright © 2023",
+    copyright_part_2: "Dieu Peut Charité",
+    copyright_part_3: "Tous droits réservés.",
+    written_by_part_1: "Écrit et géré par",
+    written_by_part_2_link: "Licence Apache-2.0 / MIT",
+  },
+  home: {
+    panel_0: {
+      title_p1: "Aide aux Haïtiens",
+      title_p2: "à domicile et à l'étranger.",
+      description: "Notre organisation est axée sur la réduction des difficultés pour les personnes vulnérables de notre communauté. Vos contributions aident à étendre la portée de notre programme d'aide alimentaire et de notre groupe de loisirs pour les jeunes. Pour ceux qui cherchent un groupe de prière, nos portes sont ouvertes!",
+      contact_us_button: "Contactez-nous",
+      learn_more_button: "Savoir plus",
+    },
+    panel_1: {
+      stat_1_title: "Familles Nourries",
+      stat_2_title: "Jeunes Inscrits",
+      stat_3_title: "Membres d'Église",
+      //stat_3_title: "Participants aux Prières",
+      stat_mobile_title: "Vies Améliorées",
+      stat_description: "...et comptant.",
+      description: "Nous nous engageons à aider les familles en difficulté et les enfants orphelins en Haïti et au Canada. Une grande partie des difficultés que nous espérons réduire ont été vécues par notre personnel - nous sommes familiers avec le sentiment de désespoir. Notre mission est d'offrir une porte à ceux qui n'ont nulle part où aller. Les programmes actuellement soutenus par nos donateurs comprennent des services d'aide alimentaire et des programmes sociaux pour les jeunes. Nous organisons également des services de prière en personne et en ligne.",
+    },
+    panel_2: {
+      title: "Nous voulons faire plus!", 
+      description: "Nous ne sommes qu'au début de notre parcours. La stratégie à long terme de nos efforts est d'avoir un impact significatif sur le plus grand nombre de vies possible. Nous espérons étendre nos opérations à de nombreuses juridictions à forte densité en Haïti. Votre soutien nous permettra de rendre notre service d'aide alimentaire disponible dans les zones éloignées ; apportant des aliments de base à ceux qui ne peuvent pas voyager. Des plans sont également en place pour un portefeuille de programmes pour les jeunes plus diversifié et axé sur les carrières.",
+    },
+    panel_3:{
+      quote: "Dieu Peut Charity est une extension de divers services d'église haïtiano-canadiens sous notre direction. La formalisation de l'aile de bienfaisance était une étape naturelle. Nous avons une vaste expérience de la gestion de collectes de denrées alimentaires et de programmes sociaux. Rendre cette expérience utile là où elle est le plus nécessaire en Haïti est un objectif qui est maintenant possible avec votre soutien. Merci!",
+			name: common.staff_names.williane,
+      founder_title: "Fondateur et Président",
+      meet_team_button: "Rencontrez l'Équipe!",
+    },
+  },
+  impact: {
+    panel_1:{
+      title: "Aide Alimentaire",
+      description: "Ce programme vise actuellement à fournir des repas aux familles et aux enfants orphelins dans la capitale haïtienne. L'inflation incontrôlable, la pénurie de carburant et la violence le long des principales routes de transport rendent difficiles l'approvisionnement en produits alimentaires de base. Les plus pauvres de Port-au-Prince ne peuvent plus se permettre les prix du marché local et risquent leur sécurité personnelle lorsqu'ils sont contraints de se tourner vers des zones sous l'influence de criminels. Nos portes restent ouvertes s'ils n'ont plus d'options.",
+      description_sub: "Services offerts dans le cadre de cette initiative",
+      description_sub_p1: "Banque alimentaire",
+      description_sub_p2: "Repas à domicile",
+      donate_link_text: "Contribuer à la Banque Alimentaire",
+    }, 
+    panel_2:{
+      title: "Activités pour Jeunes",
+      description: "Nous sommes de fervents partisans de l'organisation d'activités constructives, orientées vers le groupe et à somme positive pour les enfants et les jeunes adultes d'Haïti. Dieu Peut organise un certain nombre d'événements organisés et semi-formels pour ceux âgés de 6 à 21 ans. Nous fournissons l'espace et les outils pour que nos jeunes construisent des liens durables et des compétences de vie essentielles.",
+      description_ext: "Activités incluses:",
+      description_sub_1: "Permanent",
+      description_sub_1_p1: "Aide aux devoirs",
+      description_sub_1_p2: "Cours de piano",
+      description_sub_1_p3: "Rédaction de CV",
+      description_sub_2: "Occasionnel",
+      description_sub_2_p1: "Tournois de football",
+      description_sub_2_p2: "Jardinage",
+      description_sub_2_p3: "budgétisation",
+      donate_link_text: "Soutenir ces Activités",
+    }, 
+    panel_3:{
+      title: "Service de Prière",
+      description: "Outre la gestion de programmes caritatifs, notre fondateur anime des groupes de prière virtuels et en personne chaque semaine pour les Haïtiens vivant sur place et à l'étranger. Nous créons une communauté inclusive pour ceux qui cherchent à célébrer la parole de Dieu. Nous serions ravis de vous compter parmi nous lors de sessions de prière virtuelles!",
+      link_livestream_text: "Des événements en direct en ligne ont lieu tous les dimanches à 19h00.",
+      donate_link_text: "Aidez le Service de Prière",
+    }, 
+  },
+  goals: {
+    panel_1:{
+      title: "Expansion de l'Aide",
+      description: "Plus de 120 familles haïtiennes ont reçu de l'aide de Dieu Peut Charity, ce qui a entraîné un soulagement matériel des revers économiques depuis notre création en 2022. Cette croissance linéaire est essentielle à notre mission. Avec votre aide, nous prévoyons d'étendre nos initiatives de don de nourriture au-delà des frontières de Port-au-Prince. Nous voulons ouvrir la livraison de repas à distance dans les zones rurales sans infrastructure de transport et sans ressources locales pour la disponibilité alimentaire. Notre objectif de croissance secondaire est de rendre les programmes pour les jeunes disponibles à Gonaives. Nous voyons de la valeur dans la réduction des lacunes éducatives dans les villes avec une pénétration internet insuffisante.",
+    },
+    panel_2: {
+      title: "Contenu Web",
+      description: "Rendre notre service de prière plus accessible et interactif pour un public mondial est également une priorité. Nous mettons un accent supplémentaire sur l'efficacité du capital ici ; la plupart de notre croissance se fera par la diffusion de contenu en ligne. Le nombre d'hôtes dédiés augmentera à court terme, avec du contenu allant au-delà de la prière du dimanche. Nous construisons l'infrastructure pour prendre en charge des diffusions en direct sur les principales plateformes vidéo.",
+    },
+  },
+  organization: {
+    title: "Rencontrez l'équipe!",
+    staff: [
+      {
+				name: common.staff_names.williane,
+        role: "Fondatrice et Présidente",
+        bio: "15 ans d'exploitation d'église ; gestion d'événements et de charité. Plus de 20 ans à diriger le service du dimanche. Fière maman de trois enfants et experte en tout ce qui concerne la musique. Reconnaissante pour l'occasion d'aider notre communauté internationale. Faisons la différence!",
+      },
+      {
+				name: common.staff_names.rubenson,
+        role: "Directeur Général",
+        bio: "Travaillait auparavant dans la radiodiffusion audio, maintenant à plein temps avec Dieu Peut. Mes intérêts naturels sont les relations publiques et l'éducation. Rejoindre cet effort me permet de tirer pleinement parti de mon expérience pour une bonne cause.",
+      },
+      {
+				name: common.staff_names.wadlet,
+        role: "Secrétaire",
+        bio: "Je suis étudiante en relations d'affaires en République dominicaine. Je vois plusieurs domaines de coopération interentreprises en Haïti qui peuvent s'améliorer au bénéfice de nos clients. Mon espoir est de voir notre organisation sans but lucratif bénéficier à plus de personnes.",
+      },
+      {
+				name: common.staff_names.baudelaire,
+        role: "Coordinateur",
+        bio: "Formation en génie civil. Plus de 10 ans d'expérience dans l'enseignement des mathématiques et de la physique. La sérigraphie a été ma principale préoccupation professionnelle depuis la pandémie. Ma principale motivation pour rejoindre Dieu Peut est d'aider à éduquer les jeunes.",
+      },
+    ],
+  },
+  donate: {
+    amount: "Montant",
+    thank_you: "Merci!",
+    or_use_card: "Ou utilisez une carte",
+    email: "Email",
+    card_information: "Informations de Carte",
+    card_exp_placeholder: "MM / AA",
+    name_on_card: "Nom sur la carte",
+    card_country_region: "Pays / Région",
+    country: {
+      canada: common.country.canada,
+      dominican_republic: "République Dominicaine",
+      france: common.country.france,
+      haiti: "Haïti",
+      united_states: "États-Unis",
+    },
+    _prompt: {
+      invalid: "Invalide",
+      success: "Succès!",
+      donation_failed: "Transaction Échouée",
+    },
+    secured_by: "Sécurisé par",
+  },
+};
+
+const creole = {
+  language: "",
+  wip: "",
+  links: common.links,
+  common: {
+    donate: common.donate.cr,
+    dieu_peut_long: common.dieu_peut_long.cr,
+    read_more_button: common.read_more_button.cr,
+    food_donation_program: common.program.food_donation.cr,
+    youth_recreation_program: common.program.youth_recreation.cr,
+    prayer_service: common.program.prayer_service.cr,
+    to_be_assigned: common.to_be_assigned.cr,
+  },
+  navbar: {
+    impact: "",
+    goals: "",
+    organization: "",
+    donate: common.donate.cr,
+  },
+  footer: {
+    contact_us: "", 
+    phone_number_button: "",
+    email_button: "",
+    title: common.dieu_peut_long.cr,
+    haitian_office: "",
+    dr_office: "",
+    copyright_part_1: "",
+    copyright_part_2: "",
+    copyright_part_3: "",
+    written_by_part_1: "",
+    written_by_part_2_link: "",
+  },
+  home: {
+    panel_0: {
+      title_p1: "",
+      title_p2: "",
+      description: "",
+      contact_us_button: "",
+      learn_more_button: "",
+    },
+    panel_1: {
+      stat_1_title: "",
+      stat_2_title: "",
+      stat_3_title: "",
+      stat_mobile_title: "",
+      stat_description: "",
+      description: "",
+    },
+    panel_2: {
+      title: "", 
+      description: "",
+    },
+    panel_3:{
+      quote: "",
+      name: "",
+      founder_title: "",
+      meet_team_button: "",
+    },
+  },
+  impact: {
+    panel_1:{
+      title: "",
+      description: "",
+      description_sub: "",
+      description_sub_p1: "",
+      description_sub_p2: "",
+      donate_link_text: "",
+    }, 
+    panel_2:{
+      title: "",
+      description: "",
+      description_ext: "",
+      description_sub_1: "",
+      description_sub_1_p1: "",
+      description_sub_1_p2: "",
+      description_sub_1_p3: "",
+      description_sub_2: "",
+      description_sub_2_p1: "",
+      description_sub_2_p2: "",
+      description_sub_2_p3: "",
+      donate_link_text: "",
+    }, 
+    panel_3:{
+      title: "",
+      description: "",
+      link_livestream_text: "",
+      donate_link_text: "",
+    }, 
+  },
+  goals: {
+    panel_1:{
+      title: "",
+      description: "",
+    },
+    panel_2: {
+      title: "",
+      description: "",
+    },
+  },
+  organization: {
+    title: "",
+    staff: [
+      {
+        name: "",
+        role: "",
+        bio: "",
+      },
+      {
+        name: "",
+        role: "",
+        bio: "",
+      },
+      {
+        name: "",
+        role: "",
+        bio: "",
+      },
+      {
+        name: "",
+        role: "",
+        bio: "",
+      },
+    ],
+  },
+  donate: {
+    amount: "",
+    thank_you: "",
+    or_use_card: "",
+    email: "",
+    card_information: "",
+    card_exp_placeholder: "",
+    name_on_card: "",
+    card_country_region: "",
+    country: {
+      canada: common.country.canada,
+      dominican_republic: "",
+      france: common.country.france,
+      haiti: "",
+      united_states: "",
+    },
+    _prompt: {
+      invalid: "",
+      success: "",
+      donation_failed: "",
+    },
+    secured_by: "",
+  },
+};
+
+export const language = writable(french);

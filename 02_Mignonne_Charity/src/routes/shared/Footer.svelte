@@ -31,7 +31,7 @@
     </div>
     <div class="contact-top-panel-main-section">
       <div class="contact-top-panel-main-section-text">
-        Contact us
+        {lang.footer.contact_us}
       </div>
       <div class="contact-top-panel-main-section-buttons">
         <a href="tel:4376006987" class="contact-buttons" id="button-phone">
