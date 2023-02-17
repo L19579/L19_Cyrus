@@ -1,5 +1,5 @@
 <script>
-  import { language } from './LanguageData.js';
+  import { language, change_language } from './LanguageData.js';
 
   let lang;
   language.subscribe(value =>{
@@ -97,7 +97,7 @@
               18,14m0,19 9-25 9 25m-3-7H33"/>
               <path d="m15,41-3,3h6zv10m7-3 3,3-3,3zM14.5,51h9"/>
             </div>
-            <span>EN</span>
+            <span>{lang.language}</span>
             </button>
               <div class="nav-svg-wrapper">
                 <svg width="54" height="8" viewBox="0 0 54 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -137,19 +137,22 @@
       <div>
         <ul class="burger-nav-language-buttons-wrapper">
           <li class="burger-menu-nested-link-items" id="nav-link-items">
-            <button class="nav-language-button nav-text">
+            <button class="nav-language-button nav-text nav-nested-mobile-button"
+            on:click={() => change_language(0)}>
               🇺🇸 
             </button>
           </li>
           <li class="burger-menu-nested-link-separators" id="nav-link-items">|</li>
           <li class="burger-menu-nested-link-items" id="nav-link-items">
-            <button class="nav-language-button nav-text">
+            <button class="nav-language-button nav-text nav-nested-mobile-button"
+            on:click={() => change_language(1)}>
               🇫🇷
             </button> 
           </li>
           <li class="burger-menu-nested-link-separators" id="nav-link-items">|</li>
           <li class="burger-menu-nested-link-items" id="nav-link-items">
-            <button class="nav-language-button nav-text">
+            <button class="nav-language-button nav-text nav-nested-mobile-button"
+            on:click={() => change_language(2)}>
               🇭🇹
             </button> 
           </li>
@@ -167,6 +170,10 @@
 
 
 <style>
+
+  li{ /* here to stop mobile language flag horizontal slide */
+    overflow: hidden;
+  }
 
   #header{
     @apply

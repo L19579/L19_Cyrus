@@ -24,7 +24,7 @@ export const common = {
   },
   read_more_button: {
     en: "Read More >",
-    fr: "",
+    fr: "Savoir Plus >",
     cr: "",
   },
   country: {
@@ -53,12 +53,15 @@ export const common = {
     },
   },
   to_be_assigned: {
-    en: "TO BE ASSIGNED",
+    en: "NOT ASSIGNED",
+		fr: "NON ATTRIBUÉ",
+		cr: "PA ATRIBITE",
   },
 }
 
 const english = {
-  language: "en-ca",
+  language: "EN",
+  language_code: "en-ca",
   wip: "This website is under active development.",
   links: common.links,
   common: {
@@ -141,7 +144,8 @@ const english = {
     }, 
     panel_3:{
       title: "Prayer Service",
-      description: "Besides running charity programs our founder hosts weekly virtual and in-person prayer groups for Haitians at home and abroad. We’re building an inclusive community for those who seek to celebrate the word of God. We’d love to have you with us for virtual prayer sessions!",
+      description: "Nous organisons également des groupes de prière hebdomadaires virtuels et en personne pour les Haïtiens au pays et à l'étranger. Nous construisons une communauté inclusive pour ceux qui cherchent à célébrer la parole de Dieu. Vous êtes invités à nous rejoindre en ligne!",
+      //description: "Besides running charity programs our founder hosts weekly virtual and in-person prayer groups for Haitians at home and abroad. We’re building an inclusive community for those who seek to celebrate the word of God. We’d love to have you with us for virtual prayer sessions!",
       link_livestream_text: "Live online events are held at 7:00pm every Sunday.",
       donate_link_text: "Help Prayer Service",
     }, 
@@ -167,7 +171,7 @@ const english = {
       {
 				name: common.staff_names.rubenson,
         role: "General Manager",
-        bio: "Previously worked in audio broadcasting, now full-time with Dieu Peut. My natural interests are in public relations and education. Joining this effort allows me to take full advantage of my background for a good cause. ",
+        bio: "Previously worked in audio broadcasting; now full-time with Dieu Peut. My natural interests are in public relations and education. Joining this effort allows me to take full advantage of my background for a good cause. ",
       },
       {
 				name: common.staff_names.wadlet,
@@ -207,7 +211,8 @@ const english = {
 };
 
 const french = {
-  language: "",
+  language: "FR",
+  language_code: "fr-fr",
   wip: "Ce site est en cours de développement.",
   links: common.links,
   common: {
@@ -226,7 +231,7 @@ const french = {
     donate: common.donate.fr,
   },
   footer: {
-    contact_us: "Contactez-nous", 
+    contact_us: "Contacter", 
     phone_number_button: common.identical.phone_number_button,
     email_button: common.identical.email_button,
     title: common.dieu_peut_long.fr,
@@ -253,14 +258,17 @@ const french = {
       //stat_3_title: "Participants aux Prières",
       stat_mobile_title: "Vies Améliorées",
       stat_description: "...et comptant.",
-      description: "Nous nous engageons à aider les familles en difficulté et les enfants orphelins en Haïti et au Canada. Une grande partie des difficultés que nous espérons réduire ont été vécues par notre personnel - nous sommes familiers avec le sentiment de désespoir. Notre mission est d'offrir une porte à ceux qui n'ont nulle part où aller. Les programmes actuellement soutenus par nos donateurs comprennent des services d'aide alimentaire et des programmes sociaux pour les jeunes. Nous organisons également des services de prière en personne et en ligne.",
+      description: "Une grande partie des difficultés que nous espérons réduire ont été vécues par notre personnel - nous sommes familiers avec le sentiment de désespoir. Notre mission est d'offrir une porte à ceux qui n'ont nulle part où aller. Les programmes actuellement soutenus par nos donateurs comprennent des services d'aide alimentaire et des programmes sociaux pour les jeunes. Nous organisons également des services de prière en personne et en ligne.",
+      //description: "Nous nous engageons à aider les familles en difficulté et les enfants orphelins en Haïti et au Canada. Une grande partie des difficultés que nous espérons réduire ont été vécues par notre personnel - nous sommes familiers avec le sentiment de désespoir. Notre mission est d'offrir une porte à ceux qui n'ont nulle part où aller. Les programmes actuellement soutenus par nos donateurs comprennent des services d'aide alimentaire et des programmes sociaux pour les jeunes. Nous organisons également des services de prière en personne et en ligne.",
     },
     panel_2: {
       title: "Nous voulons faire plus!", 
-      description: "Nous ne sommes qu'au début de notre parcours. La stratégie à long terme de nos efforts est d'avoir un impact significatif sur le plus grand nombre de vies possible. Nous espérons étendre nos opérations à de nombreuses juridictions à forte densité en Haïti. Votre soutien nous permettra de rendre notre service d'aide alimentaire disponible dans les zones éloignées ; apportant des aliments de base à ceux qui ne peuvent pas voyager. Des plans sont également en place pour un portefeuille de programmes pour les jeunes plus diversifié et axé sur les carrières.",
+      description: "La stratégie à long terme est d'avoir un impact significatif sur un grand nombre de vies. Nous espérons étendre nos opérations à de nombreuses juridictions à forte densité en Haïti. Votre soutien nous permettra de rendre notre service d'aide alimentaire disponible dans les zones éloignées et d'aider ceux qui ne peuvent pas voyager. Des plans sont également en place pour un portefeuille de programmes pour les jeunes plus diversifié et axé sur les carrières.",
+      //description: "Nous ne sommes qu'au début de notre parcours. La stratégie à long terme de nos efforts est d'avoir un impact significatif sur le plus grand nombre de vies possible. Nous espérons étendre nos opérations à de nombreuses juridictions à forte densité en Haïti. Votre soutien nous permettra de rendre notre service d'aide alimentaire disponible dans les zones éloignées ; apportant des aliments de base à ceux qui ne peuvent pas voyager. Des plans sont également en place pour un portefeuille de programmes pour les jeunes plus diversifié et axé sur les carrières.",
     },
     panel_3:{
-      quote: "Dieu Peut Charity est une extension de divers services d'église haïtiano-canadiens sous notre direction. La formalisation de l'aile de bienfaisance était une étape naturelle. Nous avons une vaste expérience de la gestion de collectes de denrées alimentaires et de programmes sociaux. Rendre cette expérience utile là où elle est le plus nécessaire en Haïti est un objectif qui est maintenant possible avec votre soutien. Merci!",
+      quote: "Dieu Peut Charity est une extension des services d'église Haïtien-Canadiens sous notre direction. Nous avons une vaste expérience de la gestion de collectes de denrées alimentaires et de programmes sociaux. Rendre cette expérience utile là où elle est le plus nécessaire en Haïti est un objectif qui est maintenant possible avec votre soutien. Merci!",
+      //quote: "Dieu Peut Charity est une extension de divers services d'église haïtiano-canadiens sous notre direction. La formalisation de l'aile de bienfaisance était une étape naturelle. Nous avons une vaste expérience de la gestion de collectes de denrées alimentaires et de programmes sociaux. Rendre cette expérience utile là où elle est le plus nécessaire en Haïti est un objectif qui est maintenant possible avec votre soutien. Merci!",
 			name: common.staff_names.williane,
       founder_title: "Fondateur et Président",
       meet_team_button: "Rencontrez l'Équipe!",
@@ -269,15 +277,17 @@ const french = {
   impact: {
     panel_1:{
       title: "Aide Alimentaire",
-      description: "Ce programme vise actuellement à fournir des repas aux familles et aux enfants orphelins dans la capitale haïtienne. L'inflation incontrôlable, la pénurie de carburant et la violence le long des principales routes de transport rendent difficiles l'approvisionnement en produits alimentaires de base. Les plus pauvres de Port-au-Prince ne peuvent plus se permettre les prix du marché local et risquent leur sécurité personnelle lorsqu'ils sont contraints de se tourner vers des zones sous l'influence de criminels. Nos portes restent ouvertes s'ils n'ont plus d'options.",
+      description: "Ce programme offre des repas aux familles et aux enfants orphelins dans la capitale haïtienne. L'inflation incontrôlable, et la violence sur les routes de transport rendent les aliments de base difficiles à obtenir. Plusieurs ne peuvent plus acheter aux prix du marché local et risquent leur sécurité personnelle pour traverser les zones sous l'influence de criminels. Nos portes restent ouvertes s'ils n'ont plus d'options.",
+      //description: "Ce programme vise actuellement à fournir des repas aux familles et aux enfants orphelins dans la capitale haïtienne. L'inflation incontrôlable, la pénurie de carburant et la violence le long des principales routes de transport rendent difficiles l'approvisionnement en produits alimentaires de base. Les plus pauvres de Port-au-Prince ne peuvent plus se permettre les prix du marché local et risquent leur sécurité personnelle lorsqu'ils sont contraints de se tourner vers des zones sous l'influence de criminels. Nos portes restent ouvertes s'ils n'ont plus d'options.",
       description_sub: "Services offerts dans le cadre de cette initiative",
-      description_sub_p1: "Banque alimentaire",
-      description_sub_p2: "Repas à domicile",
+      description_sub_p1: "Banque Alimentaire",
+      description_sub_p2: "Repas à Domicile",
       donate_link_text: "Contribuer à la Banque Alimentaire",
     }, 
     panel_2:{
       title: "Activités pour Jeunes",
-      description: "Nous sommes de fervents partisans de l'organisation d'activités constructives, orientées vers le groupe et à somme positive pour les enfants et les jeunes adultes d'Haïti. Dieu Peut organise un certain nombre d'événements organisés et semi-formels pour ceux âgés de 6 à 21 ans. Nous fournissons l'espace et les outils pour que nos jeunes construisent des liens durables et des compétences de vie essentielles.",
+      description: "Il est important d'offrir des activités constructives aux enfants et jeunes adultes d'Haïti. Dieu Peut à des événements organisés et semi-formels pour les personnes âgées de 6 à 21 ans a offrir. Nous fournissons l'espace et des outils permettant à nos jeunes de créer des liens durables et des compétences de vie essentielles.",
+      //description: "Nous sommes de fervents partisans de l'organisation d'activités constructives, orientées vers le groupe et à somme positive pour les enfants et les jeunes adultes d'Haïti. Dieu Peut organise un certain nombre d'événements organisés et semi-formels pour ceux âgés de 6 à 21 ans. Nous fournissons l'espace et les outils pour que nos jeunes construisent des liens durables et des compétences de vie essentielles.",
       description_ext: "Activités incluses:",
       description_sub_1: "Permanent",
       description_sub_1_p1: "Aide aux devoirs",
@@ -286,19 +296,20 @@ const french = {
       description_sub_2: "Occasionnel",
       description_sub_2_p1: "Tournois de football",
       description_sub_2_p2: "Jardinage",
-      description_sub_2_p3: "budgétisation",
+      description_sub_2_p3: "Budgétisation",
       donate_link_text: "Soutenir ces Activités",
     }, 
     panel_3:{
       title: "Service de Prière",
-      description: "Outre la gestion de programmes caritatifs, notre fondateur anime des groupes de prière virtuels et en personne chaque semaine pour les Haïtiens vivant sur place et à l'étranger. Nous créons une communauté inclusive pour ceux qui cherchent à célébrer la parole de Dieu. Nous serions ravis de vous compter parmi nous lors de sessions de prière virtuelles!",
+      description: "Nous organisons également des groupes de prière hebdomadaires virtuels et en personne pour les Haïtiens au pays et à l'étranger. Nous construisons une communauté inclusive pour ceux qui cherchent à célébrer la parole de Dieu. Vous êtes invités à nous rejoindre en ligne!",
+      //description: "Outre la gestion de programmes caritatifs, notre fondateur anime des groupes de prière virtuels et en personne chaque semaine pour les Haïtiens vivant sur place et à l'étranger. Nous créons une communauté inclusive pour ceux qui cherchent à célébrer la parole de Dieu. Nous serions ravis de vous compter parmi nous lors de sessions de prière virtuelles!",
       link_livestream_text: "Des événements en direct en ligne ont lieu tous les dimanches à 19h00.",
       donate_link_text: "Aidez le Service de Prière",
     }, 
   },
   goals: {
     panel_1:{
-      title: "Expansion de l'Aide",
+      title: "Expansion",
       description: "Plus de 120 familles haïtiennes ont reçu de l'aide de Dieu Peut Charity, ce qui a entraîné un soulagement matériel des revers économiques depuis notre création en 2022. Cette croissance linéaire est essentielle à notre mission. Avec votre aide, nous prévoyons d'étendre nos initiatives de don de nourriture au-delà des frontières de Port-au-Prince. Nous voulons ouvrir la livraison de repas à distance dans les zones rurales sans infrastructure de transport et sans ressources locales pour la disponibilité alimentaire. Notre objectif de croissance secondaire est de rendre les programmes pour les jeunes disponibles à Gonaives. Nous voyons de la valeur dans la réduction des lacunes éducatives dans les villes avec une pénétration internet insuffisante.",
     },
     panel_2: {
@@ -307,7 +318,7 @@ const french = {
     },
   },
   organization: {
-    title: "Rencontrez l'équipe!",
+    title: "l'Équipe!",
     staff: [
       {
 				name: common.staff_names.williane,
@@ -317,7 +328,7 @@ const french = {
       {
 				name: common.staff_names.rubenson,
         role: "Directeur Général",
-        bio: "Travaillait auparavant dans la radiodiffusion audio, maintenant à plein temps avec Dieu Peut. Mes intérêts naturels sont les relations publiques et l'éducation. Rejoindre cet effort me permet de tirer pleinement parti de mon expérience pour une bonne cause.",
+        bio: "Travaillait auparavant dans la diffusion audio; maintenant à plein temps avec Dieu Peut. Mes intérêts naturels sont les relations publiques et l'éducation. Rejoindre cet effort me permet de tirer pleinement parti de mon expérience pour une bonne cause.",
       },
       {
 				name: common.staff_names.wadlet,
@@ -357,7 +368,8 @@ const french = {
 };
 
 const creole = {
-  language: "",
+  language: "KR",
+  language_code: "ht-cr",
   wip: "",
   links: common.links,
   common: {
@@ -505,4 +517,21 @@ const creole = {
   },
 };
 
-export const language = writable(french);
+export let language = writable(english);
+
+export function change_language(choice){
+  switch(choice){
+    case 0: 
+      language.update(() => english);
+      break;
+    case 1: 
+      language.update(() => french);
+      break;
+    case 2: 
+      language.update(() => creole);
+      break;
+    default: 
+      language.update(() => english);
+      break;
+  };
+};
