@@ -1,7 +1,7 @@
 <!-- TODO: 99% of devices won't have issues scaling but should support short viewport heights. -->
 <svelte:head>
   <title>
-    Welcome!
+    {lang.home.page_title}
   </title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">

@@ -6,6 +6,12 @@
     lang = value;    
   });
 
+  function en_fr(){
+    let choice = 0;
+    lang.language == "EN" ? choice = 1 : choice = 0; 
+    change_language(choice);
+  };
+
   export let current_nav_page;   
 
   let mobileNavVisible = false;
@@ -89,7 +95,7 @@
 
           <li id="nav-link-items" class="nav-text">
       <!-- TODO FIX LINK // Replace name w/ language icon. TODO: Dropdown menu -->
-            <button class="nav-language-button nav-text">
+            <button on:click={() => en_fr()} class="nav-language-button nav-text">
             <div>
               <svg id="nav-language-button-svg" xmlns="http://www.w3.org/2000/svg" width="21" height="27" viewbox="0 0 54 60" stroke-linejoin="bevel">
               <path fill="none" stroke-width="3"
@@ -97,7 +103,11 @@
               18,14m0,19 9-25 9 25m-3-7H33"/>
               <path d="m15,41-3,3h6zv10m7-3 3,3-3,3zM14.5,51h9"/>
             </div>
-            <span>{lang.language}</span>
+            {#if lang.language === "EN"}
+              <span>FR</span>
+            {:else}
+              <span>EN</span>
+            {/if}
             </button>
               <div class="nav-svg-wrapper">
                 <svg width="54" height="8" viewBox="0 0 54 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -503,6 +513,10 @@
     border: inherit;
     color: inherit;
     font: inherit;
+  }
+
+  .nav-language-button:hover{
+    cursor: pointer;
   }
   
   #nav-language-button-svg{

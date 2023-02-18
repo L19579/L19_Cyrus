@@ -1,6 +1,6 @@
 <svelte:head>
   <title>
-    Our Team
+    {lang.organization.page_title}
   </title>
 </svelte:head>
 

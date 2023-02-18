@@ -59,6 +59,7 @@ export const common = {
   },
 }
 
+/* worth moving title/navbar values to common TODO*/
 const english = {
   language: "EN",
   language_code: "en-ca",
@@ -93,6 +94,7 @@ const english = {
     written_by_part_2_link: "Apache-2.0 / MIT license",
   },
   home: {
+    page_title: "Welcome!",
     panel_0: {
       title_p1: "Assistance for Haitians",
       title_p2: "at home and abroad.",
@@ -120,6 +122,7 @@ const english = {
     },
   },
   impact: {
+    page_title: "Impact",
     panel_1:{
       title: "Meal Assistance",
       description: "This program currently aims to provide meals to families and orphaned children in Haiti’s capital. Unimpeded inflation, fuel shortages, and violence along major transport routes have made food staples difficult to source. Port-au-Prince’s poorest are being priced out of local market prices and risk personal safety when forced to look to areas under bad actor influence. Our doors are kept open if they run out of options.",
@@ -151,6 +154,7 @@ const english = {
     }, 
   },
   goals: {
+    page_title: "Goals",
     panel_1:{
       title: "Expanding Aid",
       description: "Over 120 Haitian families have received assistance from Dieu Peut Charity, resulting in material relief from economic setbacks since our founding in 2022. This linear growth is critical to our mission. With your assistance we plan to expand our food donation initiatives beyond the borders of Port-au-Prince. We want to open remote meal delivery to rural areas without the transport infrastructure and local resources for food availability. Our secondary growth objective is to make youth programs available in Gonaives. We see value in closing educational gaps in cities with insufficient internet penetration. ",
@@ -161,6 +165,7 @@ const english = {
     },
   },
   organization: {
+    page_title: "Our Team",
     title: "Meet the team!",
     staff: [
       {
@@ -244,6 +249,7 @@ const french = {
     written_by_part_2_link: "Licence Apache-2.0 / MIT",
   },
   home: {
+    page_title: "Bienvenue!",
     panel_0: {
       title_p1: "Aide aux Haïtiens",
       title_p2: "à domicile et à l'étranger.",
@@ -275,11 +281,13 @@ const french = {
     },
   },
   impact: {
+    page_title: "Impact",
     panel_1:{
       title: "Aide Alimentaire",
       description: "Ce programme offre des repas aux familles et aux enfants orphelins dans la capitale haïtienne. L'inflation incontrôlable, et la violence sur les routes de transport rendent les aliments de base difficiles à obtenir. Plusieurs ne peuvent plus acheter aux prix du marché local et risquent leur sécurité personnelle pour traverser les zones sous l'influence de criminels. Nos portes restent ouvertes s'ils n'ont plus d'options.",
+      description_sub: "Services sous cette initiative",
       //description: "Ce programme vise actuellement à fournir des repas aux familles et aux enfants orphelins dans la capitale haïtienne. L'inflation incontrôlable, la pénurie de carburant et la violence le long des principales routes de transport rendent difficiles l'approvisionnement en produits alimentaires de base. Les plus pauvres de Port-au-Prince ne peuvent plus se permettre les prix du marché local et risquent leur sécurité personnelle lorsqu'ils sont contraints de se tourner vers des zones sous l'influence de criminels. Nos portes restent ouvertes s'ils n'ont plus d'options.",
-      description_sub: "Services offerts dans le cadre de cette initiative",
+      //description_sub: "Services offerts dans le cadre de cette initiative",
       description_sub_p1: "Banque Alimentaire",
       description_sub_p2: "Repas à Domicile",
       donate_link_text: "Contribuer à la Banque Alimentaire",
@@ -308,6 +316,7 @@ const french = {
     }, 
   },
   goals: {
+    page_title: "Objectifs",
     panel_1:{
       title: "Expansion",
       description: "Plus de 120 familles haïtiennes ont reçu de l'aide de Dieu Peut Charity, ce qui a entraîné un soulagement matériel des revers économiques depuis notre création en 2022. Cette croissance linéaire est essentielle à notre mission. Avec votre aide, nous prévoyons d'étendre nos initiatives de don de nourriture au-delà des frontières de Port-au-Prince. Nous voulons ouvrir la livraison de repas à distance dans les zones rurales sans infrastructure de transport et sans ressources locales pour la disponibilité alimentaire. Notre objectif de croissance secondaire est de rendre les programmes pour les jeunes disponibles à Gonaives. Nous voyons de la valeur dans la réduction des lacunes éducatives dans les villes avec une pénétration internet insuffisante.",
@@ -318,6 +327,7 @@ const french = {
     },
   },
   organization: {
+    page_title: "l'Équipe",
     title: "l'Équipe!",
     staff: [
       {
@@ -528,7 +538,7 @@ export function change_language(choice){
       language.update(() => french);
       break;
     case 2: 
-      language.update(() => creole);
+      language.update(() => french); /* temp */
       break;
     default: 
       language.update(() => english);

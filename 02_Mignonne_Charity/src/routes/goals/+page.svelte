@@ -1,6 +1,6 @@
 <svelte:head>
   <title>
-    Goals
+    {lang.goals.page_title}
   </title>
 </svelte:head>
 

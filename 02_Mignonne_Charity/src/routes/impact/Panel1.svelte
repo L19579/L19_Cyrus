@@ -1,6 +1,6 @@
 <svelte:head>
   <title>
-    Impact
+    {lang.impact.page_title}
   </title>
 </svelte:head>
 
