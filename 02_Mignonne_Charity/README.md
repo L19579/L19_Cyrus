@@ -1,6 +1,6 @@
 # 02_Mignonne_Charity
 
-## Purpose: First solo web app; Template for Haitian Charity Site.
+## Purpose: First solo web app. Template for Haitian charity site.
 
 ---
 
@@ -8,7 +8,6 @@ Live view [here](https://dieupeutcharity.com).
 
 ## Changelog
 
-### [Production WApp]
 07/02/23
 - styling, and logic complete.
 - UI formatted for all devices.
@@ -33,18 +32,6 @@ Live view [here](https://dieupeutcharity.com).
 
   - Nav CSS, SVG implemented sans font styling
   - Responsive scaling 
-
-### [Reference WApp]
-
-10/10/22
-  - Dropped. We'll do it live.
-
-01/10/22
-
-  - Nav skeleton, links, and animation.
-  - Nav contents retain fixed borders reposition themselves w/o changing border size on scale.
-  - Nav links disappear when screen width is reduced to ~760px (to be replaced by nav drawer).
-  - body slides under fixed nav bar. 
 
 ---
 

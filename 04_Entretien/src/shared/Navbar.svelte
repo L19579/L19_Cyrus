@@ -1,4 +1,5 @@
 <script>
+  import Wopprompt from './Wopprompt.svelte';
   import { onMount } from 'svelte';
   // get and format date 
 
@@ -36,8 +37,11 @@
     };  
   });
   
-
+  const test_headline_1 = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type specimen book.";
+  const test_headline_2 = "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.";
 </script>
+
+<Wopprompt />
 
 <div class="outer-wrapper">
   <div class="mid-wrapper">
@@ -56,7 +60,7 @@
               {weather_data.current_temp}&#176;C
             </span>
             <span class="weather-text-superscript">
-              <sup><span>{weather_data.min_temp}</span>&#176;/<span>{weather_data.max_temp}</span>&#176;</sup>
+              <sup><span>{weather_data.max_temp}</span>&#176;/<span>{weather_data.min_temp}</span>&#176;</sup>
             </span>
             {:else}
             {/if}
@@ -190,9 +194,22 @@
     </div>
   </div>
 </div>
+<div class="sub-navbar-outer-wrapper">
+  <div class="sub-navbar-inner-wrapper">
+    <div class="information-panel-top-wrapper">
+    </div>
+    <div class="donate-link-wrapper">
+      <a class="donate-link" href="/temp_home">Donate</a>
+    </div>
+  </div>
+</div>
 
 
 <style>
+  object{
+    border: 0px;
+  }
+
   .outer-wrapper{
     display: flex;
     width: 100vw;
@@ -294,5 +311,49 @@
     height: 4rem;
     width: auto;
     /* border: 2px solid green; */
+  }
+
+
+/* ------------------------------------------------------------- sub navbar */
+
+  .sub-navbar-outer-wrapper{
+    display: flex;
+    width: 100%;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    background-color: black;
+  }
+
+  .sub-navbar-inner-wrapper{
+    margin: auto auto;
+    display: grid;
+    grid-template-columns: repeat(20, [col] 5%);
+    height: 70%;
+    width: 1200px;
+    /* border: 1px solid white; */
+  }
+
+  .information-panel-top-wrapper{
+    grid-column: col 1 / span 17;
+    /* border: 1px solid red; */
+  }
+
+  .donate-link-wrapper{
+    grid-column: col 18 / span 3;
+    width: 100%;
+    /* border: 1px solid blue; */
+  }
+
+  .donate-link-wrapper{
+    display: flex;
+    border-left: 1px solid white;
+  }
+
+  .donate-link{
+    font-size: 18px;
+    color: white;
+    margin: auto auto;
+    text-decoration: none;
   }
 </style>
