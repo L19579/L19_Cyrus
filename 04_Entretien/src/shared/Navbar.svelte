@@ -41,7 +41,7 @@
   const test_headline_2 = "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.";
 </script>
 
-<Wopprompt />
+<!-- <Wopprompt /> -->
 
 <div class="outer-wrapper">
   <div class="mid-wrapper">
@@ -223,8 +223,8 @@
     width: 100%; 
     height: 80%;
     box-sizing: border-box;
-    /* border: 2px solid green; */
     justify-content: space-around;
+    /* border: 2px solid green; */
   }
 
   .inner-wrapper{

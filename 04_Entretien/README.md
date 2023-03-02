@@ -6,7 +6,7 @@ Front-end for entity that serves Haitian news, opinion pieces, and podcasts.
 
 ---
 
-Live view here [here](https://www.entretienpost.com/)
+Live view [here](https://www.entretienpost.com/)
 
 ## Changelog
 
