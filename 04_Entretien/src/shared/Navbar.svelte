@@ -27,13 +27,17 @@
   let display_weather = false;
 
   onMount (async () => {
+    console.log("Written and managed by Junandre Paul / @L19579" 
+        +" \n\temail: JunandrePaul@proton.me"
+        + " \n\tGithub: github.com/L19579 \n\tDiscord: Junandre#0001");
+    
     const response = await fetch('https://services.l19579.xyz/weather', {
       method: 'GET',
     });    
     if (response.ok){
       weather_data = await response.json();
       display_weather = true;
-      console.log("DEBUG --- Weather service response (city): " + weather_data.city);
+      /* console.log("DEBUG --- Weather service response (city): " + weather_data.city); */
     };  
   });
   
