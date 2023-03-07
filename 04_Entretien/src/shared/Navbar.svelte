@@ -1,11 +1,13 @@
 <script>
+  import { fade, fly } from 'svelte/transition';
   import Wopprompt from './Wopprompt.svelte';
   import { onMount } from 'svelte';
   
   //test static text
 
-  const test_headline_1 = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type specimen book.";
+  const test_headline_1 = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer specimen.";
   const test_headline_2 = "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.";
+  const test_headline_3 = "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Lorem Ipsum has been the industry's standard.";
 
   // get and format date 
 
@@ -31,6 +33,7 @@
     country: "",
   };
   let display_weather = false;
+  let current_headline_visible = 0;
 
   onMount (async () => {
     console.log("Written and managed by Junandre Paul / @L19579" 
@@ -45,6 +48,17 @@
       display_weather = true;
       /* console.log("DEBUG --- Weather service response (city): " + weather_data.city); */
     };  
+
+    let update_current_headline = () => {
+      current_headline_visible < 50 ? current_headline_visible++ : current_headline_visible = 0;
+
+      /* console.log("DEBUG: current_headline_visible value: " + current_headline_visible); */
+    };
+    const interval = setInterval(update_current_headline, 1000);
+
+    return() => {
+      clearInterval(interval); 
+    }
   });
 
   // ------------------------------------------------------------------------- minimized bar
@@ -239,10 +253,36 @@
 <div class="sub-navbar-outer-wrapper">
   <div class="sub-navbar-inner-wrapper">
     <div class="information-panel-top-wrapper">
+      <div class="information-panel-mid-wrapper">
+        {#if current_headline_visible >= 0 && current_headline_visible <= 8}
+          <span in:fly="{{ y: 5, duration: 400 }}" out:fade>
+            Headline 1: 
+            {test_headline_2}
+          </span>
+        {:else if current_headline_visible >= 10 && current_headline_visible <= 18}
+          <span in:fly="{{ y: 5, duration: 400 }}" out:fade>
+            Headline 2: {test_headline_3}
+          </span>
+        {:else if current_headline_visible >= 20 && current_headline_visible <= 28}
+          <span in:fly="{{ y: 5, duration: 400 }}" out:fade>
+            Headline 3: {test_headline_2}
+          </span>
+        {:else if current_headline_visible >= 30 && current_headline_visible <= 38}
+          <span in:fly="{{ y: 5, duration: 400 }}" out:fade>
+            Headline 4: {test_headline_3}
+          </span>
+        {:else if current_headline_visible >= 40 && current_headline_visible <= 48}
+          <span in:fly="{{ y: 5, duration: 400 }}" out:fade>
+            Headline 5: {test_headline_2}
+          </span>
+        {/if}
+      </div>
     </div>
-    <div class="donate-link-wrapper">
-      <a class="donate-link" href="/temp_home">Donate</a>
-    </div>
+    <!-- / considering move to menu. TODO - A1!
+    div class="donate-link-wrapper"
+      a class="donate-link" href="/temp_home" Donate /a
+    /div
+    -->
   </div>
 </div>
 
@@ -636,17 +676,23 @@
   }
 
   .information-panel-top-wrapper{
-    grid-column: col 1 / span 17;
-    /* border: 1px solid red; */
-  }
-
-  .donate-link-wrapper{
-    grid-column: col 18 / span 3;
-    width: 100%;
+    grid-column: col 2 / span 18;
+    display: flex;
+    height: 100%;
     /* border: 1px solid blue; */
   }
 
+  .information-panel-mid-wrapper{
+    margin: auto auto;
+    display: flex;
+    text-align: center;
+    /* border: 1px solid red; */
+  }
+
+/* Considering move to menu, see matching TODO - A1
   .donate-link-wrapper{
+    grid-column: col 19 / span 2;
+    width: 100%;
     display: flex;
     border-left: 1px solid white;
   }
@@ -657,6 +703,7 @@
     margin: auto auto;
     text-decoration: none;
   }
+*/
 
 
 /* ------------------------------------------------------------- burger menu */
