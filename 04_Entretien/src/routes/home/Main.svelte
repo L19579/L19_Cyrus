@@ -12,8 +12,8 @@
       <img class="temp-banner-dancing-figure-image" 
         src="https://i.pinimg.com/originals/5a/65/dc/5a65dcc4e4a067fc85e1c85a3d8809d0.gif">
       <div class="top-banner-ad-space-contact-text">
-        <p>Advertisement Space</p>
-        <p><b>Contact Us</b>: fakeemail@fakeemail.zz</p>
+        <p>Advertisement Space #1</p>
+        <p><b>Contact us</b>: fakeemail@fakeemail.zz</p>
       </div>
     </div>
   </div>
@@ -86,21 +86,48 @@
               </div>
             </div>
           </div>
+
+          <div class="sidebar-story-group-outer-wrapper" id="sidebar-story-ad-outer-wrapper">
+            <div class="sidebar-story-group-mid-wrapper" id="sidebar-story-ad-mid-wrapper">
+              <div class="sidebar-story-group-inner-wrapper" id="sidebar-story-ad-inner-wrapper">
+
+                
+                <div class="sidebar-story-ad-space-outer-wrapper">
+                  <div class="sidebar-story-ad-space-mid-wrapper">
+
+                    <div class="sidebar-story-ad-space-contact-space-wrapper">
+                      <img class="sidebar-temp-banner-dancing-figure-image" 
+                        src="https://i.pinimg.com/originals/5a/65/dc/5a65dcc4e4a067fc85e1c85a3d8809d0.gif">
+                      <div class="sidebar-banner-ad-space-contact-text">
+                        <p>Advertisement Space #2</p>
+                        <p><b>Contact us</b>: fakeemail@fakeemail.zz</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          
           <div class="sidebar-story-group-outer-wrapper" id="sidebar-story-2-outer-wrapper">
             <div class="sidebar-story-group-mid-wrapper" id="sidebar-story-2-mid-wrapper">
               <div class="sidebar-story-group-inner-wrapper" id="sidebar-story-2-inner-wrapper">
 
                 <div class="sidebar-2-story-group-outer-wrapper" id="sidebar-2-story-1-outer-wrapper">
-                  <div class="sidebar-2-story-group-media-wrapper">
+                  <div class="sidebar-2-story-group-media-wrapper sidebar-2-story-group-all-wrapper">
                   </div>
-                  <div class="sidebar-2-story-group-text-wrapper">
+                  <div class="sidebar-2-story-group-text-wrapper sidebar-2-story-group-all-wrapper">
                   </div>
                 </div>
+
                 <div class="sidebar-2-seperator"></div> 
+
                 <div class="sidebar-2-story-group-outer-wrapper" id="sidebar-2-story-2-outer-wrapper">
-                  <div class="sidebar-2-story-group-media-wrapper">
+                  <div class="sidebar-2-story-group-media-wrapper sidebar-2-story-group-all-wrapper">
                   </div>
-                  <div class="sidebar-2-story-group-text-wrapper">
+                  <div class="sidebar-2-story-group-text-wrapper sidebar-2-story-group-all-wrapper">
                   </div>
                 </div>
 
@@ -170,6 +197,9 @@
           <div class="sidebar-story-group-outer-wrapper" id="sidebar-story-4-outer-wrapper">
             <div class="sidebar-story-group-mid-wrapper clear-border" id="sidebar-story-4-mid-wrapper">
               <div class="sidebar-story-group-inner-wrapper" id="sidebar-story-4-inner-wrapper">
+                <div class="sidebar-4-title-wrapper">
+                  Book Review
+                </div>
               </div>
             </div>
           </div>
@@ -195,7 +225,8 @@
     width: 99%;
     height: 99%;
     margin: auto;
-    background-color: rgb(177, 177, 177);
+    /* background-color: rgb(177, 177, 177); */
+    background-color: rgb(189,189,188);
     border: 1px solid grey;
   }
 
@@ -254,19 +285,6 @@
     /* border: 2px solid blue; */
   }
 
-  .sidebar-outer-wrapper{
-    grid-column: col 15 / span 6; 
-    /* border: 2px solid blue; */
-  }
-
-  .sidebar-mid-wrapper{
-    margin: 0 auto;
-    display: grid;
-    width: 95%;
-    /* grid-template-rows: repeat(5, [row] 356px); */
-    grid-template-rows: repeat(445, [row] 4px); 
-  }
-
   .mainbar-story-group-outer-wrapper{
     display: flex;
     padding: 1rem 0;
@@ -274,76 +292,6 @@
     min-height: 445px;
     border-bottom: 1px solid rgb(18,18,18); /* black */
   }
-
-  #sidebar-story-1-outer-wrapper{
-    grid-row: row 1 / span 89;
-    /* border: 1px solid red; */
-  }
-  #sidebar-story-2-outer-wrapper{
-    grid-row: row 90 / span 105;
-    /* border: 1px solid green; */
-  }
-  #sidebar-story-3-outer-wrapper{
-    height: 100%;
-    width: 100%;
-    grid-row: row 195 / span 176;
-    /* border: 1px solid red; */
-  }
-  #sidebar-story-4-outer-wrapper{
-    height: 100%;
-    width: 100%;
-    grid-row: row 371 / span 75;
-    /* border: 1px solid blue; */
-  }
-
-  .sidebar-story-group-mid-wrapper{
-display: flex;
-    margin: auto;
-    height: 100%;
-    width: 95%;
-    border-bottom: 1px solid rgb(18,18,18); /* black */
-  }
-
-  .sidebar-story-group-inner-wrapper{
-    margin: auto;
-    height: 95%;
-    width: 100%;
-
-    display: grid;
-    grid-template-rows: repeat(10, [row] 10%);
-    /* border: 2px solid blue; */
-  }
-
-  #sidebar-story-1-text-wrapper{
-    width: 100%;
-    padding-top: 4%;
-    grid-row: 1 / span 2;
-    /* border: 1px solid red; */
-  }
-  
-  #sidebar-story-1-title{
-    font-size: 30px;
-    font-weight: bold;
-    /* text-align: center; */
-  }
-
-  #sidebar-story-1-subtitle{
-    padding-left: 1px;
-    color: rgb(74,74,74);
-    margin-top: 4px; 
-  }
-
-  #sidebar-story-1-content-wrapper{
-    grid-row: 4 / span 7;
-    padding-bottom: 5px;
-    /* border: 2px solid green; */
-  }
-  
-  /* -- utility -- */
-  .clear-border{
-    border-bottom: 0px;
-  }
-
 
   /* START --- mainbar story sections */
 
@@ -380,52 +328,195 @@ display: flex;
   }
   /* END --- mainbar story sections */
 
+
+  /* START --- sidebar section */
+
+  .sidebar-outer-wrapper{
+    grid-column: col 15 / span 6; 
+    /* border: 2px solid blue; */
+  }
+
+  .sidebar-mid-wrapper{
+    margin: 0 auto;
+    display: flex flex-col;
+    width: 95%;
+    /* grid-template-rows: repeat(5, [row] 356px); */
+    /* grid-template-rows: repeat(445, [row] 4px); */
+  }
+
+  .sidebar-story-group-mid-wrapper{
+    margin: auto;
+    width: 95%;
+    border-bottom: 1px solid rgb(18,18,18); /* black */
+  }
+
+  .sidebar-story-group-inner-wrapper{
+    margin: auto;
+    height: 95%;
+    width: 100%;
+
+    display: grid;
+    /* grid-template-rows: repeat(10, [row] 10%); */
+    /* border: 2px solid blue; */
+  }
+
+  /* END --- sidebar section */
   /* START --- sidebar sub-sections */
+
+  /*-------------------------------------------- sidebar 1 */ 
+  #sidebar-story-1-inner-wrapper{
+    min-height: 350px;
+  }
+
+  #sidebar-story-1-text-wrapper{
+    width: 100%;
+    padding-top: 4%;
+    grid-row: 1 / span 2;
+    /* border: 1px solid red; */
+  }
+  
+  #sidebar-story-1-title{
+    font-size: 30px;
+    font-weight: bold;
+    /* text-align: center; */
+  }
+
+  #sidebar-story-1-subtitle{
+    padding-left: 1px;
+    color: rgb(74,74,74);
+    margin-top: 4px; 
+  }
+
+  #sidebar-story-1-content-wrapper{
+    grid-row: 4 / span 7;
+    padding-bottom: 5px;
+    /* border: 2px solid green; */
+  }
+  
+  /*-------------------------------------------- sidebar ad */ 
+
+  #sidebar-story-ad-inner-wrapper{
+    min-height: 338px;
+  } 
+
+  .sidebar-story-ad-space-outer-wrapper{
+    width: 334px;
+    height: 334px;
+    margin: 10px auto; 
+  }  
+
+  .sidebar-story-ad-space-mid-wrapper{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(189,189,188);
+    border: 1px solid grey;
+  }
+
+  .sidebar-story-ad-space-contact-space-wrapper{
+    margin: auto;
+    /* border: 1px solid red; */
+  }
+
+  .sidebar-temp-banner-dancing-figure-image{
+    display: block;
+    margin: auto auto;
+    height: 80px;
+    width: auto;
+    /* border: 1px solid blue; */
+  }
+
+  .sidebar-banner-ad-space-contact-text{
+    color: rgb(46,46,46);
+    margin: auto 1rem;
+    display: block;
+    text-align: center;
+    /* border: 1px solid blue; */
+  }
     
   /*-------------------------------------------- sidebar 2 */ 
-    #sidebar-story-2-inner-wrapper{
-      display: block;
-      /* border: 1px solid blue; */
-    }
-  
-    .sidebar-2-seperator{
-      margin: 0 auto;
-      width: 80%;
-      border-bottom: 1px solid rgb(199,199,199);
-    }
 
-    .sidebar-2-story-group-outer-wrapper{
-      display: flex;
-      margin: auto;
-      height: 49.5%;
-      /* border: 1px solid red; */
-    }    
+  #sidebar-story-2-inner-wrapper{
+    display: block;
+    height: 356px;
+    margin: 5px auto;
+    /* border: 1px solid blue; */
+  }
 
-    .sidebar-2-story-group-media-wrapper{
-      margin: auto 0;
-      height: 95%;
-      width: 55%;
-      border: 1px solid red; 
-    }
+  .sidebar-2-seperator{
+    margin: 0 auto;
+    width: 80%;
+    border-bottom: 1px solid rgb(199,199,199);
+  }
 
-    .sidebar-2-story-group-text-wrapper{
-      margin: auto 0;
-      height: 95%;
-      width: 45%;
-      border: 1px solid blue; 
-    }
+  .sidebar-2-story-group-outer-wrapper{
+    display: flex;
+    margin: auto;
+    height: 49.5%;
+    /* border: 1px solid red; */
+  }    
+
+  .sidebar-2-story-group-media-wrapper{
+    margin: auto 0;
+    height: 95%;
+    width: 55%;
+    border: 1px solid red; 
+  }
+
+  .sidebar-2-story-group-text-wrapper{
+    margin: auto 0;
+    height: 95%;
+    width: 45%;
+    border: 1px solid blue; 
+  }
+
+  .sidebar-2-story-group-all-wrapper{
+  }
+
   
   /*-------------------------------------------- sidebar 3 */ 
+  #sidebar-story-3-outer-wrapper{
+    height: 100%;
+    width: 100%;
+    /* border: 1px solid red; */
+  }
+
+  #sidebar-story-3-inner-wrapper{
+    margin: 10px auto;
+    height: 550px;
+    /* min-height: 660px; */
+  }
+
   .sidebar-3-title-wrapper{
     font-weight: bold;
     font-size: 18px;
     height: 20%;
-
     /* border: 1px solid red; */
   }
 
   /*-------------------------------------------- sidebar 4 */ 
+  #sidebar-story-4-outer-wrapper{
+    /* border: 1px solid blue; */
+  }
+
+  #sidebar-story-4-inner-wrapper{
+    min-height: 200px;
+    margin: 10px auto;
+  }
+
+  .sidebar-4-title-wrapper{
+    font-weight: bold;
+    font-size: 18px;
+    height: 20%;
+    /* border: 1px solid red; */
+  }
+
   /* END --- sidebar sub-sections */
   
   
+  /* -- utility -- */
+  .clear-border{
+    border-bottom: 0px;
+  }
+
 </style>
