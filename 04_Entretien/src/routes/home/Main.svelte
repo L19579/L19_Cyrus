@@ -22,7 +22,7 @@
 
 <div class="main-outer-wrapper">
   <div class="main-mid-wrapper">
-    <div class="main-inner-wrapper">
+    <div class="main-inner-wrapper bottom-grey-border">
 
       <!-- Mainbar -->
 
@@ -134,8 +134,9 @@
               </div>
             </div>
           </div>
+
           <div class="sidebar-story-group-outer-wrapper" id="sidebar-story-3-outer-wrapper">
-            <div class="sidebar-story-group-mid-wrapper" id="sidebar-story-3-mid-wrapper">
+            <div class="sidebar-story-group-mid-wrapper clear-border" id="sidebar-story-3-mid-wrapper">
               <div class="sidebar-story-group-inner-wrapper" id="sidebar-story-3-inner-wrapper">
                 <div class="sidebar-3-title-wrapper">
                   Opinions
@@ -194,8 +195,74 @@
               </div>
             </div>
           </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="top-banner-ad-space-outer-wrapper top-banner-ad-other-group-space-outer-wrapper">
+  <div class="top-banner-ad-space-mid-wrapper">
+    <div class="top-banner-ad-space-contact-space-wrapper">
+      <img class="temp-banner-dancing-figure-image" 
+        src="https://i.pinimg.com/originals/5a/65/dc/5a65dcc4e4a067fc85e1c85a3d8809d0.gif">
+      <div class="top-banner-ad-space-contact-text">
+        <p>Advertisement Space #3</p>
+        <p><b>Contact us</b>: fakeemail@fakeemail.zz</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-outer-wrapper">
+  <div class="main-mid-wrapper">
+    <div class="main-inner-wrapper bottom-grey-border top-grey-border">
+
+      <!-- Mainbar 2 -->
+
+      <div class="mainbar-outer-wrapper">
+        <div class="mainbar-mid-wrapper">
+
+          <div class="mainbar-story-group-outer-wrapper" id="mainbar-story-5-outer-wrapper">
+            <div class="mainbar-story-group-text-outer-wrapper" id="mainbar-story-5-text-outer-wrapper">
+            </div>
+            <div class="mainbar-story-group-media-outer-wrapper" id="mainbar-story-5-media-outer-wrapper">
+            </div>
+          </div>
+          <div class="mainbar-story-group-outer-wrapper" id="mainbar-story-6-outer-wrapper">
+            <div class="mainbar-story-group-text-outer-wrapper" id="mainbar-story-6-text-outer-wrapper">
+            </div>
+            <div class="mainbar-story-group-media-outer-wrapper" id="mainbar-story-6-media-outer-wrapper">
+            </div>
+          </div>
+          <div class="mainbar-story-group-outer-wrapper clear-border" id="mainbar-story-3-outer-wrapper">
+            <div class="mainbar-story-group-text-outer-wrapper" id="mainbar-story-3-group-a-outer-wrapper">
+              <div id="mainbar-story-3-sub-group-media-wrapper">
+              </div>
+              <div id="mainbar-story-3-sub-group-text-wrapper">
+              </div>
+            </div>
+            <div class="mainbar-story-group-media-outer-wrapper" id="mainbar-story-3-group-b-outer-wrapper">
+              <div id="mainbar-story-3-sub-group-media-wrapper">
+              </div>
+              <div id="mainbar-story-3-sub-group-text-wrapper">
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Sidebar 2-->
+
+      <div class="sidebar-outer-wrapper">
+        <div class="sidebar-mid-wrapper">
+
+
           <div class="sidebar-story-group-outer-wrapper" id="sidebar-story-4-outer-wrapper">
-            <div class="sidebar-story-group-mid-wrapper clear-border" id="sidebar-story-4-mid-wrapper">
+            <div class="sidebar-story-group-mid-wrapper" id="sidebar-story-4-mid-wrapper">
               <div class="sidebar-story-group-inner-wrapper" id="sidebar-story-4-inner-wrapper">
                 <div class="sidebar-4-title-wrapper">
                   Book Review
@@ -203,9 +270,80 @@
               </div>
             </div>
           </div>
+
+          <div class="sidebar-story-group-outer-wrapper" id="sidebar-story-ad-outer-wrapper">
+            <div class="sidebar-story-group-mid-wrapper" id="sidebar-story-ad-mid-wrapper">
+              <div class="sidebar-story-group-inner-wrapper" id="sidebar-story-ad-inner-wrapper">
+
+                
+                <div class="sidebar-story-ad-space-outer-wrapper">
+                  <div class="sidebar-story-ad-space-mid-wrapper">
+
+                    <div class="sidebar-story-ad-space-contact-space-wrapper">
+                      <img class="sidebar-temp-banner-dancing-figure-image" 
+                        src="https://i.pinimg.com/originals/5a/65/dc/5a65dcc4e4a067fc85e1c85a3d8809d0.gif">
+                      <div class="sidebar-banner-ad-space-contact-text">
+                        <p>Advertisement Space #4</p>
+                        <p><b>Contact us</b>: fakeemail@fakeemail.zz</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="sidebar-story-group-outer-wrapper" id="sidebar-story-2-outer-wrapper">
+            <div class="sidebar-story-group-mid-wrapper clear-border" id="sidebar-story-2-mid-wrapper">
+              <div class="sidebar-story-group-inner-wrapper" id="sidebar-story-2-inner-wrapper">
+
+                <div class="sidebar-2-story-group-outer-wrapper" id="sidebar-2-story-1-outer-wrapper">
+                  <div class="sidebar-2-story-group-media-wrapper sidebar-2-story-group-all-wrapper">
+                  </div>
+                  <div class="sidebar-2-story-group-text-wrapper sidebar-2-story-group-all-wrapper">
+                  </div>
+                </div>
+
+                <div class="sidebar-2-seperator"></div> 
+
+                <div class="sidebar-2-story-group-outer-wrapper" id="sidebar-2-story-2-outer-wrapper">
+                  <div class="sidebar-2-story-group-media-wrapper sidebar-2-story-group-all-wrapper">
+                  </div>
+                  <div class="sidebar-2-story-group-text-wrapper sidebar-2-story-group-all-wrapper">
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
+    </div>
+  </div>
+</div>
+
+<div class="top-banner-ad-space-outer-wrapper top-banner-ad-other-group-space-outer-wrapper">
+  <div class="top-banner-ad-space-mid-wrapper">
+    <div class="top-banner-ad-space-contact-space-wrapper">
+      <img class="temp-banner-dancing-figure-image" 
+        src="https://i.pinimg.com/originals/5a/65/dc/5a65dcc4e4a067fc85e1c85a3d8809d0.gif">
+      <div class="top-banner-ad-space-contact-text">
+        <p>Advertisement Space #5</p>
+        <p><b>Contact us</b>: fakeemail@fakeemail.zz</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="main-outer-wrapper">
+  <div class="main-mid-wrapper">
+    <div class="bottom-main-inner-wrapper bottom-grey-border top-grey-border">
+      <div class="assorted-articles-outer-wrapper">
+      </div>
     </div>
   </div>
 </div>
@@ -248,6 +386,9 @@
     /* border: 1px solid blue; */
   }
 
+  .top-banner-ad-other-group-space-outer-wrapper{
+    margin: 1.5rem auto 0.7rem auto;
+  }
   /*-------------------------------------------- Main wrappers */ 
   
   .main-outer-wrapper{
@@ -306,6 +447,10 @@
     border: 1px solid red;
   }
 
+  #mainbar-story-2-outer-wrapper{
+    min-height: 200px;
+  }
+
   #mainbar-story-3-group-a-outer-wrapper{
     padding: 1rem;
     width: 50%;
@@ -326,8 +471,19 @@
     height: 40%;
     border: 1px solid green;
   }
+
   /* END --- mainbar story sections */
 
+  /*-------------------------------------------- Mainbar Group 2*/ 
+  /* START --- mainbar group 2 story sections */
+  #mainbar-story-5-outer-wrapper{
+    min-height: 250px;
+  }
+
+  #mainbar-story-6-outer-wrapper{
+    min-height: 250px;
+  }
+  /* END --- mainbar group 2 story sections */
 
   /* START --- sidebar section */
 
@@ -400,7 +556,8 @@
   } 
 
   .sidebar-story-ad-space-outer-wrapper{
-    width: 334px;
+    /* width: 334px; */
+    width: 100%;
     height: 334px;
     margin: 10px auto; 
   }  
@@ -500,7 +657,7 @@
   }
 
   #sidebar-story-4-inner-wrapper{
-    min-height: 200px;
+    min-height: 290px;
     margin: 10px auto;
   }
 
@@ -508,13 +665,38 @@
     font-weight: bold;
     font-size: 18px;
     height: 20%;
+    padding-top: 4%;
     /* border: 1px solid red; */
   }
 
   /* END --- sidebar sub-sections */
   
-  
+  /* -- assorted articles -- */
+
+  .bottom-main-inner-wrapper{
+    display: flex;
+    width: 100%;
+    height: 200px;
+    /* border: 2px solid green; */
+  }
+
+  .assorted-articles-outer-wrapper{
+    width: 97%;
+    height: 90%;
+    margin: auto auto;
+    border: 1px solid red;
+  }
+
   /* -- utility -- */
+
+  .top-grey-border{
+    border-top: 1px solid rgb(199,199,199); 
+  }
+
+  .bottom-grey-border{
+    border-bottom: 1px solid rgb(199,199,199); 
+  }
+
   .clear-border{
     border-bottom: 0px;
   }
