@@ -4,6 +4,22 @@
 
 <Navbar />
 
+<!-- Top Banner Ad Space -->
+
+<div class="top-banner-ad-space-outer-wrapper">
+  <div class="top-banner-ad-space-mid-wrapper">
+    <div class="top-banner-ad-space-contact-space-wrapper">
+      <img class="temp-banner-dancing-figure-image" 
+        src="https://i.pinimg.com/originals/5a/65/dc/5a65dcc4e4a067fc85e1c85a3d8809d0.gif">
+      <div class="top-banner-ad-space-contact-text">
+        <p>Advertisement Space</p>
+        <p><b>Contact Us</b>: fakeemail@fakeemail.zz</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <div class="main-outer-wrapper">
   <div class="main-mid-wrapper">
     <div class="main-inner-wrapper">
@@ -165,6 +181,43 @@
 </div>
 
 <style>
+  /*-------------------------------------------- Top banner ad space */ 
+
+  .top-banner-ad-space-outer-wrapper{
+    width: 972px;
+    height: 92px;
+    margin: 1.5rem auto 0px auto;
+    /* border: 1px solid blue; */
+  }
+
+  .top-banner-ad-space-mid-wrapper{
+    display: flex;
+    width: 99%;
+    height: 99%;
+    margin: auto;
+    background-color: rgb(177, 177, 177);
+    border: 1px solid grey;
+  }
+
+  .top-banner-ad-space-contact-space-wrapper{
+    display: flex;
+    margin: auto auto;
+    /* border: 1px solid red; */
+  }
+
+  .temp-banner-dancing-figure-image{
+    height: 80px;
+    width: auto;
+  }
+
+  .top-banner-ad-space-contact-text{
+    color: rgb(46,46,46);
+    margin: auto 1rem;
+    display: block;
+    /* border: 1px solid blue; */
+  }
+
+  /*-------------------------------------------- Main wrappers */ 
   
   .main-outer-wrapper{
     display: flex;
@@ -174,8 +227,9 @@
   
   .main-mid-wrapper{
     margin: 0 auto;
-    width: 1300px;
-    margin-top: 1.5rem;
+    width: 1250px;
+    /* margin-top: 1.5rem; Ad space acts as filler */
+    margin-top: 1rem;
     /* border: 2px solid blue; */
   }
 
@@ -185,8 +239,10 @@
     /* border: 2px solid green; */
   }
 
+  /*-------------------------------------------- Mainbar */ 
+
   .mainbar-outer-wrapper{
-    grid-column: col 1 / span 13; 
+    grid-column: col 1 / span 14; 
     border-right: 1px solid rgb(199,199,199); /* grey */
     /* border: 2px solid red; */
   }
@@ -199,7 +255,7 @@
   }
 
   .sidebar-outer-wrapper{
-    grid-column: col 14 / span 7; 
+    grid-column: col 15 / span 6; 
     /* border: 2px solid blue; */
   }
 
@@ -261,12 +317,12 @@ display: flex;
   #sidebar-story-1-text-wrapper{
     width: 100%;
     padding-top: 4%;
-    grid-row: 1 / span 3;
+    grid-row: 1 / span 2;
     /* border: 1px solid red; */
   }
   
   #sidebar-story-1-title{
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     /* text-align: center; */
   }
@@ -279,6 +335,7 @@ display: flex;
 
   #sidebar-story-1-content-wrapper{
     grid-row: 4 / span 7;
+    padding-bottom: 5px;
     /* border: 2px solid green; */
   }
   

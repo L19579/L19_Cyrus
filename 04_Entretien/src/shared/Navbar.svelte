@@ -7,7 +7,7 @@
 
   const test_headline_1 = "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer specimen.";
   const test_headline_2 = "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.";
-  const test_headline_3 = "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Lorem Ipsum has been the industry's standard.";
+  const test_headline_3 = "It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Lorem Ipsum has been the standard.";
 
   // get and format date 
 
@@ -239,7 +239,7 @@
       <div class="burger-menu-outer-wrapper title-side-items dead-space">
         <div class="burger-menu-inner-wrapper">
           <button class="burger-menu-wrapper-button" on:click={() => show_remove_menu()}>
-            <svg class="burger-menu-svg" iewBox="0 0 16 24">
+            <svg class="minimized-burger-menu-svg" iewBox="0 0 16 24">
               <rect x="1" y="3" width="22" height="2" fill="#333"></rect>
               <rect x="1" y="7" width="22" height="2" fill="#333"></rect>
               <rect x="1" y="11" width="22" height="2" fill="#333"></rect>
@@ -416,15 +416,13 @@
 
       <div class="minimized-burger-menu-outer-wrapper">
         <div class="minimized-burger-menu-inner-wrapper">
-          <div class="minimized-burger-menu-inner-wrapper">
-            <button class="minimized-burger-menu-wrapper-button" on:click={() => show_remove_menu()}>
-              <svg class="minimized-burger-menu-svg" iewBox="0 0 16 24">
-                <rect x="1" y="3" width="22" height="2" fill="#333"></rect>
-                <rect x="1" y="7" width="22" height="2" fill="#333"></rect>
-                <rect x="1" y="11" width="22" height="2" fill="#333"></rect>
-              </svg>
-            </button>
-          </div>
+          <button class="minimized-burger-menu-wrapper-button" on:click={() => show_remove_menu()}>
+            <svg class="minimized-burger-menu-svg" iewBox="0 0 16 24">
+              <rect x="1" y="3" width="22" height="2" fill="#333"></rect>
+              <rect x="1" y="7" width="22" height="2" fill="#333"></rect>
+              <rect x="1" y="11" width="22" height="2" fill="#333"></rect>
+            </svg>
+          </button>
         </div>
       </div>
 
@@ -474,11 +472,11 @@
     display: flex;
     align-items: center;
     /* justify-content: space-between; */
-    justify-content: space-evenly;
+    justify-content: space-between;
     height: 100%;
-    width: 1300px;
+    width: 1200px;
     box-sizing: border-box;
-    /* border: 2px solid red; */
+    /* border: 2px solid red; */ 
   }            
 
   .title-side-items{
@@ -598,7 +596,7 @@
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    width: 1300px;
+    width: 1200px;
     height: 100%;
     border: 1px solid red;
   }
@@ -626,13 +624,15 @@
     border: 1px solid red;
     text-align: center;
     box-sizing: border-box;
+
+    border: 1px solid red;
   }
 
-  .minimizedburger-menu-outer-wrapper{
+  .minimized-burger-menu-outer-wrapper{
     display: flex; 
     margin-right: 2%;
     box-sizing: border-box;
-    /* border: 1px solid black; */
+    border: 1px solid black; 
   }
 
   .minimized-burger-menu-inner-wrapper{
@@ -649,7 +649,7 @@
     /* border: 1px solid black; */
   }
 
-  .burger-menu-svg{
+  .minimized-burger-menu-svg{
     margin: auto auto;
     height: 16px;
     width: 24px;
@@ -668,15 +668,15 @@
 
   .sub-navbar-inner-wrapper{
     margin: auto auto;
-    display: grid;
-    grid-template-columns: repeat(20, [col] 5%);
+    display: flex;
     height: 70%;
     width: 1200px;
     /* border: 1px solid white; */
   }
 
   .information-panel-top-wrapper{
-    grid-column: col 2 / span 18;
+    width: 90%;
+    margin: auto auto;
     display: flex;
     height: 100%;
     /* border: 1px solid blue; */
@@ -685,6 +685,7 @@
   .information-panel-mid-wrapper{
     margin: auto auto;
     display: flex;
+    font-size: 16px;
     text-align: center;
     /* border: 1px solid red; */
   }
@@ -710,12 +711,13 @@
 
   .burger-menu-outer-wrapper{
     display: flex; 
-    margin-right: 2%;
+    padding-right: 10px;
+    min-width: 140px;  /* might delete */
     /* border: 1px solid black; */
   }
 
   .burger-menu-inner-wrapper{
-    margin: auto auto auto 52%;
+    margin: auto;
     /* border: 1px solid white; */
   }
   
