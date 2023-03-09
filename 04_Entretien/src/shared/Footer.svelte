@@ -7,14 +7,21 @@
 
     <div class="footer-top-section-outer-wrapper">
       <div class="footer-title-outer-wrapper">
-        <Logoyellow width={"15rem"}/> 
+        <Logoyellow width={"13rem"}/> 
+      </div>
+      <div class="footer-social-media-outer-wrapper">
+      </div>
+      <div class="footer-copyright-statement-outer-wrapper">
+        <div class="footer-copyright-statement-inner-wrapper nowrap">
+          &copy; Entretien 2000. All Rights Reserved
+        </div>
       </div>
     </div>
 
     <div class="footer-directory-outer-wrapper">
       <div class="footer-directory-inner-wrapper">
-        <div class="footer-directory-title">
-          Sections & Highlights
+        <div class="footer-directory-title nowrap">
+          Sections & Highlighted
         </div>
         <div class="footer-directory-links">
           <div class="footer-category-links-columns" id="footer-category-links-column-1">
@@ -77,49 +84,72 @@
 
 <style>
   .footer-outer-wrapper{
-display: flex;
+    display: flex;
     border-top: 2px solid #ffc274;
     margin-top: 30px;
     width: 100vw;
-    height: 300px;
+    /* height: 180px; */
     /* background-color: #fdc141; */
     background-color: #ebe8e1;
   }
     
   .footer-mid-wrapper{
-    margin: auto auto;
+    margin: 5px auto;
     width: 1200px;
-    height: 80%;
+    /* height: 88%; */
     border: 2px solid red;
   }
 
   .footer-top-section-outer-wrapper{
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
     border: 2px solid blue;
   }
+  
+  .footer-social-media-outer-wrapper{
+    height: 100%;
+    min-width: 400px;
+    box-sizing: border-box;
+    border: 2px solid red;
+  }
+
+  .footer-copyright-statement-outer-wrapper{
+    display: flex;
+    box-sizing: border-box;
+    border: 1px solid green;
+  }
+  .footer-copyright-statement-inner-wrapper{
+    margin: auto 0;
+    font-size: 13.5px;
+  }
+
   .footer-directory-title{
-    width: 100%;
     margin: 10px auto 5px 1rem;
     color: rgb(46,46,46);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
+    box-sizing: border-box;
+    border: 1px solid white;
   }
   .footer-directory-links{
     display: flex;
     justify-content: space-between;
-    max-width: 800px;
+    max-width: 700px;
+    height: 80px;
+    min-height: 60px;
     margin: 0 auto 5px 1rem;
-    font-size: 18px;
+    font-size: 14px;
     border: 1px solid green;
   }
   .footer-category-links-columns{
-    margin: 0 1rem;
-    height: 100%;
+    margin: auto 1rem;
     border: 1px solid white;
   }
 
   .footer-grouped-links{
     display: flex;
-    margin: 0.5rem 0;
+    margin: 0.3rem 0;
     color: rgb(46,46,46);
     text-decoration: none;
     white-space: nowrap;
@@ -127,8 +157,15 @@ display: flex;
   }
 
   .footer-links-seperator{
-    width: 1px;
-    height: 100%;
-    border: 1px solid rgb(46,46,46);
+    height: 80%;
+    margin: auto 0;
+    box-sizing: border-box;
+    border-left: 1px solid rgb(199,199,199);
+  }
+
+  /* utility */
+
+  .nowrap{
+    white-space: nowrap;
   }
 </style>
