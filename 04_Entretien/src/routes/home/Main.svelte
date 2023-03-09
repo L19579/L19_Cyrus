@@ -1,5 +1,6 @@
 <script>
   import Navbar from './../../shared/Navbar.svelte';
+  import Footer from './../../shared/Footer.svelte';
 </script>
 
 <Navbar />
@@ -122,7 +123,7 @@
                   </div>
                 </div>
 
-                <div class="sidebar-2-seperator"></div> 
+                <div class="sidebar-2-separator"></div> 
 
                 <div class="sidebar-2-story-group-outer-wrapper" id="sidebar-2-story-2-outer-wrapper">
                   <div class="sidebar-2-story-group-media-wrapper sidebar-2-story-group-all-wrapper">
@@ -306,7 +307,7 @@
                   </div>
                 </div>
 
-                <div class="sidebar-2-seperator"></div> 
+                <div class="sidebar-2-separator"></div> 
 
                 <div class="sidebar-2-story-group-outer-wrapper" id="sidebar-2-story-2-outer-wrapper">
                   <div class="sidebar-2-story-group-media-wrapper sidebar-2-story-group-all-wrapper">
@@ -341,13 +342,30 @@
 
 <div class="main-outer-wrapper">
   <div class="main-mid-wrapper">
-    <div class="bottom-main-inner-wrapper bottom-grey-border top-grey-border">
+    <div class="bottom-main-inner-wrapper top-grey-border">
       <div class="assorted-articles-outer-wrapper">
+        <div class="assorted-articles-inner-wrapper">
+          <div class="assorted-articles-wrapper" id="assorted-article-1">
+          </div>
+          <span class="assorted-articles-separator" />
+          <div class="assorted-articles-wrapper" id="assorted-article-2">
+          </div>
+          <span class="assorted-articles-separator" />
+          <div class="assorted-articles-wrapper" id="assorted-article-3">
+          </div>
+          <span class="assorted-articles-separator" />
+          <div class="assorted-articles-wrapper" id="assorted-article-4">
+          </div>
+          <span class="assorted-articles-separator" />
+          <div class="assorted-articles-wrapper" id="assorted-article-5">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+<Footer />
 <style>
   /*-------------------------------------------- Top banner ad space */ 
 
@@ -600,7 +618,7 @@
     /* border: 1px solid blue; */
   }
 
-  .sidebar-2-seperator{
+  .sidebar-2-separator{
     margin: 0 auto;
     width: 80%;
     border-bottom: 1px solid rgb(199,199,199);
@@ -676,17 +694,35 @@
   .bottom-main-inner-wrapper{
     display: flex;
     width: 100%;
-    height: 200px;
+    height: 250px;
     /* border: 2px solid green; */
   }
+
+  /* TODO: horizontal scroll with fade on mobile */
 
   .assorted-articles-outer-wrapper{
     width: 97%;
     height: 90%;
     margin: auto auto;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
 
+  .assorted-articles-inner-wrapper{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .assorted-articles-wrapper{
+    width: 220px;
+    height: 100%;
+    border: 1px solid blue;
+  }
+  .assorted-articles-separator{
+    height: 80%; 
+    margin: auto 0;
+    border-left: 1px solid rgb(199,199,199);
+  }
   /* -- utility -- */
 
   .top-grey-border{
