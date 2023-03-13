@@ -1,6 +1,7 @@
 # 03_L19579_Site
 
-## Purpose: Blog? Business offering & Portfolio? Undecided atm.
-
+## Purpose: client front for various services
 
 --- 
+
+Description to come.
